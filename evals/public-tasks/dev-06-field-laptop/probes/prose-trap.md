@@ -1,0 +1,1 @@
+The requirements demand a nine-hour unplugged shift, a cold-weather operating floor and a MIL-STD-810H rating, and the vendor scores range from 81 to 96, so the tradeoffs between spec-sheet strength and field limits are real.

@@ -1,0 +1,25 @@
+{
+  "name": "recover-real-objective",
+  "version": "0.1.0",
+  "layer": "micro",
+  "evidence_level": "SMOKE_TESTED",
+  "triggers": [
+    "Request names a knob or parameter change instead of an outcome (increase/bump/set the timeout, limit, retries, threshold, buffer, workers)",
+    "Vague referent with no stated goal (fix it, improve this, clean up that, optimize it, speed it up)",
+    "Oddly specific micro-instruction with missing context (just change/add/set/remove X)",
+    "A draft executes the literal request without stating what objective the change serves"
+  ],
+  "counterindications": [
+    "Request already carries its objective (so that / because / the goal is / acceptance criteria stated)",
+    "Task is a one-step factual lookup with no optimization target"
+  ],
+  "files": [
+    "SKILL.md",
+    "skill-card.md",
+    "manifest.json",
+    "BENCHMARK.md",
+    "examples/positive.md",
+    "examples/near-miss.md",
+    "evals/EVAL-PLAN.md"
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "model": {
+    "requested": "claude-haiku-4-5",
+    "assert_resolved": true
+  },
+  "adapter": "auto",
+  "task_root": "../public-tasks",
+  "tasks": "all",
+  "conditions": [
+    "bare",
+    "portable-skill",
+    "output-guardian",
+    "verify-only",
+    "no-repair-control"
+  ],
+  "trials": 3,
+  "cell_timeout_s": 600,
+  "assets": {
+    "portable_skill": "../../skills/fable-think-portable.md",
+    "minimal_core": "../../skills/minimal-core.md",
+    "full_program": "../../skills/full-program.md",
+    "micro_skills_dir": "../../micro-skills"
+  },
+  "answers_dir": null,
+  "smoke_tasks": [
+    "dev-01-bill-split",
+    "dev-08-incident-record"
+  ]
+}

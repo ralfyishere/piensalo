@@ -1,0 +1,25 @@
+{
+  "name": "objective-vs-proxy",
+  "version": "0.1.0",
+  "layer": "micro",
+  "evidence_level": "DESIGNED",
+  "triggers": [
+    "A named metric or KPI (conversion, churn, abandonment, CAC, LTV, error rate) is presented as the ground truth for a decision",
+    "A quoted percentage is the stated basis for action",
+    "A threshold comparison (below/above a target, cutoff, or limit) drives a kill or ship decision",
+    "A draft proposes fixes to the measured system with no check of the measurement itself"
+  ],
+  "counterindications": [
+    "The number was independently recomputed from raw data this session",
+    "The metric is descriptive only; no action depends on it"
+  ],
+  "files": [
+    "SKILL.md",
+    "skill-card.md",
+    "manifest.json",
+    "BENCHMARK.md",
+    "examples/positive.md",
+    "examples/near-miss.md",
+    "evals/EVAL-PLAN.md"
+  ]
+}

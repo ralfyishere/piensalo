@@ -1,0 +1,12 @@
+{
+  "required_output_fields": [
+    {
+      "name": "CALIBRATIONS",
+      "format": "column-0 line `CALIBRATIONS: <integer>`"
+    }
+  ],
+  "also_expected": [
+    "a WORKING: section (informative, not contract-scored)"
+  ],
+  "note": "Contract checks only that the CALIBRATIONS line exists and parses. Whether the value is the boundary-correct 7 is graded in the cognition layer."
+}

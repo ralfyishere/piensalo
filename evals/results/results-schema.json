@@ -1,0 +1,95 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://fable-think.dev/schemas/results-schema.json",
+  "title": "Fable Think eval result submission",
+  "type": "object",
+  "required": ["schema_version", "environment", "model", "task_set",
+               "conditions", "trials", "cells", "raw_retention"],
+  "properties": {
+    "schema_version": {"const": "1.0"},
+    "environment": {
+      "type": "object",
+      "required": ["os", "harness_version", "adapter", "date"],
+      "properties": {
+        "os": {"type": "string"},
+        "harness_version": {"type": "string",
+          "description": "git commit of the harness used"},
+        "adapter": {"enum": ["fable_think", "claude_cli", "manual", "other"]},
+        "date": {"type": "string", "format": "date"}
+      }
+    },
+    "model": {
+      "type": "object",
+      "required": ["requested", "resolved"],
+      "properties": {
+        "requested": {"type": "string",
+          "description": "model id you asked for"},
+        "resolved": {
+          "type": "array", "items": {"type": "string"},
+          "description": "every distinct model id the backend reported serving; 'not_visible' if the backend does not report one"
+        },
+        "assert_resolved": {"type": "boolean"}
+      }
+    },
+    "task_set": {
+      "type": "object",
+      "required": ["label", "tasks", "grader_selftest_pass"],
+      "properties": {
+        "label": {"enum": ["DEVELOPMENT", "DEMO", "PRIVATE"],
+          "description": "PRIVATE = unpublished tasks under the same harness; the only label eligible for headline claims"},
+        "tasks": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+        "grader_sha256": {"type": "object",
+          "additionalProperties": {"type": "string"}},
+        "grader_selftest_pass": {"type": "boolean",
+          "description": "grader_selftest.py exited 0 over this task set before grading"}
+      }
+    },
+    "conditions": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+    "trials": {"type": "integer", "minimum": 1},
+    "cells": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["task", "condition", "trial", "status"],
+        "properties": {
+          "task": {"type": "string"},
+          "condition": {"type": "string"},
+          "trial": {"type": "integer", "minimum": 1},
+          "status": {"enum": ["OK", "OK_REUSED_BARE", "NOT_RUN", "PENDING",
+                              "MODEL_MISMATCH", "SKIPPED_MISSING_ASSET",
+                              "SKIPPED_NO_DRAFT"]},
+          "final_score": {"type": "integer", "enum": [0, 60, 100]},
+          "failure_layer": {"enum": ["cognition", "delivery", "rendering",
+                                     "routing", "verification",
+                                     "delivery-incomplete", "grader",
+                                     "harness", "none"]},
+          "cognition_pass": {"type": ["boolean", "null"]},
+          "contract_pass": {"type": "boolean"},
+          "tokens": {"type": ["integer", "null"]},
+          "wall_s": {"type": ["number", "null"]}
+        }
+      }
+    },
+    "aggregates": {
+      "type": "object",
+      "description": "optional convenience copy of ANALYSIS.json; cells[] is authoritative",
+      "properties": {
+        "per_condition": {"type": "object"},
+        "paired_vs_bare": {"type": "object"},
+        "pass_at_k": {"type": "object"}
+      }
+    },
+    "variance_note": {"type": "string",
+      "description": "state n and within-task trial ranges; direction, not certainty, at small n"},
+    "raw_retention": {
+      "type": "object",
+      "required": ["policy"],
+      "properties": {
+        "policy": {"enum": ["retained-private", "retained-public-link", "not-retained"]},
+        "link": {"type": "string"},
+        "note": {"type": "string",
+          "description": "per-cell raw model outputs: where they live and for how long; 'not-retained' submissions are accepted but flagged unverifiable"}
+      }
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "name": "feasibility-attack",
+  "version": "0.1.0",
+  "layer": "micro",
+  "evidence_level": "DESIGNED",
+  "triggers": [
+    "A novel proposal, plan, or idea is on the table for evaluation ('proposal', 'what if we', 'let's build', 'roadmap item')",
+    "The proposal names a mechanism but includes no resource or limit arithmetic",
+    "A draft endorses the proposal without testing any requirement against a constraint"
+  ],
+  "counterindications": [
+    "The proposal already argues feasibility constraint by constraint; verify that case instead of rebuilding it",
+    "The user explicitly deferred feasibility filtering ('just generate', 'wild ideas welcome', 'don't evaluate yet')"
+  ],
+  "files": [
+    "SKILL.md",
+    "skill-card.md",
+    "manifest.json",
+    "BENCHMARK.md",
+    "examples/positive.md",
+    "examples/near-miss.md",
+    "evals/EVAL-PLAN.md"
+  ]
+}

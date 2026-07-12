@@ -1,0 +1,103 @@
+name: New skill contribution
+description: Propose a new portable skill. All fields are required — they ARE the skill's spec.
+labels: ["skill-proposal", "needs-review"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Every field below is mandatory — a skill missing any of them will not be merged
+        (CONTRIBUTING.md, type 1). New skills honestly start at evidence level `DESIGNED`.
+  - type: input
+    id: skill-name
+    attributes:
+      label: Skill name
+      placeholder: "kebab-case, e.g. unit-consistency-check"
+    validations:
+      required: true
+  - type: textarea
+    id: observable-trigger
+    attributes:
+      label: Observable trigger
+      description: What a session can SEE that activates this skill. "When appropriate" is not observable.
+    validations:
+      required: true
+  - type: textarea
+    id: counterindications
+    attributes:
+      label: Counterindications
+      description: Situations where this skill must NOT fire, even though it might seem to apply.
+    validations:
+      required: true
+  - type: textarea
+    id: bounded-procedure
+    attributes:
+      label: Bounded procedure
+      description: The steps, with an explicit budget (max iterations / max scope). Unbounded procedures are declined.
+    validations:
+      required: true
+  - type: textarea
+    id: expected-output
+    attributes:
+      label: Expected output
+      description: What the skill's result looks like, concretely.
+    validations:
+      required: true
+  - type: textarea
+    id: verification
+    attributes:
+      label: Verification
+      description: How a reader checks the skill did its job (not "review carefully" — a checkable step).
+    validations:
+      required: true
+  - type: textarea
+    id: stop-condition
+    attributes:
+      label: Stop condition
+      description: When the skill is done, and when it must abort. Include the abstention path if one exists.
+    validations:
+      required: true
+  - type: textarea
+    id: positive-example
+    attributes:
+      label: Positive example
+      description: A realistic trace where the skill helps — input, skill behavior, improved outcome.
+    validations:
+      required: true
+  - type: textarea
+    id: near-miss
+    attributes:
+      label: Near miss
+      description: A concrete case that LOOKS like the trigger but isn't, and why the skill must not fire on it.
+    validations:
+      required: true
+  - type: textarea
+    id: negative-transfer-risk
+    attributes:
+      label: Negative-transfer risk
+      description: Where could this skill make results WORSE? (Strong models, easy tasks, and already-correct work are the usual victims — see NEGATIVE-RESULTS.md NR-1, NR-8.)
+    validations:
+      required: true
+  - type: textarea
+    id: evaluation-plan
+    attributes:
+      label: Evaluation plan
+      description: How this skill will be measured — tasks, comparison condition, grader, success criteria (docs/methodology.md).
+    validations:
+      required: true
+  - type: dropdown
+    id: evidence-level
+    attributes:
+      label: Claimed evidence level
+      description: Per docs/evidence-levels.md. DESIGNED is the honest default for new skills.
+      options:
+        - DESIGNED
+        - SMOKE_TESTED
+        - EXPERIMENTALLY_TESTED
+        - REPLICATED
+    validations:
+      required: true
+  - type: textarea
+    id: receipts
+    attributes:
+      label: Receipts for the claimed level
+      description: Required for any level above DESIGNED — link the runs/artifacts.

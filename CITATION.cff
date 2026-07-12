@@ -1,0 +1,25 @@
+cff-version: 1.2.0
+message: "If you use Fable Think in your research, please cite it as below."
+title: "Fable Think: an open cognitive operating system for AI models and agents"
+type: software
+authors:
+  - name: "Fable Think contributors"
+license: MIT
+repository-code: "https://github.com/fable-think/fable-think"
+url: "https://github.com/fable-think/fable-think"
+version: 0.1.0-dev
+date-released: "2026-07-12"
+keywords:
+  - cognitive architecture
+  - AI agents
+  - verification
+  - self-repair
+  - agent skills
+  - abstention
+abstract: >-
+  Fable Think is an open cognitive operating system for AI models and agents.
+  It separates thinking, inspection, repair, verification, evidence, and
+  continuation into distinct operations, supports abstention as a first-class
+  result, and attaches an explicit evidence level to every capability claim.
+  Fable Think is an independent open-source project. It is not affiliated with
+  or endorsed by Anthropic.

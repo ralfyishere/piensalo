@@ -1,0 +1,1 @@
+A bishop attacks along both diagonals. On the 8x8 board there are 64 squares, and the longest diagonals have eight squares each; covering every square with few bishops is a classic puzzle, related to the fact that 14 non-attacking bishops fit on the board.

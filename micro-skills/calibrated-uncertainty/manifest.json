@@ -1,0 +1,24 @@
+{
+  "name": "calibrated-uncertainty",
+  "version": "0.1.0",
+  "layer": "micro",
+  "evidence_level": "SMOKE_TESTED",
+  "triggers": [
+    "The user asks for likelihood or confidence: how confident, how likely, probability, odds, forecast, prediction, estimate, or whether something will work, scale, or hold",
+    "The draft attaches certainty words (definitely, certainly, guaranteed, 100%, can't fail) to claims",
+    "Load-bearing claims about unverified state carry no evidence-level distinction"
+  ],
+  "counterindications": [
+    "Every claim was observed or executed live this session; hedging them would miscalibrate downward",
+    "Pure preference or taste question; calibration has no object"
+  ],
+  "files": [
+    "SKILL.md",
+    "skill-card.md",
+    "manifest.json",
+    "examples/positive.md",
+    "examples/near-miss.md",
+    "evals/EVAL-PLAN.md",
+    "BENCHMARK.md"
+  ]
+}

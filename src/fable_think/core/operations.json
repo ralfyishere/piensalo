@@ -1,0 +1,207 @@
+{
+  "schema": "fable-think/operations/v1",
+  "description": "The cognitive core: 11 named operations composable into a program. Each operation is a bounded, verifiable unit of thinking with an explicit trigger, stop condition, and failure signatures mapped to repairs.",
+  "operations": [
+    {
+      "name": "recover_objective",
+      "trigger": "The request names a solution or knob rather than an outcome, uses a vague referent ('fix it', 'make it better'), or states no acceptance criterion.",
+      "inputs": ["task_text"],
+      "procedure": [
+        "Quote the literal request in one line.",
+        "Write the most plausible underlying objective in one line — the problem the request is trying to solve, not a paraphrase.",
+        "Check whether executing the literal request achieves that objective; name any divergence (symptom-fix, proxy target, wrong layer).",
+        "If they diverge, state the interpretation and the better-aimed action before acting; ask only if a wrong guess is expensive.",
+        "Carry the stated interpretation into the final answer so it can be vetoed."
+      ],
+      "outputs": ["objective_statement", "divergence_note"],
+      "stop_condition": "One objective statement exists and the chosen action has been checked against it.",
+      "failure_signatures": ["proxy-solving", "over-interpretation drifting from the literal ask"],
+      "repair_mappings": {"proxy-solving": "recover-real-objective"},
+      "verification": "The objective statement is not a paraphrase of the request, and the action is explicitly checked against it.",
+      "cost_expectation": "<=150 output tokens; no tool calls.",
+      "evidence_status": "DESIGNED"
+    },
+    {
+      "name": "identify_constraints",
+      "trigger": "The task text contains restrictive language (must, only, never, except, at most) or is long enough that mid-prompt constraints fall out of working memory.",
+      "inputs": ["task_text"],
+      "procedure": [
+        "Re-scan the full task text and extract every constraint verbatim — restrictive clauses, format directives, scope exclusions, limits.",
+        "Classify each as hard (violating it voids the work) or soft (preference).",
+        "Keep the constraint list visible so later steps re-check against it.",
+        "Mark each constraint satisfied / violated / not-yet-applicable as work proceeds."
+      ],
+      "outputs": ["constraint_table"],
+      "stop_condition": "Every restrictive clause in the task text appears in the table.",
+      "failure_signatures": ["boundary-ignoring", "constraint dropped mid-task", "preference inflated into hard constraint"],
+      "repair_mappings": {"constraint dropped mid-task": "hidden-constraint-scan"},
+      "verification": "No hard constraint is marked satisfied without a specific supporting location in the work.",
+      "cost_expectation": "<=300 output tokens; one full re-read of the task text.",
+      "evidence_status": "DESIGNED"
+    },
+    {
+      "name": "decompose_problem",
+      "trigger": "The task cannot be planned in one pass: multiple deliverables, unknown sub-steps, or an honest 'no idea yet' about a later step.",
+      "inputs": ["task_text", "objective_statement", "constraint_table"],
+      "procedure": [
+        "Split the task into units that each have an observable completion test.",
+        "Mark dependencies between units and flag units whose approach is still unknown.",
+        "Order units so the earliest ones reduce the most uncertainty.",
+        "Stop decomposing when every unit is either directly executable or explicitly marked unknown."
+      ],
+      "outputs": ["unit_list", "dependency_notes", "unknowns"],
+      "stop_condition": "Every unit is executable or explicitly marked unknown; no unit hides a 'figure out the rest' step.",
+      "failure_signatures": ["monolithic plan with hidden unknowns", "units without completion tests"],
+      "repair_mappings": {"units without completion tests": "complete-the-delivery"},
+      "verification": "Each unit names its completion test; unknowns are listed, not embedded.",
+      "cost_expectation": "<=400 output tokens.",
+      "evidence_status": "DESIGNED"
+    },
+    {
+      "name": "locate_load_bearing_uncertainty",
+      "trigger": "Multiple open questions exist and resolving all of them is unaffordable; the plan silently assumes an answer to one of them.",
+      "inputs": ["unit_list", "unknowns"],
+      "procedure": [
+        "List the open uncertainties and, for each, what changes about the plan if it resolves the other way.",
+        "Rank by blast radius: the uncertainty whose wrong resolution invalidates the most downstream work is load-bearing.",
+        "State the load-bearing uncertainty in one line with the two (or more) live branches.",
+        "Defer non-load-bearing uncertainties explicitly instead of resolving them now."
+      ],
+      "outputs": ["load_bearing_uncertainty", "deferred_uncertainties"],
+      "stop_condition": "One uncertainty is named as load-bearing with its live branches; the rest are explicitly deferred.",
+      "failure_signatures": ["resolving cheap questions first because they are easy", "plan proceeds on an unstated assumption"],
+      "repair_mappings": {"plan proceeds on an unstated assumption": "calibrated-uncertainty"},
+      "verification": "The named uncertainty, if resolved the other way, would actually change the plan; a reader can confirm this from the branch descriptions.",
+      "cost_expectation": "<=250 output tokens.",
+      "evidence_status": "DESIGNED"
+    },
+    {
+      "name": "select_cheapest_discriminating_test",
+      "trigger": "A load-bearing uncertainty is named and more than one way of resolving it exists.",
+      "inputs": ["load_bearing_uncertainty"],
+      "procedure": [
+        "Enumerate candidate tests that could resolve the uncertainty.",
+        "For each, state what result discriminates between the branches — a test whose outcome is compatible with all branches discriminates nothing.",
+        "Estimate cost (time, tokens, side effects) per test.",
+        "Pick the cheapest test that actually discriminates; state expected outcome per branch before running it."
+      ],
+      "outputs": ["selected_test", "predicted_outcomes_per_branch"],
+      "stop_condition": "One test is selected with pre-registered branch predictions.",
+      "failure_signatures": ["confirmatory test that cannot fail", "expensive test chosen when a cheap one discriminates"],
+      "repair_mappings": {"confirmatory test that cannot fail": "boundary-case-check"},
+      "verification": "The selected test has at least two distinct predicted outcomes mapped to distinct branches.",
+      "cost_expectation": "<=200 output tokens plus the test itself.",
+      "evidence_status": "DESIGNED"
+    },
+    {
+      "name": "execute",
+      "trigger": "A unit or test is selected, bounded, and its completion test is known.",
+      "inputs": ["selected_unit_or_test", "constraint_table"],
+      "procedure": [
+        "Run the unit within its declared budget (tokens, wall time, side-effect scope).",
+        "Produce the artifact or observation the completion test needs.",
+        "Record what was actually done, not what was intended.",
+        "Stop at the budget boundary even if incomplete; partial evidence beats a blown budget."
+      ],
+      "outputs": ["draft_or_observation", "execution_record"],
+      "stop_condition": "Completion test satisfied, or budget exhausted with a checkpoint recorded.",
+      "failure_signatures": ["budget overrun", "silent scope expansion", "intended-as-done reporting"],
+      "repair_mappings": {"intended-as-done reporting": "complete-the-delivery"},
+      "verification": "The execution record cites the actual artifact/observation, and budget consumption is stated.",
+      "cost_expectation": "Task-dependent; bounded by the declared budget.",
+      "evidence_status": "DESIGNED"
+    },
+    {
+      "name": "inspect_result",
+      "trigger": "A draft or execution result exists and has not yet been scanned for observable defects.",
+      "inputs": ["task_text", "draft", "contract (optional)"],
+      "procedure": [
+        "Scan the draft for observable failure signatures only — no speculative critique.",
+        "If a contract exists, check field presence on the raw text.",
+        "Score each detected defect: confidence x expected repair effectiveness minus distraction, token, and negative-transfer costs.",
+        "Select at most one repair (two only if defects are independent); if nothing clears the activation threshold, report NO REPAIR NEEDED.",
+        "Attach the observable evidence line for every detected defect."
+      ],
+      "outputs": ["defect_inventory", "selected_repairs", "evidence_lines"],
+      "stop_condition": "Every defect signature has been evaluated once; selection is made or abstained.",
+      "failure_signatures": ["repair selected without observable evidence", "abstention threshold swallowing genuine defects"],
+      "repair_mappings": {"repair selected without observable evidence": "source-claim-verification"},
+      "verification": "Each selected repair cites at least one evidence line drawn from the draft or contract check.",
+      "cost_expectation": "Deterministic scan; negligible tokens.",
+      "evidence_status": "EXPERIMENTALLY_TESTED"
+    },
+    {
+      "name": "classify_failure",
+      "trigger": "A verification or grading step failed, or an inspection found defects, and the layer of the failure is not yet known.",
+      "inputs": ["draft", "verdict_or_defects"],
+      "procedure": [
+        "Decide first whether output is absent (empty, infra stub, permission stall) — absent output is a delivery failure, never a cognition failure.",
+        "If output is present, separate cognition (is the underlying answer right?) from contract compliance (is it in the demanded surface form?).",
+        "Judge cognition on decoration-stripped text; judge contract compliance on raw text.",
+        "Assign exactly one failure layer: cognition, delivery, rendering, routing, verification, delivery-incomplete, grader, or none."
+      ],
+      "outputs": ["failure_layer", "layer_evidence"],
+      "stop_condition": "Exactly one failure layer is assigned with its evidence.",
+      "failure_signatures": ["cognition blamed for a rendering fault", "absent output scored as a wrong answer"],
+      "repair_mappings": {"cognition blamed for a rendering fault": "final-answer-completeness"},
+      "verification": "The assigned layer is consistent with the layered-verdict rules: absent output is UNMEASURED cognition; decoration alone never fails cognition.",
+      "cost_expectation": "Deterministic; negligible tokens.",
+      "evidence_status": "EXPERIMENTALLY_TESTED"
+    },
+    {
+      "name": "apply_targeted_repair",
+      "trigger": "inspect_result selected a repair for a demonstrated defect.",
+      "inputs": ["draft", "selected_repair", "evidence_lines"],
+      "procedure": [
+        "Load the single selected repair procedure from the library.",
+        "Apply it to the demonstrated defect only; preserve every correct portion of the draft untouched.",
+        "Do not stack additional repairs opportunistically — one demonstrated defect, one repair.",
+        "Record what changed and why, keyed to the evidence line that justified it."
+      ],
+      "outputs": ["repaired_draft", "repair_record"],
+      "stop_condition": "The demonstrated defect is addressed or the repair is recorded as ineffective; no undirected rewriting occurred.",
+      "failure_signatures": ["repair rewrites correct content", "second undemonstrated repair stacked on"],
+      "repair_mappings": {"repair rewrites correct content": "hidden-constraint-scan"},
+      "verification": "The diff between draft and repaired draft touches only material related to the demonstrated defect.",
+      "cost_expectation": "Bounded by the repair's own declared max cost.",
+      "evidence_status": "EXPERIMENTALLY_TESTED"
+    },
+    {
+      "name": "verify",
+      "trigger": "A deliverable is about to be declared finished, or a repair was just applied.",
+      "inputs": ["task_text", "draft", "contract (optional)"],
+      "procedure": [
+        "Run the contract check on the raw text if a contract exists.",
+        "Build the layered verdict: cognition (decoration-stripped), contract compliance (raw), deterministic checks.",
+        "Apply the fallback rule: a prose fallback may only lower credit relative to the primary parse, never rescue it; explicit trap values veto.",
+        "Mark absent output UNMEASURED (null), not failed.",
+        "Report the verdict with its failure layer; a disclosed defect is still a defect."
+      ],
+      "outputs": ["layered_verdict"],
+      "stop_condition": "A verdict JSON exists with cognition, contract, deterministic layers and one failure layer.",
+      "failure_signatures": ["verification by re-reading instead of re-checking", "fallback parse rescuing credit"],
+      "repair_mappings": {"verification by re-reading instead of re-checking": "rederive-the-numbers"},
+      "verification": "The verdict is machine-parseable and each layer's pass value is true, false, or null with checks attached.",
+      "cost_expectation": "Deterministic; negligible tokens.",
+      "evidence_status": "EXPERIMENTALLY_TESTED"
+    },
+    {
+      "name": "deliver",
+      "trigger": "Verification passed, or budget forces delivery of partial work.",
+      "inputs": ["draft", "layered_verdict", "constraint_table"],
+      "procedure": [
+        "Map every requested deliverable to the place in the work that satisfies it.",
+        "Partition the completion claim: delivered-and-verified / delivered-unverified / not delivered — never merge categories.",
+        "Honor exact-format contracts verbatim: required lines at column 0, nothing after a designated final line.",
+        "Lead with the outcome; state what remains uncertain or unverified at the end."
+      ],
+      "outputs": ["final_response", "completion_partition"],
+      "stop_condition": "Every requested item is mapped or explicitly declared undone; the claim spans only checked items.",
+      "failure_signatures": ["summary claim spanning unmapped items", "content appended after a mandated final line"],
+      "repair_mappings": {"summary claim spanning unmapped items": "complete-the-delivery"},
+      "verification": "No completion claim covers an unmapped or unchecked item.",
+      "cost_expectation": "<=250 output tokens beyond the deliverable itself.",
+      "evidence_status": "DESIGNED"
+    }
+  ]
+}

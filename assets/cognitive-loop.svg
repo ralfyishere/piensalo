@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 640" role="img" aria-label="The Fable Think lifecycle: goal, recover intent, build program, execute, inspect, classify failure, repair, verify, preserve evidence, continue or stop">
+  <title>The Fable Think cognitive loop</title>
+  <defs>
+    <linearGradient id="ring" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#7c6cf0"/>
+      <stop offset="1" stop-color="#41d6a8"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="640" fill="#0b0f1a"/>
+
+  <text x="400" y="42" text-anchor="middle" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="24" font-weight="600" fill="#eef1f8">The lifecycle</text>
+
+  <!-- the ring -->
+  <circle cx="400" cy="310" r="200" fill="none" stroke="#2a3450" stroke-width="3" stroke-dasharray="6 8"/>
+
+  <!-- clockwise direction arrows -->
+  <path d="M 594 300 L 606 300 L 600 316 Z" fill="#41d6a8"/>
+  <path d="M 206 320 L 194 320 L 200 304 Z" fill="#7c6cf0"/>
+
+  <!-- stage nodes (clockwise from top) -->
+  <g fill="#7c6cf0">
+    <circle cx="400" cy="110" r="8"/>
+    <circle cx="517.6" cy="148.2" r="8"/>
+    <circle cx="590.2" cy="248.2" r="8"/>
+  </g>
+  <g fill="#41d6a8">
+    <circle cx="590.2" cy="371.8" r="8"/>
+    <circle cx="517.6" cy="471.8" r="8"/>
+    <circle cx="400" cy="510" r="8"/>
+    <circle cx="282.4" cy="471.8" r="8"/>
+  </g>
+  <g fill="#e8b45a">
+    <circle cx="209.8" cy="371.8" r="8"/>
+    <circle cx="209.8" cy="248.2" r="8"/>
+    <circle cx="282.4" cy="148.2" r="8"/>
+  </g>
+
+  <!-- stage labels -->
+  <g font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="16" fill="#c6cfe4">
+    <text x="400" y="88" text-anchor="middle">user goal</text>
+    <text x="542" y="124" text-anchor="start">recover intent</text>
+    <text x="626" y="242" text-anchor="start">build program</text>
+    <text x="626" y="388" text-anchor="start">execute</text>
+    <text x="542" y="504" text-anchor="start">inspect result</text>
+    <text x="400" y="538" text-anchor="middle">classify failure</text>
+    <text x="258" y="504" text-anchor="end">targeted repair</text>
+    <text x="174" y="388" text-anchor="end">verify</text>
+    <text x="174" y="242" text-anchor="end">preserve evidence</text>
+    <text x="258" y="124" text-anchor="end">continue / stop</text>
+  </g>
+
+  <!-- center -->
+  <g text-anchor="middle" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif">
+    <text x="400" y="290" font-size="19" font-weight="600" fill="#eef1f8">bounded loop</text>
+    <text x="400" y="318" font-size="14" fill="#8fa0c4">budgets tracked · provenance recorded</text>
+    <text x="400" y="340" font-size="14" fill="#8fa0c4">no silent model fallback</text>
+    <text x="400" y="372" font-size="14" fill="#41d6a8" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace">NO REPAIR NEEDED is a valid exit</text>
+  </g>
+
+  <!-- legend -->
+  <g font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13">
+    <circle cx="222" cy="596" r="6" fill="#7c6cf0"/>
+    <text x="236" y="601" fill="#8fa0c4">understand</text>
+    <circle cx="372" cy="596" r="6" fill="#41d6a8"/>
+    <text x="386" y="601" fill="#8fa0c4">act &amp; inspect</text>
+    <circle cx="540" cy="596" r="6" fill="#e8b45a"/>
+    <text x="554" y="601" fill="#8fa0c4">assure &amp; continue</text>
+  </g>
+</svg>

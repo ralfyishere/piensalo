@@ -1,0 +1,24 @@
+{
+  "name": "audience-constraint-check",
+  "version": "0.1.0",
+  "layer": "micro",
+  "evidence_level": "DESIGNED",
+  "triggers": [
+    "The deliverable is directed at a consumer beyond the requester, such as an email, memo, report, briefing, handoff, or summary for a team, board, executive, investor, on-call engineer, client, or customer",
+    "The reader or actor on the deliverable is not the person making the request",
+    "A draft's length, format, or jargon level conflicts with the named consumer's constraints"
+  ],
+  "counterindications": [
+    "The requester is the sole consumer; notes have no downstream reader",
+    "Audience constraints were already gathered and checked this session"
+  ],
+  "files": [
+    "SKILL.md",
+    "skill-card.md",
+    "manifest.json",
+    "examples/positive.md",
+    "examples/near-miss.md",
+    "evals/EVAL-PLAN.md",
+    "BENCHMARK.md"
+  ]
+}

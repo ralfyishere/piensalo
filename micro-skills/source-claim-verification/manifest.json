@@ -1,0 +1,24 @@
+{
+  "name": "source-claim-verification",
+  "version": "0.1.0",
+  "layer": "micro",
+  "evidence_level": "SMOKE_TESTED",
+  "triggers": [
+    "An error label names its own cause with unknown provenance (rate limited, quota exceeded, throttled, timeout, out of memory, permission denied)",
+    "A claim arrives via a summary of a source that can be opened directly (the docs say, the log shows, the vendor reports, according to)",
+    "A draft diagnosis rests on a label or summary with no primary-source trace"
+  ],
+  "counterindications": [
+    "Provenance already established live this session (claim traced to its emitting line or primary document)",
+    "Primary source cannot be opened; the claim gets an explicit unverified label instead of a trace"
+  ],
+  "files": [
+    "SKILL.md",
+    "skill-card.md",
+    "manifest.json",
+    "BENCHMARK.md",
+    "examples/positive.md",
+    "examples/near-miss.md",
+    "evals/EVAL-PLAN.md"
+  ]
+}

@@ -1,0 +1,83 @@
+# OPERATOR LAUNCH DECISION — Fable Think v0.1.0 (NOT PUBLISHED)
+
+Prepared 2026-07-12 by the verified claude-fable-5 session. Nothing below has
+been executed against any remote. **The repository has no remote. Publication
+requires Rafael's explicit approval of this document.**
+
+## Product identity
+- Final product name: **Fable Think**
+- Proposed repository: `ralfyishere/fable-think` (verified 404/free). Option:
+  create a `fable-think` GitHub org (org name unclaimed at check time) — the
+  docs currently use `github.com/fable-think/fable-think` as a placeholder;
+  pick one and sweep the placeholder before push.
+- Package identifiers: PyPI **fable-think** (free at check) with alias
+  **fablethink** (free); console scripts `fable-think` + `fablethink`.
+  The `fable` PyPI name is TAKEN — we claim neither the package nor a `fable`
+  binary (collision risk documented).
+
+## Repository state
+- Local path: `<PRIVATE_LOCAL_PATH>` (sibling clean-room; new
+  git history; zero private history).
+- ~552 files, 2.8 MB. Full tree hash manifest: `public-export/HASHES.sha256`
+  (536 files). Per-artifact provenance: `public-export/EXPORT-MANIFEST.json`
+  (73 entries: ported-rewritten / ported-hardened / authored; nothing exported
+  from the never-export list).
+- Public/private boundary: private repo remains the laboratory; exported
+  content = 27 skill packages, ported runtime modules (loop, scanner,
+  contract, layered grading), CONSUMED run-1 task set (renamed + hardened),
+  3 fresh DEMO tasks, aggregate evidence only. NOT exported: .git, .fable,
+  transcripts, unconsumed tasks, credentials, memory, bundles, business
+  context, machine paths.
+
+## q4 mechanism verdicts (drove the v0.1 defaults)
+- inspect-then-repair with **abstention-first** posture: EXPERIMENTALLY_TESTED → the default.
+- output-contract-guardian: EXPERIMENTALLY_TESTED, **default-on where a contract exists** (30% delivery reduction run-1; zero harm both runs; ≥50% gate not yet passed → not PROMOTED).
+- targeted micro-skill repair content: **NARROW** — repair-when-failing only; forced repair measured destructive (delivery layer) on correct drafts.
+- adaptive repair routing: **REJECTED as shipped** (correctness-blind detection) → ships EXPERIMENTAL, off by default.
+- monolithic domain skill: **NARROW** (real knowledge-floor harm, artifact-free) → available, honestly labeled, not default.
+- Full records: EVIDENCE.md; run summaries: BENCHMARKS.md; failures: NEGATIVE-RESULTS.md.
+
+## Feature maturity labels
+- stable: none (v0.1.0 is alpha; no mechanism is PROMOTED)
+- beta: think/inspect/repair/verify CLI (offline), contract guardian, layered grading library, portable skills install
+- experimental: adaptive router (off), loop slow-path self-improvement, provider adapters (unit-tested only, no live-provider runs)
+- narrow: micro-skill forced repair, monolithic fable-think skill
+- rejected: unconditional repair; silent model fallback (prohibited by design)
+
+## Audits
+- Security: skill_scan + doctor implemented; threat model T1–T11 with mitigations; defaults: no telemetry, no network without explicit adapter, no silent fallback. CI includes secret-scan step. Residual: adapters untested against live providers.
+- Secret/private-data scan: orchestrator repo-level grep clean (only intentional hits inside the leak-detector itself and its test fixture); four workstream-level sweeps clean; NOT a full human read of all 552 files.
+- License: MIT recommended and applied (LICENSE, per-skill frontmatter). THIRD_PARTY_NOTICES present. No copied third-party code identified by builders.
+
+## Acceptance status
+- Local: `python3 -m pytest` 49/49 · grader selftest 11/11 tasks PASS · `make benchmark` SMOKE OK (no API) · root Makefile delegates correctly.
+- Fresh-clone: see FRESH-CLONE-RESULT block appended below after the check runs.
+- CI: workflow authored, NOT executed (no runner locally). Known CI risks: `uv` steps unverified (uv absent on build machine; no uv.lock generated), Windows unsupported (documented).
+- Alpha gate: NOT MET — outstanding: 3 model families live-run, public benchmark reproduction on live models, 10 independent users, 5 real-world case studies, demo recording, org/repo URL sweep, uv.lock. Tracked in ALPHA-PLAN.md / ALPHA-EXIT-CRITERIA.md.
+
+## Claims policy
+- Prohibited (enforced in docs): guaranteed improvement, cross-model generality, statistical certainty, Anthropic affiliation, copied-weights framing.
+- Permitted: the pre-registered aggregates in BENCHMARKS.md with confounds attached; the abstention/harm findings; negative results.
+
+## Launch content
+- README (hero → 60-second demo → install → evidence), MANIFESTO, social/x-thread + show-hn + linkedin + demo-script, docs/origin-story (accurate: preserve-and-study origin; value stands independently). Demo assets: 4 SVGs; terminal recording still to produce (ALPHA item).
+
+## Unresolved risks
+1. v0.1 evidence base: one model family, n=8/run; run-2 saturated (lift claim rests on run-1).
+2. Evals oracle-repair labels reference 5 genericized micro-skill names not yet present in micro-skills/ (degrades to SKIPPED, documented) — author or remap before alpha.
+3. `github.com/fable-think/fable-think` placeholder appears in docs — must be swept to the chosen URL pre-push.
+4. uv.lock absent; `uvx fable-think` untested until first PyPI (Test PyPI recommended first).
+5. CoC/security contact email unset (LAUNCH gate item).
+
+## Exact commands that WOULD publish (DO NOT RUN without approval)
+```
+# 1. choose identity (example: personal repo)
+gh repo create ralfyishere/fable-think --public --source "<PRIVATE_LOCAL_PATH>" --push
+# or org route: create org 'fable-think' in UI, then:
+# git remote add origin git@github.com:fable-think/fable-think.git && git push -u origin main
+# 2. package (after uv lock + build on a machine with uv):
+# uv build && uv publish            # Test PyPI first: uv publish --index testpypi
+# 3. tag
+# git tag v0.1.0-alpha && git push origin v0.1.0-alpha
+```
+Pre-push checklist (mandatory): sweep URL placeholder · re-run repo-level secret scan · private-data scan · fresh-clone acceptance green · Rafael reads README + EVIDENCE + this file.

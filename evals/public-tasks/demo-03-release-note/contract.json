@@ -1,0 +1,21 @@
+{
+  "required_output_fields": [
+    {
+      "name": "HEADLINE",
+      "format": "column-0 `HEADLINE: <text, max 80 chars>`"
+    },
+    {
+      "name": "AUDIENCE",
+      "format": "column-0 `AUDIENCE: existing-users` (exact)"
+    },
+    {
+      "name": "CTA",
+      "format": "column-0 `CTA: Update Lumen Notes in your app store` (exact)"
+    }
+  ],
+  "forbidden": [
+    "Markdown bold",
+    "code fences"
+  ],
+  "note": "Cognition = the three release facts conveyed accurately (offline sync, 40% faster search, Android 8 EOL on September 30). Contract = the exact HEADLINE/AUDIENCE/CTA lines and no bold/fences. Wrong facts in a well-formatted announcement fail cognition, not contract."
+}

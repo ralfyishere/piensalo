@@ -1,0 +1,24 @@
+{
+  "name": "contradiction-resolution",
+  "version": "0.1.0",
+  "layer": "micro",
+  "evidence_level": "SMOKE_TESTED",
+  "triggers": [
+    "Text flags disagreement between sources: contradicts, inconsistent, conflicts, disagrees, doesn't match, or 'but X says/shows/reports'",
+    "Two inputs state different values for the same named quantity",
+    "A draft's conclusion uses one side of a detected conflict without resolution or caveat"
+  ],
+  "counterindications": [
+    "Values differ because windows, units, or populations differ and this scoping is already stated",
+    "The differing values are experimental arms or deliberate counterfactuals meant to differ"
+  ],
+  "files": [
+    "SKILL.md",
+    "skill-card.md",
+    "manifest.json",
+    "examples/positive.md",
+    "examples/near-miss.md",
+    "evals/EVAL-PLAN.md",
+    "BENCHMARK.md"
+  ]
+}

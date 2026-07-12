@@ -1,0 +1,43 @@
+{
+  "required_output_fields": [
+    {
+      "name": "INCIDENT_DATE",
+      "format": "column-0 `INCIDENT_DATE: YYYY-MM-DD`"
+    },
+    {
+      "name": "REGION",
+      "format": "column-0 `REGION: <value>`"
+    },
+    {
+      "name": "SERVICE",
+      "format": "column-0 `SERVICE: <value>`"
+    },
+    {
+      "name": "DURATION_MINUTES",
+      "format": "column-0 `DURATION_MINUTES: <integer>`"
+    },
+    {
+      "name": "ROOT_CAUSE",
+      "format": "column-0 `ROOT_CAUSE: <text>`"
+    },
+    {
+      "name": "FAILED_TRANSACTIONS",
+      "format": "column-0 `FAILED_TRANSACTIONS: <bare integer, no thousands separator>`"
+    },
+    {
+      "name": "ONCALL",
+      "format": "column-0 `ONCALL: <name>`"
+    }
+  ],
+  "order_required": true,
+  "no_extra_lines": true,
+  "forbidden": [
+    "bold/asterisks",
+    "code fences",
+    "bullets",
+    "leading indentation",
+    "surrounding prose",
+    "thousands separators"
+  ],
+  "note": "This is a pure delivery-contract task. Cognition (do you know the facts) is graded separately from whether the seven exact lines are the entire answer. A correct-but-casually-formatted answer fails contract, not cognition."
+}

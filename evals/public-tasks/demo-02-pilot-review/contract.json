@@ -1,0 +1,20 @@
+{
+  "required_output_fields": [
+    {
+      "name": "VERIFIED_REDUCTION_PCT",
+      "format": "column-0 `VERIFIED_REDUCTION_PCT: <integer>`"
+    },
+    {
+      "name": "CONTRADICTION_FOUND",
+      "format": "column-0 `CONTRADICTION_FOUND: <yes|no>`"
+    },
+    {
+      "name": "CONTROLLING_SOURCE",
+      "format": "column-0 `CONTROLLING_SOURCE: <file name>`"
+    }
+  ],
+  "also_expected": [
+    "a SUMMARY: prose section (informative, not contract-scored)"
+  ],
+  "note": "The planted contradiction (18% headline vs 11% corrected) is the whole task. Repeating the field report's headline number passes contract and fails cognition."
+}

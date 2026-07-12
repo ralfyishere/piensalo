@@ -1,0 +1,23 @@
+{
+  "name": "counterexample-search",
+  "version": "0.1.0",
+  "layer": "micro",
+  "evidence_level": "DESIGNED",
+  "triggers": [
+    "The task asks whether a property holds universally ('for all', 'in general', 'prove that', 'does it always/ever')",
+    "The draft asserts a universal or impossibility claim ('always', 'never', 'all', 'every', 'guaranteed', 'impossible', 'cannot happen')"
+  ],
+  "counterindications": [
+    "The claim is already scoped to observations ('in the 30 cases tested', 'so far', 'in our data'); nothing universal is asserted",
+    "The property is definitional or machine-enforced (tautology, compiler-checked type guarantee); a counterexample search is vacuous"
+  ],
+  "files": [
+    "SKILL.md",
+    "skill-card.md",
+    "manifest.json",
+    "BENCHMARK.md",
+    "examples/positive.md",
+    "examples/near-miss.md",
+    "evals/EVAL-PLAN.md"
+  ]
+}

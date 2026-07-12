@@ -1,0 +1,1 @@
+Four friends split a bill with an 84.00 subtotal and an 18% tip. Splitting evenly four ways keeps it fair; each pays the same share, and the tip is calculated on the subtotal rather than on the total.

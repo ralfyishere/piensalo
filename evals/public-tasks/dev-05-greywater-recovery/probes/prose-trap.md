@@ -1,0 +1,1 @@
+The greenhouse feeds 2000 litres a day into a four-stage train that passes 90, 85, 80 and 75 percent at the successive stages, and mains water costs EUR 3.20 per cubic metre, so meaningful monthly savings are available.

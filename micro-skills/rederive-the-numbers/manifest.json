@@ -1,0 +1,25 @@
+{
+  "name": "rederive-the-numbers",
+  "version": "0.1.0",
+  "layer": "micro",
+  "evidence_level": "EXPERIMENTALLY_TESTED",
+  "triggers": [
+    "Percentages or multiples are present that are typically derived rather than quoted",
+    "Monetary figures are present, often computed from unit price times volume",
+    "Aggregates are named (total, sum, average, median, per-user or per-month rates, growth, delta) — derived by definition",
+    "The draft asserts a computed number with no visible recomputation"
+  ],
+  "counterindications": [
+    "Every figure is a labeled quotation from a source; nothing was derived",
+    "Numbers are illustrative only; no claim or decision depends on them"
+  ],
+  "files": [
+    "SKILL.md",
+    "skill-card.md",
+    "manifest.json",
+    "BENCHMARK.md",
+    "examples/positive.md",
+    "examples/near-miss.md",
+    "evals/EVAL-PLAN.md"
+  ]
+}

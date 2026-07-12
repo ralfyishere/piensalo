@@ -1,0 +1,24 @@
+{
+  "name": "boundary-case-check",
+  "version": "0.1.0",
+  "layer": "micro",
+  "evidence_level": "EXPERIMENTALLY_TESTED",
+  "triggers": [
+    "The deliverable is executable or rule-like: a function, regex, parser, query, validator, formula, filter, allowlist, denylist, matcher, sanitizer, or threshold policy that will face untyped inputs",
+    "The artifact being produced is code or a matching/threshold rule",
+    "A draft ships a rule-like artifact with no boundary input actually executed"
+  ],
+  "counterindications": [
+    "A named, executed test suite already exercises the edges",
+    "The deliverable has no input domain (pure prose or analysis)"
+  ],
+  "files": [
+    "SKILL.md",
+    "skill-card.md",
+    "manifest.json",
+    "examples/positive.md",
+    "examples/near-miss.md",
+    "evals/EVAL-PLAN.md",
+    "BENCHMARK.md"
+  ]
+}

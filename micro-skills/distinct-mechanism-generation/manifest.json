@@ -1,0 +1,24 @@
+{
+  "name": "distinct-mechanism-generation",
+  "version": "0.1.0",
+  "layer": "micro",
+  "evidence_level": "DESIGNED",
+  "triggers": [
+    "The task asks for multiple candidate explanations, causes, ideas, or hypotheses ('brainstorm', 'list possible causes', 'what could explain', 'enumerate')",
+    "A draft candidate list re-describes the symptom or its own entries rather than naming distinct mechanisms",
+    "A list made of '<noun> issues' entries — the paraphrase smell"
+  ],
+  "counterindications": [
+    "The hypothesis space is saturated and validated candidates await application; applying known results beats generating novelty",
+    "A single known-correct answer exists; enumeration is theater"
+  ],
+  "files": [
+    "SKILL.md",
+    "skill-card.md",
+    "manifest.json",
+    "BENCHMARK.md",
+    "examples/positive.md",
+    "examples/near-miss.md",
+    "evals/EVAL-PLAN.md"
+  ]
+}

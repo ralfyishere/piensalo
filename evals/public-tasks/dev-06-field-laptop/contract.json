@@ -1,0 +1,12 @@
+{
+  "required_output_fields": [
+    {
+      "name": "PICK",
+      "format": "column-0 line `PICK: <single model name>`"
+    }
+  ],
+  "also_expected": [
+    "free-form comparison reasoning (not contract-scored)"
+  ],
+  "note": "Contract compliance checks only that a well-formed PICK line naming one model exists. WHICH model is correct is graded in the cognition layer."
+}

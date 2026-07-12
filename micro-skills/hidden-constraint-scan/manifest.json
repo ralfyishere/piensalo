@@ -1,0 +1,25 @@
+{
+  "name": "hidden-constraint-scan",
+  "version": "0.1.0",
+  "layer": "micro",
+  "evidence_level": "EXPERIMENTALLY_TESTED",
+  "triggers": [
+    "The task text contains restrictive or limiting clauses in a genuine constraint context ('must', 'cannot', 'never', 'only', 'except', 'at most', 'forbidden', 'not allowed')",
+    "The task text is long enough (over ~150 words) that mid-prompt constraints drop out of attention",
+    "An explicit output-format or length directive is present ('in 200 words', 'JSON only', 'format: ...')",
+    "The draft violates a constraint stated verbatim in the task text"
+  ],
+  "counterindications": [
+    "Short task (under ~50 words) with no restrictive language; the scan adds pure overhead",
+    "Constraints already extracted into a checklist this session and being checked"
+  ],
+  "files": [
+    "SKILL.md",
+    "skill-card.md",
+    "manifest.json",
+    "BENCHMARK.md",
+    "examples/positive.md",
+    "examples/near-miss.md",
+    "evals/EVAL-PLAN.md"
+  ]
+}

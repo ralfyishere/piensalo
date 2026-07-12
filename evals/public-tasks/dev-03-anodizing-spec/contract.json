@@ -1,0 +1,25 @@
+{
+  "required_output_fields": [
+    {
+      "name": "SPEC",
+      "format": "column-0 `SPEC: <spec number>`"
+    },
+    {
+      "name": "TYPE_I",
+      "format": "column-0 `TYPE_I: <process>`"
+    },
+    {
+      "name": "TYPE_II",
+      "format": "column-0 `TYPE_II: <process>`"
+    },
+    {
+      "name": "TYPE_III",
+      "format": "column-0 `TYPE_III: <process or common name>`"
+    },
+    {
+      "name": "CONFIDENCE",
+      "format": "column-0 `CONFIDENCE: <high|medium|low>`"
+    }
+  ],
+  "note": "Contract is easy to satisfy; cognition requires specialized recall. A well-formatted but factually wrong answer passes contract and fails cognition."
+}

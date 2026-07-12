@@ -1,0 +1,20 @@
+{
+  "required_output_fields": [
+    {
+      "name": "TIP",
+      "format": "column-0 `TIP: <two decimals>`"
+    },
+    {
+      "name": "TOTAL",
+      "format": "column-0 `TOTAL: <two decimals>`"
+    },
+    {
+      "name": "PER_PERSON",
+      "format": "column-0 `PER_PERSON: <two decimals>`"
+    }
+  ],
+  "also_expected": [
+    "a WORKING: section (informative, not contract-scored)"
+  ],
+  "note": "Contract and cognition are both easily satisfiable by the obvious answer."
+}

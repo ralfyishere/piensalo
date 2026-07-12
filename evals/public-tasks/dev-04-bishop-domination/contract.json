@@ -1,0 +1,12 @@
+{
+  "required_output_fields": [
+    {
+      "name": "MIN_BISHOPS",
+      "format": "column-0 `MIN_BISHOPS: <integer>`"
+    }
+  ],
+  "also_expected": [
+    "a prose justification above the line (informative, not contract-scored)"
+  ],
+  "note": "Contract is a single trivial line; cognition requires the correct combinatorial result. A well-formatted wrong integer passes contract and fails cognition."
+}

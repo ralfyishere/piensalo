@@ -1,0 +1,26 @@
+{
+  "name": "complete-the-delivery",
+  "version": "0.1.0",
+  "layer": "micro",
+  "evidence_level": "EXPERIMENTALLY_TESTED",
+  "triggers": [
+    "The request contains an enumerated or bulleted list of parts",
+    "Multiple deliverables are chained in prose: and also, as well as, both, all of, each of, plus",
+    "The request specifies an exact count of items, such as 3 examples or 5 tests",
+    "A part of the request has no corresponding element in the draft",
+    "The draft defers requested work (as an exercise, later, TODO, follow-up) without the user asking for deferral"
+  ],
+  "counterindications": [
+    "The request has exactly one deliverable and no format or count directives",
+    "The user explicitly dropped parts mid-task; the latest statement supersedes"
+  ],
+  "files": [
+    "SKILL.md",
+    "skill-card.md",
+    "manifest.json",
+    "examples/positive.md",
+    "examples/near-miss.md",
+    "evals/EVAL-PLAN.md",
+    "BENCHMARK.md"
+  ]
+}

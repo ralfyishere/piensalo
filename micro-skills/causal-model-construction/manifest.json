@@ -1,0 +1,24 @@
+{
+  "name": "causal-model-construction",
+  "version": "0.1.0",
+  "layer": "micro",
+  "evidence_level": "DESIGNED",
+  "triggers": [
+    "The task asks how the system produces its behavior: why is/does, root cause, what's causing or driving, mechanism, how does X affect Y",
+    "An action is proposed with no written path from action to outcome",
+    "A draft recommends an intervention without an articulated causal chain"
+  ],
+  "counterindications": [
+    "The action is instantly reversible and near-free; direct trial dominates modeling",
+    "A causal chain with labeled arrows already exists from this session"
+  ],
+  "files": [
+    "SKILL.md",
+    "skill-card.md",
+    "manifest.json",
+    "examples/positive.md",
+    "examples/near-miss.md",
+    "evals/EVAL-PLAN.md",
+    "BENCHMARK.md"
+  ]
+}

@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 460" role="img" aria-label="Evidence levels: DESIGNED to SMOKE_TESTED to EXPERIMENTALLY_TESTED to REPLICATED, then through six promotion gates to PROMOTED, with NARROW and REJECTED as honest terminal states">
+  <title>Fable Think evidence levels and promotion gates</title>
+  <rect width="1000" height="460" fill="#0b0f1a"/>
+
+  <text x="500" y="40" text-anchor="middle" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="22" font-weight="600" fill="#eef1f8">Every capability ships with receipts</text>
+
+  <!-- main ladder -->
+  <g font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" text-anchor="middle">
+    <rect x="28"  y="86" width="150" height="52" rx="8" fill="#131a2c" stroke="#3d4a6b" stroke-width="2"/>
+    <text x="103" y="117" fill="#8fa0c4">DESIGNED</text>
+
+    <rect x="216" y="86" width="150" height="52" rx="8" fill="#131a2c" stroke="#3d4a6b" stroke-width="2"/>
+    <text x="291" y="117" fill="#aab6d3">SMOKE_TESTED</text>
+
+    <rect x="404" y="86" width="160" height="52" rx="8" fill="#131a2c" stroke="#5d6b8f" stroke-width="2"/>
+    <text x="484" y="110" fill="#c6cfe4">EXPERIMENTALLY</text>
+    <text x="484" y="128" fill="#c6cfe4">_TESTED</text>
+
+    <rect x="602" y="86" width="150" height="52" rx="8" fill="#131a2c" stroke="#7c6cf0" stroke-width="2"/>
+    <text x="677" y="117" fill="#c9c2f7">REPLICATED</text>
+
+    <rect x="836" y="86" width="140" height="52" rx="8" fill="#12261f" stroke="#41d6a8" stroke-width="2.5"/>
+    <text x="906" y="117" fill="#41d6a8" font-weight="700">PROMOTED</text>
+  </g>
+
+  <!-- arrows -->
+  <g stroke="#5d6b8f" stroke-width="2" fill="#5d6b8f">
+    <line x1="178" y1="112" x2="208" y2="112"/><path d="M 208 106 L 218 112 L 208 118 Z"/>
+    <line x1="366" y1="112" x2="396" y2="112"/><path d="M 396 106 L 406 112 L 396 118 Z"/>
+    <line x1="564" y1="112" x2="594" y2="112"/><path d="M 594 106 L 604 112 L 594 118 Z"/>
+  </g>
+  <!-- gated arrow into PROMOTED -->
+  <g stroke="#41d6a8" stroke-width="2" fill="#41d6a8">
+    <line x1="752" y1="112" x2="826" y2="112" stroke-dasharray="5 5"/>
+    <path d="M 826 106 L 836 112 L 826 118 Z"/>
+  </g>
+  <rect x="758" y="90" width="14" height="44" rx="3" fill="#0b0f1a" stroke="#e8b45a" stroke-width="2"/>
+  <rect x="778" y="90" width="14" height="44" rx="3" fill="#0b0f1a" stroke="#e8b45a" stroke-width="2"/>
+  <rect x="798" y="90" width="14" height="44" rx="3" fill="#0b0f1a" stroke="#e8b45a" stroke-width="2"/>
+  <text x="786" y="76" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#e8b45a">6 gates</text>
+
+  <!-- the six gates -->
+  <g font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#c6cfe4">
+    <text x="70" y="196" fill="#e8b45a">Promotion gates — all six, on fresh data:</text>
+    <text x="70"  y="226">1 dev validation</text>
+    <text x="70"  y="252">2 fresh held-out test</text>
+    <text x="70"  y="278">3 regression on prior wins</text>
+    <text x="390" y="226">4 cost accounting</text>
+    <text x="390" y="252">5 negative-transfer check</text>
+    <text x="390" y="278">6 paired no-harm comparison</text>
+  </g>
+
+  <!-- honest terminal states -->
+  <g font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" text-anchor="middle">
+    <rect x="700" y="212" width="130" height="46" rx="8" fill="#131a2c" stroke="#e8b45a" stroke-width="2"/>
+    <text x="765" y="240" fill="#e8b45a">NARROW</text>
+    <rect x="850" y="212" width="130" height="46" rx="8" fill="#241318" stroke="#ff6b6b" stroke-width="2"/>
+    <text x="915" y="240" fill="#ff6b6b">REJECTED</text>
+  </g>
+  <g stroke="#3d4a6b" stroke-width="2" fill="none">
+    <path d="M 700 138 Q 730 180 757 210"/>
+    <path d="M 880 138 Q 900 175 910 210"/>
+  </g>
+  <text x="765" y="282" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#5d6b8f">real, but bounded</text>
+  <text x="915" y="282" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#5d6b8f">preserved in public</text>
+
+  <!-- footer principles -->
+  <g font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="15" fill="#8fa0c4">
+    <text x="70" y="356">· Levels move down as well as up — demotions are published like promotions.</text>
+    <text x="70" y="384">· A docs PR cannot upgrade a level. Only an experiment can.</text>
+    <text x="70" y="412">· REJECTED results stay public in NEGATIVE-RESULTS.md — so you don't repeat them.</text>
+  </g>
+</svg>

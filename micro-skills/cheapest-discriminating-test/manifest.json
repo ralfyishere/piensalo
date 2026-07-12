@@ -1,0 +1,25 @@
+{
+  "name": "cheapest-discriminating-test",
+  "version": "0.1.0",
+  "layer": "micro",
+  "evidence_level": "DESIGNED",
+  "triggers": [
+    "Multiple live explanations are named in the task: hypotheses, could be either A or B, one of several candidates, possible causes or explanations",
+    "Two or more hypotheses are live and tests are not free",
+    "A proposed test's every outcome is compatible with every live hypothesis",
+    "The draft proposes diligence gestures (add more logging, increase coverage, monitor the situation, gather more data) instead of discriminators"
+  ],
+  "counterindications": [
+    "Only one live hypothesis exists; generate alternative mechanisms first",
+    "All tests are near-free; running everything is cheaper than designing the table"
+  ],
+  "files": [
+    "SKILL.md",
+    "skill-card.md",
+    "manifest.json",
+    "examples/positive.md",
+    "examples/near-miss.md",
+    "evals/EVAL-PLAN.md",
+    "BENCHMARK.md"
+  ]
+}

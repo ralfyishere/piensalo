@@ -1,0 +1,66 @@
+name: Negative-transfer report
+description: Fable Think made your results WORSE. This is a first-class contribution — confirmed reports are published with credit.
+labels: ["negative-transfer", "evidence"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you — this is the report we most need (Manifesto, principle 6).
+        Confirmed reports go into NEGATIVE-RESULTS.md with credit (if you want it).
+  - type: textarea
+    id: task
+    attributes:
+      label: The task
+      description: What you were doing, in enough detail to reproduce the setup. No secrets or client-identifying details.
+    validations:
+      required: true
+  - type: textarea
+    id: comparison
+    attributes:
+      label: The comparison
+      description: What "worse" is measured against — the same task without Fable Think? A different configuration? Describe both sides.
+    validations:
+      required: true
+  - type: textarea
+    id: worse-how
+    attributes:
+      label: How it was worse
+      description: Observable difference — wrong output, damaged correct work, unnecessary repair applied, failure to abstain, time/cost burned.
+    validations:
+      required: true
+  - type: input
+    id: model
+    attributes:
+      label: Model + adapter (as recorded by provenance)
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: fable-think version / skill versions
+    validations:
+      required: true
+  - type: dropdown
+    id: repeatability
+    attributes:
+      label: Repeatability
+      options:
+        - Reproduced 2+ times
+        - Happened once, could not retry yet
+        - Happened once, retry did NOT reproduce it
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence artifacts
+      description: Relevant .fable-think/evidence files or transcripts (scrub secrets first).
+  - type: dropdown
+    id: credit
+    attributes:
+      label: Credit preference if published
+      options:
+        - Credit me (GitHub handle)
+        - Publish anonymously
+    validations:
+      required: true

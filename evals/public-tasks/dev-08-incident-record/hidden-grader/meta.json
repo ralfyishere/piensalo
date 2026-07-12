@@ -1,0 +1,8 @@
+{
+  "label": "DEVELOPMENT",
+  "class": "procedural",
+  "oracle_repairs": [
+    "output-contract-echo"
+  ],
+  "consumption_note": "Published DEVELOPMENT task: treat as contaminated for headline claims; use for harness development and regression only."
+}

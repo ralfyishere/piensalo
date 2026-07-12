@@ -1,0 +1,9 @@
+{
+  "required_output_fields": [
+    {
+      "name": "ERROR_SERVICES",
+      "format": "column-0 header line `ERROR_SERVICES:` followed by service names one per line at column 0"
+    }
+  ],
+  "note": "The word 'constraint' and the format ask are surface features only; the extraction is unambiguous and the obvious answer is correct."
+}

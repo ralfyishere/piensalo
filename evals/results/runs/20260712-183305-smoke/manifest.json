@@ -1,0 +1,22 @@
+{
+  "run_id": "20260712-183305-smoke",
+  "smoke": true,
+  "date": "2026-07-12T18:33:05",
+  "adapter": "manual",
+  "model_requested": "manual",
+  "assert_resolved": false,
+  "tasks": [
+    "dev-01-bill-split",
+    "dev-08-incident-record"
+  ],
+  "conditions": [
+    "bare",
+    "verify-only"
+  ],
+  "trials": 1,
+  "grader_sha256": {
+    "dev-01-bill-split": "f0eed9c1d9703899b9a68de46dc70ab3921a7dc0f2b62e3fbae2dd45de4a66e4",
+    "dev-08-incident-record": "2358a7c51fe9723d6be9aa16ed5859c1ceee4dc2ff4d8e67caa66aef46d61add"
+  },
+  "layered_common_sha256": "0bd2126c8c8f9a52eb3530ec210861a5caaf1044ab693059e1ff944b417daba9"
+}

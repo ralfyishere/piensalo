@@ -1,0 +1,24 @@
+{
+  "name": "load-bearing-uncertainty",
+  "version": "0.1.0",
+  "layer": "micro",
+  "evidence_level": "DESIGNED",
+  "triggers": [
+    "A recommendation, verdict, or go/no-go conclusion someone will act on is being produced",
+    "At least one input to the conclusion was not observed or recomputed this session",
+    "The draft hedges inside the conclusion (assumes/probably/likely) without isolating which assumption bears the load"
+  ],
+  "counterindications": [
+    "Every input was verified live this session; nothing to isolate",
+    "No conclusion is being offered yet — exploratory work with no verdict"
+  ],
+  "files": [
+    "SKILL.md",
+    "skill-card.md",
+    "manifest.json",
+    "BENCHMARK.md",
+    "examples/positive.md",
+    "examples/near-miss.md",
+    "evals/EVAL-PLAN.md"
+  ]
+}

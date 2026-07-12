@@ -1,0 +1,32 @@
+{
+  "clean-correct.md": {
+    "cognition_pass": true,
+    "contract_pass": true,
+    "failure_layer": "none"
+  },
+  "decorated-correct.md": {
+    "cognition_pass": true,
+    "contract_pass": false,
+    "failure_layer": "rendering"
+  },
+  "wrong-value.md": {
+    "cognition_pass": false,
+    "contract_pass": false,
+    "failure_layer": "cognition"
+  },
+  "prose-trap.md": {
+    "cognition_pass": false,
+    "contract_pass": null,
+    "failure_layer": "cognition"
+  },
+  "stall.md": {
+    "cognition_pass": null,
+    "contract_pass": null,
+    "failure_layer": "delivery-incomplete"
+  },
+  "stub.md": {
+    "cognition_pass": null,
+    "contract_pass": null,
+    "failure_layer": "delivery-incomplete"
+  }
+}

@@ -1,0 +1,52 @@
+name: Case study / benchmark reproduction
+description: Share a real usage trace or a reproduction of our published numbers — agreeing or disagreeing.
+labels: ["case-study", "evidence"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Reproductions that DISAGREE with our published numbers are especially welcome —
+        they get the same visibility as confirmations (docs/methodology.md).
+  - type: dropdown
+    id: kind
+    attributes:
+      label: Kind
+      options:
+        - Case study (real task, full lifecycle trace)
+        - Benchmark reproduction (matches published results)
+        - Benchmark reproduction (DISAGREES with published results)
+    validations:
+      required: true
+  - type: textarea
+    id: setup
+    attributes:
+      label: Setup
+      description: OS, install method, fable-think version, exact model identifiers as recorded by provenance, hardware if local.
+    validations:
+      required: true
+  - type: textarea
+    id: narrative
+    attributes:
+      label: What happened
+      description: The trace or run summary. For case studies include verdicts (REPAIR REQUIRED / NO REPAIR NEEDED / PASS) as they occurred — including wrong ones.
+    validations:
+      required: true
+  - type: textarea
+    id: artifacts
+    attributes:
+      label: Evidence artifacts
+      description: Outputs, evidence bundles, result tables. Scrub secrets and private paths before attaching.
+    validations:
+      required: true
+  - type: textarea
+    id: divergence
+    attributes:
+      label: Divergence from published results (if any)
+      description: For reproductions — what differed, by how much, and your best hypothesis why.
+  - type: checkboxes
+    id: consent
+    attributes:
+      label: Publication
+      options:
+        - label: I consent to this content being published (anonymized on request) in the project's case studies or evidence reports
+          required: true

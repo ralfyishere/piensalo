@@ -1,0 +1,25 @@
+{
+  "name": "disqualifier-scan",
+  "version": "0.1.0",
+  "layer": "micro",
+  "evidence_level": "EXPERIMENTALLY_TESTED",
+  "triggers": [
+    "The task defines a spec, rubric, acceptance criteria, or submission rules the answer can fail outright",
+    "Explicit pass/fail or rejection conditions are present ('disqualified', 'invalid', 'void', 'must include', 'will not be accepted')",
+    "A required element from the spec has no counterpart in the draft",
+    "The draft discloses a spec violation as a caveat instead of fixing it"
+  ],
+  "counterindications": [
+    "No external spec or rubric exists; the scan would invent rules to disqualify against",
+    "Early drafting while the structure is still moving; sweep at ship time instead"
+  ],
+  "files": [
+    "SKILL.md",
+    "skill-card.md",
+    "manifest.json",
+    "BENCHMARK.md",
+    "examples/positive.md",
+    "examples/near-miss.md",
+    "evals/EVAL-PLAN.md"
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "label": "DEMO",
+  "class": "procedural",
+  "oracle_repairs": [
+    "contradiction-sweep"
+  ],
+  "consumption_note": "DEMO task: authored for public illustration; contaminated for headline claims by publication."
+}

@@ -1,0 +1,20 @@
+{
+  "required_output_fields": [
+    {
+      "name": "RECOVERED_LPD",
+      "format": "column-0 line `RECOVERED_LPD: <integer>`"
+    },
+    {
+      "name": "RECOVERED_M3_MONTH",
+      "format": "column-0 line `RECOVERED_M3_MONTH: <number, two decimals>`"
+    },
+    {
+      "name": "SAVINGS_EUR_MONTH",
+      "format": "column-0 line `SAVINGS_EUR_MONTH: <number, two decimals>` (leading EUR optional)"
+    }
+  ],
+  "also_expected": [
+    "a WORKING: section listing the four stage outputs (informative, not contract-scored)"
+  ],
+  "note": "Contract compliance is graded independently of whether the numbers are correct. A wrong number in a correctly-formatted line passes contract but fails cognition."
+}

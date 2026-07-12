@@ -1,0 +1,12 @@
+{
+  "required_output_fields": [
+    {
+      "name": "FINAL_PRICE",
+      "format": "column-0 `FINAL_PRICE: <two decimals>`"
+    }
+  ],
+  "also_expected": [
+    "a WORKING: section (informative, not contract-scored)"
+  ],
+  "note": "Contract checks only that the FINAL_PRICE line exists with two decimals. Whether the value compounds the discounts correctly is graded in the cognition layer."
+}

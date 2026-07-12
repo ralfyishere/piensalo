@@ -1,0 +1,26 @@
+{
+  "name": "final-answer-completeness",
+  "version": "0.1.0",
+  "layer": "micro",
+  "evidence_level": "EXPERIMENTALLY_TESTED",
+  "triggers": [
+    "The task contains two or more question marks",
+    "The task contains a numbered question list",
+    "The task dictates the answer's shape ('in 3 bullets', 'as a table', 'yes or no', 'one paragraph', 'JSON only')",
+    "The task mandates verbatim machine-parsed output lines ('lines exactly of the form...', 'parsed by a script')",
+    "An explicit question in the task has no answer location in the draft"
+  ],
+  "counterindications": [
+    "A single question whose answer is plainly present in the draft; mapping is overhead",
+    "The user rescoped or withdrew questions mid-session; the latest instruction supersedes"
+  ],
+  "files": [
+    "SKILL.md",
+    "skill-card.md",
+    "manifest.json",
+    "BENCHMARK.md",
+    "examples/positive.md",
+    "examples/near-miss.md",
+    "evals/EVAL-PLAN.md"
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "name": "second-order-effects",
+  "version": "0.1.0",
+  "layer": "micro",
+  "evidence_level": "DESIGNED",
+  "triggers": [
+    "A change with adapting dependents is proposed: rollout, migration, deprecation, policy, incentive, pricing, quota, reorg, mandate, or changing a default for everyone",
+    "The draft's impact analysis stops at direct effects; no adaptation is traced"
+  ],
+  "counterindications": [
+    "The change is verified to have no dependents or adapting agents",
+    "Second-order analysis for this change was already produced this session"
+  ],
+  "files": [
+    "SKILL.md",
+    "skill-card.md",
+    "manifest.json",
+    "BENCHMARK.md",
+    "examples/positive.md",
+    "examples/near-miss.md",
+    "evals/EVAL-PLAN.md"
+  ]
+}

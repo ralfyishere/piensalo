@@ -1,0 +1,53 @@
+[
+  {
+    "run_id": "20260712-183305-smoke",
+    "date": "2026-07-12T18:33:05",
+    "smoke": true,
+    "model_requested": "manual",
+    "adapter": "manual",
+    "tasks": [
+      "dev-01-bill-split",
+      "dev-08-incident-record"
+    ],
+    "conditions": [
+      "bare",
+      "verify-only"
+    ],
+    "trials": 1,
+    "note": "smoke plumbing test; answers came from probe files, not a model"
+  },
+  {
+    "run_id": "20260712-183440-smoke",
+    "date": "2026-07-12T18:34:40",
+    "smoke": true,
+    "model_requested": "manual",
+    "adapter": "manual",
+    "tasks": [
+      "dev-01-bill-split",
+      "dev-08-incident-record"
+    ],
+    "conditions": [
+      "bare",
+      "verify-only"
+    ],
+    "trials": 1,
+    "note": "smoke plumbing test; answers came from probe files, not a model"
+  },
+  {
+    "run_id": "20260712-183510-smoke",
+    "date": "2026-07-12T18:35:10",
+    "smoke": true,
+    "model_requested": "manual",
+    "adapter": "manual",
+    "tasks": [
+      "dev-01-bill-split",
+      "dev-08-incident-record"
+    ],
+    "conditions": [
+      "bare",
+      "verify-only"
+    ],
+    "trials": 1,
+    "note": "smoke plumbing test; answers came from probe files, not a model"
+  }
+]

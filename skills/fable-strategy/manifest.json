@@ -1,0 +1,28 @@
+{
+  "name": "fable-strategy",
+  "version": "0.1.0",
+  "layer": "domain",
+  "evidence_level": "DESIGNED",
+  "triggers": [
+    "recommend",
+    "should we",
+    "what's the right move"
+  ],
+  "counterindications": [
+    "decisions with a known correct answer or negligible downside",
+    "small reversible choices where a one-line tradeoff suffices",
+    "reading scenario probabilities as measurement rather than explicit judgment"
+  ],
+  "files": [
+    "SKILL.md",
+    "skill-card.md",
+    "manifest.json",
+    "BENCHMARK.md",
+    "references/contracts.md",
+    "references/failure-checks.md",
+    "references/verification.md",
+    "examples/positive.md",
+    "examples/near-miss.md",
+    "evals/EVAL-PLAN.md"
+  ]
+}

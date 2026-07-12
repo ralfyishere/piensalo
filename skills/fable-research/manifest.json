@@ -1,0 +1,28 @@
+{
+  "name": "fable-research",
+  "version": "0.1.0",
+  "layer": "domain",
+  "evidence_level": "DESIGNED",
+  "triggers": [
+    "research",
+    "reconcile these figures",
+    "what does the evidence say"
+  ],
+  "counterindications": [
+    "single-fact lookups or questions answerable from one provided document",
+    "no retrieval tools available (degrades to auditing supplied sources)",
+    "first-principles derivation tasks better served by fable-strategy or fable-invent"
+  ],
+  "files": [
+    "SKILL.md",
+    "skill-card.md",
+    "manifest.json",
+    "BENCHMARK.md",
+    "references/contracts.md",
+    "references/failure-checks.md",
+    "references/verification.md",
+    "examples/positive.md",
+    "examples/near-miss.md",
+    "evals/EVAL-PLAN.md"
+  ]
+}

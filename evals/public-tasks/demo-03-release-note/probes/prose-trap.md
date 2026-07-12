@@ -1,0 +1,1 @@
+Big news for note takers: version 2.4 of Lumen Notes is the snappiest release yet, with search that feels faster than ever and smarter handling of notebooks across devices. More detail lands in the full changelog soon.

@@ -1,0 +1,9 @@
+Here is the incident record:
+
+**INCIDENT_DATE**: 2026-03-03
+**REGION**: eu-west
+**SERVICE**: checkout
+**DURATION_MINUTES**: 45
+**ROOT_CAUSE**: expired TLS certificate
+**FAILED_TRANSACTIONS**: 12,400
+**ONCALL**: Priya Nandakumar
