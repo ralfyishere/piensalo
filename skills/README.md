@@ -1,4 +1,4 @@
-# Fable Think — domain skills
+# Piénsalo — domain skills
 
 Eight domain-level cognitive skills in the Agent Skills format. Each one packages a
 full reasoning workflow — objective recovery, constraint extraction, candidate
@@ -34,7 +34,7 @@ Every skill directory is self-contained and uses progressive disclosure:
 ### One skill, with the `skills` CLI
 
 ```bash
-npx skills add <this-repo-url> --skill piensalo
+npx skills add <owner>/piensalo --skill piensalo
 ```
 
 ### One skill, manual copy
@@ -49,11 +49,21 @@ cp -r skills/piensalo ~/.claude/skills/piensalo     # Claude Code
 ### All eight
 
 ```bash
-cp -r skills/fable-* ~/.claude/skills/
+cp -r skills/piensalo* ~/.claude/skills/
 ```
 
 Nothing else is required: skills have no runtime dependency, call no network
 services, and read only their own bundled files plus your task.
+
+### Managing skills with the Piénsalo CLI
+
+```bash
+piensalo skill list                          # enumerate visible skill packages
+piensalo skill inspect piensalo              # print a skill's SKILL.md
+piensalo skill export piensalo --target DIR  # export a portable copy
+piensalo skill lint skills/piensalo          # structural checks
+piensalo skill scan <third-party-dir>        # vet a third-party skill before install
+```
 
 ## Choosing a skill
 

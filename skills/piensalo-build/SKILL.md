@@ -6,7 +6,7 @@ license: MIT
 
 # piensalo-build
 
-The build-and-debug workflow of Fable Think (domain: software build & debugging). Work the numbered steps in order; each step's output feeds the next. Do not skip steps silently - if one does not apply, say so in one line.
+The build-and-debug workflow of Piénsalo (domain: software build & debugging). Work the numbered steps in order; each step's output feeds the next. Do not skip steps silently - if one does not apply, say so in one line.
 
 ## Primary workflow
 1. **Recover real objective** - Per intent-clarity: decode what the requester actually needs before optimizing anything. Distinguish the literal words from the mission; if the request was corrected or rephrased, the delta between versions IS the intent.

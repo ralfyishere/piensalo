@@ -6,7 +6,7 @@ license: MIT
 
 # piensalo-verify
 
-The verification workflow of Fable Think. Given a task and a candidate answer, grade the candidate - do not fix it. Verification is adversarial: your job is to find where it fails.
+The verification workflow of Piénsalo. Given a task and a candidate answer, grade the candidate - do not fix it. Verification is adversarial: your job is to find where it fails.
 
 ## Primary workflow
 1. **Pick the domain verifier** - software, mathematics, research, strategy, invention, writing, or generic if none fits. Criteria for every domain are in references/verification.md.

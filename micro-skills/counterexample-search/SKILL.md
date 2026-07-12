@@ -31,4 +31,4 @@ Per universal claim: the strongest counterexample candidate, the result of actua
 
 **Evidence status:** DESIGNED — specified from documented reasoning-failure modes; not yet executed as a packaged skill.
 
-**Lineage:** Derived from a documented reasoning-failure mode — reaching a plausible answer and stopping without probing it — combined with an adversarial-probe verification pattern from the broader Fable Think skill family.
+**Lineage:** Derived from a documented reasoning-failure mode — reaching a plausible answer and stopping without probing it — combined with an adversarial-probe verification pattern from the broader Piénsalo skill family.

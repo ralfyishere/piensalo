@@ -1,4 +1,4 @@
-# Fable Think — micro-skills
+# Piénsalo — micro-skills
 
 A **micro-skill** is the smallest useful unit of cognitive repair:
 
@@ -59,10 +59,14 @@ path, or inject the `SKILL.md` body directly into a prompt when you know the
 failure mode you are guarding against:
 
 ```bash
-npx skills add <this-repo-url> --skill rederive-the-numbers
+npx skills add <owner>/piensalo --skill rederive-the-numbers
 # or
 cp -r micro-skills/rederive-the-numbers ~/.claude/skills/
 ```
+
+The Piénsalo CLI manages them the same way as the domain skills:
+`piensalo skill list` / `inspect` / `export` / `lint` / `scan` — e.g.
+`piensalo skill lint micro-skills/rederive-the-numbers`.
 
 Use them surgically: pick the one or two whose trigger matches your task, rather
 than loading all nineteen. Bulk-loading defeats the design — the value is a

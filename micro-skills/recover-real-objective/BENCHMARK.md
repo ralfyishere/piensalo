@@ -1,7 +1,7 @@
 # BENCHMARK — recover-real-objective
 
 ## Evidence ladder
-Every Fable Think micro-skill carries exactly one status from this ladder:
+Every Piénsalo micro-skill carries exactly one status from this ladder:
 
 - **DESIGNED** — specified from documented reasoning-failure modes; not yet executed as a packaged skill.
 - **SMOKE_TESTED** — executed end-to-end in live sessions and behaves as specified; no measured lift is claimed.

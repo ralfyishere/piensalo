@@ -1,6 +1,6 @@
 # Benchmark status — hidden-constraint-scan
 
-Fable Think grades every skill on a fixed evidence ladder:
+Piénsalo grades every skill on a fixed evidence ladder:
 
 - **DESIGNED** — specified from documented failure modes; not yet executed as a packaged skill.
 - **SMOKE_TESTED** — ran end to end at least once; no controlled comparison.

@@ -6,7 +6,7 @@ license: MIT
 
 # piensalo
 
-The core reasoning loop of Fable Think (domain: any). Work the numbered steps in order; each step's output feeds the next. Do not skip steps silently - if one does not apply, say so in one line.
+The core reasoning loop of Piénsalo (domain: any). Work the numbered steps in order; each step's output feeds the next. Do not skip steps silently - if one does not apply, say so in one line.
 
 ## Primary workflow
 1. **Recover real objective** - State what the requester actually needs (not the stated ask); one interpretation line.

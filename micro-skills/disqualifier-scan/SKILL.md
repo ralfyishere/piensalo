@@ -31,4 +31,4 @@ A disqualifier list with per-item check results (pass / HIT with quoted evidence
 
 **Evidence status:** EXPERIMENTALLY_TESTED — this repair content lifted a weak model on procedural tasks in controlled runs; the effect is task-concentrated, and automatic router selection of micro-skills is a separate, unproven layer.
 
-**Lineage:** Grounded in an evidence-backed completion-integrity principle (a deliverable is not done while a voiding condition stands) and in a documented reasoning-failure mode — verifying surface form while missing the semantic requirements; applies the disqualifier-sweep pattern from the broader Fable Think skill family.
+**Lineage:** Grounded in an evidence-backed completion-integrity principle (a deliverable is not done while a voiding condition stands) and in a documented reasoning-failure mode — verifying surface form while missing the semantic requirements; applies the disqualifier-sweep pattern from the broader Piénsalo skill family.

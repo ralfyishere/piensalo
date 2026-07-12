@@ -1,6 +1,6 @@
 # Benchmark status — calibrated-uncertainty
 
-Fable Think grades every skill on one evidence ladder:
+Piénsalo grades every skill on one evidence ladder:
 
 - **DESIGNED** — specified from documented reasoning-failure modes; never executed as a packaged skill.
 - **SMOKE_TESTED** — executed end-to-end in live sessions; behaves as specified; no measured lift claimed.
