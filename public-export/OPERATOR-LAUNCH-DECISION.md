@@ -81,3 +81,10 @@ gh repo create ralfyishere/fable-think --public --source "<PRIVATE_LOCAL_PATH>" 
 # git tag v0.1.0-alpha && git push origin v0.1.0-alpha
 ```
 Pre-push checklist (mandatory): sweep URL placeholder · re-run repo-level secret scan · private-data scan · fresh-clone acceptance green · Rafael reads README + EVIDENCE + this file.
+
+## FRESH-CLONE-RESULT (2026-07-12, local clone to scratch)
+- `python3 -m pytest -q` → 49 passed
+- `python3 evals/harness/grader_selftest.py` → ALL GRADER SELF-TESTS PASS (11 tasks)
+- `make benchmark` → SMOKE OK: 4 cells graded end-to-end (no API)
+- `PYTHONPATH=src python3 -m fable_think.cli.main think examples/math/task.md` → renders the cognitive program (a Python-3.9 runpy warning appears on the below-floor interpreter; clean on 3.10+)
+- `uv sync` / `uvx` NOT tested (uv absent on build machine — ALPHA item)
