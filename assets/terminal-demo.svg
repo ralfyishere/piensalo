@@ -1,36 +1,55 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600" role="img" aria-label="Terminal transcript: piensalo inspects a pricing draft, finds a compounding error, repairs it to 44 percent effective discount, verifies, and abstains on a correct draft">
-  <title>Fable Think terminal demo</title>
-  <rect width="900" height="600" rx="14" fill="#0b0f1a" stroke="#2a3450" stroke-width="2"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 560" role="img" aria-label="Terminal transcript: piensalo inspect finds two defects in a pricing draft, repairs with rederive-numbers, verifies 100 dollars through two sequential discounts equals 56 dollars, 44 percent effective — then abstains on a corrected draft with no intervention needed.">
+  <title>piensalo — terminal demo</title>
+  <desc>Two runs of piensalo inspect: one ending in REPAIR REQUIRED, one ending in NO INTERVENTION NEEDED.</desc>
 
-  <!-- title bar -->
-  <rect x="2" y="2" width="896" height="40" rx="12" fill="#131a2c"/>
-  <rect x="2" y="28" width="896" height="14" fill="#131a2c"/>
-  <circle cx="28" cy="22" r="7" fill="#ff5f57"/>
-  <circle cx="52" cy="22" r="7" fill="#febc2e"/>
-  <circle cx="76" cy="22" r="7" fill="#28c840"/>
-  <text x="450" y="27" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#5d6b8f">piensalo — 60 second demo</text>
+  <rect width="900" height="560" fill="#10141C"/>
 
-  <!-- transcript -->
-  <g font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="16">
-    <text x="32" y="80" fill="#41d6a8">$ <tspan fill="#eef1f8">piensalo think "30% off plus an extra 20% — is that 50% off?"</tspan></text>
-    <text x="32" y="110" fill="#7c6cf0">▸ recover_objective</text>
-    <text x="52" y="136" fill="#8fa0c4">load-bearing uncertainty: does 30% + 20% stack to 50%?</text>
-    <text x="32" y="166" fill="#7c6cf0">▸ execute <tspan fill="#8fa0c4">→ draft-v1</tspan></text>
+  <!-- window -->
+  <rect x="20" y="16" width="860" height="524" rx="12" fill="#0C1015" stroke="#2A3242" stroke-width="1.5"/>
+  <circle cx="48" cy="44" r="6" fill="#E36855"/>
+  <circle cx="70" cy="44" r="6" fill="#ECA43F"/>
+  <circle cx="92" cy="44" r="6" fill="#34C29A"/>
+  <text x="450" y="49" text-anchor="middle" font-size="13" fill="#5D6678"
+        font-family="ui-monospace, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace">piensalo — terminal</text>
+  <line x1="21" y1="64" x2="879" y2="64" stroke="#2A3242" stroke-width="1"/>
 
-    <text x="32" y="208" fill="#41d6a8">$ <tspan fill="#eef1f8">piensalo inspect draft-v1</tspan></text>
-    <text x="52" y="236" fill="#e8b45a">FINDING [numeric]  compounded percentage not re-derived</text>
-    <text x="52" y="262" fill="#e8b45a">FINDING [delivery] missing final recommendation</text>
-    <text x="52" y="290" fill="#ff6b6b">verdict: REPAIR REQUIRED</text>
+  <g font-family="ui-monospace, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="15">
+    <!-- run 1 -->
+    <text x="44" y="98"><tspan fill="#ECA43F">$</tspan> <tspan fill="#E8E4DA">piensalo inspect --task task.md --draft answer.md</tspan></text>
 
-    <text x="32" y="332" fill="#41d6a8">$ <tspan fill="#eef1f8">piensalo repair draft-v1 --strategy rederive-numbers</tspan></text>
-    <text x="52" y="360" fill="#eef1f8">$100 → 30% off → $70.00 → 20% off → $56.00</text>
-    <text x="52" y="386" fill="#eef1f8">effective discount: <tspan fill="#41d6a8" font-weight="700">44%</tspan>, not 50%</text>
+    <text x="64" y="128" fill="#7C93B8">understand</text>
+    <text x="190" y="128" fill="#98A0B3">pricing task — two sequential discounts on $100</text>
 
-    <text x="32" y="428" fill="#41d6a8">$ <tspan fill="#eef1f8">piensalo verify draft-v2</tspan></text>
-    <text x="52" y="456" fill="#8fa0c4">re-derived independently: 0.70 × 0.80 = 0.56 ✓</text>
-    <text x="52" y="482" fill="#41d6a8">verdict: PASS — evidence recorded</text>
+    <text x="64" y="153" fill="#7C93B8">inspect</text>
+    <text x="190" y="153" fill="#98A0B3">2 defects observed in draft</text>
 
-    <text x="32" y="524" fill="#41d6a8">$ <tspan fill="#eef1f8">piensalo inspect other-draft</tspan></text>
-    <text x="52" y="552" fill="#41d6a8">verdict: NO REPAIR NEEDED <tspan fill="#5d6b8f">· abstention is a first-class result</tspan></text>
+    <text x="190" y="178" fill="#5D6678">· <tspan fill="#E36855">D1 arithmetic</tspan>  discounts summed: 30% + 20% read as 50% off</text>
+    <text x="190" y="203" fill="#5D6678">· <tspan fill="#E36855">D2 unverified</tspan>  final price asserted, never derived</text>
+
+    <text x="64" y="228" fill="#7C93B8">repair</text>
+    <text x="190" y="228" fill="#98A0B3">selected micro-skill: <tspan fill="#ECA43F">rederive-numbers</tspan></text>
+
+    <text x="64" y="253" fill="#7C93B8">verify</text>
+    <text x="190" y="253" fill="#E8E4DA">$100 → 30% off → $70 → 20% off → $56 = 44% effective</text>
+
+    <text x="44" y="290" font-weight="700" fill="#ECA43F">! REPAIR REQUIRED</text>
+    <text x="266" y="290" fill="#98A0B3">answer.md corrected: $50 → $56</text>
+
+    <!-- divider -->
+    <line x1="44" y1="318" x2="856" y2="318" stroke="#2A3242" stroke-width="1" stroke-dasharray="3 5"/>
+
+    <!-- run 2 -->
+    <text x="44" y="352"><tspan fill="#ECA43F">$</tspan> <tspan fill="#E8E4DA">piensalo inspect --task task.md --draft answer.v2.md</tspan></text>
+
+    <text x="64" y="382" fill="#7C93B8">inspect</text>
+    <text x="190" y="382" fill="#98A0B3">0 defects observed</text>
+
+    <text x="64" y="407" fill="#7C93B8">verify</text>
+    <text x="190" y="407" fill="#98A0B3">$56 re-derived independently — matches draft</text>
+
+    <text x="44" y="444" font-weight="700" fill="#34C29A">✓ NO INTERVENTION NEEDED</text>
+    <text x="330" y="444" fill="#98A0B3">draft delivered unchanged</text>
+
+    <text x="44" y="496" font-size="13" fill="#5D6678"># abstention is a first-class outcome — piensalo intervenes only when evidence demands it</text>
   </g>
 </svg>

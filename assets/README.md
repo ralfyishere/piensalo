@@ -1,14 +1,17 @@
 # Assets
 
-Hand-authored SVGs. Dark-friendly, self-contained: system font stacks only,
-no external fonts, images, or network references — safe to embed anywhere.
+Hand-authored PIÉNSALO brand SVGs. Self-backgrounded (identical on light and
+dark), fully self-contained: system font stacks only, no external fonts,
+images, scripts, or network references — safe to embed anywhere. The acute
+accent over the E is drawn as geometry (the brand mark), never left to font
+rendering.
 
 | File | Use |
 |---|---|
-| `hero.svg` | README hero / social preview base |
-| `cognitive-loop.svg` | The lifecycle ring (docs/architecture.md, talks) |
-| `terminal-demo.svg` | Static version of the 60-second demo transcript |
-| `evidence-map.svg` | Evidence levels + promotion gates (docs/evidence-levels.md) |
+| `hero.svg` | PIÉNSALO wordmark + tagline — README hero / social preview base |
+| `cognitive-loop.svg` | The 7-stage lifecycle ring, with NO INTERVENTION NEEDED as a first-class exit |
+| `terminal-demo.svg` | Static `piensalo inspect` transcript: one REPAIR REQUIRED run, one abstention |
+| `evidence-map.svg` | Evidence levels DESIGNED → PROMOTED with NARROW / REJECTED side rails |
 
 ## Placeholder
 

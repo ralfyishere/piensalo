@@ -1,40 +1,35 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" role="img" aria-label="Fable Think — give any AI a better way to think">
-  <title>Fable Think</title>
-  <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#0b0f1a"/>
-      <stop offset="1" stop-color="#131a2c"/>
-    </linearGradient>
-    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0" stop-color="#7c6cf0"/>
-      <stop offset="1" stop-color="#41d6a8"/>
-    </linearGradient>
-  </defs>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" role="img" aria-label="PIÉNSALO — Give any AI a better way to think.">
+  <title>PIÉNSALO</title>
+  <desc>Wordmark with the acute accent drawn as a brand mark, and the tagline: Give any AI a better way to think.</desc>
 
-  <rect width="1200" height="400" fill="url(#bg)"/>
+  <rect width="1200" height="400" fill="#10141C"/>
 
-  <!-- loop glyph -->
-  <g transform="translate(170,200)">
-    <circle r="92" fill="none" stroke="#2a3450" stroke-width="10"/>
-    <path d="M 0 -92 A 92 92 0 0 1 92 0" fill="none" stroke="url(#accent)" stroke-width="10" stroke-linecap="round"/>
-    <path d="M 92 6 l -12 -18 h 24 z" fill="#41d6a8"/>
-    <!-- nodes: think / inspect / repair / verify -->
-    <circle cx="0" cy="-92" r="9" fill="#7c6cf0"/>
-    <circle cx="92" cy="0" r="9" fill="#41d6a8"/>
-    <circle cx="0" cy="92" r="9" fill="#3d4a6b"/>
-    <circle cx="-92" cy="0" r="9" fill="#3d4a6b"/>
-    <!-- abstention: the loop may rest -->
-    <circle r="26" fill="none" stroke="#3d4a6b" stroke-width="3" stroke-dasharray="4 6"/>
-    <text y="7" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="20" fill="#8fa0c4">◦</text>
+  <!-- wordmark: letters placed individually so the accent mark is geometry, not font rendering -->
+  <g font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif"
+     font-size="100" font-weight="800" fill="#F3EFE7" text-anchor="middle">
+    <text x="271" y="196">P</text>
+    <text x="365" y="196">I</text>
+    <text x="459" y="196">E</text>
+    <text x="553" y="196">N</text>
+    <text x="647" y="196">S</text>
+    <text x="741" y="196">A</text>
+    <text x="835" y="196">L</text>
+    <text x="929" y="196">O</text>
   </g>
 
-  <!-- wordmark -->
-  <g font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif">
-    <text x="330" y="185" font-size="84" font-weight="700" fill="#eef1f8" letter-spacing="-1">Fable <tspan fill="url(#accent)">Think</tspan></text>
-    <text x="334" y="238" font-size="30" fill="#aab6d3">Give any AI a better way to think.</text>
-    <text x="334" y="290" font-size="19" fill="#5d6b8f" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace">think · inspect · repair · verify · loop · skill</text>
+  <!-- the accent: a deliberate rising stroke over the E — the brand mark -->
+  <path d="M 437 112 L 456 78 L 483 78 L 464 112 Z" fill="#ECA43F"/>
+
+  <!-- tagline -->
+  <g font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" text-anchor="middle">
+    <text x="600" y="258" font-size="31" fill="#C9CFDD">Give any AI a better way to think.</text>
   </g>
 
-  <!-- footer strip -->
-  <text x="334" y="344" font-size="15" fill="#46527a" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace">an open cognitive operating system for AI models and agents · MIT</text>
+  <!-- subline -->
+  <text x="600" y="308" text-anchor="middle" font-size="17" fill="#5D6678"
+        font-family="ui-monospace, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace">piensalo — an open artificial cortex for AI models and agents</text>
+
+  <!-- baseline rule with accent echo -->
+  <line x1="271" y1="346" x2="905" y2="346" stroke="#2A3242" stroke-width="2"/>
+  <path d="M 913 350 L 921 336 L 932 336 L 924 350 Z" fill="#ECA43F"/>
 </svg>
