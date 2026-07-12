@@ -1,4 +1,4 @@
-<!-- Fable Think eval task | label: DEMO | id: demo-02-pilot-review -->
+<!-- Piénsalo eval task | label: DEMO | id: demo-02-pilot-review -->
 
 # Task: Synthesize the delivery-pilot results
 

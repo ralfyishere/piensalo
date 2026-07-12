@@ -13,7 +13,7 @@ should work now" without running anything. The clamp also silently encodes
 the same wrong model (night portion measured from `night_start` regardless
 of where the shift starts) — it survives these three tests by coincidence
 of arithmetic, and nobody would notice until a new boundary case arrives.
-The Fable Think-style output (1) reproduces the failure first, (2) states
+The Piénsalo-style output (1) reproduces the failure first, (2) states
 the root cause as a model error (missing interval intersection), (3)
 replaces the model rather than clamping its output, (4) enumerates boundary
 cases *derived from the corrected model* and adds them as regression tests,

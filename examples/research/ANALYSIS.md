@@ -9,8 +9,7 @@
 
 **Observable difference.** The bare output answers the literal question
 ("one number") by grabbing the bigger, older, sales-sourced figure and
-never mentions that a second provided source corrected it. The Fable
-Think-style output (1) detects that the sources conflict, (2) explains the
+never mentions that a second provided source corrected it. The Piénsalo-style output (1) detects that the sources conflict, (2) explains the
 *mechanism* of the discrepancy rather than just averaging or picking, (3)
 identifies which document controls and why (later, explains the delta,
 matches the product's actual constraint), and (4) refuses to launder the

@@ -1,4 +1,4 @@
-<!-- Fable Think eval task | label: DEMO | id: demo-03-release-note -->
+<!-- Piénsalo eval task | label: DEMO | id: demo-03-release-note -->
 
 # Task: Write a release announcement under a strict contract
 

@@ -13,7 +13,7 @@ window times, no card-safety statement, no refund remedy, no named contact,
 and it is dense with exactly the jargon the brief banned (TLS, SSL
 handshake, edge termination, PKI). It reads like an email about the
 incident *for the engineering team's pride*, not for a customer's next
-action. The Fable Think-style output treats the brief as an output
+action. The Piénsalo-style output treats the brief as an output
 contract: every required element is present, and the visible contract-check
 footer verifies each one — including an actual word count — before
 delivery.

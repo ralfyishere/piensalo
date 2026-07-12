@@ -1,4 +1,4 @@
-<!-- Fable Think eval task | label: DEVELOPMENT | id: dev-01-bill-split -->
+<!-- Piénsalo eval task | label: DEVELOPMENT | id: dev-01-bill-split -->
 
 # Task: Split a restaurant bill
 

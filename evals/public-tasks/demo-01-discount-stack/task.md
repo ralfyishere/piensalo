@@ -1,4 +1,4 @@
-<!-- Fable Think eval task | label: DEMO | id: demo-01-discount-stack -->
+<!-- Piénsalo eval task | label: DEMO | id: demo-01-discount-stack -->
 
 # Task: Checkout price after stacked discounts
 

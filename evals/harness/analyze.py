@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Fable Think public eval harness — run analyzer.
+"""Piénsalo public eval harness — run analyzer.
 
 Computes, from a run directory produced by runner.py:
 - per-condition, per-class score stats (mean/median/stdev);

@@ -1,0 +1,5 @@
+cell	requested_model	resolved_model	status	wall_s	tokens	bytes
+dev-01-bill-split.bare.t1	manual	manual	OK	0	0	80
+dev-01-bill-split.verify-only.t1	manual	manual	OK	0	0	159
+dev-08-incident-record.bare.t1	manual	manual	OK	0	0	228
+dev-08-incident-record.verify-only.t1	manual	manual	OK	0	0	169

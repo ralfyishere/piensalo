@@ -10,7 +10,7 @@
 **Observable difference.** The bare output ranks by the composite score —
 which is exactly what the composite score invites — and recommends a vendor
 that fails the single non-negotiable requirement for shipping chilled food.
-The Fable Think-style output applies hard constraints as *gates before any
+The Piénsalo-style output applies hard constraints as *gates before any
 ranking*, which flips the recommendation entirely (94-point SwiftParcel is
 out; 87-point Northlane wins). It also does two things scores can't:
 notices the reversibility asymmetry in the exclusivity clause, and

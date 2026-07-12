@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
   "$id": "https://piensalo.dev/schemas/results-schema.json",
-  "title": "Fable Think eval result submission",
+  "title": "Piénsalo eval result submission",
   "type": "object",
   "required": ["schema_version", "environment", "model", "task_set",
                "conditions", "trials", "cells", "raw_retention"],

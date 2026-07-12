@@ -1,7 +1,7 @@
 """On-disk state layout and helpers for the bounded loop.
 
 All loop state lives under ``<root>/.piensalo/`` where ``<root>`` is
-the ``FABLE_THINK_ROOT`` environment variable if set, else the current
+the ``PIENSALO_ROOT`` environment variable if set, else the current
 working directory. The public loop has NO git dependency: instead of
 clean-tree gates and commit hashes, every open/close/stop writes a JSON
 checkpoint snapshot of the full state into ``checkpoints/``, and handoff
@@ -40,7 +40,7 @@ class LoopPaths:
     """Resolves and creates the loop's on-disk layout."""
 
     def __init__(self, root: str | os.PathLike | None = None):
-        self.root = Path(root or os.environ.get("FABLE_THINK_ROOT") or os.getcwd())
+        self.root = Path(root or os.environ.get("PIENSALO_ROOT") or os.getcwd())
         self.state_dir = self.root / ".piensalo"
         self.state = self.state_dir / "state.json"
         self.queue = self.state_dir / "queue.json"

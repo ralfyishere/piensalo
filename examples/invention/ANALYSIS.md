@@ -9,7 +9,7 @@
 
 **Observable difference.** The bare output commits to the first workable
 idea (Bluetooth tracker) — a real but crowded solution that quietly assumes
-the phone is at hand at the failure moment. The Fable Think-style output
+the phone is at hand at the failure moment. The Piénsalo-style output
 (1) decomposes the vague mandate into four distinct problem mechanisms
 before ideating, (2) generates one structurally different option per
 mechanism rather than four variants of a tracker, (3) attacks each idea

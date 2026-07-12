@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Fable Think evaluation lab — shared layered-grading library.
+"""Piénsalo evaluation lab — shared layered-grading library.
 
 Every hidden grader in evals/public-tasks/*/hidden-grader/ imports this module
 and emits one layered verdict as the last line of stdout. The layering exists

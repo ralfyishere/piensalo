@@ -14,7 +14,7 @@ if str(SRC) not in sys.path:
 
 @pytest.fixture
 def project_root(tmp_path, monkeypatch):
-    """A temp cwd that also pins FABLE_THINK_ROOT for loop state."""
+    """A temp cwd that also pins PIENSALO_ROOT for loop state."""
     monkeypatch.chdir(tmp_path)
-    monkeypatch.setenv("FABLE_THINK_ROOT", str(tmp_path))
+    monkeypatch.setenv("PIENSALO_ROOT", str(tmp_path))
     return tmp_path

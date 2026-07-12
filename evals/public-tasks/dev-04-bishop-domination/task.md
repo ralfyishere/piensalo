@@ -1,4 +1,4 @@
-<!-- Fable Think eval task | label: DEVELOPMENT | id: dev-04-bishop-domination -->
+<!-- Piénsalo eval task | label: DEVELOPMENT | id: dev-04-bishop-domination -->
 
 # Task: Minimum dominating set of bishops
 

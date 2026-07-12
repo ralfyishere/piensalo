@@ -1,4 +1,4 @@
-<!-- Fable Think worked example | label: DEMO | dir: strategy -->
+<!-- Piénsalo worked example | label: DEMO | dir: strategy -->
 
 # Task
 

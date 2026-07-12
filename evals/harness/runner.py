@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Fable Think public eval harness — condition runner.
+"""Piénsalo public eval harness — condition runner.
 
 Design invariants (non-negotiable):
 - The model's workspace for a task contains ONLY task.md + public-context/.

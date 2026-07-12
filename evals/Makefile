@@ -1,4 +1,4 @@
-# Fable Think eval lab — one-command reproduction.
+# Piénsalo eval lab — one-command reproduction.
 #
 #   make benchmark   = grader self-test battery + a 2-task harness smoke run
 #                      (manual adapter, probe-sourced answers, no API needed)

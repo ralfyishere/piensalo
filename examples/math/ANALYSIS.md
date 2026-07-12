@@ -9,8 +9,7 @@
 
 **Observable difference.** The bare output takes the additive-percentage
 shortcut (3 x 20% = 60%) — the single most common human error on this
-problem shape — and presents $18,400 with full confidence. The Fable
-Think-style output names the trap explicitly *before* stepping around it,
+problem shape — and presents $18,400 with full confidence. The Piénsalo-style output names the trap explicitly *before* stepping around it,
 computes year by year, and then **recomputes by an independent route**
 (collapsed net factor) so the final number is confirmed by two derivations
 that could disagree if either had slipped.
