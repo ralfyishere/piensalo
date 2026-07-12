@@ -1,6 +1,6 @@
 # Alpha Plan
 
-Goal: learn whether Fable Think works **in hands that aren't ours**, on
+Goal: learn whether Piénsalo works **in hands that aren't ours**, on
 models we didn't tune for, before any public claim depends on it.
 
 ## Shape
@@ -21,7 +21,7 @@ models we didn't tune for, before any public claim depends on it.
 | Do verdicts match reality? | User-rated verdict correctness per `inspect`/`verify` run |
 | Is abstention honest? | Rate of `NO REPAIR NEEDED`, and whether users agree it was right |
 | Does repair help or churn? | Repairs accepted vs. reverted by the user |
-| Negative transfer | Any task the user says went *worse* with Fable Think — highest-priority signal we collect |
+| Negative transfer | Any task the user says went *worse* with Piénsalo — highest-priority signal we collect |
 | Portability | Same skill, different model family: does behavior hold? |
 | Friction | Where users stopped, swore, or dropped to raw prompting |
 

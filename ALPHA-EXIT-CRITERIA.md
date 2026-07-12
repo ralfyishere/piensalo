@@ -11,7 +11,7 @@ criteria don't shrink.
 | 2 | One-command install | Each of `uvx piensalo`, `pipx install piensalo`, `npx skills add piensalo` succeeds on a clean environment | CI or recorded logs, one per path |
 | 3 | Three model families | The demo lifecycle (think → inspect → repair → verify) completes on 3 distinct families, at least one fully local/offline | evidence bundles with provenance records |
 | 4 | Benchmark reproduces | A third party reproduces the published benchmark from the public repo alone, no maintainer assistance beyond the docs | reproducer's writeup + outputs |
-| 5 | Negative transfer measured | A paired comparison (with/without Fable Think) run and published, including any task where we made things worse | published in EVIDENCE.md |
+| 5 | Negative transfer measured | A paired comparison (with/without Piénsalo) run and published, including any task where we made things worse | published in EVIDENCE.md |
 | 6 | Abstention measured | `NO REPAIR NEEDED` rate on already-correct inputs measured and published, with false-abstention rate | published in EVIDENCE.md |
 | 7 | Scans pass | `piensalo skill scan` clean on all shipped skills; secret scan clean on full git history; no private identifiers or machine paths in the repo | scan outputs archived |
 | 8 | Ten independent users | ≥ 10 users outside the project completed ≥ 1 full feedback record each ([schema](ALPHA-FEEDBACK-SCHEMA.json)); blockers they reported are fixed or documented as known limitations with an explicit decision | feedback records (consented subset published) |

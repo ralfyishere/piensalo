@@ -1,6 +1,6 @@
 # Skill Security
 
-Skills are instruction files. This document defines how Fable Think keeps
+Skills are instruction files. This document defines how Piénsalo keeps
 them *only* that — and what risk remains when it can't.
 
 ## The core rule: skills are inert text

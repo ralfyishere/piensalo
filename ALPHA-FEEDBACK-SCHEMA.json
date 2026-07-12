@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://github.com/piensalo/piensalo/ALPHA-FEEDBACK-SCHEMA.json",
-  "title": "Fable Think alpha session feedback",
+  "title": "Piénsalo alpha session feedback",
   "description": "One record per alpha usage session. Submitted voluntarily by the user; nothing is collected automatically. Records without consent_to_publish=true are never published.",
   "type": "object",
   "required": [
@@ -68,7 +68,7 @@
     },
     "verdict_agreement": {
       "type": "object",
-      "description": "Did the user agree with each verdict Fable Think produced?",
+      "description": "Did the user agree with each verdict Piénsalo produced?",
       "required": ["verdicts_seen", "verdicts_agreed_with"],
       "additionalProperties": false,
       "properties": {
@@ -106,7 +106,7 @@
     },
     "negative_transfer_suspected": {
       "type": "boolean",
-      "description": "True if the user believes any part of the task went worse than it would have without Fable Think."
+      "description": "True if the user believes any part of the task went worse than it would have without Piénsalo."
     },
     "negative_transfer_details": {
       "type": "string",

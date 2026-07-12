@@ -1,5 +1,5 @@
 name: Negative-transfer report
-description: Fable Think made your results WORSE. This is a first-class contribution — confirmed reports are published with credit.
+description: Piénsalo made your results WORSE. This is a first-class contribution — confirmed reports are published with credit.
 labels: ["negative-transfer", "evidence"]
 body:
   - type: markdown
@@ -18,7 +18,7 @@ body:
     id: comparison
     attributes:
       label: The comparison
-      description: What "worse" is measured against — the same task without Fable Think? A different configuration? Describe both sides.
+      description: What "worse" is measured against — the same task without Piénsalo? A different configuration? Describe both sides.
     validations:
       required: true
   - type: textarea

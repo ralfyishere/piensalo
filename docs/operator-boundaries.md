@@ -1,6 +1,6 @@
 # Operator Boundaries
 
-What Fable Think will and will not do without you. These boundaries are
+What Piénsalo will and will not do without you. These boundaries are
 enforced by the runtime, verified by `piensalo doctor`, and treated as
 security invariants — a release that weakens one is a security bug
 ([SECURITY.md](../SECURITY.md)).
@@ -9,7 +9,7 @@ security invariants — a release that weakens one is a security bug
 
 Autonomy requires stronger controls, not weaker ones (Manifesto, principle 9).
 The more the system can do in a loop without a human, the harder its
-boundaries must be. Fable Think's answer is a fixed, small action surface
+boundaries must be. Piénsalo's answer is a fixed, small action surface
 with explicit approval gates.
 
 ## Always allowed (no approval)

@@ -1,7 +1,7 @@
 # Threat Model
 
 What can go wrong when an AI system reads untrusted text, holds state, calls
-models, and acts — and what Fable Think does about each. Every entry lists the
+models, and acts — and what Piénsalo does about each. Every entry lists the
 mitigation **and the residual risk**, because a threat model that claims zero
 residual risk is marketing.
 
@@ -132,7 +132,7 @@ substitution ([docs/model-provenance.md](docs/model-provenance.md)). This
 entry exists because we measured exactly this corruption
 ([NEGATIVE-RESULTS.md](NEGATIVE-RESULTS.md), NR-6).
 
-**Residual risk:** low within Fable Think; nonzero at provider level (an API
+**Residual risk:** low within Piénsalo; nonzero at provider level (an API
 endpoint may itself route between model versions — provenance records what
 the provider reported).
 
@@ -166,7 +166,7 @@ stays honest about it.
 
 ## What this model assumes
 
-- The local user is trusted; Fable Think does not defend against the machine's
+- The local user is trusted; Piénsalo does not defend against the machine's
   owner.
 - The model provider honors its API contract; provenance records what the
   provider reports.

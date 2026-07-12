@@ -2,11 +2,11 @@
 
 ## Title
 
-Show HN: Fable Think – an open cognitive OS for AI models (publishes its own negative results)
+Show HN: Piénsalo – an open cognitive OS for AI models (publishes its own negative results)
 
 *(78 chars. Alternates if too long or taken:*
-*"Show HN: Fable Think – give any AI a separate inspect/repair/verify loop";*
-*"Show HN: Fable Think – a cognitive OS for LLMs that knows when to do nothing")*
+*"Show HN: Piénsalo – give any AI a separate inspect/repair/verify loop";*
+*"Show HN: Piénsalo – a cognitive OS for LLMs that knows when to do nothing")*
 
 ## URL
 
@@ -16,7 +16,7 @@ https://github.com/piensalo/piensalo
 
 Hi HN — author here.
 
-Fable Think is an open cognitive operating system for AI models and agents:
+Piénsalo is an open cognitive operating system for AI models and agents:
 it separates thinking, inspection, repair, verification, evidence, and
 continuation into distinct operations. Six CLI modes (think / inspect /
 repair / verify / loop / skill), plus a portable skills layer that's plain
@@ -54,7 +54,7 @@ benchmark, try to break the abstention behavior, find a configuration where
 it makes results worse — negative-transfer reports get published with
 credit. MIT licensed.
 
-Fable Think is an independent open-source project. It is not affiliated with
+Piénsalo is an independent open-source project. It is not affiliated with
 or endorsed by Anthropic.
 
 Happy to answer anything, including about the failures.

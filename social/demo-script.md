@@ -13,7 +13,7 @@ Recording setup: dark terminal, large monospace font (18pt+), window sized
 
 **0:00–0:04 — Title card (text on black)**
 
-> Fable Think
+> PIÉNSALO
 > Give any AI a better way to think.
 
 **0:04–0:12 — The task**

@@ -1,4 +1,4 @@
-# The Fable Think Manifesto
+# The Piénsalo Manifesto
 
 Nine principles. Every design decision in this project traces back to one of
 them, and every one of them was paid for by a measured failure.
@@ -6,7 +6,7 @@ them, and every one of them was paid for by a measured failure.
 ## 1. Thinking should be inspectable
 
 If you cannot see how a conclusion was reached, you cannot repair it when it is
-wrong. Fable Think externalizes the cognitive program — objective, constraints,
+wrong. Piénsalo externalizes the cognitive program — objective, constraints,
 decomposition, tests — so failure has a location, not just a vibe.
 
 ## 2. More prompting is not always better
@@ -30,7 +30,7 @@ allowed to return a verdict the author dislikes.
 ## 5. Abstention is intelligence
 
 Knowing when *not* to intervene is as valuable as any repair. `NO REPAIR
-NEEDED` is a first-class result in Fable Think, because in our measurements,
+NEEDED` is a first-class result in Piénsalo, because in our measurements,
 abstention beat intervention on already-competent work.
 
 ## 6. Negative results belong in public
@@ -43,7 +43,7 @@ you the experiment.
 ## 7. State should outlive a context window
 
 Real work spans sessions, and evidence that evaporates with the context was
-never really evidence. Fable Think persists programs, verdicts, and provenance
+never really evidence. Piénsalo persists programs, verdicts, and provenance
 so the next action starts from what was established, not from re-derivation.
 
 ## 8. Models are replaceable; cognitive systems are portable

@@ -1,6 +1,6 @@
 # Evidence
 
-Every Fable Think capability ships with receipts. This file is the canonical
+Every Piénsalo capability ships with receipts. This file is the canonical
 public evidence map: what has been measured, what the measurements actually
 support, and what would change each verdict. Levels are defined in
 [docs/evidence-levels.md](docs/evidence-levels.md):

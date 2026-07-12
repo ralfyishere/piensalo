@@ -1,6 +1,6 @@
 # Evidence Levels
 
-Every capability claim in Fable Think carries one of seven levels. The level
+Every capability claim in Piénsalo carries one of seven levels. The level
 states how the claim could be wrong, and what has been done to find out. A
 doc PR cannot change a level; only an experiment can.
 
@@ -68,7 +68,7 @@ the promotion. See the correction policy in [LAUNCH.md](../LAUNCH.md).
 
 ## How to read a claim
 
-When a Fable Think document says a capability "works", the honest reading is
+When a Piénsalo document says a capability "works", the honest reading is
 determined entirely by its level:
 
 - DESIGNED — "we have a reasoned bet"

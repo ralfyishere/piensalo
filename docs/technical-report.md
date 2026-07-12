@@ -1,4 +1,4 @@
-# Fable Think — Technical Report (skeleton)
+# Piénsalo — Technical Report (skeleton)
 
 > **Status: SKELETON.** Sections marked TODO are unwritten or awaiting data.
 > This file deliberately ships in skeleton form rather than being padded with
@@ -79,5 +79,5 @@ reproducibility ([ALPHA-EXIT-CRITERIA.md](../ALPHA-EXIT-CRITERIA.md), item 4).
 
 ---
 
-*Fable Think is an independent open-source project. It is not affiliated
+*Piénsalo is an independent open-source project. It is not affiliated
 with or endorsed by Anthropic.*

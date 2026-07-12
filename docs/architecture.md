@@ -1,10 +1,10 @@
 # Architecture
 
-How Fable Think is put together, and why every seam exists.
+How Piénsalo is put together, and why every seam exists.
 
 ## The one-paragraph version
 
-Fable Think separates an AI task into distinct operations — understand, plan,
+Piénsalo separates an AI task into distinct operations — understand, plan,
 execute, inspect, classify, repair, verify, deliver — connected by a bounded
 lifecycle and backed by persistent, inspectable state. Two layers implement
 this: **portable Agent Skills** (plain text, run anywhere) and an **optional
@@ -75,7 +75,7 @@ the skills would still work everywhere.
 
 ## Layer 2: the runtime
 
-The CLI (`piensalo`, alias `fablethink`) adds what plain text cannot:
+The CLI (`piensalo`) adds what plain text cannot:
 
 - **State** — programs, findings, verdicts, and evidence persist in
   `.piensalo/` and survive the context window (Manifesto, principle 7).

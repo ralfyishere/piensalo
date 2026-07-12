@@ -1,6 +1,6 @@
 # Launch Plan
 
-Internal playbook for taking Fable Think public. The rule that governs
+Internal playbook for taking Piénsalo public. The rule that governs
 everything below: **we launch when the alpha gate passes, not when the
 narrative is ready.** Claims made in public materials may not exceed what
 EVIDENCE.md supports on launch day.
@@ -8,7 +8,9 @@ EVIDENCE.md supports on launch day.
 ## The narrative (accurate version)
 
 This project began as an effort to preserve and study strong model behaviors
-before access changed. The obvious approaches failed, measurably:
+before access changed. It was internally codenamed "Fable Think" during
+development and renamed Piénsalo for public release. The obvious approaches
+failed, measurably:
 
 - Giant prompts sometimes made weaker models **worse**, not better.
 - Full reasoning graphs added overhead that regressed a weak model.
@@ -28,7 +30,7 @@ What we say and don't say:
 - **Say:** "changed measured outcomes in our runs", "evidence levels",
   "published negative results", "abstention is a first-class result".
 - **Never say:** guaranteed improvement, works for every model, endorsed by
-  anyone. Every public artifact carries: *"Fable Think is an independent
+  anyone. Every public artifact carries: *"Piénsalo is an independent
   open-source project. It is not affiliated with or endorsed by Anthropic."*
 
 ## Launch gate (must all be checked)

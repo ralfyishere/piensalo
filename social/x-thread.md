@@ -12,7 +12,7 @@ Most AI tooling makes models produce more.
 We spent months making them think better — and publishing every time it
 failed.
 
-Fable Think: an open cognitive operating system for AI models and agents. 🧵
+Piénsalo: an open cognitive operating system for AI models and agents. 🧵
 
 **2/**
 It started as a preservation project: capture what a strong model does well
@@ -35,7 +35,7 @@ Worst one: the runtime silently swapped models when one was unavailable.
 Every measurement from that period attributed one model's behavior to
 another. Plausible outputs, lying labels.
 
-Silent fallback is now prohibited in Fable Think. Hard stop, loud error.
+Silent fallback is now prohibited in Piénsalo. Hard stop, loud error.
 
 **5/**
 The fix wasn't a better prompt. It was separation:
@@ -88,5 +88,5 @@ that with credit.
 
 → github.com/piensalo/piensalo
 
-Fable Think is an independent open-source project. It is not affiliated
+Piénsalo is an independent open-source project. It is not affiliated
 with or endorsed by Anthropic.

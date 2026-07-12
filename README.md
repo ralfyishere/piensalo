@@ -1,13 +1,16 @@
-# Fable Think
+# PIÉNSALO
 
 ## Give any AI a better way to think.
 
-**Fable Think is an open cognitive operating system for AI models and agents.**
+**Piénsalo is an open cognitive operating system for AI models and agents.**
+It helps models understand the real objective, structure difficult work,
+inspect their output, repair specific failures, verify the result, and
+continue across sessions. Not a giant system prompt. Not a model replacement.
+An artificial cortex you can install, inspect, test, and extend.
 
-Understand the task. Build a cognitive program. Inspect failure. Apply targeted
-repair. Verify the outcome. Continue from evidence.
+Piénsalo — "think it through." Pronounced: pee-EN-sa-lo.
 
-Most AI tooling makes models *produce more*. Fable Think makes them *think better*:
+Most AI tooling makes models *produce more*. Piénsalo makes them *think better*:
 it separates thinking, inspection, repair, verification, evidence, and continuation
 into distinct, inspectable operations — and it knows when the right move is to do
 **nothing** (`NO REPAIR NEEDED` is a first-class result).
@@ -86,13 +89,14 @@ pipx install piensalo
 npx skills add piensalo
 ```
 
-`piensalo` and `fablethink` are equivalent commands. Run
-`piensalo doctor` first — it checks your environment and tells you exactly
+Run `piensalo doctor` first — it checks your environment and tells you exactly
 what will and won't work, offline.
 
 ## Why this is different
 
-| Typical approach | Fable Think |
+**An open artificial cortex for AI models and agents.**
+
+| Typical approach | Piénsalo |
 |---|---|
 | One giant prompt does everything | Thinking, inspection, repair, verification are **separate operations** with separate outputs |
 | "Try again" on failure | Failure is **classified by layer** (objective, plan, numeric, delivery…), then given the **smallest justified repair** |
@@ -142,7 +146,7 @@ The current evidence status of each skill is tracked per-skill in
 
 ## Evidence philosophy
 
-**Every capability ships with receipts.** Each mechanism in Fable Think carries
+**Every capability ships with receipts.** Each mechanism in Piénsalo carries
 an explicit evidence level:
 
 `DESIGNED → SMOKE_TESTED → EXPERIMENTALLY_TESTED → REPLICATED → PROMOTED`
@@ -166,7 +170,7 @@ receipts: [EVIDENCE.md](EVIDENCE.md). Things that failed and stay published:
 | Generic command adapter | Pipe any CLI-invocable model through stdin/stdout | No (unless your command does) |
 
 The core works **offline** with **zero telemetry**. Model identity is recorded
-on every run; if a configured model is unavailable, Fable Think stops and says
+on every run; if a configured model is unavailable, Piénsalo stops and says
 so — **silent model fallback is prohibited** ([docs/model-provenance.md](docs/model-provenance.md)).
 
 ## Obsidian Studio (optional)
@@ -198,7 +202,7 @@ We would rather undersell than overclaim:
   analysis but not yet experimentally tested — their evidence level says so.
 - **One model family is most-tested.** Cross-model claims are weaker than
   same-family claims until adapters mature.
-- **No guarantees.** Fable Think changed measured outcomes in our runs; it may
+- **No guarantees.** Piénsalo changed measured outcomes in our runs; it may
   not in yours. It has also *hurt* performance in specific configurations —
   those results are published in [NEGATIVE-RESULTS.md](NEGATIVE-RESULTS.md).
 
@@ -221,14 +225,18 @@ Full detail: [ROADMAP.md](ROADMAP.md).
 
 ## Citation
 
-If Fable Think is useful in your research, please cite it — see
+If Piénsalo is useful in your research, please cite it — see
 [CITATION.cff](CITATION.cff).
 
 ## Independence
 
-Fable Think is an independent open-source project. It is not affiliated with or
+Piénsalo is an independent open-source project. It is not affiliated with or
 endorsed by Anthropic.
 
 ## License
 
-[MIT](LICENSE) © 2026 Fable Think contributors
+[MIT](LICENSE) © 2026 Piénsalo contributors
+
+---
+
+*Think through hard work. Verify what matters. Know when to stop.*

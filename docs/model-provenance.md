@@ -1,6 +1,6 @@
 # Model Provenance
 
-Every claim Fable Think records is a claim about *some model's* behavior. If
+Every claim Piénsalo records is a claim about *some model's* behavior. If
 the model identity is wrong, every downstream conclusion is wrong. This
 document specifies how identity is recorded and why fallback is prohibited.
 

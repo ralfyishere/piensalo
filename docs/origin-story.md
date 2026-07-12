@@ -1,6 +1,8 @@
 # Origin Story
 
-Fable Think began as a preservation project, not a product.
+Piénsalo began as a preservation project, not a product. During development
+it was internally codenamed "Fable Think"; it was renamed Piénsalo for public
+release.
 
 ## Preserve first
 
@@ -55,10 +57,10 @@ had to persist.
 
 ## Where it stands
 
-Fable Think today is that operating system: a portable skills layer that
+Piénsalo today is that operating system: a portable skills layer that
 works with any model, and an optional runtime that adds state, bounds, and
 measurement. The evidence base is young and says so plainly
 ([EVIDENCE.md](../EVIDENCE.md), README "Limitations").
 
-Fable Think is an independent open-source project. It is not affiliated with
+Piénsalo is an independent open-source project. It is not affiliated with
 or endorsed by Anthropic.

@@ -1,4 +1,4 @@
-# Contributing to Fable Think
+# Contributing to Piénsalo
 
 Contributions are welcome — and negative results are as welcome as features.
 This document tells you what kinds of contributions exist, what evidence each
@@ -67,7 +67,7 @@ exact versions, and outputs.
 
 ### 5. Negative-transfer reports
 
-Found a configuration where Fable Think makes results worse? That's a
+Found a configuration where Piénsalo makes results worse? That's a
 first-class contribution — file a
 [negative-transfer report](.github/ISSUE_TEMPLATE/negative-transfer.yml).
 Confirmed reports are added to [NEGATIVE-RESULTS.md](NEGATIVE-RESULTS.md)

@@ -1,6 +1,6 @@
 # Third-Party Notices
 
-Fable Think aims for a minimal dependency surface: the core is designed to run
+Piénsalo aims for a minimal dependency surface: the core is designed to run
 offline from the Python standard library wherever practical.
 
 ## Runtime dependencies
@@ -23,7 +23,7 @@ users.
 
 ## Names and trademarks
 
-- "Claude" and "Anthropic" are trademarks of Anthropic, PBC. Fable Think is an
+- "Claude" and "Anthropic" are trademarks of Anthropic, PBC. Piénsalo is an
   independent open-source project. It is not affiliated with or endorsed by
   Anthropic.
 - "OpenAI" is a trademark of OpenAI. "Ollama" and "Obsidian" are trademarks of

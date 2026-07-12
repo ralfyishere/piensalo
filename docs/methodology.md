@@ -1,6 +1,6 @@
 # Methodology
 
-How Fable Think capabilities are built, measured, and allowed to make claims.
+How Piénsalo capabilities are built, measured, and allowed to make claims.
 This is the process behind [evidence-levels.md](evidence-levels.md); the
 current results live in [EVIDENCE.md](../EVIDENCE.md).
 

@@ -1,11 +1,15 @@
 # Changelog
 
-All notable changes to Fable Think are documented here.
+All notable changes to Piénsalo are documented here.
 Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 Versioning: [SemVer](https://semver.org/) once we reach 0.1.0; until then,
 everything may change.
 
 ## [Unreleased] — 0.1.0-dev
+
+### Changed
+- 0.1.0-dev — public identity migrated to PIÉNSALO (previously internal
+  codename Fable Think); no functional changes.
 
 ### Added
 - Cognitive core: 11 operations (`recover_objective` → `deliver`) with a

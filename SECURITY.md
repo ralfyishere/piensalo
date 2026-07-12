@@ -24,7 +24,7 @@ one of them is a security bug, not a feature:
 | **No telemetry** | Nothing is collected, counted, or phoned home. Ever. |
 | **No network without an explicit adapter** | The core runs offline. Network happens only through an adapter you configured, to the endpoint you named. |
 | **No silent uploads** | No content leaves the machine except as the model call you explicitly configured. |
-| **No silent model fallback** | If the configured model is unavailable, Fable Think stops with an error. It never substitutes a model quietly. See [docs/model-provenance.md](docs/model-provenance.md). |
+| **No silent model fallback** | If the configured model is unavailable, Piénsalo stops with an error. It never substitutes a model quietly. See [docs/model-provenance.md](docs/model-provenance.md). |
 | **No destructive action without approval** | Deletes, overwrites outside the workspace, sends, and deploys require explicit approval. See [docs/operator-boundaries.md](docs/operator-boundaries.md). |
 | **No arbitrary shell from untrusted skill text** | Skill files are instructions, not code. Text inside a skill can never cause command execution by itself. See [docs/skill-security.md](docs/skill-security.md). |
 | **No secrets in logs** | Evidence and logs are scrubbed of values matching secret patterns; adapters must never log credentials. |

@@ -5,11 +5,11 @@ EVIDENCE.md on launch day.)*
 
 ---
 
-We just open-sourced Fable Think — a cognitive operating system for AI
+We just open-sourced Piénsalo — a cognitive operating system for AI
 models and agents.
 
 The short version: most AI tooling optimizes for producing more output.
-Fable Think optimizes for thinking better. It separates a task into distinct,
+Piénsalo optimizes for thinking better. It separates a task into distinct,
 inspectable operations — understand the task, build a bounded cognitive
 program, execute, inspect the result, classify the failure, apply the
 smallest justified repair, verify independently, preserve the evidence, and
@@ -46,5 +46,5 @@ reports are a first-class contribution and get published with credit.
 
 Repo: github.com/piensalo/piensalo
 
-Fable Think is an independent open-source project. It is not affiliated with
+Piénsalo is an independent open-source project. It is not affiliated with
 or endorsed by Anthropic.
