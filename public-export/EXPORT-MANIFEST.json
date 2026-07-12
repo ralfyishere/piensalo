@@ -17,7 +17,7 @@
  "entries": [
   {
    "public_destination": "skills/piensalo",
-   "private_source": "dist/skills/piensalo",
+   "private_source": "dist/skills/fable-think",
    "export_method": "ported-rewritten",
    "sanitization_status": "clean (workstream sweep + orchestrator repo-level grep 2026-07-12)",
    "license_status": "MIT (repo license)",
@@ -28,7 +28,7 @@
   },
   {
    "public_destination": "skills/piensalo-build",
-   "private_source": "dist/skills/piensalo-build",
+   "private_source": "dist/skills/fable-think-build",
    "export_method": "ported-rewritten",
    "sanitization_status": "clean (workstream sweep + orchestrator repo-level grep 2026-07-12)",
    "license_status": "MIT (repo license)",
@@ -39,7 +39,7 @@
   },
   {
    "public_destination": "skills/piensalo-math",
-   "private_source": "dist/skills/piensalo-math",
+   "private_source": "dist/skills/fable-think-math",
    "export_method": "ported-rewritten",
    "sanitization_status": "clean (workstream sweep + orchestrator repo-level grep 2026-07-12)",
    "license_status": "MIT (repo license)",
@@ -50,7 +50,7 @@
   },
   {
    "public_destination": "skills/piensalo-verify",
-   "private_source": "dist/skills/piensalo-verify",
+   "private_source": "dist/skills/fable-think-verify",
    "export_method": "ported-rewritten",
    "sanitization_status": "clean (workstream sweep + orchestrator repo-level grep 2026-07-12)",
    "license_status": "MIT (repo license)",
@@ -61,7 +61,7 @@
   },
   {
    "public_destination": "skills/piensalo-research",
-   "private_source": "dist/skills/piensalo-research",
+   "private_source": "dist/skills/fable-think-research",
    "export_method": "ported-rewritten",
    "sanitization_status": "clean (workstream sweep + orchestrator repo-level grep 2026-07-12)",
    "license_status": "MIT (repo license)",
@@ -72,7 +72,7 @@
   },
   {
    "public_destination": "skills/piensalo-strategy",
-   "private_source": "dist/skills/piensalo-strategy",
+   "private_source": "dist/skills/fable-think-strategy",
    "export_method": "ported-rewritten",
    "sanitization_status": "clean (workstream sweep + orchestrator repo-level grep 2026-07-12)",
    "license_status": "MIT (repo license)",
@@ -83,7 +83,7 @@
   },
   {
    "public_destination": "skills/piensalo-invent",
-   "private_source": "dist/skills/piensalo-invent",
+   "private_source": "dist/skills/fable-think-invent",
    "export_method": "ported-rewritten",
    "sanitization_status": "clean (workstream sweep + orchestrator repo-level grep 2026-07-12)",
    "license_status": "MIT (repo license)",
@@ -94,7 +94,7 @@
   },
   {
    "public_destination": "skills/piensalo-write",
-   "private_source": "dist/skills/piensalo-write",
+   "private_source": "dist/skills/fable-think-write",
    "export_method": "ported-rewritten",
    "sanitization_status": "clean (workstream sweep + orchestrator repo-level grep 2026-07-12)",
    "license_status": "MIT (repo license)",
@@ -818,5 +818,11 @@
    "provenance": "clean-room build 2026-07-12, verified-model orchestrator + registered agents",
    "notes": "aggregate numbers with confounds attached"
   }
- ]
+ ],
+ "identity_migration": {
+  "date": "2026-07-12",
+  "from": "Fable Think (internal codename)",
+  "to": "PIENSALO / piensalo",
+  "note": "Git history preserved; rollback refs backup/fable-think-before-piensalo + fable-think-public-pre-piensalo at e69b647; private_source fields record TRUE private-lab paths (an earlier mechanical pass briefly rewrote them; repaired here)"
+ }
 }

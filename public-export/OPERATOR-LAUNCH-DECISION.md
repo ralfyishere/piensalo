@@ -1,22 +1,40 @@
-# OPERATOR LAUNCH DECISION — Fable Think v0.1.0 (NOT PUBLISHED)
+# OPERATOR LAUNCH DECISION — PIÉNSALO v0.1.0 (NOT PUBLISHED)
+
+> **IDENTITY MIGRATED (2026-07-12).** The public product name is now
+> **PIÉNSALO** (technical identifiers: `piensalo`); "Fable Think" was the
+> internal development codename. Repository proposal: `ralfyishere/piensalo`
+> or a `piensalo` GitHub org — the final owner/org is an operator decision;
+> docs use `github.com/piensalo/piensalo` as the placeholder until it is
+> made. PyPI: **piensalo** — availability re-check pending name audit. A
+> single console script (`piensalo`) ships; the `fablethink` alias originally
+> recorded below was dropped in the technical migration. The local path is
+> now `$HOME/Desktop/Piensalo`. Original identity fields as first
+> recorded (historical): product name "Fable Think"; PyPI `piensalo` with
+> alias `fablethink`; console scripts `piensalo` + `fablethink`. Apart from
+> the Product identity section, the decision text below is preserved
+> unchanged as the historical record — where it says "Fable Think" or uses
+> the old local path, read the internal codename / pre-migration state.
 
 Prepared 2026-07-12 by the verified claude-fable-5 session. Nothing below has
 been executed against any remote. **The repository has no remote. Publication
 requires Rafael's explicit approval of this document.**
 
 ## Product identity
-- Final product name: **Fable Think**
-- Proposed repository: `ralfyishere/piensalo` (verified 404/free). Option:
-  create a `piensalo` GitHub org (org name unclaimed at check time) — the
-  docs currently use `github.com/piensalo/piensalo` as a placeholder;
-  pick one and sweep the placeholder before push.
-- Package identifiers: PyPI **piensalo** (free at check) with alias
-  **fablethink** (free); console scripts `piensalo` + `fablethink`.
+- Final product name: **PIÉNSALO** (human-facing Piénsalo; identifiers
+  `piensalo`). Internal development codename: "Fable Think".
+- Proposed repository: `ralfyishere/piensalo` (verified 404/free at original
+  check). Option: create a `piensalo` GitHub org (org name unclaimed at check
+  time) — the final owner/org is an operator decision; the docs use
+  `github.com/piensalo/piensalo` as a placeholder; pick one and sweep the
+  placeholder before push.
+- Package identifiers: PyPI **piensalo** — availability re-check pending name
+  audit. Single console script `piensalo` (the originally planned
+  `fablethink` alias no longer ships).
   The `fable` PyPI name is TAKEN — we claim neither the package nor a `fable`
   binary (collision risk documented).
 
 ## Repository state
-- Local path: `<PRIVATE_LOCAL_PATH>` (sibling clean-room; new
+- Local path: `<local clean-room checkout>` (since renamed to the Piensalo directory) (sibling clean-room; new
   git history; zero private history).
 - ~552 files, 2.8 MB. Full tree hash manifest: `public-export/HASHES.sha256`
   (536 files). Per-artifact provenance: `public-export/EXPORT-MANIFEST.json`
@@ -72,7 +90,7 @@ requires Rafael's explicit approval of this document.**
 ## Exact commands that WOULD publish (DO NOT RUN without approval)
 ```
 # 1. choose identity (example: personal repo)
-gh repo create ralfyishere/piensalo --public --source "<PRIVATE_LOCAL_PATH>" --push
+gh repo create ralfyishere/piensalo --public --source "$HOME/Desktop/Piensalo" --push
 # or org route: create org 'piensalo' in UI, then:
 # git remote add origin git@github.com:piensalo/piensalo.git && git push -u origin main
 # 2. package (after uv lock + build on a machine with uv):
