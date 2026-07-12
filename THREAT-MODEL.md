@@ -5,7 +5,7 @@ models, and acts — and what Fable Think does about each. Every entry lists the
 mitigation **and the residual risk**, because a threat model that claims zero
 residual risk is marketing.
 
-Scope: the `fable-think` runtime, skill loader, state store, adapters, and
+Scope: the `piensalo` runtime, skill loader, state store, adapters, and
 evaluation tooling. The security defaults these mitigations rest on are in
 [SECURITY.md](SECURITY.md).
 
@@ -35,7 +35,7 @@ exfiltration attempts.*
 
 **Mitigation:** skills are inert text — the loader never executes code from
 skill files ([docs/skill-security.md](docs/skill-security.md)).
-`fable-think skill scan` flags command patterns, network references,
+`piensalo skill scan` flags command patterns, network references,
 obfuscation, and secret-shaped strings before install. No unreviewed skill
 marketplace exists or is planned.
 
@@ -62,7 +62,7 @@ adapter, not the impossibility of fetching.
 cause reads/writes outside the workspace.*
 
 **Mitigation:** all state paths are resolved and verified to remain under
-`.fable-think/` (or the explicitly configured root) before any I/O; traversal
+`.piensalo/` (or the explicitly configured root) before any I/O; traversal
 sequences in identifiers are rejected, not sanitized.
 
 **Residual risk:** low, bounded by implementation correctness — this is
@@ -117,7 +117,7 @@ provenance; verdicts reference their evidence rather than replacing it;
 `verify` re-derives rather than trusting stored conclusions; `doctor` flags
 state inconsistencies.
 
-**Residual risk:** medium. Anyone with write access to `.fable-think/` can
+**Residual risk:** medium. Anyone with write access to `.piensalo/` can
 alter history; state integrity is currently inspectability, not cryptographic
 attestation.
 

@@ -5,9 +5,9 @@ import json
 
 import pytest
 
-from fable_think.compiler import compile_program, select_operations
-from fable_think.core import load_operations, operation_names
-from fable_think.evidence import MechanismRecord, load_evidence_file
+from piensalo.compiler import compile_program, select_operations
+from piensalo.core import load_operations, operation_names
+from piensalo.evidence import MechanismRecord, load_evidence_file
 
 RECORD = {
     "mechanism": "post-draft-scanner",
@@ -62,7 +62,7 @@ def test_core_has_eleven_operations_with_correct_evidence_status():
 def test_compile_program_modes():
     task = "Compute 5% compounded per month over 12 months. You must not use estimates."
     packet = compile_program(task, mode="packet")
-    assert packet["schema"] == "fable-think/program/v1"
+    assert packet["schema"] == "piensalo/program/v1"
     assert packet["task_analysis"]["has_numeric_work"] is True
     assert packet["task_analysis"]["constraints"]
 

@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://github.com/fable-think/fable-think/ALPHA-FEEDBACK-SCHEMA.json",
+  "$id": "https://github.com/piensalo/piensalo/ALPHA-FEEDBACK-SCHEMA.json",
   "title": "Fable Think alpha session feedback",
   "description": "One record per alpha usage session. Submitted voluntarily by the user; nothing is collected automatically. Records without consent_to_publish=true are never published.",
   "type": "object",
@@ -32,12 +32,12 @@
     },
     "environment": {
       "type": "object",
-      "required": ["os", "install_method", "fable_think_version"],
+      "required": ["os", "install_method", "piensalo_version"],
       "additionalProperties": false,
       "properties": {
         "os": { "type": "string", "enum": ["linux", "macos", "windows", "other"] },
         "install_method": { "type": "string", "enum": ["uvx", "pipx", "pip", "skills-only", "source"] },
-        "fable_think_version": { "type": "string" },
+        "piensalo_version": { "type": "string" },
         "offline": { "type": "boolean", "description": "True if the session ran with no network access." }
       }
     },
@@ -114,7 +114,7 @@
     },
     "evidence_artifacts": {
       "type": "array",
-      "description": "Relative paths (within the user's shared bundle) to .fable-think evidence files supporting this report.",
+      "description": "Relative paths (within the user's shared bundle) to .piensalo evidence files supporting this report.",
       "items": { "type": "string", "pattern": "^[^/\\\\].*" }
     },
     "would_use_again": {

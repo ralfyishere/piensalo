@@ -1,0 +1,28 @@
+{
+  "name": "piensalo-write",
+  "version": "0.1.0",
+  "layer": "domain",
+  "evidence_level": "DESIGNED",
+  "triggers": [
+    "draft",
+    "write the announcement/memo/notice",
+    "tighten this"
+  ],
+  "counterindications": [
+    "casual or low-stakes prose where the ledger machinery is pure latency",
+    "voice/style matching without provided exemplars",
+    "fiction or exploratory freewriting"
+  ],
+  "files": [
+    "SKILL.md",
+    "skill-card.md",
+    "manifest.json",
+    "BENCHMARK.md",
+    "references/contracts.md",
+    "references/failure-checks.md",
+    "references/verification.md",
+    "examples/positive.md",
+    "examples/near-miss.md",
+    "evals/EVAL-PLAN.md"
+  ]
+}

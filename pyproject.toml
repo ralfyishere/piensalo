@@ -3,13 +3,13 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
-name = "fable-think"
+name = "piensalo"
 version = "0.1.0.dev0"
 description = "A cognitive operating layer for AI models: bounded loops, observable-defect inspection, targeted repair, and layered verification."
 readme = "README.md"
 requires-python = ">=3.10"
 license = { text = "MIT" }
-authors = [{ name = "Fable Think contributors" }]
+authors = [{ name = "Piensalo contributors" }]
 keywords = ["ai", "agents", "verification", "cognitive-architecture", "llm"]
 classifiers = [
     "Development Status :: 3 - Alpha",
@@ -32,14 +32,13 @@ openai = ["openai>=1.30"]
 dev = ["pytest>=7.0", "ruff>=0.4"]
 
 [project.scripts]
-fable-think = "fable_think.cli.main:main"
-fablethink = "fable_think.cli.main:main"
+piensalo = "piensalo.cli.main:main"
 
 [project.urls]
-Homepage = "https://github.com/fable-think/fable-think"
+Homepage = "https://github.com/piensalo/piensalo"
 
 [tool.hatch.build.targets.wheel]
-packages = ["src/fable_think"]
+packages = ["src/piensalo"]
 
 [tool.pytest.ini_options]
 pythonpath = ["src"]

@@ -3,5 +3,5 @@ __pycache__/
 .venv/
 dist/
 *.egg-info/
-.fable-think/
+.piensalo/
 uv.lock.tmp

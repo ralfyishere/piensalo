@@ -16,7 +16,7 @@
   "trials": 3,
   "cell_timeout_s": 600,
   "assets": {
-    "portable_skill": "../../skills/fable-think-portable.md",
+    "portable_skill": "../../skills/piensalo-portable.md",
     "minimal_core": "../../skills/minimal-core.md",
     "full_program": "../../skills/full-program.md",
     "micro_skills_dir": "../../micro-skills"

@@ -17,13 +17,13 @@ models follow instructions. That residual risk is real and stated in
 [operator-boundaries.md](operator-boundaries.md) are what keep persuasion
 from becoming action.
 
-## `fable-think skill scan`
+## `piensalo skill scan`
 
 Run before installing anything you didn't write:
 
 ```bash
-fable-think skill scan ./some-skill/           # a local directory
-fable-think skill scan some-skill.tar.gz       # a package
+piensalo skill scan ./some-skill/           # a local directory
+piensalo skill scan some-skill.tar.gz       # a package
 ```
 
 The scanner flags:

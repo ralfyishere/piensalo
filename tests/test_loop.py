@@ -1,7 +1,7 @@
 """Loop lifecycle tests: start, gate, step, close, checkpoints, handoff.
 
 The public loop is git-free: checkpoints are JSON snapshots under
-.fable-think/checkpoints/ and handoff staleness is detected via a state
+.piensalo/checkpoints/ and handoff staleness is detected via a state
 fingerprint, so these tests need no repository.
 """
 from __future__ import annotations
@@ -10,8 +10,8 @@ import json
 
 import pytest
 
-from fable_think.loop import controller
-from fable_think.loop.state import LoopPaths, jload, jsave
+from piensalo.loop import controller
+from piensalo.loop.state import LoopPaths, jload, jsave
 
 GOOD_ACTION = {
     "id": "act-1",

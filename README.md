@@ -17,7 +17,7 @@ into distinct, inspectable operations — and it knows when the right move is to
 ## 60 seconds, start to finish
 
 ```text
-$ fable-think think "Our plan is $100/mo. Marketing wants '30% off, plus an
+$ piensalo think "Our plan is $100/mo. Marketing wants '30% off, plus an
   extra 20% off for annual billing'. Finance says that's 50% off total.
   Draft the pricing note."
 
@@ -35,13 +35,13 @@ $ fable-think think "Our plan is $100/mo. Marketing wants '30% off, plus an
 
 ▸ execute → draft-v1 produced
 
-$ fable-think inspect draft-v1
+$ piensalo inspect draft-v1
 
   FINDING [numeric]    compounded percentage asserted, not re-derived ("50% total")
   FINDING [delivery]   missing final recommendation — note ends mid-analysis
   verdict: REPAIR REQUIRED   (layers: numeric, delivery)
 
-$ fable-think repair draft-v1 --strategy rederive-numbers
+$ piensalo repair draft-v1 --strategy rederive-numbers
 
   $100 → 30% off → $70.00 → 20% off → $56.00
   effective discount: 44%, not 50%
@@ -49,20 +49,20 @@ $ fable-think repair draft-v1 --strategy rederive-numbers
     · corrected the effective-discount figure
     · added the missing final recommendation
 
-$ fable-think verify draft-v2
+$ piensalo verify draft-v2
 
   arithmetic re-derived independently: 0.70 × 0.80 = 0.56  ✓  (44% effective)
   completeness: final recommendation present               ✓
   verdict: PASS — evidence recorded
 
-$ fable-think inspect other-draft        # a draft that was already correct
+$ piensalo inspect other-draft        # a draft that was already correct
 
   no defects found at any layer
   verdict: NO REPAIR NEEDED              # abstention is a first-class result
 
-$ fable-think loop --continue
+$ piensalo loop --continue
 
-  state:      1 task verified · evidence preserved in .fable-think/evidence/
+  state:      1 task verified · evidence preserved in .piensalo/evidence/
   provenance: model declared and recorded — silent fallback prohibited
   budget:     1 of max 3 repair cycles used (bounded loop)
   next:       deliver draft-v2, or stop
@@ -77,17 +77,17 @@ state → next action or stop.**
 
 ```bash
 # Run without installing
-uvx fable-think doctor
+uvx piensalo doctor
 
 # Or install the CLI
-pipx install fable-think
+pipx install piensalo
 
 # Or add only the portable Agent Skills (no runtime required)
-npx skills add fable-think
+npx skills add piensalo
 ```
 
-`fable-think` and `fablethink` are equivalent commands. Run
-`fable-think doctor` first — it checks your environment and tells you exactly
+`piensalo` and `fablethink` are equivalent commands. Run
+`piensalo doctor` first — it checks your environment and tells you exactly
 what will and won't work, offline.
 
 ## Why this is different
@@ -121,7 +121,7 @@ what will and won't work, offline.
 
 1. **Portable Agent Skills** — plain instruction files that work in any agent
    that reads skills. No runtime, no dependencies, copy-paste friendly.
-2. **Optional runtime** — the `fable-think` CLI adds persistent state, bounded
+2. **Optional runtime** — the `piensalo` CLI adds persistent state, bounded
    adaptive loops, model provenance tracking, and measurement.
 
 ### Portable skills
@@ -173,7 +173,7 @@ so — **silent model fallback is prohibited** ([docs/model-provenance.md](docs/
 
 An optional companion vault that renders your cognitive programs, inspection
 traces, and evidence ledger as linked, navigable notes in Obsidian. Strictly
-read-your-own-files: it points at `.fable-think/` state, adds nothing to the
+read-your-own-files: it points at `.piensalo/` state, adds nothing to the
 core, and the core never depends on it.
 
 <!-- assets/obsidian-studio.png — screenshot placeholder, added when Studio ships -->
@@ -183,8 +183,8 @@ core, and the core never depends on it.
 Off by default, forever: telemetry, network access without an explicit adapter,
 uploads, silent model fallback, destructive actions without approval, arbitrary
 shell from untrusted skill text, secrets in logs, hidden persistence,
-auto-publish. `fable-think skill scan` vets third-party skills before install;
-`fable-think doctor` audits your configuration. Details:
+auto-publish. `piensalo skill scan` vets third-party skills before install;
+`piensalo doctor` audits your configuration. Details:
 [SECURITY.md](SECURITY.md) · [THREAT-MODEL.md](THREAT-MODEL.md) ·
 [docs/operator-boundaries.md](docs/operator-boundaries.md).
 

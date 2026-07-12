@@ -1,0 +1,30 @@
+{
+  "name": "piensalo",
+  "version": "0.1.0",
+  "layer": "domain",
+  "evidence_level": "NARROW",
+  "triggers": [
+    "think this through",
+    "get this right",
+    "hard problem",
+    "any multi-constraint ask where being confidently wrong is expensive"
+  ],
+  "counterindications": [
+    "trivial tasks with a deterministic, one-step-checkable answer",
+    "single obvious mechanism with no real uncertainty",
+    "time-critical single-fact lookups",
+    "larger prompts can harm already-strong models"
+  ],
+  "files": [
+    "SKILL.md",
+    "skill-card.md",
+    "manifest.json",
+    "BENCHMARK.md",
+    "references/contracts.md",
+    "references/failure-checks.md",
+    "references/verification.md",
+    "examples/positive.md",
+    "examples/near-miss.md",
+    "evals/EVAL-PLAN.md"
+  ]
+}

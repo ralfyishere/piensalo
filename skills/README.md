@@ -7,14 +7,14 @@ specialized for one class of work:
 
 | Skill | Domain |
 |---|---|
-| `fable-think` | General hard problems — the core loop, domain-agnostic |
-| `fable-build` | Building software: features, fixes, refactors |
-| `fable-math` | Quantitative and formal reasoning |
-| `fable-research` | Multi-source research and synthesis |
-| `fable-strategy` | Decisions, plans, and strategy under uncertainty |
-| `fable-invent` | Invention and novelty-seeking tasks |
-| `fable-write` | High-stakes writing and editing |
-| `fable-verify` | Standalone verification passes over existing work |
+| `piensalo` | General hard problems — the core loop, domain-agnostic |
+| `piensalo-build` | Building software: features, fixes, refactors |
+| `piensalo-math` | Quantitative and formal reasoning |
+| `piensalo-research` | Multi-source research and synthesis |
+| `piensalo-strategy` | Decisions, plans, and strategy under uncertainty |
+| `piensalo-invent` | Invention and novelty-seeking tasks |
+| `piensalo-write` | High-stakes writing and editing |
+| `piensalo-verify` | Standalone verification passes over existing work |
 
 Every skill directory is self-contained and uses progressive disclosure:
 
@@ -34,7 +34,7 @@ Every skill directory is self-contained and uses progressive disclosure:
 ### One skill, with the `skills` CLI
 
 ```bash
-npx skills add <this-repo-url> --skill fable-think
+npx skills add <this-repo-url> --skill piensalo
 ```
 
 ### One skill, manual copy
@@ -42,7 +42,7 @@ npx skills add <this-repo-url> --skill fable-think
 Copy the skill folder into your agent's skills directory:
 
 ```bash
-cp -r skills/fable-think ~/.claude/skills/fable-think     # Claude Code
+cp -r skills/piensalo ~/.claude/skills/piensalo     # Claude Code
 # or wherever your agent runtime discovers Agent Skills
 ```
 
@@ -57,7 +57,7 @@ services, and read only their own bundled files plus your task.
 
 ## Choosing a skill
 
-Load the domain skill that matches the work; `fable-think` is the fallback for any
+Load the domain skill that matches the work; `piensalo` is the fallback for any
 hard multi-constraint problem. Do not stack several domain skills on one task —
 they share the same core loop and stacking mostly adds prompt weight. For a single
 targeted behavior repair, use a [micro-skill](../micro-skills/) instead.

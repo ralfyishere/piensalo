@@ -21,7 +21,7 @@ Recording setup: dark terminal, large monospace font (18pt+), window sized
 Type:
 
 ```
-fable-think think "Our plan is $100/mo. Marketing wants '30% off, plus an
+piensalo think "Our plan is $100/mo. Marketing wants '30% off, plus an
 extra 20% off for annual billing'. Finance says that's 50% off total.
 Draft the pricing note."
 ```
@@ -37,7 +37,7 @@ is whether 30% + 20% = 50%), the 4-step bounded program, `execute → draft-v1`.
 **0:16–0:26 — Inspection finds the defects**
 
 ```
-fable-think inspect draft-v1
+piensalo inspect draft-v1
 ```
 
 Hold on the two findings:
@@ -51,7 +51,7 @@ verdict: REPAIR REQUIRED
 **0:26–0:36 — Targeted repair**
 
 ```
-fable-think repair draft-v1 --strategy rederive-numbers
+piensalo repair draft-v1 --strategy rederive-numbers
 ```
 
 Hold on the derivation — this is the money shot of the video:
@@ -65,7 +65,7 @@ applied smallest justified repair: 2 edits
 **0:36–0:42 — Verification**
 
 ```
-fable-think verify draft-v2
+piensalo verify draft-v2
 ```
 
 ```
@@ -80,7 +80,7 @@ Text card (2s):
 > And when the work is already correct?
 
 ```
-fable-think inspect other-draft
+piensalo inspect other-draft
 ```
 
 ```
@@ -95,7 +95,7 @@ Text card:
 **0:50–0:57 — Continuation**
 
 ```
-fable-think loop --continue
+piensalo loop --continue
 ```
 
 Show: evidence preserved, model provenance recorded, budget `1 of 3 repair
@@ -103,8 +103,8 @@ cycles used`, next action.
 
 **0:57–0:60 — Close card**
 
-> fable-think · open source · MIT
-> github.com/fable-think/fable-think
+> piensalo · open source · MIT
+> github.com/piensalo/piensalo
 >
 > Independent open-source project.
 > Not affiliated with or endorsed by Anthropic.

@@ -11,7 +11,7 @@ says so. Dates are targets; honesty outranks schedule.
 - [x] Cognitive core: 11 operations, bounded lifecycle
 - [x] Six CLI modes: `think` / `inspect` / `repair` / `verify` / `loop` / `skill`
 - [x] Portable Agent Skills layer (runtime-free)
-- [ ] `fable-think doctor` and `fable-think skill scan` hardened
+- [ ] `piensalo doctor` and `piensalo skill scan` hardened
 - [ ] Alpha gate passed — see [ALPHA-EXIT-CRITERIA.md](ALPHA-EXIT-CRITERIA.md)
   (fresh-clone install, three model families, reproducible benchmark,
   negative-transfer and abstention measured, independent users, case studies)

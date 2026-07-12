@@ -21,7 +21,7 @@ body:
     id: setup
     attributes:
       label: Setup
-      description: OS, install method, fable-think version, exact model identifiers as recorded by provenance, hardware if local.
+      description: OS, install method, piensalo version, exact model identifiers as recorded by provenance, hardware if local.
     validations:
       required: true
   - type: textarea

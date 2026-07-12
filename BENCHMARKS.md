@@ -61,7 +61,7 @@ measurable instead.
 
 ```
 make benchmark          # grader self-test battery + 2-task smoke, no API needed
-uv run fable-think-eval # full harness (bring your own adapter/model)
+uv run piensalo-eval # full harness (bring your own adapter/model)
 ```
 
 Task sets in `evals/public-tasks/` are labeled `DEMO` or `DEVELOPMENT`.

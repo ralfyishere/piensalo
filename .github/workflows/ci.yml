@@ -43,8 +43,8 @@ jobs:
           pip install -e ".[dev]"
       - name: Lint shipped skills (structure + scan)
         run: |
-          python -m fable_think skill scan skills/ micro-skills/
-          python -m fable_think skill lint skills/ micro-skills/
+          python -m piensalo skill scan skills/ micro-skills/
+          python -m piensalo skill lint skills/ micro-skills/
 
   secret-scan:
     name: Secret scan

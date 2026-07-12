@@ -1,4 +1,4 @@
-# fable-think — offline-first developer tasks.
+# piensalo — offline-first developer tasks.
 
 .PHONY: test lint benchmark build
 

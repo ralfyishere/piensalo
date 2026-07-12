@@ -35,7 +35,7 @@ must not fire.
 
 **Done means:** the near miss is concrete (a real-looking input, not a
 category description), the counterindication logic references it, and the
-skill still passes `fable-think skill scan` and skill lint.
+skill still passes `piensalo skill scan` and skill lint.
 
 ## 4. Harden `skill scan` against one obfuscation trick
 

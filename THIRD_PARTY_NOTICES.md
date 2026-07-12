@@ -7,7 +7,7 @@ offline from the Python standard library wherever practical.
 
 None required for the core at 0.1.0-dev. Optional model adapters may use the
 respective provider SDKs or plain HTTP; installing an adapter's extras is an
-explicit, opt-in step (`pip install "fable-think[<adapter>]"`), and each
+explicit, opt-in step (`pip install "piensalo[<adapter>]"`), and each
 extra's license is listed here when it is added.
 
 | Component | Dependency | License | Notes |

@@ -42,7 +42,7 @@ away.
 
 `adapter` in the config: `auto` tries, in order:
 
-1. `fable_think` — `fable_think.adapters` if the package is installed;
+1. `piensalo` — `piensalo.adapters` if the package is installed;
 2. `claude_cli` — `claude -p --output-format json --model <requested>`;
 3. `manual` — prompts are written to `<run>/pending-prompts/<cell>.prompt.md`;
    you produce `<cell>.md` answers in an answers dir and re-run with

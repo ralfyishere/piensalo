@@ -44,7 +44,7 @@ do is try to break it: reproduce our benchmark, test the abstention behavior,
 and report any configuration where it makes results worse. Negative-transfer
 reports are a first-class contribution and get published with credit.
 
-Repo: github.com/fable-think/fable-think
+Repo: github.com/piensalo/piensalo
 
 Fable Think is an independent open-source project. It is not affiliated with
 or endorsed by Anthropic.

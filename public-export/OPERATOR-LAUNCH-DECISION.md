@@ -6,12 +6,12 @@ requires Rafael's explicit approval of this document.**
 
 ## Product identity
 - Final product name: **Fable Think**
-- Proposed repository: `ralfyishere/fable-think` (verified 404/free). Option:
-  create a `fable-think` GitHub org (org name unclaimed at check time) — the
-  docs currently use `github.com/fable-think/fable-think` as a placeholder;
+- Proposed repository: `ralfyishere/piensalo` (verified 404/free). Option:
+  create a `piensalo` GitHub org (org name unclaimed at check time) — the
+  docs currently use `github.com/piensalo/piensalo` as a placeholder;
   pick one and sweep the placeholder before push.
-- Package identifiers: PyPI **fable-think** (free at check) with alias
-  **fablethink** (free); console scripts `fable-think` + `fablethink`.
+- Package identifiers: PyPI **piensalo** (free at check) with alias
+  **fablethink** (free); console scripts `piensalo` + `fablethink`.
   The `fable` PyPI name is TAKEN — we claim neither the package nor a `fable`
   binary (collision risk documented).
 
@@ -41,7 +41,7 @@ requires Rafael's explicit approval of this document.**
 - stable: none (v0.1.0 is alpha; no mechanism is PROMOTED)
 - beta: think/inspect/repair/verify CLI (offline), contract guardian, layered grading library, portable skills install
 - experimental: adaptive router (off), loop slow-path self-improvement, provider adapters (unit-tested only, no live-provider runs)
-- narrow: micro-skill forced repair, monolithic fable-think skill
+- narrow: micro-skill forced repair, monolithic piensalo skill
 - rejected: unconditional repair; silent model fallback (prohibited by design)
 
 ## Audits
@@ -65,16 +65,16 @@ requires Rafael's explicit approval of this document.**
 ## Unresolved risks
 1. v0.1 evidence base: one model family, n=8/run; run-2 saturated (lift claim rests on run-1).
 2. Evals oracle-repair labels reference 5 genericized micro-skill names not yet present in micro-skills/ (degrades to SKIPPED, documented) — author or remap before alpha.
-3. `github.com/fable-think/fable-think` placeholder appears in docs — must be swept to the chosen URL pre-push.
-4. uv.lock absent; `uvx fable-think` untested until first PyPI (Test PyPI recommended first).
+3. `github.com/piensalo/piensalo` placeholder appears in docs — must be swept to the chosen URL pre-push.
+4. uv.lock absent; `uvx piensalo` untested until first PyPI (Test PyPI recommended first).
 5. CoC/security contact email unset (LAUNCH gate item).
 
 ## Exact commands that WOULD publish (DO NOT RUN without approval)
 ```
 # 1. choose identity (example: personal repo)
-gh repo create ralfyishere/fable-think --public --source "<PRIVATE_LOCAL_PATH>" --push
-# or org route: create org 'fable-think' in UI, then:
-# git remote add origin git@github.com:fable-think/fable-think.git && git push -u origin main
+gh repo create ralfyishere/piensalo --public --source "<PRIVATE_LOCAL_PATH>" --push
+# or org route: create org 'piensalo' in UI, then:
+# git remote add origin git@github.com:piensalo/piensalo.git && git push -u origin main
 # 2. package (after uv lock + build on a machine with uv):
 # uv build && uv publish            # Test PyPI first: uv publish --index testpypi
 # 3. tag
@@ -86,5 +86,5 @@ Pre-push checklist (mandatory): sweep URL placeholder · re-run repo-level secre
 - `python3 -m pytest -q` → 49 passed
 - `python3 evals/harness/grader_selftest.py` → ALL GRADER SELF-TESTS PASS (11 tasks)
 - `make benchmark` → SMOKE OK: 4 cells graded end-to-end (no API)
-- `PYTHONPATH=src python3 -m fable_think.cli.main think examples/math/task.md` → renders the cognitive program (a Python-3.9 runpy warning appears on the below-floor interpreter; clean on 3.10+)
+- `PYTHONPATH=src python3 -m piensalo.cli.main think examples/math/task.md` → renders the cognitive program (a Python-3.9 runpy warning appears on the below-floor interpreter; clean on 3.10+)
 - `uv sync` / `uvx` NOT tested (uv absent on build machine — ALPHA item)

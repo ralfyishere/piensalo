@@ -5,8 +5,8 @@ type: software
 authors:
   - name: "Fable Think contributors"
 license: MIT
-repository-code: "https://github.com/fable-think/fable-think"
-url: "https://github.com/fable-think/fable-think"
+repository-code: "https://github.com/piensalo/piensalo"
+url: "https://github.com/piensalo/piensalo"
 version: 0.1.0-dev
 date-released: "2026-07-12"
 keywords:

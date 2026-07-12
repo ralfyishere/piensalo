@@ -1,7 +1,7 @@
 """Layered-verdict tests: UNMEASURED absent output, decoration, fallback."""
 from __future__ import annotations
 
-from fable_think.verify.layered import (
+from piensalo.verify.layered import (
     build_layered_verdict,
     fallback_explicit_value,
     is_absent,

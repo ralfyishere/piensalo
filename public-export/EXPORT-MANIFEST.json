@@ -16,8 +16,8 @@
  "hash_manifest": "public-export/HASHES.sha256",
  "entries": [
   {
-   "public_destination": "skills/fable-think",
-   "private_source": "dist/skills/fable-think",
+   "public_destination": "skills/piensalo",
+   "private_source": "dist/skills/piensalo",
    "export_method": "ported-rewritten",
    "sanitization_status": "clean (workstream sweep + orchestrator repo-level grep 2026-07-12)",
    "license_status": "MIT (repo license)",
@@ -27,8 +27,8 @@
    "notes": "progressive disclosure; evidence level per canonical map"
   },
   {
-   "public_destination": "skills/fable-build",
-   "private_source": "dist/skills/fable-build",
+   "public_destination": "skills/piensalo-build",
+   "private_source": "dist/skills/piensalo-build",
    "export_method": "ported-rewritten",
    "sanitization_status": "clean (workstream sweep + orchestrator repo-level grep 2026-07-12)",
    "license_status": "MIT (repo license)",
@@ -38,8 +38,8 @@
    "notes": "progressive disclosure; evidence level per canonical map"
   },
   {
-   "public_destination": "skills/fable-math",
-   "private_source": "dist/skills/fable-math",
+   "public_destination": "skills/piensalo-math",
+   "private_source": "dist/skills/piensalo-math",
    "export_method": "ported-rewritten",
    "sanitization_status": "clean (workstream sweep + orchestrator repo-level grep 2026-07-12)",
    "license_status": "MIT (repo license)",
@@ -49,8 +49,8 @@
    "notes": "progressive disclosure; evidence level per canonical map"
   },
   {
-   "public_destination": "skills/fable-verify",
-   "private_source": "dist/skills/fable-verify",
+   "public_destination": "skills/piensalo-verify",
+   "private_source": "dist/skills/piensalo-verify",
    "export_method": "ported-rewritten",
    "sanitization_status": "clean (workstream sweep + orchestrator repo-level grep 2026-07-12)",
    "license_status": "MIT (repo license)",
@@ -60,8 +60,8 @@
    "notes": "progressive disclosure; evidence level per canonical map"
   },
   {
-   "public_destination": "skills/fable-research",
-   "private_source": "dist/skills/fable-research",
+   "public_destination": "skills/piensalo-research",
+   "private_source": "dist/skills/piensalo-research",
    "export_method": "ported-rewritten",
    "sanitization_status": "clean (workstream sweep + orchestrator repo-level grep 2026-07-12)",
    "license_status": "MIT (repo license)",
@@ -71,8 +71,8 @@
    "notes": "progressive disclosure; evidence level per canonical map"
   },
   {
-   "public_destination": "skills/fable-strategy",
-   "private_source": "dist/skills/fable-strategy",
+   "public_destination": "skills/piensalo-strategy",
+   "private_source": "dist/skills/piensalo-strategy",
    "export_method": "ported-rewritten",
    "sanitization_status": "clean (workstream sweep + orchestrator repo-level grep 2026-07-12)",
    "license_status": "MIT (repo license)",
@@ -82,8 +82,8 @@
    "notes": "progressive disclosure; evidence level per canonical map"
   },
   {
-   "public_destination": "skills/fable-invent",
-   "private_source": "dist/skills/fable-invent",
+   "public_destination": "skills/piensalo-invent",
+   "private_source": "dist/skills/piensalo-invent",
    "export_method": "ported-rewritten",
    "sanitization_status": "clean (workstream sweep + orchestrator repo-level grep 2026-07-12)",
    "license_status": "MIT (repo license)",
@@ -93,8 +93,8 @@
    "notes": "progressive disclosure; evidence level per canonical map"
   },
   {
-   "public_destination": "skills/fable-write",
-   "private_source": "dist/skills/fable-write",
+   "public_destination": "skills/piensalo-write",
+   "private_source": "dist/skills/piensalo-write",
    "export_method": "ported-rewritten",
    "sanitization_status": "clean (workstream sweep + orchestrator repo-level grep 2026-07-12)",
    "license_status": "MIT (repo license)",
@@ -335,7 +335,7 @@
    "notes": ""
   },
   {
-   "public_destination": "src/fable_think/loop/",
+   "public_destination": "src/piensalo/loop/",
    "private_source": "tools/loop/floop.py",
    "export_method": "ported-rewritten",
    "sanitization_status": "clean (workstream sweep + orchestrator repo-level grep 2026-07-12)",
@@ -346,7 +346,7 @@
    "notes": "git-free; JSON checkpoints; prompt gate/stop conditions/provenance preserved"
   },
   {
-   "public_destination": "src/fable_think/inspect/scanner.py",
+   "public_destination": "src/piensalo/inspect/scanner.py",
    "private_source": "tools/adaptive-boost/postdraft.py",
    "export_method": "ported-rewritten",
    "sanitization_status": "clean (workstream sweep + orchestrator repo-level grep 2026-07-12)",
@@ -357,7 +357,7 @@
    "notes": "recalibrated constants + schema conversion enforced"
   },
   {
-   "public_destination": "src/fable_think/verify/contract.py",
+   "public_destination": "src/piensalo/verify/contract.py",
    "private_source": "tools/adaptive-boost/contract_adapter.py",
    "export_method": "ported-rewritten",
    "sanitization_status": "clean (workstream sweep + orchestrator repo-level grep 2026-07-12)",
@@ -368,7 +368,7 @@
    "notes": ""
   },
   {
-   "public_destination": "src/fable_think/verify/layered.py",
+   "public_destination": "src/piensalo/verify/layered.py",
    "private_source": "experiments/adaptive-boost-v3/tasks/_grader_common.py",
    "export_method": "ported-rewritten",
    "sanitization_status": "clean (workstream sweep + orchestrator repo-level grep 2026-07-12)",
@@ -379,7 +379,7 @@
    "notes": "empty-checks=UNMEASURED hardening"
   },
   {
-   "public_destination": "src/fable_think/repair/library/ (10 files)",
+   "public_destination": "src/piensalo/repair/library/ (10 files)",
    "private_source": "dist/micro-skills/*/SKILL.md",
    "export_method": "ported-rewritten",
    "sanitization_status": "clean (workstream sweep + orchestrator repo-level grep 2026-07-12)",
@@ -390,7 +390,7 @@
    "notes": ""
   },
   {
-   "public_destination": "src/fable_think/core/",
+   "public_destination": "src/piensalo/core/",
    "private_source": null,
    "export_method": "authored",
    "sanitization_status": "clean (workstream sweep + orchestrator repo-level grep 2026-07-12)",
@@ -401,7 +401,7 @@
    "notes": ""
   },
   {
-   "public_destination": "src/fable_think/compiler/",
+   "public_destination": "src/piensalo/compiler/",
    "private_source": null,
    "export_method": "authored",
    "sanitization_status": "clean (workstream sweep + orchestrator repo-level grep 2026-07-12)",
@@ -412,7 +412,7 @@
    "notes": ""
   },
   {
-   "public_destination": "src/fable_think/cli/",
+   "public_destination": "src/piensalo/cli/",
    "private_source": null,
    "export_method": "authored",
    "sanitization_status": "clean (workstream sweep + orchestrator repo-level grep 2026-07-12)",
@@ -423,7 +423,7 @@
    "notes": ""
   },
   {
-   "public_destination": "src/fable_think/adapters/",
+   "public_destination": "src/piensalo/adapters/",
    "private_source": null,
    "export_method": "authored",
    "sanitization_status": "clean (workstream sweep + orchestrator repo-level grep 2026-07-12)",
@@ -434,7 +434,7 @@
    "notes": ""
   },
   {
-   "public_destination": "src/fable_think/security/",
+   "public_destination": "src/piensalo/security/",
    "private_source": null,
    "export_method": "authored",
    "sanitization_status": "clean (workstream sweep + orchestrator repo-level grep 2026-07-12)",
@@ -445,7 +445,7 @@
    "notes": ""
   },
   {
-   "public_destination": "src/fable_think/evidence/",
+   "public_destination": "src/piensalo/evidence/",
    "private_source": null,
    "export_method": "authored",
    "sanitization_status": "clean (workstream sweep + orchestrator repo-level grep 2026-07-12)",

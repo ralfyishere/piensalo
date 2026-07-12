@@ -8,7 +8,7 @@ Fable Think separates an AI task into distinct operations — understand, plan,
 execute, inspect, classify, repair, verify, deliver — connected by a bounded
 lifecycle and backed by persistent, inspectable state. Two layers implement
 this: **portable Agent Skills** (plain text, run anywhere) and an **optional
-runtime** (the `fable-think` CLI, which adds state, adaptivity, and
+runtime** (the `piensalo` CLI, which adds state, adaptivity, and
 measurement). The runtime depends on nothing external; models attach through
 declared adapters with recorded provenance.
 
@@ -75,10 +75,10 @@ the skills would still work everywhere.
 
 ## Layer 2: the runtime
 
-The CLI (`fable-think`, alias `fablethink`) adds what plain text cannot:
+The CLI (`piensalo`, alias `fablethink`) adds what plain text cannot:
 
 - **State** — programs, findings, verdicts, and evidence persist in
-  `.fable-think/` and survive the context window (Manifesto, principle 7).
+  `.piensalo/` and survive the context window (Manifesto, principle 7).
 - **Bounded loops** — `loop` tracks budgets (repair cycles, steps) and
   reports used/remaining; exhausted budgets stop the loop visibly (a
   measured failure, NR-7, is why counters are surfaced).
@@ -101,7 +101,7 @@ The CLI (`fable-think`, alias `fablethink`) adds what plain text cannot:
 ## State layout
 
 ```
-.fable-think/
+.piensalo/
   programs/     # cognitive programs, one file per task
   findings/     # inspection findings, layer-tagged
   evidence/     # verification records, provenance, verdicts

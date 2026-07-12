@@ -19,7 +19,7 @@ plausible, and the labels were lies.
 ## What gets recorded
 
 Every model call writes a provenance record into the evidence trail
-(`.fable-think/evidence/`):
+(`.piensalo/evidence/`):
 
 ```
 model_requested:   the identity you configured
@@ -52,7 +52,7 @@ how NR-6 happened.
 
 - Pin the most specific model identifier your provider offers; aliases trade
   provenance for convenience.
-- Treat `PROVENANCE_MISMATCH` in `fable-think doctor` output as a
+- Treat `PROVENANCE_MISMATCH` in `piensalo doctor` output as a
   measurement-invalidating event: fix the configuration, then re-run affected
   work rather than relabeling it.
 - Never edit provenance records to "correct" them. Evidence is immutable;

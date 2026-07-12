@@ -1,8 +1,8 @@
 """Security scan + skill lint tests."""
 from __future__ import annotations
 
-from fable_think.cli.main import main
-from fable_think.security.skill_scan import scan_skill_dir
+from piensalo.cli.main import main
+from piensalo.security.skill_scan import scan_skill_dir
 
 CLEAN_SKILL = """---
 name: clean-skill

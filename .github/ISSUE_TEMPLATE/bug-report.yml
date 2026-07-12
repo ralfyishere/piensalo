@@ -1,5 +1,5 @@
 name: Bug report
-description: Something in fable-think behaves incorrectly
+description: Something in piensalo behaves incorrectly
 labels: ["bug", "needs-triage"]
 body:
   - type: markdown
@@ -13,7 +13,7 @@ body:
     attributes:
       label: What happened
       description: The observable behavior, not the interpretation.
-      placeholder: "`fable-think verify draft` exited 0 but printed no verdict line."
+      placeholder: "`piensalo verify draft` exited 0 but printed no verdict line."
     validations:
       required: true
   - type: textarea
@@ -34,7 +34,7 @@ body:
     id: environment
     attributes:
       label: Environment
-      description: Paste the output of `fable-think doctor` (it redacts secrets; still skim it before pasting).
+      description: Paste the output of `piensalo doctor` (it redacts secrets; still skim it before pasting).
       render: text
     validations:
       required: true

@@ -3,7 +3,7 @@ from __future__ import annotations
 
 import json
 
-from fable_think.cli.main import main
+from piensalo.cli.main import main
 
 TASK = (
     "Compute the compounded total: 5% per month over 12 months on a base of "
@@ -117,4 +117,4 @@ def test_doctor(project_root, capsys):
 
 def test_version(capsys):
     assert main(["version"]) == 0
-    assert "fable-think" in capsys.readouterr().out
+    assert "piensalo" in capsys.readouterr().out

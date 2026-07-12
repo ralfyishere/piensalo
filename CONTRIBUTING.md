@@ -82,8 +82,8 @@ more than reference docs. See
 ## Development setup
 
 ```bash
-git clone https://github.com/fable-think/fable-think
-cd fable-think
+git clone https://github.com/piensalo/piensalo
+cd piensalo
 python -m venv .venv && source .venv/bin/activate
 pip install -e ".[dev]"
 pytest

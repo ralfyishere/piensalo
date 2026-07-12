@@ -21,7 +21,7 @@ Conditions (each is a prompt-construction function):
                output-guardian | oracle-repair | adaptive-repair |
                verify-only | no-repair-control
 
-Adapters: fable_think.adapters (if the package is installed) -> claude CLI
+Adapters: piensalo.adapters (if the package is installed) -> claude CLI
 (`claude -p --output-format json`) -> manual (prompts are written to
 pending-prompts/, answers are read from an answers dir). `--smoke` runs the
 manual adapter end-to-end with answers auto-populated from probe files: it
@@ -185,9 +185,9 @@ CONDITIONS = {
 
 # ---------------------------------------------------------------- adapters
 
-def adapter_fable_think(cfg):
+def adapter_piensalo(cfg):
     try:
-        from fable_think import adapters  # type: ignore
+        from piensalo import adapters  # type: ignore
     except ImportError:
         return None
 
@@ -376,10 +376,10 @@ def run(cfg, run_id, smoke=False):
     adapter_name = "manual" if smoke else cfg["adapter"]
     named_adapter = None
     adapter = None
-    if adapter_name in ("auto", "fable_think"):
-        adapter = adapter_fable_think(cfg)
+    if adapter_name in ("auto", "piensalo"):
+        adapter = adapter_piensalo(cfg)
         if adapter:
-            adapter_name = "fable_think"
+            adapter_name = "piensalo"
     if adapter is None and adapter_name in ("auto", "claude_cli"):
         adapter = adapter_claude_cli(cfg)
         if adapter:
@@ -505,7 +505,7 @@ def main():
     ap.add_argument("--tasks", help="comma-separated task ids (overrides config)")
     ap.add_argument("--conditions", help="comma-separated conditions (overrides config)")
     ap.add_argument("--trials", type=int)
-    ap.add_argument("--adapter", choices=["auto", "fable_think", "claude_cli", "manual"])
+    ap.add_argument("--adapter", choices=["auto", "piensalo", "claude_cli", "manual"])
     ap.add_argument("--answers-dir")
     ap.add_argument("--run-id")
     args = ap.parse_args()

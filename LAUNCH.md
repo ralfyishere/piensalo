@@ -62,7 +62,7 @@ The full checklist with measurement details is
 2. **T-3 days** — final security pass: secret scan on full history, skill
    scan on shipped skills, license/notice review.
 3. **T-0, morning** — tag `v0.1.0`, publish package, verify
-   `uvx fable-think doctor` works from the public index on a clean machine.
+   `uvx piensalo doctor` works from the public index on a clean machine.
 4. **T-0** — Show HN ([social/show-hn.md](social/show-hn.md)), X thread
    ([social/x-thread.md](social/x-thread.md)), LinkedIn
    ([social/linkedin.md](social/linkedin.md)). Demo per

@@ -86,7 +86,7 @@ It's open source (MIT), and negative-result reports are a first-class
 contribution — find a setup where it makes things worse and we'll publish
 that with credit.
 
-→ github.com/fable-think/fable-think
+→ github.com/piensalo/piensalo
 
 Fable Think is an independent open-source project. It is not affiliated
 with or endorsed by Anthropic.

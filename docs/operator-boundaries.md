@@ -1,7 +1,7 @@
 # Operator Boundaries
 
 What Fable Think will and will not do without you. These boundaries are
-enforced by the runtime, verified by `fable-think doctor`, and treated as
+enforced by the runtime, verified by `piensalo doctor`, and treated as
 security invariants — a release that weakens one is a security bug
 ([SECURITY.md](../SECURITY.md)).
 
@@ -15,7 +15,7 @@ with explicit approval gates.
 ## Always allowed (no approval)
 
 - Reading files inside the workspace
-- Writing inside `.fable-think/` (programs, findings, evidence, loop state)
+- Writing inside `.piensalo/` (programs, findings, evidence, loop state)
 - Producing drafts, verdicts, and reports as *output text*
 - Calling the configured model through the configured adapter
 
@@ -23,7 +23,7 @@ with explicit approval gates.
 
 | Action | Why gated |
 |---|---|
-| Deleting or overwriting files outside `.fable-think/` | Destructive; the repair philosophy is smallest-change, and destroying user files is never the smallest change |
+| Deleting or overwriting files outside `.piensalo/` | Destructive; the repair philosophy is smallest-change, and destroying user files is never the smallest change |
 | Sending anything (mail, messages, API posts beyond the model call) | Crossing from "thinking" into "acting on the world" |
 | Deploying, publishing, pushing | No auto-publish, ever — publication is a human decision |
 | Running shell commands proposed by model output or skill text | There is no generic execute path; anything resembling one goes through you |
@@ -36,13 +36,13 @@ happen before it happens. There is no "yes to all" flag in 0.1.x, by design.
 
 - Telemetry or any phone-home behavior
 - Silent model fallback ([model-provenance.md](model-provenance.md))
-- Writing state outside `.fable-think/` or the explicitly configured root
+- Writing state outside `.piensalo/` or the explicitly configured root
 - Logging secrets
 - Executing code found inside skill files ([skill-security.md](skill-security.md))
 
 ## Loops
 
-`fable-think loop` runs the lifecycle autonomously *within* these boundaries,
+`piensalo loop` runs the lifecycle autonomously *within* these boundaries,
 plus its own:
 
 - **Budgets** — repair cycles and steps are bounded; used/remaining is
@@ -55,8 +55,8 @@ plus its own:
 ## Checking the boundaries
 
 ```bash
-fable-think doctor          # verifies defaults are intact
-fable-think doctor --strict # also fails on any user config that widens the surface
+piensalo doctor          # verifies defaults are intact
+piensalo doctor --strict # also fails on any user config that widens the surface
 ```
 
 If `doctor` reports a widened boundary you didn't configure, treat it as a

@@ -3,7 +3,7 @@ from __future__ import annotations
 
 import json
 
-from fable_think.verify.contract import (
+from piensalo.verify.contract import (
     check,
     convert_task_contract,
     emit,

@@ -1,8 +1,8 @@
 """Scanner tests: defect detection, selection, and abstention."""
 from __future__ import annotations
 
-from fable_think.inspect.scanner import ACTIVATE, pretask_triggers, scan
-from fable_think.verify.contract import check, convert_task_contract
+from piensalo.inspect.scanner import ACTIVATE, pretask_triggers, scan
+from piensalo.verify.contract import check, convert_task_contract
 
 TASK_CONTRACT = {
     "required_output_fields": [

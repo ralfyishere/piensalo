@@ -18,8 +18,8 @@ everything may change.
 - Abstention as a first-class result: `NO REPAIR NEEDED`.
 - Model adapters: manual copy/paste, Claude / Claude Code, OpenAI-compatible,
   Ollama/local, generic command adapter.
-- `fable-think skill scan` (third-party skill vetting) and
-  `fable-think doctor` (environment + configuration audit).
+- `piensalo skill scan` (third-party skill vetting) and
+  `piensalo doctor` (environment + configuration audit).
 - Evidence discipline: per-capability evidence levels with promotion gates
   (docs/evidence-levels.md), public negative results (NEGATIVE-RESULTS.md).
 - Security defaults: zero telemetry, offline core, no silent model fallback,

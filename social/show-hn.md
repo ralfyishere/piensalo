@@ -10,7 +10,7 @@ Show HN: Fable Think – an open cognitive OS for AI models (publishes its own n
 
 ## URL
 
-https://github.com/fable-think/fable-think
+https://github.com/piensalo/piensalo
 
 ## First comment (post immediately after submitting)
 
@@ -46,7 +46,7 @@ Things I'd want to know before trying it:
   until the adapters mature.
 - **Boring security posture:** core runs offline, zero telemetry, no network
   without an explicit adapter, no silent model fallback (hard stop instead),
-  skills are inert text with a scanner (`fable-think skill scan`), and
+  skills are inert text with a scanner (`piensalo skill scan`), and
   destructive actions always require approval.
 
 The contribution I most want from HN: adversarial reproduction. Run the
