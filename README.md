@@ -16,6 +16,13 @@ Created by [Rafael “Ralph” Peña](https://github.com/ralfyishere).
 
 Piénsalo — "think it through." Pronounced: pee-EN-sa-lo.
 
+> **Status: PIÉNSALO is public alpha software.**
+> The runtime, portable skills, packaging, evaluation harness, and core
+> verification workflows have been tested. Current live experimental
+> evidence is primarily from the Claude model family. Cross-model
+> validation, independent reproduction, and real-world case studies are
+> expanding in public.
+
 Most AI tooling makes models *produce more*. Piénsalo makes them *think better*:
 it separates thinking, inspection, repair, verification, evidence, and continuation
 into distinct, inspectable operations — and it knows when the right move is to do
