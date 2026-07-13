@@ -2,13 +2,12 @@
 
 ## Reporting a vulnerability
 
-> **Status note (pre-publication):** the public repository
-> (`github.com/ralfyishere/piensalo`) does not exist yet, so GitHub Private
-> Vulnerability Reporting is the **intended** public channel, not an active
-> one. Until publication, private-alpha testers should report security
-> issues through the same private channel through which they received this
-> repository. A dedicated project email is a pre-publication operator
-> decision and is deliberately not invented here.
+> **Reporting channels (public alpha):** ordinary bugs → GitHub Issues.
+> Sensitive security reports → GitHub **Private Vulnerability Reporting**
+> ("Security" tab → "Report a vulnerability") on
+> [ralfyishere/piensalo](https://github.com/ralfyishere/piensalo) — enabled.
+> A dedicated project email is a future operational improvement, not a
+> current channel; no personal email is published by design.
 
 Please **do not** open a public issue for security problems. Use GitHub's
 private vulnerability reporting ("Security" tab → "Report a vulnerability") on
@@ -56,7 +55,7 @@ The full threat catalog — prompt injection, malicious skills, reference
 poisoning, path traversal, symlinks, secret exfiltration, tool escalation,
 memory poisoning, model fallback, grader leakage, supply chain — with
 mitigations and **residual risk stated honestly**, lives in
-[THREAT-MODEL.md](THREAT-MODEL.md).
+[THREAT-MODEL.md](docs/THREAT-MODEL.md).
 
 ## Supported versions
 

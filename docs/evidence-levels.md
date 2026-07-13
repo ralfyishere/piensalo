@@ -64,7 +64,7 @@ counts as gate 1, never gates 2–6.
 Levels go down as well as up. A failed replication, a negative-transfer
 report confirmed in the wild, or a grader defect discovered after the fact
 demotes the claim, and the demotion is published with the same prominence as
-the promotion. See the correction policy in [LAUNCH.md](../LAUNCH.md).
+the promotion. See the correction policy in [LAUNCH.md](alpha/ALPHA-EXIT-CRITERIA.md).
 
 ## How to read a claim
 

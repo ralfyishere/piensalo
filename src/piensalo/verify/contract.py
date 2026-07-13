@@ -44,7 +44,15 @@ def convert_task_contract(d: dict) -> dict:
     if "fields" in d:  # already internal form
         return d
     fields = [
-        {"name": f["name"], "pattern": r"^" + re.escape(f["name"]) + r":", "required": True}
+        {
+            "name": f["name"],
+            "pattern": r"^" + re.escape(f["name"]) + r":",
+            "required": True,
+            # Optional declared expected value: makes the field's VALUE
+            # deterministically checkable downstream (verify). Absent by
+            # default — presence-only contracts stay presence-only.
+            "expected": f.get("expected"),
+        }
         for f in d.get("required_output_fields", [])
     ]
     exact = bool(d.get("order_required") or d.get("no_extra_lines") or d.get("forbidden"))

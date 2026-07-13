@@ -1,0 +1,27 @@
+{
+ "cognitive_correctness": {
+  "pass": true,
+  "checks": {
+   "tip_15_12": true,
+   "total_99_12": true,
+   "per_person_24_78": true
+  }
+ },
+ "task_contract_compliance": {
+  "pass": false,
+  "checks": {
+   "tip_line": false,
+   "total_line": false,
+   "per_person_line": false
+  }
+ },
+ "deterministic_result": {
+  "pass": true,
+  "checks": {
+   "all_values_correct": true
+  }
+ },
+ "critical_failure": false,
+ "final_score": 60,
+ "failure_layer": "delivery"
+}

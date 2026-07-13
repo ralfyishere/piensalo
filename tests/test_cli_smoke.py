@@ -69,9 +69,13 @@ def test_verify(project_root, capsys):
         ["verify", "--task", str(task), "--draft", str(draft), "--contract", str(contract)]
     )
     assert rc == 0
-    payload = json.loads(capsys.readouterr().out)
+    out = capsys.readouterr().out
+    # JSON block first, then the plain-text TRUTH REPORT (see item 5 of the
+    # CLI-hardening spec: verify output gained the five truth buckets).
+    payload = json.loads(out[: out.rindex("}") + 1])
     assert payload["contract"]["all_present"] is True
     assert "layered_verdict" in payload
+    assert "TRUTH REPORT" in out
 
 
 def test_loop_help(project_root, capsys):

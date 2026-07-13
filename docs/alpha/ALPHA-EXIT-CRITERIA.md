@@ -21,7 +21,7 @@ criteria don't shrink.
 
 ## Hard blockers (any one stops launch regardless of the table)
 
-- A security default from [SECURITY.md](SECURITY.md) found violated in the
+- A security default from [SECURITY.md](../../SECURITY.md) found violated in the
   shipping build.
 - An evidence-level claim in any public doc that exceeds its receipts.
 - Unresolved secret or private identifier in git history.

@@ -9,230 +9,160 @@ models and agents understand the real objective, structure difficult work,
 inspect their output, repair specific failures, verify the result, know when
 not to intervene, preserve evidence, and continue across sessions.
 
-Not a giant system prompt. Not a model replacement. An artificial cortex you
-can install, inspect, test, and extend.
-
 Created by [Rafael “Ralph” Peña](https://github.com/ralfyishere).
-
 Piénsalo — "think it through." Pronounced: pee-EN-sa-lo.
 
-> **Status: PIÉNSALO is public alpha software.**
-> The runtime, portable skills, packaging, evaluation harness, and core
-> verification workflows have been tested. Current live experimental
-> evidence is primarily from the Claude model family. Cross-model
-> validation, independent reproduction, and real-world case studies are
-> expanding in public.
+> **Status: public alpha.** The runtime, portable skills, packaging,
+> evaluation harness, and core verification workflows are tested. Current
+> live experimental evidence is primarily from the Claude model family;
+> cross-model validation, independent reproduction, and real-world case
+> studies are expanding in public.
 
-Most AI tooling makes models *produce more*. Piénsalo makes them *think better*:
-it separates thinking, inspection, repair, verification, evidence, and continuation
-into distinct, inspectable operations — and it knows when the right move is to do
-**nothing** (`NO REPAIR NEEDED` is a first-class result).
+**The wedge, in one sentence:** give PIÉNSALO a task and an AI's draft — it
+finds what was actually missed, leaves correct work alone, emits the
+smallest justified repair when one is warranted, verifies what can honestly
+be verified, and says **NO REPAIR NEEDED** when intervention would only
+cause harm.
 
----
+## 60 seconds, for real
 
-## 60 seconds, start to finish
+Every line below is real output from the shipped CLI — the transcript is
+committed at [examples/flagship/TRANSCRIPT.md](examples/flagship/TRANSCRIPT.md)
+and a CI test re-runs the demo and fails if this ever drifts.
+
+A quote task applies two sequential discounts (20%, then 15%). The AI draft
+added them (35% off → $221.00) instead of compounding (→ $231.20):
 
 ```text
-$ piensalo think "Our plan is $100/mo. Marketing wants '30% off, plus an
-  extra 20% off for annual billing'. Finance says that's 50% off total.
-  Draft the pricing note."
+$ piensalo inspect --task examples/flagship/task.md \
+    --draft examples/flagship/draft-broken.md \
+    --contract examples/flagship/contract.json
+selected repair(s): rederive-the-numbers
+  evidence: asserts a figure with no visible derivation on a multi-rate task
 
-▸ recover_objective
-    stated:  draft the pricing note
-    actual:  determine what the stacked discount really is, then draft a
-             note finance can sign off on
-    load-bearing uncertainty: does 30% + 20% actually stack to 50%?
-
-▸ cognitive program (bounded, 4 steps)
-    1. re-derive the stacked discount from first principles
-    2. compare against the 50% claim
-    3. draft the note with the derived number
-    4. verify arithmetic and completeness before delivery
-
-▸ execute → draft-v1 produced
-
-$ piensalo inspect draft-v1
-
-  FINDING [numeric]    compounded percentage asserted, not re-derived ("50% total")
-  FINDING [delivery]   missing final recommendation — note ends mid-analysis
-  verdict: REPAIR REQUIRED   (layers: numeric, delivery)
-
-$ piensalo repair draft-v1 --strategy rederive-numbers
-
-  $100 → 30% off → $70.00 → 20% off → $56.00
-  effective discount: 44%, not 50%
-  applied smallest justified repair: 2 edits
-    · corrected the effective-discount figure
-    · added the missing final recommendation
-
-$ piensalo verify draft-v2
-
-  arithmetic re-derived independently: 0.70 × 0.80 = 0.56  ✓  (44% effective)
-  completeness: final recommendation present               ✓
-  verdict: PASS — evidence recorded
-
-$ piensalo inspect other-draft        # a draft that was already correct
-
-  no defects found at any layer
-  verdict: NO REPAIR NEEDED              # abstention is a first-class result
-
-$ piensalo loop --continue
-
-  state:      1 task verified · evidence preserved in .piensalo/evidence/
-  provenance: model declared and recorded — silent fallback prohibited
-  budget:     1 of max 3 repair cycles used (bounded loop)
-  next:       deliver draft-v2, or stop
+$ piensalo verify --task examples/flagship/task.md \
+    --draft examples/flagship/draft-broken.md \
+    --contract examples/flagship/contract.json
+FAILED
+  QUOTE_USD: 221.00 != expected 231.20
+[exit: 1]
 ```
 
-That's the whole lifecycle: **user goal → recover actual intent → bounded
-cognitive program → execute → inspect the observable result → identify the
-failure layer → smallest justified repair → verify → preserve evidence and
-state → next action or stop.**
+`piensalo repair` then emits a **repair packet** — the complete, ready-to-run
+prompt for your model, honestly labeled: *"instructions for a model; nothing
+has been applied."* (With `--adapter`, it runs the packet through a model you
+explicitly choose, writes the repaired draft to a **new** file with a
+provenance sidecar, and re-inspects the result — it never claims success just
+because a model returned text.)
+
+And on a draft that is already right:
+
+```text
+$ piensalo inspect --task examples/flagship/task.md \
+    --draft examples/flagship/draft-correct.md \
+    --contract examples/flagship/contract.json
+NO REPAIR NEEDED — no observable defect cleared the activation threshold.
+
+$ piensalo verify --task examples/flagship/task.md \
+    --draft examples/flagship/draft-correct.md \
+    --contract examples/flagship/contract.json
+DETERMINISTICALLY VERIFIED
+  QUOTE_USD: 231.20 == expected
+CONTRACT VERIFIED
+UNMEASURED
+  cognition: UNMEASURED (no verifier configured — this is not a pass)
+```
+
+Run the whole thing yourself: `bash examples/flagship/demo.sh`
 
 ## Install
 
-**Now (private alpha — you received this repository directly):**
-
 ```bash
-# with uv
+# From PyPI
+uvx piensalo doctor
+pipx install piensalo
+
+# Directly from GitHub
+uvx --from git+https://github.com/ralfyishere/piensalo piensalo doctor
+
+# From a clone (development)
+git clone https://github.com/ralfyishere/piensalo.git && cd piensalo
 uv sync && uv run piensalo doctor
 
-# or plain pip in a venv
-python3 -m venv .venv && . .venv/bin/activate && pip install . && piensalo doctor
+# Portable Agent Skills only (no runtime needed)
+npx skills add ralfyishere/piensalo
 ```
 
-**After publication** (these commands do not work yet — the package and
-public repository are not published):
+`doctor` verifies your environment and confirms the core runs fully offline
+— no telemetry, no network, nothing leaves your machine. Python ≥ 3.10;
+tested in CI on Linux and macOS, Python 3.10–3.13 (Windows unsupported for
+now).
 
-```bash
-uvx piensalo doctor                     # run without installing
-pipx install piensalo                   # install the CLI
-npx skills add ralfyishere/piensalo     # portable Agent Skills only (no runtime)
-git clone https://github.com/ralfyishere/piensalo.git && cd piensalo
+## How the workflow behaves
+
+```
+TASK → DRAFT → INSPECT → ABSTAIN or TARGETED REPAIR → VERIFY → FINAL ARTIFACT
 ```
 
-Run `piensalo doctor` first — it checks your environment and tells you exactly
-what will and won't work, offline.
+- **inspect** detects observable defects with evidence lines — never vibes.
+- **repair** has two honest modes: offline (emit the packet) or
+  adapter-backed (`--adapter claude-cli|openai|ollama|manual`, `--model`,
+  `--output`) — original draft preserved, provenance recorded, result
+  re-inspected.
+- **verify** reports in five strict buckets — `DETERMINISTICALLY VERIFIED`,
+  `CONTRACT VERIFIED`, `MODEL-ASSISTED CHECK`, `UNMEASURED`, `FAILED` — and
+  UNMEASURED never counts as a pass.
+- **think** compiles a task (file or inline text) into a bounded cognitive
+  program; **loop** keeps long-running work resumable with model provenance;
+  **skill** manages the portable skill packages.
+- Silent model fallback is prohibited by design: adapters record requested
+  and resolved model and stop on mismatch.
 
-## Why this is different
+## Why trust it
 
-**An open artificial cortex for AI models and agents.**
+**Every capability ships with receipts.** Two pre-registered 120-cell
+controlled runs sit behind the defaults — including the finding that forced
+repair on already-correct drafts *damages* delivery ~29% of the time while
+never corrupting cognition. That is why abstention is the default posture.
 
-| Typical approach | Piénsalo |
-|---|---|
-| One giant prompt does everything | Thinking, inspection, repair, verification are **separate operations** with separate outputs |
-| "Try again" on failure | Failure is **classified by layer** (objective, plan, numeric, delivery…), then given the **smallest justified repair** |
-| Model output is the end state | Every run leaves **inspectable evidence**; the next action starts from evidence, not vibes |
-| Always intervenes | Knows when to **abstain** — `NO REPAIR NEEDED` on already-correct work is a success, not a no-op |
-| Unbounded agent loops | Loops are **bounded**, with recorded model provenance; silent model fallback is prohibited |
-| Tied to one vendor | **Portable skills** work in any agent; the optional runtime adds state, adaptivity, and measurement |
+- [EVIDENCE.md](EVIDENCE.md) — mechanism records with maturity levels
+  (DESIGNED → … → PROMOTED, with NARROW and REJECTED as honest terminal
+  states; nothing is PROMOTED yet)
+- [BENCHMARKS.md](BENCHMARKS.md) — run designs and numbers, confounds attached
+- [NEGATIVE-RESULTS.md](NEGATIVE-RESULTS.md) — the eight failures we keep public on purpose
+- Reproduce: `make benchmark` (no API key needed) · full harness in [evals/](evals/)
+- Current limits, honestly: one model family live-tested (Claude); n = 8
+  tasks per run; OpenAI-compatible/Ollama adapters are unit-tested with live
+  validation pending; no independent reproduction yet. Help change that:
+  [docs/alpha/SUBMIT-RESULTS.md](docs/alpha/SUBMIT-RESULTS.md).
 
-## The cognitive core: 11 operations
+## Going deeper
 
-| # | Operation | What it does |
-|---|---|---|
-| 1 | `recover_objective` | Recover what the user actually needs, not just what was typed |
-| 2 | `identify_constraints` | Make budgets, formats, and hard limits explicit before work starts |
-| 3 | `decompose_problem` | Break the task into units small enough to verify individually |
-| 4 | `locate_load_bearing_uncertainty` | Find the unknown that, if wrong, invalidates everything downstream |
-| 5 | `select_cheapest_discriminating_test` | Choose the cheapest check that can actually falsify the uncertainty |
-| 6 | `execute` | Run the bounded cognitive program |
-| 7 | `inspect_result` | Examine the observable output — not the intention behind it |
-| 8 | `classify_failure` | Assign each defect to a layer so repair targets the right thing |
-| 9 | `apply_targeted_repair` | Smallest justified change; never a rewrite when an edit suffices |
-| 10 | `verify` | Independently re-derive and check — a separate capability, not a re-read |
-| 11 | `deliver` | Ship the result with its evidence trail, or abstain and say so |
+- 27 portable skill packages: [skills/](skills/) (8 domain) +
+  [micro-skills/](micro-skills/) (19 focused repairs) — each with triggers,
+  counterindications, an evidence level, and a near-miss example; installable
+  into any agent that speaks Agent Skills.
+- The cognitive core (11 operations, human- and machine-readable):
+  [src/piensalo/core/](src/piensalo/core/)
+- Architecture, methodology, evidence levels: [docs/](docs/) · export
+  provenance and hash manifest: [docs/provenance/](docs/provenance/)
+- Optional Obsidian studio: [integrations/obsidian/](integrations/obsidian/)
 
-## Two layers
+## Security
 
-1. **Portable Agent Skills** — plain instruction files that work in any agent
-   that reads skills. No runtime, no dependencies, copy-paste friendly.
-2. **Optional runtime** — the `piensalo` CLI adds persistent state, bounded
-   adaptive loops, model provenance tracking, and measurement.
+Offline by default; no telemetry; no shell execution from untrusted skill
+text; skill packages scannable with `piensalo skill scan`. Threat model:
+[docs/THREAT-MODEL.md](docs/THREAT-MODEL.md). Sensitive reports: GitHub
+Private Vulnerability Reporting ([SECURITY.md](SECURITY.md)).
 
-### Portable skills
+## Contributing
 
-| Skill | Trigger | What it adds |
-|---|---|---|
-| `objective-recovery` | Any non-trivial request | Separates stated ask from actual need before work begins |
-| `cheapest-test` | A load-bearing unknown exists | Picks the cheapest check that can falsify it |
-| `failure-classification` | An output has defects | Assigns each defect to a layer before any fix |
-| `targeted-repair` | A classified failure | Applies the smallest justified change |
-| `independent-verify` | Before delivery | Re-derives numbers and claims independently of the draft |
-| `abstention-check` | Reviewing existing work | Returns `NO REPAIR NEEDED` when the work is already correct |
-| `evidence-ledger` | Any completed step | Records what was checked and what remains unverified |
-| `loop-continuation` | Multi-session work | Resumes from preserved state instead of re-deriving context |
-
-The current evidence status of each skill is tracked per-skill in
-[EVIDENCE.md](EVIDENCE.md) — statuses are earned, not asserted (see next section).
-
-## Evidence philosophy
-
-**Every capability ships with receipts.** Each mechanism in Piénsalo carries
-an explicit evidence level:
-
-`DESIGNED → SMOKE_TESTED → EXPERIMENTALLY_TESTED → REPLICATED → PROMOTED`
-(with `NARROW` and `REJECTED` as honest terminal states).
-
-Nothing gets promoted without passing the gates: dev validation, a fresh
-held-out test, regression on prior wins, cost accounting, a negative-transfer
-check, and a paired no-harm comparison. Definitions and gates:
-[docs/evidence-levels.md](docs/evidence-levels.md). Current claims and their
-receipts: [EVIDENCE.md](EVIDENCE.md). Things that failed and stay published:
-[NEGATIVE-RESULTS.md](NEGATIVE-RESULTS.md).
-
-## Model support
-
-| Interface | How | Network required |
-|---|---|---|
-| Manual copy/paste | Portable skills as plain text — works with any model, anywhere | No |
-| Claude / Claude Code | Native skills + runtime adapter | Only for the model call |
-| OpenAI-compatible APIs | Runtime adapter (any endpoint speaking the API) | Only for the model call |
-| Ollama / local models | Runtime adapter, fully offline | No |
-| Generic command adapter | Pipe any CLI-invocable model through stdin/stdout | No (unless your command does) |
-
-> **Testing status (honest):** the offline core and manual mode are fully
-> tested. Live-model runs so far cover the **Claude family only** (see
-> [BENCHMARKS.md](BENCHMARKS.md)). The OpenAI-compatible, Ollama, and
-> generic adapters are unit-tested but not yet exercised against live
-> providers — treat them as **experimental** until reproduced.
-
-The core works **offline** with **zero telemetry**. Model identity is recorded
-on every run; if a configured model is unavailable, Piénsalo stops and says
-so — **silent model fallback is prohibited** ([docs/model-provenance.md](docs/model-provenance.md)).
-
-## Obsidian Studio (optional)
-
-An optional companion vault that renders your cognitive programs, inspection
-traces, and evidence ledger as linked, navigable notes in Obsidian. Strictly
-read-your-own-files: it points at `.piensalo/` state, adds nothing to the
-core, and the core never depends on it.
-
-<!-- assets/obsidian-studio.png — screenshot placeholder, added when Studio ships -->
-
-## Security defaults
-
-Off by default, forever: telemetry, network access without an explicit adapter,
-uploads, silent model fallback, destructive actions without approval, arbitrary
-shell from untrusted skill text, secrets in logs, hidden persistence,
-auto-publish. `piensalo skill scan` vets third-party skills before install;
-`piensalo doctor` audits your configuration. Details:
-[SECURITY.md](SECURITY.md) · [THREAT-MODEL.md](THREAT-MODEL.md) ·
-[docs/operator-boundaries.md](docs/operator-boundaries.md).
-
-## Limitations (read this)
-
-We would rather undersell than overclaim:
-
-- **The evidence base is young.** Sample sizes are small; confidence intervals
-  are wide. Treat every number in [EVIDENCE.md](EVIDENCE.md) as provisional.
-- **Some mechanisms are DESIGNED-only.** They are engineered from failure
-  analysis but not yet experimentally tested — their evidence level says so.
-- **One model family is most-tested.** Cross-model claims are weaker than
-  same-family claims until adapters mature.
-- **No guarantees.** Piénsalo changed measured outcomes in our runs; it may
-  not in yours. It has also *hurt* performance in specific configurations —
-  those results are published in [NEGATIVE-RESULTS.md](NEGATIVE-RESULTS.md).
+Real-task results are the most valuable contribution — all five outcomes,
+including "it correctly did nothing" and "it invented a problem":
+[docs/alpha/SUBMIT-RESULTS.md](docs/alpha/SUBMIT-RESULTS.md). Code, skills,
+verifiers, adapters: [CONTRIBUTING.md](CONTRIBUTING.md) — every contribution
+meets the same evidence and security bar. Principles:
+[MANIFESTO.md](MANIFESTO.md).
 
 ## Creator
 
@@ -244,39 +174,10 @@ behavior. The experiments showed that larger prompts alone were not enough:
 some interventions helped, while others overloaded weaker models, damaged
 correct delivery, routed incorrectly, or created false confidence.
 
-PIÉNSALO was built from the mechanisms that survived the evidence.
+PIÉNSALO was built from the mechanisms that survived the evidence — the full
+story is in [docs/origin-story.md](docs/origin-story.md).
 
-## Contributing
-
-New skills, verifiers, model adapters, tasks, benchmark reproductions, and
-negative-result reports are all first-class contributions — see
-[CONTRIBUTING.md](CONTRIBUTING.md) and
-[docs/good-first-issues.md](docs/good-first-issues.md). Every new skill needs
-an observable trigger, a stop condition, and an evaluation plan; we don't merge
-vibes.
-
-## Roadmap
-
-- **v0.1 (alpha)** — cognitive core, portable skills, CLI, evidence discipline
-- **v0.2** — model adapters hardened, public case studies
-- **v0.3** — public benchmark season: reproducible tasks, third-party runs
-
-Full detail: [ROADMAP.md](ROADMAP.md).
-
-## Citation
-
-If Piénsalo is useful in your research, please cite it — see
-[CITATION.cff](CITATION.cff).
-
-## Independence
+*Think through hard work. Verify what matters. Know when to stop.*
 
 Piénsalo is an independent open-source project. It is not affiliated with or
 endorsed by Anthropic.
-
-## License
-
-[MIT](LICENSE) © 2026 Piénsalo contributors
-
----
-
-*Think through hard work. Verify what matters. Know when to stop.*

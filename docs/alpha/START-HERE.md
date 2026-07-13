@@ -6,8 +6,8 @@ repair specific failures, verify results, and know when to leave good work
 alone. Its signature behavior is honest restraint: **NO INTERVENTION
 NEEDED** is a first-class result.
 
-You received this repository privately. It is not published anywhere;
-please don't redistribute it during the alpha.
+PIÉNSALO is a public alpha: https://github.com/ralfyishere/piensalo — share
+the link freely; structured feedback is what we ask for in return.
 
 ## 1 — Install (5 minutes, offline)
 
@@ -63,5 +63,5 @@ back through whatever private channel you received this repo from.
 
 Not a model. Not a guarantee of correctness. Not affiliated with or
 endorsed by Anthropic. The evidence behind every mechanism — including the
-negative results — is in [EVIDENCE.md](EVIDENCE.md) and
-[NEGATIVE-RESULTS.md](NEGATIVE-RESULTS.md).
+negative results — is in [EVIDENCE.md](../../EVIDENCE.md) and
+[NEGATIVE-RESULTS.md](../../NEGATIVE-RESULTS.md).

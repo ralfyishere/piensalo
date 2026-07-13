@@ -12,7 +12,12 @@ says so. Dates are targets; honesty outranks schedule.
 - [x] Six CLI modes: `think` / `inspect` / `repair` / `verify` / `loop` / `skill`
 - [x] Portable Agent Skills layer (runtime-free)
 - [ ] `piensalo doctor` and `piensalo skill scan` hardened
-- [ ] Alpha gate passed — see [ALPHA-EXIT-CRITERIA.md](ALPHA-EXIT-CRITERIA.md)
+- [x] Engineering alpha verification: PASSED (tests, battery, packaging, fresh-clone certification)
+- [x] Public alpha: LIVE — [ralfyishere/piensalo](https://github.com/ralfyishere/piensalo)
+- [ ] Independent user validation: IN PROGRESS (submit results — see [docs/alpha/SUBMIT-RESULTS.md](docs/alpha/SUBMIT-RESULTS.md))
+- [ ] Cross-model validation: IN PROGRESS (Claude-family evidence exists; other adapters await live runs)
+- [ ] Third-party reproduction: PENDING
+- Broad performance claims: NOT AUTHORIZED until the above land (full gate: [docs/alpha/ALPHA-EXIT-CRITERIA.md](docs/alpha/ALPHA-EXIT-CRITERIA.md))
   (fresh-clone install, three model families, reproducible benchmark,
   negative-transfer and abstention measured, independent users, case studies)
 

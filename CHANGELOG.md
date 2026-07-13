@@ -5,6 +5,30 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 Versioning: [SemVer](https://semver.org/) once we reach 0.1.0; until then,
 everything may change.
 
+## [0.1.0-alpha.2] — 2026-07-13
+
+Truthfulness and UX correction release.
+
+### Added
+- Real flagship workflow: `examples/flagship/` with a committed transcript of
+  actual CLI output; CI parity tests prevent README/demo drift
+- `repair` adapter mode: writes a NEW repaired file + provenance sidecar and
+  automatically re-inspects the result; source drafts are never overwritten
+- `think` accepts a task file or inline text (`--file`/`--text` overrides)
+- `python -m piensalo`; `skill lint`/`scan` accept multiple and parent paths
+- PyPI publication via GitHub trusted publishing (release-triggered)
+
+### Changed
+- `repair` default mode clearly labeled as a repair PACKET (nothing applied)
+- `verify` reports in five strict buckets; UNMEASURED never counts as a pass
+- Roadmap reconciled to the truthful maturity hierarchy; stale
+  pre-publication language removed; public tree simplified (operator/process
+  scaffolding removed, provenance kept under docs/provenance/)
+
+### Fixed
+- Red CI Skill lint job (root cause: missing `__main__.py` + single-path lint)
+- Tests: 49 → 86
+
 ## [Unreleased] — 0.1.0-dev
 
 ### Changed

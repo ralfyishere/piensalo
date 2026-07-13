@@ -1,0 +1,13 @@
+{
+  "_comment": "Oracle for the flagship demo: what inspect/verify MUST observe on each draft.",
+  "draft-broken.md": {
+    "no_repair_needed": false,
+    "defect": "number-without-derivation",
+    "selected_repair": "rederive-the-numbers",
+    "verify_failed_contains": "QUOTE_USD: 221.00 != expected 231.20"
+  },
+  "draft-correct.md": {
+    "no_repair_needed": true,
+    "verify_deterministic_contains": "QUOTE_USD: 231.20 == expected 231.20"
+  }
+}

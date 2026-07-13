@@ -1,0 +1,9 @@
+{
+  "schema": "piensalo/task-contract/v2",
+  "task": "flagship-subscription-quote",
+  "required_output_fields": [
+    { "name": "QUOTE_USD", "format": "number:2dp", "expected": "231.20" },
+    { "name": "FLOOR_APPLIED", "format": "YES|NO", "expected": "NO" }
+  ],
+  "order_required": true
+}

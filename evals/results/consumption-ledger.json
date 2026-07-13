@@ -83,5 +83,22 @@
     ],
     "trials": 1,
     "note": "smoke plumbing test; answers came from probe files, not a model"
+  },
+  {
+    "run_id": "20260713-021554-smoke",
+    "date": "2026-07-13T02:15:54",
+    "smoke": true,
+    "model_requested": "manual",
+    "adapter": "manual",
+    "tasks": [
+      "dev-01-bill-split",
+      "dev-08-incident-record"
+    ],
+    "conditions": [
+      "bare",
+      "verify-only"
+    ],
+    "trials": 1,
+    "note": "smoke plumbing test; answers came from probe files, not a model"
   }
 ]

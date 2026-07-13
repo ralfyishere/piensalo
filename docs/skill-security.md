@@ -13,7 +13,7 @@ filtering (which would eventually be bypassed).
 
 What a malicious skill *can* still do is persuade: it is read by a model, and
 models follow instructions. That residual risk is real and stated in
-[THREAT-MODEL.md](../THREAT-MODEL.md) (T2) — the action boundaries in
+[THREAT-MODEL.md](THREAT-MODEL.md) (T2) — the action boundaries in
 [operator-boundaries.md](operator-boundaries.md) are what keep persuasion
 from becoming action.
 

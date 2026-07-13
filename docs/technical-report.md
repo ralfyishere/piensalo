@@ -77,7 +77,7 @@ Requires a careful pass; placeholder citations would be worse than none.
 
 TODO — exact commands, pinned versions, expected artifacts. Gate: a third
 party must have actually reproduced before this section claims
-reproducibility ([ALPHA-EXIT-CRITERIA.md](../ALPHA-EXIT-CRITERIA.md), item 4).
+reproducibility ([ALPHA-EXIT-CRITERIA.md](alpha/ALPHA-EXIT-CRITERIA.md), item 4).
 
 ---
 

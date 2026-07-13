@@ -7,7 +7,7 @@ residual risk is marketing.
 
 Scope: the `piensalo` runtime, skill loader, state store, adapters, and
 evaluation tooling. The security defaults these mitigations rest on are in
-[SECURITY.md](SECURITY.md).
+[SECURITY.md](../SECURITY.md).
 
 ---
 
@@ -19,7 +19,7 @@ instructions the model may follow.*
 **Mitigation:** untrusted content is delimited and labeled as data in every
 prompt the runtime constructs; instructions from content can never trigger
 tool execution directly — actions pass through the operator-boundary layer
-([docs/operator-boundaries.md](docs/operator-boundaries.md)), and destructive
+([docs/operator-boundaries.md](operator-boundaries.md)), and destructive
 ones require approval. Inspection treats "output follows embedded
 instructions" as a classifiable failure.
 
@@ -34,7 +34,7 @@ instructions. Assume any sufficiently motivated injected text can steer
 exfiltration attempts.*
 
 **Mitigation:** skills are inert text — the loader never executes code from
-skill files ([docs/skill-security.md](docs/skill-security.md)).
+skill files ([docs/skill-security.md](skill-security.md)).
 `piensalo skill scan` flags command patterns, network references,
 obfuscation, and secret-shaped strings before install. No unreviewed skill
 marketplace exists or is planned.
@@ -128,9 +128,9 @@ attribution and measurement downstream.*
 
 **Mitigation:** prohibited by design. Model identity is declared per run,
 recorded in evidence, and an unavailable model is a hard stop — never a
-substitution ([docs/model-provenance.md](docs/model-provenance.md)). This
+substitution ([docs/model-provenance.md](model-provenance.md)). This
 entry exists because we measured exactly this corruption
-([NEGATIVE-RESULTS.md](NEGATIVE-RESULTS.md), NR-6).
+([NEGATIVE-RESULTS.md](../NEGATIVE-RESULTS.md), NR-6).
 
 **Residual risk:** low within Piénsalo; nonzero at provider level (an API
 endpoint may itself route between model versions — provenance records what
@@ -173,4 +173,4 @@ stays honest about it.
 - Filesystem permissions work; state confidentiality is delegated to the OS.
 
 Reports that break these assumptions in interesting ways are still welcome —
-see [SECURITY.md](SECURITY.md).
+see [SECURITY.md](../SECURITY.md).
