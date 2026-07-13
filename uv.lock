@@ -276,7 +276,7 @@ wheels = [
 
 [[package]]
 name = "piensalo"
-version = "0.1.0.dev0"
+version = "0.1.0a2"
 source = { editable = "." }
 
 [package.optional-dependencies]

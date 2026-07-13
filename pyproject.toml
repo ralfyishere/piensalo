@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "piensalo"
-version = "0.1.0.dev0"
+version = "0.1.0a2"
 description = "A cognitive operating layer for AI models: bounded loops, observable-defect inspection, targeted repair, and layered verification."
 readme = "README.md"
 requires-python = ">=3.10"
