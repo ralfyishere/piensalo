@@ -1,0 +1,31 @@
+{
+  "comment": "Hand-authored ground truth for the demo transcript. Tests compare the generated capsule against this file; the generated/ directory itself is produced by shipping code, never by hand.",
+  "objective": "Harden the acme-widgets service for the beta cut.",
+  "active_decisions": [
+    "Host the beta on a dedicated small cluster, because noisy neighbors\non acme-platform caused the March latency incident."
+  ],
+  "superseded_decisions": [
+    "Host the beta on the shared acme-platform cluster."
+  ],
+  "contested_decisions": [
+    "Adopt a weekly release cadence for the beta period."
+  ],
+  "unverified_decisions": [
+    "Product reportedly wants SSO before beta; unconfirmed hearsay."
+  ],
+  "failed_approaches": [
+    "Caching whole responses in Redis; cache invalidation bugs\nproduced stale order totals in checkout and the approach was abandoned."
+  ],
+  "next_action": "Run `pytest -q tests/store` and fix the first failure before touching the dashboard work.",
+  "must_survive_exact": [
+    "services/widgets/src/store/pool.py",
+    "commit 4f2a9c1e7b3d5a20",
+    "Deploy to staging only with `make deploy ENV=staging TAG=beta`.",
+    "Keep p95 read latency under 250 ms at 400 rps.",
+    "Stop the rollout if error rate exceeds 0.5% for 10 consecutive minutes."
+  ],
+  "must_not_render_as_current": [
+    "Host the beta on the shared acme-platform cluster."
+  ],
+  "unstructured_omission_count": 2
+}

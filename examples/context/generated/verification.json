@@ -1,0 +1,65 @@
+{
+  "behavioral_equivalence": "UNMEASURED",
+  "capsule_id": "cap-7ac7709aabf5d9b5",
+  "checks": {
+    "behavioral_equivalence": {
+      "detail": "no behavioral verification exists in this MVP; structural checks do not prove a resumed model behaves equivalently",
+      "status": "UNMEASURED"
+    },
+    "capsule_id_stable": {
+      "detail": "capsule_id recomputes to cap-7ac7709aabf5d9b5",
+      "status": "PASS"
+    },
+    "decision_conflicts": {
+      "detail": "contested decisions: decision-5ee17da45716",
+      "status": "QUALIFIED"
+    },
+    "exact_content_preserved_in_resume": {
+      "detail": "every rendered EXACT record appears byte-for-byte",
+      "status": "PASS"
+    },
+    "known_omissions": {
+      "detail": "2 known omission(s) recorded — material exists that was not compiled into typed records",
+      "status": "QUALIFIED"
+    },
+    "next_action_present": {
+      "detail": "next action declared",
+      "status": "PASS"
+    },
+    "record_reference_integrity": {
+      "detail": "every per-record source span re-hashes to its recorded hash",
+      "status": "PASS"
+    },
+    "schema_valid": {
+      "detail": "capsule conforms to context-capsule/1",
+      "status": "PASS"
+    },
+    "serialization_stable": {
+      "detail": "canonical serialization round-trips (in-memory)",
+      "status": "PASS"
+    },
+    "source_hash_integrity": {
+      "detail": "transcript hash matches capsule.source_hash",
+      "status": "PASS"
+    },
+    "stop_conditions_present": {
+      "detail": "active stop conditions present",
+      "status": "PASS"
+    },
+    "superseded_not_rendered_as_active": {
+      "detail": "no SUPERSEDED or EXPIRED record is rendered as current",
+      "status": "PASS"
+    },
+    "supersession_links_consistent": {
+      "detail": "supersession links are acyclic and resolve",
+      "status": "PASS"
+    },
+    "token_budget_compliance": {
+      "detail": "resume estimate 755 <= budget 1200",
+      "status": "PASS"
+    }
+  },
+  "note": "verdict covers deterministic structure only; it is not a claim of behavioral equivalence or net token savings",
+  "schema_version": "context-capsule/1",
+  "verdict": "SAFE WITH QUALIFICATIONS"
+}

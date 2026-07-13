@@ -1,0 +1,69 @@
+OBJECTIVE: Harden the acme-widgets service for the beta cut.
+SUCCESS CONDITION: The full suite passes and staging runs 24h without a p95 regression.
+
+The session opened with a long discussion about naming, weekend plans, and
+whether the logo should be teal. None of it changed any engineering decision.
+Then the agent spent a while exploring the repository layout: it listed the
+services directory, opened services/widgets/README.md, skimmed the store and
+api packages, and read through the connection-pool module twice before doing
+anything. It printed the full dependency tree, which scrolled for a couple of
+hundred lines, and summarized that nothing unusual stood out. It then ran the
+test suite once just to see the baseline; 214 tests passed, 3 were skipped,
+and the wall time was around ninety seconds. All of this was useful in the
+moment and none of it needs to be replayed verbatim to continue the work.
+
+There was also a false start around instrumentation: the agent drafted a
+middleware-based timing hook, realized halfway through that the framework
+already exposes per-route timing, deleted the draft, and moved on without
+committing anything. The chat about whether to use histogram buckets of 50ms
+or 100ms went back and forth for a while and ended without a firm decision;
+nobody wrote it down as a requirement, so it stays an open thread in the raw
+log rather than a recorded constraint.
+
+DECISION: Host the beta on the shared acme-platform cluster.
+DECISION: Host the beta on a dedicated small cluster, because noisy neighbors
+  on acme-platform caused the March latency incident.
+SUPERSEDES: Host the beta on the shared acme-platform cluster.
+
+DECISION [CONTESTED]: Adopt a weekly release cadence for the beta period.
+DECISION [UNVERIFIED]: Product reportedly wants SSO before beta; unconfirmed hearsay.
+
+CONSTRAINT: Never run schema migrations against the production database from a laptop.
+CONSTRAINT [EXACT]: Keep p95 read latency under 250 ms at 400 rps.
+CONSTRAINT [EXACT]: Deploy to staging only with `make deploy ENV=staging TAG=beta`.
+INVARIANT: The public API stays backward compatible within the v1 prefix.
+
+COMPLETED: Connection pool rewrite merged and load-tested.
+COMPLETED: Flaky test quarantine emptied; suite is green twice in a row.
+
+FAILED APPROACH: Caching whole responses in Redis; cache invalidation bugs
+  produced stale order totals in checkout and the approach was abandoned.
+
+ARTIFACT: services/widgets/src/store/pool.py
+ARTIFACT: commit 4f2a9c1e7b3d5a20
+
+Someone pasted a partial stack trace here and the discussion moved on before
+anyone confirmed whether it was from staging or a laptop run. The trace showed
+a timeout in the pool acquire path, but the pool rewrite landed after the
+trace was captured, so it may simply be stale. There was a long tangent about
+whether the ORM retries on serialization failures, with three people quoting
+different versions of the documentation; the thread ended with someone
+promising to check and never reporting back. The agent also produced two
+exploratory diffs it later discarded, and pasted the output of a profiling
+run whose flame graph mostly confirmed what the March incident review had
+already established about connection contention under burst load.
+
+Near the end of the session there was scheduling chatter: who is on call for
+the beta window, whether the dashboard review can move to Thursday, and a
+reminder that the platform team freezes deploys on Friday afternoons. Someone
+suggested renaming the beta cluster and was talked out of it. A draft of the
+beta announcement email was pasted, edited twice for tone, and handed off to
+marketing; the email content has no bearing on the engineering work tracked
+here.
+
+OPEN QUESTION: Do we need a read replica for the reporting endpoints before beta?
+OPEN ACTION: Wire the latency histogram into the staging dashboard.
+
+STOP CONDITION: Stop the rollout if error rate exceeds 0.5% for 10 consecutive minutes.
+
+NEXT ACTION: Run `pytest -q tests/store` and fix the first failure before touching the dashboard work.

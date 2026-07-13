@@ -1,0 +1,470 @@
+{
+  "active_artifacts": [
+    {
+      "confidence": "stated",
+      "content": "services/widgets/src/store/pool.py",
+      "created_at": null,
+      "exactness": "EXACT",
+      "expiry": null,
+      "id": "artifact-926f0ae1e0ea",
+      "importance": "normal",
+      "provenance": "transcript lines 42-42",
+      "record_type": "artifact",
+      "risk_if_omitted": null,
+      "risk_if_stale": null,
+      "source_reference": {
+        "access_policy": "local",
+        "artifact_id": "transcript",
+        "content_hash": "a7ff10285d0081f32d0a2c48dc1bb8809c6be8c76e9ffd99790188e828e97f3c",
+        "content_type": "text/plain",
+        "location": "lines:42-42"
+      },
+      "status": "ACTIVE",
+      "superseded_by": null,
+      "supersedes": null
+    },
+    {
+      "confidence": "stated",
+      "content": "commit 4f2a9c1e7b3d5a20",
+      "created_at": null,
+      "exactness": "EXACT",
+      "expiry": null,
+      "id": "artifact-5ccfe899544c",
+      "importance": "normal",
+      "provenance": "transcript lines 43-43",
+      "record_type": "artifact",
+      "risk_if_omitted": null,
+      "risk_if_stale": null,
+      "source_reference": {
+        "access_policy": "local",
+        "artifact_id": "transcript",
+        "content_hash": "f82bc89c0931aad9f56160b2ad3e1d070e7f9d98f4b0b26fe155ddf653bde29c",
+        "content_type": "text/plain",
+        "location": "lines:43-43"
+      },
+      "status": "ACTIVE",
+      "superseded_by": null,
+      "supersedes": null
+    }
+  ],
+  "capsule_id": "cap-7ac7709aabf5d9b5",
+  "compiled_for": {
+    "goal": "Continue the acme-widgets beta-hardening work in a fresh session",
+    "source_model": null,
+    "target_model": null,
+    "token_budget": 1200
+  },
+  "completed": [
+    {
+      "confidence": "stated",
+      "content": "Connection pool rewrite merged and load-tested.",
+      "created_at": null,
+      "exactness": "SEMANTIC",
+      "expiry": null,
+      "id": "completed-6ee48578455d",
+      "importance": "normal",
+      "provenance": "transcript lines 36-36",
+      "record_type": "completed",
+      "risk_if_omitted": null,
+      "risk_if_stale": null,
+      "source_reference": {
+        "access_policy": "local",
+        "artifact_id": "transcript",
+        "content_hash": "1842ad0c02bf453854347f1d347d279de85dba86456ddae2b65ec81cd5c992c0",
+        "content_type": "text/plain",
+        "location": "lines:36-36"
+      },
+      "status": "ACTIVE",
+      "superseded_by": null,
+      "supersedes": null
+    },
+    {
+      "confidence": "stated",
+      "content": "Flaky test quarantine emptied; suite is green twice in a row.",
+      "created_at": null,
+      "exactness": "SEMANTIC",
+      "expiry": null,
+      "id": "completed-4a6199f30ec3",
+      "importance": "normal",
+      "provenance": "transcript lines 37-37",
+      "record_type": "completed",
+      "risk_if_omitted": null,
+      "risk_if_stale": null,
+      "source_reference": {
+        "access_policy": "local",
+        "artifact_id": "transcript",
+        "content_hash": "f694cc86fac31534a052aa0675368806b1e1befa700b602b99a8b335ae6f9735",
+        "content_type": "text/plain",
+        "location": "lines:37-37"
+      },
+      "status": "ACTIVE",
+      "superseded_by": null,
+      "supersedes": null
+    }
+  ],
+  "decisions": [
+    {
+      "confidence": "stated",
+      "content": "Host the beta on the shared acme-platform cluster.",
+      "created_at": null,
+      "exactness": "SEMANTIC",
+      "expiry": null,
+      "id": "decision-60a3bd6ec1e3",
+      "importance": "normal",
+      "provenance": "transcript lines 23-23",
+      "record_type": "decision",
+      "risk_if_omitted": null,
+      "risk_if_stale": null,
+      "source_reference": {
+        "access_policy": "local",
+        "artifact_id": "transcript",
+        "content_hash": "9ade1c79f02100a6c29f5ba99f7d46276399e5fddb920584f845f2013e4b88a8",
+        "content_type": "text/plain",
+        "location": "lines:23-23"
+      },
+      "status": "SUPERSEDED",
+      "superseded_by": "decision-edafa35abba5",
+      "supersedes": null
+    },
+    {
+      "confidence": "stated",
+      "content": "Host the beta on a dedicated small cluster, because noisy neighbors\non acme-platform caused the March latency incident.",
+      "created_at": null,
+      "exactness": "SEMANTIC",
+      "expiry": null,
+      "id": "decision-edafa35abba5",
+      "importance": "normal",
+      "provenance": "transcript lines 24-25",
+      "record_type": "decision",
+      "risk_if_omitted": null,
+      "risk_if_stale": null,
+      "source_reference": {
+        "access_policy": "local",
+        "artifact_id": "transcript",
+        "content_hash": "1b067bfd99d8686208c310f26703eae8b216648294b8589a1326f242072697a9",
+        "content_type": "text/plain",
+        "location": "lines:24-25"
+      },
+      "status": "ACTIVE",
+      "superseded_by": null,
+      "supersedes": "decision-60a3bd6ec1e3"
+    },
+    {
+      "confidence": "stated",
+      "content": "Adopt a weekly release cadence for the beta period.",
+      "created_at": null,
+      "exactness": "SEMANTIC",
+      "expiry": null,
+      "id": "decision-5ee17da45716",
+      "importance": "normal",
+      "provenance": "transcript lines 28-28",
+      "record_type": "decision",
+      "risk_if_omitted": null,
+      "risk_if_stale": null,
+      "source_reference": {
+        "access_policy": "local",
+        "artifact_id": "transcript",
+        "content_hash": "ab9f26a70931def98d5c296532cb6dca3bea040c5c2f25bd1b8cabfde5d2718f",
+        "content_type": "text/plain",
+        "location": "lines:28-28"
+      },
+      "status": "CONTESTED",
+      "superseded_by": null,
+      "supersedes": null
+    },
+    {
+      "confidence": "stated",
+      "content": "Product reportedly wants SSO before beta; unconfirmed hearsay.",
+      "created_at": null,
+      "exactness": "SEMANTIC",
+      "expiry": null,
+      "id": "decision-8403d590804e",
+      "importance": "normal",
+      "provenance": "transcript lines 29-29",
+      "record_type": "decision",
+      "risk_if_omitted": null,
+      "risk_if_stale": null,
+      "source_reference": {
+        "access_policy": "local",
+        "artifact_id": "transcript",
+        "content_hash": "733b80118c305302b7fcd5635536aeb55600b6a50abd3cff02ba552b377af187",
+        "content_type": "text/plain",
+        "location": "lines:29-29"
+      },
+      "status": "UNVERIFIED",
+      "superseded_by": null,
+      "supersedes": null
+    }
+  ],
+  "failed_approaches": [
+    {
+      "confidence": "stated",
+      "content": "Caching whole responses in Redis; cache invalidation bugs\nproduced stale order totals in checkout and the approach was abandoned.",
+      "created_at": null,
+      "exactness": "SEMANTIC",
+      "expiry": null,
+      "id": "failed_approach-74c55f53a042",
+      "importance": "normal",
+      "provenance": "transcript lines 39-40",
+      "record_type": "failed_approach",
+      "risk_if_omitted": null,
+      "risk_if_stale": null,
+      "source_reference": {
+        "access_policy": "local",
+        "artifact_id": "transcript",
+        "content_hash": "73dfa81fed9711b7127c463ecf7c7572ea55ae90c73ec80177f3104957b8498f",
+        "content_type": "text/plain",
+        "location": "lines:39-40"
+      },
+      "status": "ACTIVE",
+      "superseded_by": null,
+      "supersedes": null
+    }
+  ],
+  "invariants": [
+    {
+      "confidence": "stated",
+      "content": "Never run schema migrations against the production database from a laptop.",
+      "created_at": null,
+      "exactness": "SEMANTIC",
+      "expiry": null,
+      "id": "constraint-fb31f03ae558",
+      "importance": "normal",
+      "provenance": "transcript lines 31-31",
+      "record_type": "constraint",
+      "risk_if_omitted": null,
+      "risk_if_stale": null,
+      "source_reference": {
+        "access_policy": "local",
+        "artifact_id": "transcript",
+        "content_hash": "1e9d671054c29f3432534f31b5a15e50b85ec476a7765fd517ec08ca0e2179c6",
+        "content_type": "text/plain",
+        "location": "lines:31-31"
+      },
+      "status": "ACTIVE",
+      "superseded_by": null,
+      "supersedes": null
+    },
+    {
+      "confidence": "stated",
+      "content": "Keep p95 read latency under 250 ms at 400 rps.",
+      "created_at": null,
+      "exactness": "EXACT",
+      "expiry": null,
+      "id": "constraint-4d485a4c8da4",
+      "importance": "normal",
+      "provenance": "transcript lines 32-32",
+      "record_type": "constraint",
+      "risk_if_omitted": null,
+      "risk_if_stale": null,
+      "source_reference": {
+        "access_policy": "local",
+        "artifact_id": "transcript",
+        "content_hash": "8eeafe38e531f41caf862969e6182227d697a1f855c84397eded208c35e50e17",
+        "content_type": "text/plain",
+        "location": "lines:32-32"
+      },
+      "status": "ACTIVE",
+      "superseded_by": null,
+      "supersedes": null
+    },
+    {
+      "confidence": "stated",
+      "content": "Deploy to staging only with `make deploy ENV=staging TAG=beta`.",
+      "created_at": null,
+      "exactness": "EXACT",
+      "expiry": null,
+      "id": "constraint-0a393a3af227",
+      "importance": "normal",
+      "provenance": "transcript lines 33-33",
+      "record_type": "constraint",
+      "risk_if_omitted": null,
+      "risk_if_stale": null,
+      "source_reference": {
+        "access_policy": "local",
+        "artifact_id": "transcript",
+        "content_hash": "7af7c460ecd0a11f1ba4f4a37e27593fe87739fbcd407c34b57b6b67272d4aa8",
+        "content_type": "text/plain",
+        "location": "lines:33-33"
+      },
+      "status": "ACTIVE",
+      "superseded_by": null,
+      "supersedes": null
+    },
+    {
+      "confidence": "stated",
+      "content": "The public API stays backward compatible within the v1 prefix.",
+      "created_at": null,
+      "exactness": "SEMANTIC",
+      "expiry": null,
+      "id": "invariant-faac9ef35a90",
+      "importance": "normal",
+      "provenance": "transcript lines 34-34",
+      "record_type": "invariant",
+      "risk_if_omitted": null,
+      "risk_if_stale": null,
+      "source_reference": {
+        "access_policy": "local",
+        "artifact_id": "transcript",
+        "content_hash": "150f517d6a69bc17fbe865f1368d42ec0328eca1780ce0e209ea6d795394b715",
+        "content_type": "text/plain",
+        "location": "lines:34-34"
+      },
+      "status": "ACTIVE",
+      "superseded_by": null,
+      "supersedes": null
+    }
+  ],
+  "known_omissions": [
+    {
+      "detail": "unstructured content not deterministically classifiable; available via source reference, not invented into a record",
+      "kind": "unstructured",
+      "lines": "4-21",
+      "preview": "The session opened with a long discussion about naming, weekend plans, and\nwhether the logo should be teal. None of i..."
+    },
+    {
+      "detail": "unstructured content not deterministically classifiable; available via source reference, not invented into a record",
+      "kind": "unstructured",
+      "lines": "45-62",
+      "preview": "Someone pasted a partial stack trace here and the discussion moved on before\nanyone confirmed whether it was from sta..."
+    }
+  ],
+  "metrics": {
+    "gross_compression_ratio_est": 1.34,
+    "net_savings": "UNMEASURED (retrieval + behavioral verification not implemented; a smaller capsule is not automatically a successful result)",
+    "original_tokens_est": 1014,
+    "resume_tokens_est": 755,
+    "resume_within_budget": true,
+    "token_budget": 1200,
+    "token_estimator": "chars/4 heuristic (provider-independent estimate)"
+  },
+  "mission": {
+    "objective": "Harden the acme-widgets service for the beta cut.",
+    "success_conditions": [
+      "The full suite passes and staging runs 24h without a p95 regression."
+    ]
+  },
+  "next_action": "Run `pytest -q tests/store` and fix the first failure before touching the dashboard work.",
+  "open_actions": [
+    {
+      "confidence": "stated",
+      "content": "Wire the latency histogram into the staging dashboard.",
+      "created_at": null,
+      "exactness": "SEMANTIC",
+      "expiry": null,
+      "id": "open_action-d6a89315d45c",
+      "importance": "normal",
+      "provenance": "transcript lines 65-65",
+      "record_type": "open_action",
+      "risk_if_omitted": null,
+      "risk_if_stale": null,
+      "source_reference": {
+        "access_policy": "local",
+        "artifact_id": "transcript",
+        "content_hash": "66785492a0b5cc0847f6a66fcc4086199bad12fa9122eb1e29b2e087827ed280",
+        "content_type": "text/plain",
+        "location": "lines:65-65"
+      },
+      "status": "ACTIVE",
+      "superseded_by": null,
+      "supersedes": null
+    }
+  ],
+  "open_questions": [
+    {
+      "confidence": "stated",
+      "content": "Do we need a read replica for the reporting endpoints before beta?",
+      "created_at": null,
+      "exactness": "SEMANTIC",
+      "expiry": null,
+      "id": "open_question-75cddba9d6ef",
+      "importance": "normal",
+      "provenance": "transcript lines 64-64",
+      "record_type": "open_question",
+      "risk_if_omitted": null,
+      "risk_if_stale": null,
+      "source_reference": {
+        "access_policy": "local",
+        "artifact_id": "transcript",
+        "content_hash": "62dd0a993b7d5407d9c635c225170a04d88e6399f9949c453a7f1711c228e178",
+        "content_type": "text/plain",
+        "location": "lines:64-64"
+      },
+      "status": "ACTIVE",
+      "superseded_by": null,
+      "supersedes": null
+    }
+  ],
+  "references": {
+    "project_state": {
+      "access_policy": "local",
+      "artifact_id": "project_state",
+      "content_hash": "87a4194c98b42376b0e3e75e61eccfd1d7af1ac70e4627a89e1c27fdca5078ee",
+      "content_type": "application/json",
+      "location": "file:project-state.json"
+    },
+    "transcript": {
+      "access_policy": "local",
+      "artifact_id": "transcript",
+      "content_hash": "4ad02eef9fc173098789b69aea59b502888ec69aaa44fc5bff87b91466c1d07d",
+      "content_type": "text/plain",
+      "location": "file:transcript.txt"
+    }
+  },
+  "risk": {
+    "behavioral_equivalence": "UNMEASURED",
+    "notes": [],
+    "unsafe_omissions": []
+  },
+  "schema_version": "context-capsule/1",
+  "source_hash": "4ad02eef9fc173098789b69aea59b502888ec69aaa44fc5bff87b91466c1d07d",
+  "source_path": "transcript.txt",
+  "state": {
+    "branch": "beta-hardening",
+    "environments": [
+      "staging"
+    ],
+    "head_commit": "4f2a9c1e7b3d5a20",
+    "repository": "acme-widgets",
+    "suite": "green (2 consecutive runs)"
+  },
+  "stop_conditions": [
+    {
+      "confidence": "stated",
+      "content": "Stop the rollout if error rate exceeds 0.5% for 10 consecutive minutes.",
+      "created_at": null,
+      "exactness": "EXACT",
+      "expiry": null,
+      "id": "stop_condition-f7c8530c7c17",
+      "importance": "normal",
+      "provenance": "transcript lines 67-67",
+      "record_type": "stop_condition",
+      "risk_if_omitted": null,
+      "risk_if_stale": null,
+      "source_reference": {
+        "access_policy": "local",
+        "artifact_id": "transcript",
+        "content_hash": "98f70a2013537433383fe9e280445d53132edadeedbc8564d30ee51a34281918",
+        "content_type": "text/plain",
+        "location": "lines:67-67"
+      },
+      "status": "ACTIVE",
+      "superseded_by": null,
+      "supersedes": null
+    }
+  ],
+  "verification_tests": [
+    "schema_valid",
+    "capsule_id_stable",
+    "serialization_stable",
+    "source_hash_integrity",
+    "record_reference_integrity",
+    "exact_content_preserved_in_resume",
+    "superseded_not_rendered_as_active",
+    "supersession_links_consistent",
+    "next_action_present",
+    "stop_conditions_present",
+    "token_budget_compliance",
+    "behavioral_equivalence"
+  ]
+}
