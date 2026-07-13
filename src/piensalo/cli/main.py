@@ -1,4 +1,4 @@
-"""piensalo CLI: think / inspect / repair / verify / loop / skill / doctor / version.
+"""piensalo CLI: think / inspect / repair / verify / context / loop / skill / doctor / version.
 
 Offline-first: ``think`` compiles a cognitive program without any model
 call; ``inspect``/``repair``/``verify`` are deterministic scans of real
@@ -643,6 +643,10 @@ def _build_parser() -> argparse.ArgumentParser:
                 help="manual adapter only: read the model response from this file",
             )
         p.set_defaults(func=func)
+
+    from piensalo.context.cli import add_context_parser
+
+    add_context_parser(sub)
 
     p = sub.add_parser("loop", help="bounded loop controller")
     p.add_argument("loop_args", nargs=argparse.REMAINDER, help="loop subcommand and args")
