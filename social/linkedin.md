@@ -5,7 +5,7 @@ EVIDENCE.md on launch day.)*
 
 ---
 
-We just open-sourced Piénsalo — a cognitive operating system for AI
+I just open-sourced PIÉNSALO — the open artificial cortex for AI: a model-independent cognitive operating system for AI
 models and agents.
 
 The short version: most AI tooling optimizes for producing more output.
@@ -44,7 +44,7 @@ do is try to break it: reproduce our benchmark, test the abstention behavior,
 and report any configuration where it makes results worse. Negative-transfer
 reports are a first-class contribution and get published with credit.
 
-Repo: github.com/piensalo/piensalo
+Repo: github.com/ralfyishere/piensalo
 
 Piénsalo is an independent open-source project. It is not affiliated with
 or endorsed by Anthropic.

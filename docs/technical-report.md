@@ -1,4 +1,6 @@
-# Piénsalo — Technical Report (skeleton)
+# PIÉNSALO — Technical Report (skeleton)
+
+Author: Rafael “Ralph” Peña (@ralfyishere) · github.com/ralfyishere/piensalo
 
 > **Status: SKELETON.** Sections marked TODO are unwritten or awaiting data.
 > This file deliberately ships in skeleton form rather than being padded with

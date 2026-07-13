@@ -2,11 +2,17 @@
 
 ## Give any AI a better way to think.
 
-**Piénsalo is an open cognitive operating system for AI models and agents.**
-It helps models understand the real objective, structure difficult work,
-inspect their output, repair specific failures, verify the result, and
-continue across sessions. Not a giant system prompt. Not a model replacement.
-An artificial cortex you can install, inspect, test, and extend.
+**The open artificial cortex for AI.**
+
+PIÉNSALO is a model-independent cognitive operating system that helps AI
+models and agents understand the real objective, structure difficult work,
+inspect their output, repair specific failures, verify the result, know when
+not to intervene, preserve evidence, and continue across sessions.
+
+Not a giant system prompt. Not a model replacement. An artificial cortex you
+can install, inspect, test, and extend.
+
+Created by [Rafael “Ralph” Peña](https://github.com/ralfyishere).
 
 Piénsalo — "think it through." Pronounced: pee-EN-sa-lo.
 
@@ -78,15 +84,24 @@ state → next action or stop.**
 
 ## Install
 
+**Now (private alpha — you received this repository directly):**
+
 ```bash
-# Run without installing
-uvx piensalo doctor
+# with uv
+uv sync && uv run piensalo doctor
 
-# Or install the CLI
-pipx install piensalo
+# or plain pip in a venv
+python3 -m venv .venv && . .venv/bin/activate && pip install . && piensalo doctor
+```
 
-# Or add only the portable Agent Skills (no runtime required)
-npx skills add piensalo
+**After publication** (these commands do not work yet — the package and
+public repository are not published):
+
+```bash
+uvx piensalo doctor                     # run without installing
+pipx install piensalo                   # install the CLI
+npx skills add ralfyishere/piensalo     # portable Agent Skills only (no runtime)
+git clone https://github.com/ralfyishere/piensalo.git && cd piensalo
 ```
 
 Run `piensalo doctor` first — it checks your environment and tells you exactly
@@ -211,6 +226,18 @@ We would rather undersell than overclaim:
 - **No guarantees.** Piénsalo changed measured outcomes in our runs; it may
   not in yours. It has also *hurt* performance in specific configurations —
   those results are published in [NEGATIVE-RESULTS.md](NEGATIVE-RESULTS.md).
+
+## Creator
+
+PIÉNSALO was created by
+[Rafael “Ralph” Peña](https://github.com/ralfyishere).
+
+It began as an attempt to preserve and transfer powerful AI problem-solving
+behavior. The experiments showed that larger prompts alone were not enough:
+some interventions helped, while others overloaded weaker models, damaged
+correct delivery, routed incorrectly, or created false confidence.
+
+PIÉNSALO was built from the mechanisms that survived the evidence.
 
 ## Contributing
 

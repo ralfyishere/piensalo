@@ -1,5 +1,10 @@
 # Launch Plan
 
+**PIÉNSALO** · Give any AI a better way to think. · **The open artificial
+cortex for AI.** · Created by Rafael “Ralph” Peña (@ralfyishere) ·
+github.com/ralfyishere/piensalo
+
+
 Internal playbook for taking Piénsalo public. The rule that governs
 everything below: **we launch when the alpha gate passes, not when the
 narrative is ready.** Claims made in public materials may not exceed what

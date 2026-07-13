@@ -1,6 +1,7 @@
 # Origin Story
 
-Piénsalo began as a preservation project, not a product. During development
+Rafael “Ralph” Peña ([@ralfyishere](https://github.com/ralfyishere)) began
+Piénsalo as a preservation project, not a product. During development
 it was internally codenamed "Fable Think"; it was renamed Piénsalo for public
 release.
 

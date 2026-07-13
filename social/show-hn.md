@@ -10,13 +10,15 @@ Show HN: Piénsalo – an open cognitive OS for AI models (publishes its own neg
 
 ## URL
 
-https://github.com/piensalo/piensalo
+https://github.com/ralfyishere/piensalo
 
 ## First comment (post immediately after submitting)
 
 Hi HN — author here.
 
-Piénsalo is an open cognitive operating system for AI models and agents:
+I’m Rafael Peña (@ralfyishere), and I built PIÉNSALO after trying to preserve and transfer unusually strong AI problem-solving behavior.
+
+Piénsalo is the open artificial cortex for AI — a model-independent cognitive operating system for AI models and agents:
 it separates thinking, inspection, repair, verification, evidence, and
 continuation into distinct operations. Six CLI modes (think / inspect /
 repair / verify / loop / skill), plus a portable skills layer that's plain

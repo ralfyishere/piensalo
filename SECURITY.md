@@ -2,6 +2,14 @@
 
 ## Reporting a vulnerability
 
+> **Status note (pre-publication):** the public repository
+> (`github.com/ralfyishere/piensalo`) does not exist yet, so GitHub Private
+> Vulnerability Reporting is the **intended** public channel, not an active
+> one. Until publication, private-alpha testers should report security
+> issues through the same private channel through which they received this
+> repository. A dedicated project email is a pre-publication operator
+> decision and is deliberately not invented here.
+
 Please **do not** open a public issue for security problems. Use GitHub's
 private vulnerability reporting ("Security" tab → "Report a vulnerability") on
 this repository. You'll get an acknowledgment within 72 hours and a status

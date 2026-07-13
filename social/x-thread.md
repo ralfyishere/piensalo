@@ -12,7 +12,7 @@ Most AI tooling makes models produce more.
 We spent months making them think better — and publishing every time it
 failed.
 
-Piénsalo: an open cognitive operating system for AI models and agents. 🧵
+PIÉNSALO: the open artificial cortex for AI — give any AI a better way to think. 🧵
 
 **2/**
 It started as a preservation project: capture what a strong model does well
@@ -86,7 +86,7 @@ It's open source (MIT), and negative-result reports are a first-class
 contribution — find a setup where it makes things worse and we'll publish
 that with credit.
 
-→ github.com/piensalo/piensalo
+→ github.com/ralfyishere/piensalo
 
 Piénsalo is an independent open-source project. It is not affiliated
 with or endorsed by Anthropic.
