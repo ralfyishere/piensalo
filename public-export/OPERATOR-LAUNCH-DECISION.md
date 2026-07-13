@@ -197,3 +197,27 @@ open-source
   package publication · public launch approval
 - OPTIONAL: demo recording · Obsidian screenshot · Test PyPI dry-run ·
   applying the profile draft
+
+---
+
+# PUBLICATION RECORD (2026-07-13, operator-authorized)
+
+- PUBLIC GITHUB REPOSITORY: **COMPLETE** — https://github.com/ralfyishere/piensalo
+- PUBLIC ALPHA: **LIVE** — release v0.1.0-alpha.1 (prerelease):
+  https://github.com/ralfyishere/piensalo/releases/tag/v0.1.0-alpha.1
+- Published commit: 803e27c (aa77486 + the required README public-alpha
+  statement); public-clone verified equal, full flow green (uv sync, 49
+  tests, battery 11/11, doctor, think, inspect, skills listing)
+- Tags pushed: piensalo-alpha-ready-candidate, piensalo-creator-brand-final,
+  v0.1.0-alpha.1 · Issues: ENABLED · Discussions: ENABLED · Private
+  Vulnerability Reporting: ENABLED · Topics: 10 applied · Description: set
+- Outside view: anonymous 200 on repo + raw README (hero hierarchy renders);
+  private-artifact 404 checks pass; no private Fable refs pushed
+- PYPI PUBLICATION: **NOT YET** · SKILLS.SH SUBMISSION: **NOT YET**
+- BROAD PERFORMANCE CLAIMS: **BLOCKED BY ADDITIONAL EVIDENCE** (10 testers,
+  5 case studies, live non-Claude runs, third-party reproduction — now
+  public workstreams, not privacy blockers)
+- Security contact (alpha): GitHub Issues (ordinary) + Private Vulnerability
+  Reporting (sensitive); dedicated project email = future operational
+  improvement
+- Announcement campaign: NOT executed in this pass by design
