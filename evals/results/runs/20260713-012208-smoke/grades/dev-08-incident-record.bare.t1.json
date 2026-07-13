@@ -1,0 +1,33 @@
+{
+ "cognitive_correctness": {
+  "pass": true,
+  "checks": {
+   "date_correct": true,
+   "region_correct": true,
+   "service_correct": true,
+   "duration_45": true,
+   "root_cause_correct": true,
+   "failed_txn_12400": true,
+   "oncall_correct": true
+  }
+ },
+ "task_contract_compliance": {
+  "pass": false,
+  "checks": {
+   "all_seven_fields_at_col0": false,
+   "field_values_exact": false,
+   "failed_txn_no_thousands_separator": false,
+   "no_markdown_or_bold_or_fences": false,
+   "exactly_seven_field_lines_no_prose": false
+  }
+ },
+ "deterministic_result": {
+  "pass": false,
+  "checks": {
+   "record_parses_and_matches": false
+  }
+ },
+ "critical_failure": false,
+ "final_score": 60,
+ "failure_layer": "rendering"
+}

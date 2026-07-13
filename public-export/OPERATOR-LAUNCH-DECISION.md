@@ -4,7 +4,7 @@
 > **PIÉNSALO** (technical identifiers: `piensalo`); "Fable Think" was the
 > internal development codename. Repository proposal: `ralfyishere/piensalo`
 > or a `piensalo` GitHub org — the final owner/org is an operator decision;
-> docs use `github.com/piensalo/piensalo` as the placeholder until it is
+> docs use `github.com/ralfyishere/piensalo` as the placeholder until it is
 > made. PyPI: **piensalo** — availability re-check pending name audit. A
 > single console script (`piensalo`) ships; the `fablethink` alias originally
 > recorded below was dropped in the technical migration. The local path is
@@ -25,7 +25,7 @@ requires Rafael's explicit approval of this document.**
 - Proposed repository: `ralfyishere/piensalo` (verified 404/free at original
   check). Option: create a `piensalo` GitHub org (org name unclaimed at check
   time) — the final owner/org is an operator decision; the docs use
-  `github.com/piensalo/piensalo` as a placeholder; pick one and sweep the
+  `github.com/ralfyishere/piensalo` as a placeholder; pick one and sweep the
   placeholder before push.
 - Package identifiers: PyPI **piensalo** — availability re-check pending name
   audit. Single console script `piensalo` (the originally planned
@@ -83,7 +83,7 @@ requires Rafael's explicit approval of this document.**
 ## Unresolved risks
 1. v0.1 evidence base: one model family, n=8/run; run-2 saturated (lift claim rests on run-1).
 2. Evals oracle-repair labels reference 5 genericized micro-skill names not yet present in micro-skills/ (degrades to SKIPPED, documented) — author or remap before alpha.
-3. `github.com/piensalo/piensalo` placeholder appears in docs — must be swept to the chosen URL pre-push.
+3. `github.com/ralfyishere/piensalo` placeholder appears in docs — must be swept to the chosen URL pre-push.
 4. uv.lock absent; `uvx piensalo` untested until first PyPI (Test PyPI recommended first).
 5. CoC/security contact email unset (LAUNCH gate item).
 
@@ -92,7 +92,7 @@ requires Rafael's explicit approval of this document.**
 # 1. choose identity (example: personal repo)
 gh repo create ralfyishere/piensalo --public --source "$HOME/Desktop/Piensalo" --push
 # or org route: create org 'piensalo' in UI, then:
-# git remote add origin git@github.com:piensalo/piensalo.git && git push -u origin main
+# git remote add origin git@github.com:ralfyishere/piensalo.git && git push -u origin main
 # 2. package (after uv lock + build on a machine with uv):
 # uv build && uv publish            # Test PyPI first: uv publish --index testpypi
 # 3. tag
@@ -135,7 +135,7 @@ Pre-push checklist (mandatory): sweep URL placeholder · re-run repo-level secre
 - Public benchmark reproduction by anyone other than the builder
 
 ## BLOCKED BY OPERATOR DECISION
-- GitHub owner: org `piensalo` (recommended: matches package, free at check) vs `ralfyishere/piensalo`; then sweep the `github.com/piensalo/piensalo` placeholder if the personal route is chosen
+- GitHub owner: org `piensalo` (recommended: matches package, free at check) vs `ralfyishere/piensalo`; then sweep the `github.com/ralfyishere/piensalo` placeholder if the personal route is chosen
 - Security/CoC contact identity (email or GitHub-advisories-only)
 - Domain purchases + USPTO/professional trademark review (name audit found no software/company collision; song-title namespace = LOW)
 - The publication go/no-go itself (exact commands preserved above, still not executed)
@@ -150,3 +150,50 @@ Pick 10 candidate testers → send public-export/ALPHA-INVITE.md via private
 channels → deliver the repo privately (zip or private remote after your
 owner decision) → track in ALPHA-RESULT-TRACKER.md. Nothing else is needed
 from engineering to begin.
+
+---
+
+# CREATOR-BRAND FINALIZATION (2026-07-13, verified claude-fable-5)
+
+## RESOLVED — Repository ownership
+Owner: **ralfyishere** · Repository: **piensalo** · Canonical future
+repository: **https://github.com/ralfyishere/piensalo**. This is a
+deliberate creator-brand strategy, not a compromise; no PIÉNSALO GitHub
+organization will be created. All prepared references resolved (17 files);
+`piensalo/piensalo` remaining: 0.
+
+## RESOLVED — Creator identity
+Creator: **Rafael “Ralph” Peña** · GitHub: **@ralfyishere**. Attribution
+durable across README (hero line + Creator section), CITATION.cff (Peña /
+Rafael / alias ralfyishere; title PIÉNSALO), pyproject authors, CODEOWNERS
+(* @ralfyishere), CoC enforcement, origin story, technical report, launch +
+social drafts. No email invented anywhere (operator decision pending).
+
+## RESOLVED — Brand architecture
+Product **PIÉNSALO** · Tagline **Give any AI a better way to think.** ·
+Category **The open artificial cortex for AI.** · Expanded: an open
+artificial cortex for AI models and agents · Technical architecture: a
+model-independent cognitive operating system. Hierarchy installed in the
+README hero and led through LAUNCH + social drafts. Audit:
+public-export/CREATOR-BRAND-AUDIT.md.
+
+## Prepared GitHub repository metadata (record only — do not apply)
+Description: "PIÉNSALO is the open artificial cortex for AI—an
+evidence-driven system for understanding, verification, repair, abstention,
+and continuation." (152 chars, within GitHub's 350 limit)
+Topics: ai · ai-agents · agent-skills · reasoning · verification · llm ·
+cognitive-architecture · cognitive-operating-system · model-agnostic ·
+open-source
+
+## Status taxonomy (unchanged where not listed)
+- COMPLETE (this pass): ownership resolution, creator attribution,
+  artificial-cortex positioning, canonical references, current-vs-future
+  command split, profile draft (public-export/RALFYISHERE-PROFILE-DRAFT.md),
+  brand audit, re-verification (tests/battery/smoke/lint/build/clone/scans)
+- BLOCKED BY EXTERNAL HUMAN TESTING (unchanged): 10 testers · 5 case
+  studies · live non-Claude runs · third-party reproduction
+- BLOCKED BY OPERATOR DECISION (remaining): dedicated project email ·
+  domain decision · trademark/legal review · public repository creation ·
+  package publication · public launch approval
+- OPTIONAL: demo recording · Obsidian screenshot · Test PyPI dry-run ·
+  applying the profile draft

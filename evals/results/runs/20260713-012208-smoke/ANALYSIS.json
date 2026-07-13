@@ -1,0 +1,95 @@
+{
+  "run_id": "20260713-012208-smoke",
+  "model_requested": "manual",
+  "adapter": "manual",
+  "smoke": true,
+  "n_cells_graded": 4,
+  "excluded_by_status": {},
+  "note": "smoke run: answers are probe files, not model output",
+  "per_condition": {
+    "bare": {
+      "n": 2,
+      "score_mean": 60,
+      "score_median": 60.0,
+      "score_stdev": 0.0,
+      "cognition_rate": 1,
+      "delivery_failure_rate": 1,
+      "by_class": {
+        "competent-baseline": {
+          "mean": 60,
+          "n": 1
+        },
+        "procedural": {
+          "mean": 60,
+          "n": 1
+        }
+      },
+      "tokens_mean": 0
+    },
+    "verify-only": {
+      "n": 2,
+      "score_mean": 100,
+      "score_median": 100.0,
+      "score_stdev": 0.0,
+      "cognition_rate": 1,
+      "delivery_failure_rate": 0,
+      "by_class": {
+        "competent-baseline": {
+          "mean": 100,
+          "n": 1
+        },
+        "procedural": {
+          "mean": 100,
+          "n": 1
+        }
+      },
+      "tokens_mean": 0
+    }
+  },
+  "paired_vs_bare": {
+    "verify-only": {
+      "n_pairs": 2,
+      "mean_delta_vs_bare": 40,
+      "median_delta_vs_bare": 40.0,
+      "delta_stdev": 0.0,
+      "by_class": {
+        "competent-baseline": {
+          "mean_delta": 40,
+          "harm": false,
+          "n": 1
+        },
+        "procedural": {
+          "mean_delta": 40,
+          "harm": false,
+          "n": 1
+        }
+      },
+      "median_added_tokens_vs_bare": 0.0
+    }
+  },
+  "negative_transfer_note": "by_class.harm=true on a class the condition was not meant to help means the intervention actively hurt those tasks; report it, do not average it away.",
+  "pass_at_k": {
+    "bare": {
+      "k": 1,
+      "n_tasks_complete": 2,
+      "pass_at_k": 0,
+      "pass_pow_k": 0
+    },
+    "verify-only": {
+      "k": 1,
+      "n_tasks_complete": 2,
+      "pass_at_k": 1,
+      "pass_pow_k": 1
+    }
+  },
+  "within_task_variance": {
+    "bare": {
+      "mean_within_task_range": null,
+      "n_tasks_multi_trial": 0
+    },
+    "verify-only": {
+      "mean_within_task_range": null,
+      "n_tasks_multi_trial": 0
+    }
+  }
+}
