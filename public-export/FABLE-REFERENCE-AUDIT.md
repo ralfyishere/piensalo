@@ -30,3 +30,13 @@ three owned workstreams and the primary session.
 - absolute operator-machine paths (`/Users/...`): 0
 - `fablethink` entry point: removed from pyproject; no doc claims it
 - tests 49/49 · grader battery 11/11 PASS · benchmark smoke OK · skill lint 27/27 (workstream) + spot re-run by primary session
+
+## Alpha-pass addendum (2026-07-13)
+Two additional intentional classes confirmed during alpha verification:
+- `public-export/ALPHA-READINESS-NEXT-PROMPT.md` (3 lines): rollback ref
+  names (`backup/fable-think-before-piensalo`, `fable-think-public-pre-piensalo`
+  — real git refs), the private-laboratory statement, and the maintainer
+  model requirement `claude-fable-5` — factual operator-side documentation,
+  RETAIN.
+- `.github/workflows/ci.yml`: matches the secret scanner only because line 58 defines the detection PATTERNS regex (AKIA/ghp_/private-key markers etc.) — RETAIN (same class as the skill-scan
+  regexes).

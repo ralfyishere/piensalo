@@ -2,7 +2,7 @@
   "label": "DEMO",
   "class": "procedural",
   "oracle_repairs": [
-    "output-contract-echo"
+    "complete-the-delivery"
   ],
   "consumption_note": "DEMO task: authored for public illustration; contaminated for headline claims by publication."
 }

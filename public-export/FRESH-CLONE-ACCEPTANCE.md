@@ -32,3 +32,11 @@ NOT verified here (environment or publication gaps, all honest ALPHA items):
   not exist yet by design (nothing published);
 - `examples/basic/` paths from the directive template do not exist in this
   repo layout; the equivalent documented commands above were used.
+
+## Final-HEAD certification mechanism (2026-07-13)
+A certification recorded inside a committed file can never equal the commit
+it describes (writing it moves HEAD). Certification therefore lives in the
+ANNOTATED TAG `piensalo-alpha-ready-candidate`: the acceptance suite runs on
+a fresh clone of the exact final commit, and the tag object at that commit
+carries the results (`git tag -n99 piensalo-alpha-ready-candidate`). This
+supersedes the 051af75 run above; the uv gap is closed (uv 0.11.28).

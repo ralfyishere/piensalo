@@ -15,6 +15,7 @@ f92ed6e84a0376f084f15ff4d6d94f42504f19418c20bb7c0655a9f6ae9f9f9c  .pytest_cache/
 c546e0d60d1ebefd54a13447212ac672e417f97e9a7bb763ebf84e71bf854612  ALPHA-EXIT-CRITERIA.md
 3c5c35fc57eac5fa895e8c10c8692b6a60ae022aeb49adb9d0a391d06e7f4f9a  ALPHA-FEEDBACK-SCHEMA.json
 b07a09d4a052bd6f9aff713e37f6e2b10722c068cc0e5e77bc7aa487991d05d2  ALPHA-PLAN.md
+cd01881655c4c3c0236983cff5e1061e666e464b08da7e58dc2506c11ebb44e1  ALPHA-START-HERE.md
 9c30b6187d48125f3860c192b206c63c1a1d5018aa0b798aad3025e4b80e7df8  BENCHMARKS.md
 dad27b59bd4647fa7b4ed87222e57d830e280a333e5d3e69120a2fca584f34a9  CHANGELOG.md
 e38445a513d2713f887629972e0ce7fcded73f968646620f278c8b9af39c8b8c  CITATION.cff
@@ -26,7 +27,7 @@ a7fba262d2700ab756660b98a330700094b4dc6cca1d4ad8f505f8aa0d107807  CONTRIBUTING.m
 647d6bc948f86e5af638c55e35448fc18092625b97025e6bb155c90b6fdd0226  MANIFESTO.md
 6097023663ca010ecc84dea3db16239395a098e695ca7af5f105a1820ef491cc  Makefile
 f7cdb9aaf6d522bdfaaab7afebd4ed694446d42d7f2267cadceb9c66a402acab  NEGATIVE-RESULTS.md
-a4d15faeff7cbce6c0cd4386bf64ee135d4c2c0088df932ce6dbb55fde82751e  README.md
+651ab9d261e21b31ccb4188b509a4bae8094cd7fad93640cfe1530df3323feaa  README.md
 374c061e5b5b515cfd08559a01ffe3609b97e002f3a4c0304969024fc13e80a7  ROADMAP.md
 011423b6d09c1804f12014448ff1f81da351d00a0875cf543e379ab613cdaef4  SECURITY.md
 a0534e03c30208c8ee6223b44b737c9c26033a1cfd96c7b068a8aaea78e0aeb0  THIRD_PARTY_NOTICES.md
@@ -58,7 +59,7 @@ d6e86b369747144b4d79b13eb095a281784dc574ab60cc6f2a76e978e5639129  evals/public-t
 b7783b23179100b4730b11c39c6ec852627bb3b2c9b93533fb6cc21144b38b4b  evals/public-tasks/demo-01-discount-stack/contract.json
 ab76fd2a2f9e0fb5a3daa3ba0523367e6f74c9e3a449d4228d1289fb7251b49b  evals/public-tasks/demo-01-discount-stack/hidden-grader/KEY.md
 8df484b8e60825283ae0f800df34b89faf14cf7cf72f8279b36c5d178bb12758  evals/public-tasks/demo-01-discount-stack/hidden-grader/grade.py
-7242607cbf86692d2a7c462d89985e268000ad053ed8392a07c10f5fede73c4c  evals/public-tasks/demo-01-discount-stack/hidden-grader/meta.json
+7ffa4bdcc826a3e7688bbada69b4f7e03ad9b7defb80595b33448417343ab059  evals/public-tasks/demo-01-discount-stack/hidden-grader/meta.json
 37887eea71c2309e7616a9570fd25bcb43683f72a59449c48ad71a00310e287a  evals/public-tasks/demo-01-discount-stack/probes/clean-correct.md
 513a30ed4e055b19e58502681cab02323060e67704ca2b319afe9fb8f9ef6ec2  evals/public-tasks/demo-01-discount-stack/probes/decorated-correct.md
 f43bf9fdfc82a1dfc5428800f0e1bd7ac4cf6fa423424a28947848589b2422ab  evals/public-tasks/demo-01-discount-stack/probes/expected.json
@@ -70,7 +71,7 @@ b678e990e460fd7e7e0bf75c9dd18ab0762592e1cc29f7452d8a71edc0a341e3  evals/public-t
 64526cddcec6074b1ec656cbe3527bba4341fe5ae18b3ab7703c5ec1811b7829  evals/public-tasks/demo-02-pilot-review/contract.json
 fc6f1eba79ed72d4cb065d6e0e834085426fa43e7a8c52ad49d4dfb26977496a  evals/public-tasks/demo-02-pilot-review/hidden-grader/KEY.md
 ed090bfcb8ac3daf8bc45fe066cc77fea943786c21cddfc868f5d70338f31e7f  evals/public-tasks/demo-02-pilot-review/hidden-grader/grade.py
-4c39ee2b718f3b126aea20db1ec6fb9afea7c12ab6d58b0aec7018b574c989c6  evals/public-tasks/demo-02-pilot-review/hidden-grader/meta.json
+a61dbee36c758262251b7bbf0ca602421cb8fb5f6bc193de734f1933fdd713d4  evals/public-tasks/demo-02-pilot-review/hidden-grader/meta.json
 5b64dc402e3a6b16ec4335401f08a1e4670a0e16d7b7c53541a4b3d4eb89970f  evals/public-tasks/demo-02-pilot-review/probes/clean-correct.md
 2f16f833fc71663382e497c6b0ac2083ddacf15b6313b55a7e209fd1fc116805  evals/public-tasks/demo-02-pilot-review/probes/decorated-correct.md
 f43bf9fdfc82a1dfc5428800f0e1bd7ac4cf6fa423424a28947848589b2422ab  evals/public-tasks/demo-02-pilot-review/probes/expected.json
@@ -84,7 +85,7 @@ b678e990e460fd7e7e0bf75c9dd18ab0762592e1cc29f7452d8a71edc0a341e3  evals/public-t
 63652e3e5409b7ccc73cf7bce0c1876606b567d565b105baa3f3eba6bbb5f1af  evals/public-tasks/demo-03-release-note/contract.json
 3f37dedf2cc334b17f68a83df2488752276665072b1d352e2bf0baaa2f5d8e40  evals/public-tasks/demo-03-release-note/hidden-grader/KEY.md
 a44f44b94efeb81365fd12f1f69ea63f02c4007d6ac9b542364fcc729600fa94  evals/public-tasks/demo-03-release-note/hidden-grader/grade.py
-39c33ad47b5ebefa477d94eddfc072d1fd44cf94f027261236fb4cb22211e349  evals/public-tasks/demo-03-release-note/hidden-grader/meta.json
+374ad7bf6117e9bc178bc1bee5b53fd223eefddffaf945d3347c45f01773cdbf  evals/public-tasks/demo-03-release-note/hidden-grader/meta.json
 660f8451d749f20eda1d5806cada1944aefae6ae8dbbb4789e351548bd00e163  evals/public-tasks/demo-03-release-note/probes/clean-correct.md
 a45349b67d0d9613ad3c0e9253b8f7e20d01c80e4a525bf172ed8b1972a0cc44  evals/public-tasks/demo-03-release-note/probes/decorated-correct.md
 f43bf9fdfc82a1dfc5428800f0e1bd7ac4cf6fa423424a28947848589b2422ab  evals/public-tasks/demo-03-release-note/probes/expected.json
@@ -145,7 +146,7 @@ f63a89491130d7aca7c6de6ddaf18be635315c5fb9369ae9eba47f6e92c7b720  evals/public-t
 131be1ad8fec8dde3451ae52f34c561092f146fcae77358bc907de9356db9e82  evals/public-tasks/dev-05-greywater-recovery/contract.json
 a884b5bf467322216c80db750922f3c2e6fa26900dcc624a232545ad73ddff07  evals/public-tasks/dev-05-greywater-recovery/hidden-grader/KEY.md
 747df127de3b1f9242aaa8cddd6bd6c1d9a5a887d22a488ab9b6b063edf37226  evals/public-tasks/dev-05-greywater-recovery/hidden-grader/grade.py
-eff3cb23355baa1c223aaaa18a23033cb3736cc9c5b6db7c83e3c1269325c0af  evals/public-tasks/dev-05-greywater-recovery/hidden-grader/meta.json
+0c359e66a759c7e970088779151c1346e4f197bb9e5cd4da5a3d939031f93966  evals/public-tasks/dev-05-greywater-recovery/hidden-grader/meta.json
 7fd493a83f800730fddbfd4e1fbf78b8f61dee519e81f37f122cca3d1a0a647d  evals/public-tasks/dev-05-greywater-recovery/probes/clean-correct.md
 30b578ebd8448fc551b7c04cf8413f6a51726d05f5a08b9bc160ec6fc727734c  evals/public-tasks/dev-05-greywater-recovery/probes/decorated-correct.md
 f43bf9fdfc82a1dfc5428800f0e1bd7ac4cf6fa423424a28947848589b2422ab  evals/public-tasks/dev-05-greywater-recovery/probes/expected.json
@@ -157,7 +158,7 @@ c97051b35403894ce67aa013f166fcc4177e242b813bb939129eda032dcc7d0a  evals/public-t
 4751b2cac641c396743dc22ae6d00e675e068981c758bffd45b8fbb9c397df76  evals/public-tasks/dev-06-field-laptop/contract.json
 29fbfd91bbeec9c2a02f93fd918c468754d12391b011942bdb539429a97c2413  evals/public-tasks/dev-06-field-laptop/hidden-grader/KEY.md
 833f0ea5d06931fa69e991bc934029e4b5e9c2db381c611b7476bdecf9cbc378  evals/public-tasks/dev-06-field-laptop/hidden-grader/grade.py
-6706b97debc87ca939002122a4b20142f293377d1f358b113a3cbb35fa39d4f5  evals/public-tasks/dev-06-field-laptop/hidden-grader/meta.json
+6ba9dcdbd16af1a185d865c69ac8bde4654d3943e15967abc3741da53da59876  evals/public-tasks/dev-06-field-laptop/hidden-grader/meta.json
 3cc5ddf15d220d68e72ef33df9bb0635c5fcfcc175fe076d90e89c110f210d64  evals/public-tasks/dev-06-field-laptop/probes/clean-correct.md
 04ac19d8f124cebb84a954dc8f8ef45a42bb6311f37f9c8ee6129a161de1c5ce  evals/public-tasks/dev-06-field-laptop/probes/decorated-correct.md
 f43bf9fdfc82a1dfc5428800f0e1bd7ac4cf6fa423424a28947848589b2422ab  evals/public-tasks/dev-06-field-laptop/probes/expected.json
@@ -171,7 +172,7 @@ ae7d2b6f8ae5b302111c1b555d04d34b76e5b56793557a4c22c30e93c74e1849  evals/public-t
 52444665d53a29532f6c7b95a56dcba15a12e4f3adc106de5de463c1c252e6d6  evals/public-tasks/dev-07-calibration-windows/contract.json
 c647e6aa1f1d49ac616990c53b2d838e44da0778576752dbab8cc460b35fa62e  evals/public-tasks/dev-07-calibration-windows/hidden-grader/KEY.md
 81f9f9a7349d89fa519db23d405bd355d3d981708f1829d8b3990f0a3e38089f  evals/public-tasks/dev-07-calibration-windows/hidden-grader/grade.py
-2a58cbc2cf541d36e5669ce827f23ac0c4d8cfb217e35a7c3ca5128b310dc2a1  evals/public-tasks/dev-07-calibration-windows/hidden-grader/meta.json
+4d65e02e092420932cdfc6c6c1816af7bb2b981b122b312d59c269e9a2a0f07c  evals/public-tasks/dev-07-calibration-windows/hidden-grader/meta.json
 9450b9024bd996b2b67ed0c0f7ffbb6c782e54f1327d268b183583fff31cc269  evals/public-tasks/dev-07-calibration-windows/probes/clean-correct.md
 bd4bb424b3bceb4acdb032e1322d04ccc47c1bf36ba2e176b87af71fd0f924e2  evals/public-tasks/dev-07-calibration-windows/probes/decorated-correct.md
 f43bf9fdfc82a1dfc5428800f0e1bd7ac4cf6fa423424a28947848589b2422ab  evals/public-tasks/dev-07-calibration-windows/probes/expected.json
@@ -183,7 +184,7 @@ bc28ec026c924ea6d5f9f0293091e27ae49146459a216555cc74838c1cd5b3b3  evals/public-t
 bf1c2cb344be8a0399601cf6151c9361bb3e63c643746618385014a3c665a6f8  evals/public-tasks/dev-08-incident-record/contract.json
 917ebb58b4001ed5123a02329177744fb52765ef34573d4157ce463a1592116e  evals/public-tasks/dev-08-incident-record/hidden-grader/KEY.md
 2358a7c51fe9723d6be9aa16ed5859c1ceee4dc2ff4d8e67caa66aef46d61add  evals/public-tasks/dev-08-incident-record/hidden-grader/grade.py
-e2777179745691a2234f75267bc57ef5d1d61f967be0ff2ee3146dd37b97bdb8  evals/public-tasks/dev-08-incident-record/hidden-grader/meta.json
+83b276023a43eeaa13a7d48c0f3526e5fe673021e974de87e4cb5c2d2aa2341f  evals/public-tasks/dev-08-incident-record/hidden-grader/meta.json
 c38206e826abce333069140aa63b0f806db17803d5c1286b9708ae1186b50044  evals/public-tasks/dev-08-incident-record/probes/clean-correct.md
 cccef1a3b2e9d1f698fb1c5a547683f600589c89b726c48360c307da45353b93  evals/public-tasks/dev-08-incident-record/probes/decorated-correct.md
 89c925cca27f8b858a2054137e5afb53865b24ed9a87b39cbc86c064e0958806  evals/public-tasks/dev-08-incident-record/probes/expected.json
@@ -417,13 +418,16 @@ c36efe912b664bb56820781bc5f08055965213b3fbc26bb44dc225cc14aec7c9  micro-skills/s
 947fe32dbfe90a4e31d8cf3862e55825e741bd0b8acf27786f750fd6fe3ae998  micro-skills/source-claim-verification/examples/positive.md
 7acb4199eec4e3338c332015d834f8e370a371ec93902e7d9c1fa9292e27a555  micro-skills/source-claim-verification/manifest.json
 9acd2794299d8d1fc767a342e64f425aaac43a0c7ef65606698d3b46e8e73821  micro-skills/source-claim-verification/skill-card.md
+111577f52216e2f872f172a8216f3361a34db13653e2e6040c9ab125e526f066  public-export/ALPHA-INVITE.md
 02ee2eba110d749504a6c6402249798710cd834a424397ba792357df2495058e  public-export/ALPHA-READINESS-NEXT-PROMPT.md
+c668d64ad793c24f1e925301821756f1b83a56c0092275aa73874ab18b1a80da  public-export/ALPHA-RESULT-TRACKER.md
+66e433a8d5134c410b3329a94a48d22c57f291063e5d9e2b510414421caf1423  public-export/ALPHA-TESTER-INSTRUCTIONS.md
 f5b24e4060c85969f5837cce96d6eb85d2f3ac5c5e0e058522d076449c09f41f  public-export/EXPORT-MANIFEST.json
-987ffba495c25e751d29753dab8deebdb46a3f68070db4efc23d544e3a5bf210  public-export/FABLE-REFERENCE-AUDIT.md
-a1633a17bff8e4a2d52430343f93ed649279573032646c6640e6aeada4a330e4  public-export/FRESH-CLONE-ACCEPTANCE.md
-511379e7329bfba5c8d7cb6a277b28939f209bf7b6e11af56c627bfd24ff3872  public-export/OPERATOR-LAUNCH-DECISION.md
+5673786213c8c56b980bfd9256e0e2387121d693bd47ef112d7aac1e40cf09fd  public-export/FABLE-REFERENCE-AUDIT.md
+1f9879367472516299b969a12df5171bd95c018b19beeaa69352453a71b47d06  public-export/FRESH-CLONE-ACCEPTANCE.md
+4555c671aae31308d95fcf190441d18c52838a52f457ff6eff53affc8f5d4f4a  public-export/OPERATOR-LAUNCH-DECISION.md
 7e3daf6d496788e43a966aab5487fb5ef0bad8050eb8ab70d8d553cfa15a52e3  public-export/PIENSALO-NAME-AUDIT.md
-f06b9024d0a322c86fc5dd155f89ac85a9c8a3df3d2578ca46608ffac6b4dbf8  pyproject.toml
+7d13b8a8509b0943c6ed5ddc543b65ab7a81f80bfbe8a7aba6a8ae3ebac8d891  pyproject.toml
 5fa12469a23723b2492c7fb13452e1ca810c162f1a4282f714462d4a20c21032  skills/README.md
 dfd20f65ebfc145f958ebefe92f4ed14e55d8ef0bf258ad2a79bbede85c00ba8  skills/piensalo-build/BENCHMARK.md
 518f00de40f24b2750f9ef5fb069f865c441de9b79c08e31fa6ee74bc06fb540  skills/piensalo-build/SKILL.md
@@ -554,3 +558,4 @@ b1b3981eef8ce39657b448bbdad6ad92c477cb2efa29f32f496a9d6047fce7f5  tests/test_lay
 35b3648063bed211563316f83c08c8b60d5f92fb959351908b67b55ed68ddc8f  tests/test_loop.py
 977acbdf59abaa82a6bcaf4464d20291d548d86cdfea02ed758ac51e1c2dcc14  tests/test_scanner.py
 ff7e04e1f3442f7e8dcce2301d7432106a3399102137d8427e5e38ed5be097ed  tests/test_skill_scan.py
+24b68f57cd2993c213e19df9acfb95971a4c98e91218d8a3783a3895dab56c74  uv.lock

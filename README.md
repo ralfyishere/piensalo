@@ -169,6 +169,12 @@ receipts: [EVIDENCE.md](EVIDENCE.md). Things that failed and stay published:
 | Ollama / local models | Runtime adapter, fully offline | No |
 | Generic command adapter | Pipe any CLI-invocable model through stdin/stdout | No (unless your command does) |
 
+> **Testing status (honest):** the offline core and manual mode are fully
+> tested. Live-model runs so far cover the **Claude family only** (see
+> [BENCHMARKS.md](BENCHMARKS.md)). The OpenAI-compatible, Ollama, and
+> generic adapters are unit-tested but not yet exercised against live
+> providers — treat them as **experimental** until reproduced.
+
 The core works **offline** with **zero telemetry**. Model identity is recorded
 on every run; if a configured model is unavailable, Piénsalo stops and says
 so — **silent model fallback is prohibited** ([docs/model-provenance.md](docs/model-provenance.md)).

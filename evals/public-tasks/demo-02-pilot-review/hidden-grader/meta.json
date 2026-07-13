@@ -2,7 +2,7 @@
   "label": "DEMO",
   "class": "procedural",
   "oracle_repairs": [
-    "contradiction-sweep"
+    "contradiction-resolution"
   ],
   "consumption_note": "DEMO task: authored for public illustration; contaminated for headline claims by publication."
 }

@@ -106,3 +106,47 @@ Pre-push checklist (mandatory): sweep URL placeholder · re-run repo-level secre
 - `make benchmark` → SMOKE OK: 4 cells graded end-to-end (no API)
 - `PYTHONPATH=src python3 -m piensalo.cli.main think examples/math/task.md` → renders the cognitive program (a Python-3.9 runpy warning appears on the below-floor interpreter; clean on 3.10+)
 - `uv sync` / `uvx` NOT tested (uv absent on build machine — ALPHA item)
+
+---
+
+# ALPHA-READINESS STATUS (2026-07-13, autonomous pass, verified claude-fable-5)
+
+## COMPLETE (engineering, verified this pass)
+- uv flow end-to-end: `uv sync` (uv 0.11.28 installed via Homebrew), `uv.lock` committed, `uv run pytest` 49/49, `uv run piensalo ...` CLI, **`uv build`** (wheel + sdist)
+- Wheel/sdist inspected: correct `piensalo/` paths, zero old-package residue, metadata Name=piensalo License=MIT, sdist carries README/LICENSE/pyproject
+- Isolated wheel install (fresh Python 3.11 venv): `piensalo version` → 0.1.0.dev0
+- Dev dependency group added (pytest) — the one engineering defect uv exposed
+- Orphan oracle-repair labels REMAPPED to existing micro-skills (7 meta.json files: compounding-check→rederive-the-numbers, hard-constraints-first→disqualifier-scan, boundary-condition-check→boundary-case-check, output-contract-echo→complete-the-delivery, contradiction-sweep→contradiction-resolution); oracle prompt-builder smoke-tested (skill bodies resolve; menu=20)
+- Model-support claims aligned with actual testing (README testing-status note: live runs = Claude family only; other adapters experimental)
+- CLI verification: all 7 `--help`s; think/inspect/repair/verify example runs; bounded loop smoke (start/status only); skill list; **skill lint 27/27**
+- Scans: secrets 0 (CI pattern-definition false positive classified), machine paths 0, stale brand 0 non-intentional, old-dir refs 0, broken relative links 0
+- Grader battery 11/11 PASS · benchmark smoke OK · full test suite 49/49
+- Alpha package: ALPHA-START-HERE.md, ALPHA-INVITE.md (send-ready template), ALPHA-TESTER-INSTRUCTIONS.md, ALPHA-RESULT-TRACKER.md (empty by honesty), plus existing ALPHA-PLAN / FEEDBACK-SCHEMA / EXIT-CRITERIA
+- Export manifest + hash manifest regenerated at final state; no remote; nothing published
+- Final-HEAD certification: acceptance suite re-run on a fresh clone of the exact final commit; result recorded in the annotated tag `piensalo-alpha-ready-candidate` (tag message = certification record, keeping tested commit == final HEAD)
+
+## BLOCKED BY ENGINEERING
+- None known. (CI workflow itself still unexecuted — no local runner; first run happens when a remote exists. OPTIONAL pre-launch: run via act or a private mirror.)
+
+## BLOCKED BY EXTERNAL HUMAN TESTING
+- 10 independent alpha installs + structured reports (tracker empty — honestly)
+- 5 real-world case studies (pipeline table NOT STARTED)
+- Live multi-model smoke on non-Claude families (OpenAI-compatible/Ollama adapters need real endpoints; unit-tested only)
+- Public benchmark reproduction by anyone other than the builder
+
+## BLOCKED BY OPERATOR DECISION
+- GitHub owner: org `piensalo` (recommended: matches package, free at check) vs `ralfyishere/piensalo`; then sweep the `github.com/piensalo/piensalo` placeholder if the personal route is chosen
+- Security/CoC contact identity (email or GitHub-advisories-only)
+- Domain purchases + USPTO/professional trademark review (name audit found no software/company collision; song-title namespace = LOW)
+- The publication go/no-go itself (exact commands preserved above, still not executed)
+
+## OPTIONAL
+- Demo recording (script ready: social/demo-script.md); Obsidian Studio screenshot; Test PyPI dry-run before real PyPI; Windows support statement upgrade
+
+## Claims allowed / prohibited — unchanged from the migration section; evidence limitations unchanged (one model family, n=8/run, run-2 saturated)
+
+## Exact private-alpha next step (for the operator)
+Pick 10 candidate testers → send public-export/ALPHA-INVITE.md via private
+channels → deliver the repo privately (zip or private remote after your
+owner decision) → track in ALPHA-RESULT-TRACKER.md. Nothing else is needed
+from engineering to begin.
