@@ -10,4 +10,9 @@ library of micro-skills, layered verification, and optional model adapters
 that are never imported by the core.
 """
 
-__version__ = "0.1.0.dev0"
+try:  # single source of truth: the installed package metadata (pyproject)
+    from importlib.metadata import PackageNotFoundError, version as _version
+
+    __version__ = _version("piensalo")
+except (ImportError, PackageNotFoundError):  # not installed (e.g. raw source tree)
+    __version__ = "0.0.0+unknown"

@@ -5,6 +5,13 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 Versioning: [SemVer](https://semver.org/) once we reach 0.1.0; until then,
 everything may change.
 
+## [0.1.0-alpha.3] — 2026-07-13
+
+### Fixed
+- `piensalo version` derives from installed package metadata instead of a
+  hardcoded string (0.1.0-alpha.2 shipped printing `0.1.0.dev0`); regression
+  test added.
+
 ## [0.1.0-alpha.2] — 2026-07-13
 
 Truthfulness and UX correction release.
