@@ -104,7 +104,7 @@ cycles used`, next action.
 **0:57–0:60 — Close card**
 
 > piensalo · open source · MIT
-> github.com/piensalo/piensalo
+> github.com/ralfyishere/piensalo
 >
 > Independent open-source project.
 > Not affiliated with or endorsed by Anthropic.

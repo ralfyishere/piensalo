@@ -1,12 +1,14 @@
 cff-version: 1.2.0
 message: "If you use Piénsalo in your research, please cite it as below."
-title: "Piénsalo: an open cognitive operating system for AI models and agents"
+title: "PIÉNSALO"
 type: software
 authors:
-  - name: "Piénsalo contributors"
+  - family-names: "Peña"
+    given-names: "Rafael"
+    alias: "ralfyishere"
 license: MIT
-repository-code: "https://github.com/piensalo/piensalo"
-url: "https://github.com/piensalo/piensalo"
+repository-code: "https://github.com/ralfyishere/piensalo"
+url: "https://github.com/ralfyishere/piensalo"
 version: 0.1.0-dev
 date-released: "2026-07-12"
 keywords:

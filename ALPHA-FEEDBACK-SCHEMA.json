@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://github.com/piensalo/piensalo/ALPHA-FEEDBACK-SCHEMA.json",
+  "$id": "https://github.com/ralfyishere/piensalo/ALPHA-FEEDBACK-SCHEMA.json",
   "title": "Piénsalo alpha session feedback",
   "description": "One record per alpha usage session. Submitted voluntarily by the user; nothing is collected automatically. Records without consent_to_publish=true are never published.",
   "type": "object",

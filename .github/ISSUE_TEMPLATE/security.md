@@ -13,7 +13,7 @@ A public issue gives attackers the details before users have a fix.
 ## Please report privately instead
 
 1. Go to the repository's **Security** tab → **Report a vulnerability**
-   (https://github.com/piensalo/piensalo/security/advisories/new)
+   (https://github.com/ralfyishere/piensalo/security/advisories/new)
 2. You'll get an acknowledgment within 72 hours (see SECURITY.md for the
    full policy, scope, and disclosure process).
 

@@ -82,7 +82,7 @@ more than reference docs. See
 ## Development setup
 
 ```bash
-git clone https://github.com/piensalo/piensalo
+git clone https://github.com/ralfyishere/piensalo
 cd piensalo
 python -m venv .venv && source .venv/bin/activate
 pip install -e ".[dev]"

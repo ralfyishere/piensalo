@@ -52,7 +52,7 @@ public-export/FABLE-REFERENCE-AUDIT.md
    (degrades to SKIPPED): author those micro-skill stubs or remap labels —
    narrow fix, no new architecture.
 7. Demo recording per social/demo-script.md; obsidian-studio screenshot.
-8. Repo URL placeholder `github.com/piensalo/piensalo` — final owner/org is
+8. Repo URL placeholder `github.com/ralfyishere/piensalo` — final owner/org is
    an OPERATOR decision; sweep once decided.
 9. CoC/security contact (operator).
 

@@ -9,7 +9,7 @@ description = "A cognitive operating layer for AI models: bounded loops, observa
 readme = "README.md"
 requires-python = ">=3.10"
 license = { text = "MIT" }
-authors = [{ name = "Piensalo contributors" }]
+authors = [{ name = "Rafael Peña" }]
 keywords = ["ai", "agents", "verification", "cognitive-architecture", "llm"]
 classifiers = [
     "Development Status :: 3 - Alpha",
@@ -35,7 +35,7 @@ dev = ["pytest>=7.0", "ruff>=0.4"]
 piensalo = "piensalo.cli.main:main"
 
 [project.urls]
-Homepage = "https://github.com/piensalo/piensalo"
+Homepage = "https://github.com/ralfyishere/piensalo"
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/piensalo"]
