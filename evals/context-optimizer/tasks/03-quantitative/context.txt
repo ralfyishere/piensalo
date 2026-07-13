@@ -1,0 +1,43 @@
+Digression e-1: a long discussion about the summer offsite venue and whether the lake house fits 40 people. It wandered for a while, several people chimed in with anecdotes, someone posted a poll, and the thread ended with no engineering decision, no constraint, and no action item. Nothing in it affects the current work beyond morale.
+
+Digression e-2: a long discussion about who keeps leaving the standing desk at maximum height. It wandered for a while, several people chimed in with anecdotes, someone posted a poll, and the thread ended with no engineering decision, no constraint, and no action item. Nothing in it affects the current work beyond morale.
+
+Digression e-3: a long discussion about the espresso machine descaling rota and its laminated instructions. It wandered for a while, several people chimed in with anecdotes, someone posted a poll, and the thread ended with no engineering decision, no constraint, and no action item. Nothing in it affects the current work beyond morale.
+
+Digression e-4: a long discussion about whether the team mascot should be a heron or an axolotl. It wandered for a while, several people chimed in with anecdotes, someone posted a poll, and the thread ended with no engineering decision, no constraint, and no action item. Nothing in it affects the current work beyond morale.
+
+Digression e-5: a long discussion about the never-ending thread about tabs versus spaces in the wiki. It wandered for a while, several people chimed in with anecdotes, someone posted a poll, and the thread ended with no engineering decision, no constraint, and no action item. Nothing in it affects the current work beyond morale.
+
+Digression e-6: a long discussion about parking garage badge readers rebooting every Tuesday. It wandered for a while, several people chimed in with anecdotes, someone posted a poll, and the thread ended with no engineering decision, no constraint, and no action item. Nothing in it affects the current work beyond morale.
+
+Digression e-7: a long discussion about the potluck signup sheet and three people all bringing hummus. It wandered for a while, several people chimed in with anecdotes, someone posted a poll, and the thread ended with no engineering decision, no constraint, and no action item. Nothing in it affects the current work beyond morale.
+
+Digression e-8: a long discussion about a long recap of the trivia night and the disputed geography answer. It wandered for a while, several people chimed in with anecdotes, someone posted a poll, and the thread ended with no engineering decision, no constraint, and no action item. Nothing in it affects the current work beyond morale.
+
+CONSTRAINT [EXACT]: The widgets service must sustain 240 requests per second at steady state.
+CONSTRAINT [EXACT]: The reports service must sustain 60 requests per second at steady state.
+CONSTRAINT [EXACT]: The auth service must sustain 100 requests per second at steady state.
+
+Digression e-x: someone mentioned the office has 500 chairs, 12 plants, and 3 espresso machines, and that trivia night had 42 attendees paying 15 dollars each. None of that is engineering.
+
+Digression f-1: a long discussion about the summer offsite venue and whether the lake house fits 40 people. It wandered for a while, several people chimed in with anecdotes, someone posted a poll, and the thread ended with no engineering decision, no constraint, and no action item. Nothing in it affects the current work beyond morale.
+
+Digression f-2: a long discussion about who keeps leaving the standing desk at maximum height. It wandered for a while, several people chimed in with anecdotes, someone posted a poll, and the thread ended with no engineering decision, no constraint, and no action item. Nothing in it affects the current work beyond morale.
+
+Digression f-3: a long discussion about the espresso machine descaling rota and its laminated instructions. It wandered for a while, several people chimed in with anecdotes, someone posted a poll, and the thread ended with no engineering decision, no constraint, and no action item. Nothing in it affects the current work beyond morale.
+
+Digression f-4: a long discussion about whether the team mascot should be a heron or an axolotl. It wandered for a while, several people chimed in with anecdotes, someone posted a poll, and the thread ended with no engineering decision, no constraint, and no action item. Nothing in it affects the current work beyond morale.
+
+Digression f-5: a long discussion about the never-ending thread about tabs versus spaces in the wiki. It wandered for a while, several people chimed in with anecdotes, someone posted a poll, and the thread ended with no engineering decision, no constraint, and no action item. Nothing in it affects the current work beyond morale.
+
+Digression f-6: a long discussion about parking garage badge readers rebooting every Tuesday. It wandered for a while, several people chimed in with anecdotes, someone posted a poll, and the thread ended with no engineering decision, no constraint, and no action item. Nothing in it affects the current work beyond morale.
+
+Digression f-7: a long discussion about the potluck signup sheet and three people all bringing hummus. It wandered for a while, several people chimed in with anecdotes, someone posted a poll, and the thread ended with no engineering decision, no constraint, and no action item. Nothing in it affects the current work beyond morale.
+
+Digression f-8: a long discussion about a long recap of the trivia night and the disputed geography answer. It wandered for a while, several people chimed in with anecdotes, someone posted a poll, and the thread ended with no engineering decision, no constraint, and no action item. Nothing in it affects the current work beyond morale.
+
+Digression f-9: a long discussion about the office plants watering schedule on alternating weeks. It wandered for a while, several people chimed in with anecdotes, someone posted a poll, and the thread ended with no engineering decision, no constraint, and no action item. Nothing in it affects the current work beyond morale.
+
+Digression f-10: a long discussion about whether meeting-free Wednesdays survived the reorg. It wandered for a while, several people chimed in with anecdotes, someone posted a poll, and the thread ended with no engineering decision, no constraint, and no action item. Nothing in it affects the current work beyond morale.
+
+NEXT ACTION: Size the ingress for combined steady-state load.

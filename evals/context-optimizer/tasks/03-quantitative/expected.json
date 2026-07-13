@@ -1,0 +1,9 @@
+{
+  "field_values": {
+    "TOTAL": "400"
+  },
+  "must_not_contain": [
+    "TOTAL: 442",
+    "TOTAL: 500"
+  ]
+}

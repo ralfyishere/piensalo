@@ -1,0 +1,14 @@
+{
+  "required_output_fields": [
+    {
+      "name": "NAME"
+    },
+    {
+      "name": "VERSION"
+    },
+    {
+      "name": "NEXT_COMMAND"
+    }
+  ],
+  "no_extra_lines": true
+}

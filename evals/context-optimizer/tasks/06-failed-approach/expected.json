@@ -1,0 +1,6 @@
+{
+  "must_contain": [
+    "Caching whole responses in Redis; cache invalidation bugs produced stale order totals in checkout and the approach was abandoned.",
+    "version-keyed"
+  ]
+}

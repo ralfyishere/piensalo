@@ -1,0 +1,6 @@
+{
+  "must_contain": [
+    "2.7.1-beta.3",
+    "pytest -q tests/store"
+  ]
+}

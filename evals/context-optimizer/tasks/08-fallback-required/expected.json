@@ -1,0 +1,6 @@
+{
+  "must_contain": [
+    "Binding rule 07: subsystem-07 must keep its p99 under 157 ms and abort on breach.",
+    "Binding rule 23: subsystem-23 must keep its p99 under 173 ms and abort on breach."
+  ]
+}

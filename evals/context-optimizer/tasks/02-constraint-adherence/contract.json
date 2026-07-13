@@ -1,0 +1,13 @@
+{
+  "required_output_fields": [
+    {
+      "name": "MIGRATION_RULE"
+    },
+    {
+      "name": "FREEZE_RULE"
+    },
+    {
+      "name": "STOP_RULE"
+    }
+  ]
+}

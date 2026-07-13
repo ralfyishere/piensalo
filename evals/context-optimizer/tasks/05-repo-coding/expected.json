@@ -1,0 +1,7 @@
+{
+  "must_contain": [
+    "services/widgets/src/store/pool.py",
+    "acquire",
+    "pytest -q tests/store"
+  ]
+}

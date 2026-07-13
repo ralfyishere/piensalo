@@ -1,0 +1,7 @@
+{
+  "required_output_fields": [
+    {
+      "name": "OWNER"
+    }
+  ]
+}

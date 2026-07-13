@@ -1,0 +1,10 @@
+{
+  "required_output_fields": [
+    {
+      "name": "APPROACH"
+    },
+    {
+      "name": "AVOID"
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+Digression g-1: a long discussion about the summer offsite venue and whether the lake house fits 40 people. It wandered for a while, several people chimed in with anecdotes, someone posted a poll, and the thread ended with no engineering decision, no constraint, and no action item. Nothing in it affects the current work beyond morale.
+
+Digression g-2: a long discussion about who keeps leaving the standing desk at maximum height. It wandered for a while, several people chimed in with anecdotes, someone posted a poll, and the thread ended with no engineering decision, no constraint, and no action item. Nothing in it affects the current work beyond morale.
+
+Digression g-3: a long discussion about the espresso machine descaling rota and its laminated instructions. It wandered for a while, several people chimed in with anecdotes, someone posted a poll, and the thread ended with no engineering decision, no constraint, and no action item. Nothing in it affects the current work beyond morale.
+
+Digression g-4: a long discussion about whether the team mascot should be a heron or an axolotl. It wandered for a while, several people chimed in with anecdotes, someone posted a poll, and the thread ended with no engineering decision, no constraint, and no action item. Nothing in it affects the current work beyond morale.
+
+Digression g-5: a long discussion about the never-ending thread about tabs versus spaces in the wiki. It wandered for a while, several people chimed in with anecdotes, someone posted a poll, and the thread ended with no engineering decision, no constraint, and no action item. Nothing in it affects the current work beyond morale.
+
+Digression g-6: a long discussion about parking garage badge readers rebooting every Tuesday. It wandered for a while, several people chimed in with anecdotes, someone posted a poll, and the thread ended with no engineering decision, no constraint, and no action item. Nothing in it affects the current work beyond morale.
+
+Digression g-7: a long discussion about the potluck signup sheet and three people all bringing hummus. It wandered for a while, several people chimed in with anecdotes, someone posted a poll, and the thread ended with no engineering decision, no constraint, and no action item. Nothing in it affects the current work beyond morale.
+
+Digression g-8: a long discussion about a long recap of the trivia night and the disputed geography answer. It wandered for a while, several people chimed in with anecdotes, someone posted a poll, and the thread ended with no engineering decision, no constraint, and no action item. Nothing in it affects the current work beyond morale.
+
+Digression g-9: a long discussion about the office plants watering schedule on alternating weeks. It wandered for a while, several people chimed in with anecdotes, someone posted a poll, and the thread ended with no engineering decision, no constraint, and no action item. Nothing in it affects the current work beyond morale.
+
+ARTIFACT: service name acme-widgets
+CONSTRAINT [EXACT]: The beta ships as version 2.7.1-beta.3, nothing else.
+NEXT ACTION: Run `pytest -q tests/store` before tagging.
+
+Digression h-1: a long discussion about the summer offsite venue and whether the lake house fits 40 people. It wandered for a while, several people chimed in with anecdotes, someone posted a poll, and the thread ended with no engineering decision, no constraint, and no action item. Nothing in it affects the current work beyond morale.
+
+Digression h-2: a long discussion about who keeps leaving the standing desk at maximum height. It wandered for a while, several people chimed in with anecdotes, someone posted a poll, and the thread ended with no engineering decision, no constraint, and no action item. Nothing in it affects the current work beyond morale.
+
+Digression h-3: a long discussion about the espresso machine descaling rota and its laminated instructions. It wandered for a while, several people chimed in with anecdotes, someone posted a poll, and the thread ended with no engineering decision, no constraint, and no action item. Nothing in it affects the current work beyond morale.
+
+Digression h-4: a long discussion about whether the team mascot should be a heron or an axolotl. It wandered for a while, several people chimed in with anecdotes, someone posted a poll, and the thread ended with no engineering decision, no constraint, and no action item. Nothing in it affects the current work beyond morale.
+
+Digression h-5: a long discussion about the never-ending thread about tabs versus spaces in the wiki. It wandered for a while, several people chimed in with anecdotes, someone posted a poll, and the thread ended with no engineering decision, no constraint, and no action item. Nothing in it affects the current work beyond morale.
+
+Digression h-6: a long discussion about parking garage badge readers rebooting every Tuesday. It wandered for a while, several people chimed in with anecdotes, someone posted a poll, and the thread ended with no engineering decision, no constraint, and no action item. Nothing in it affects the current work beyond morale.
+
+Digression h-7: a long discussion about the potluck signup sheet and three people all bringing hummus. It wandered for a while, several people chimed in with anecdotes, someone posted a poll, and the thread ended with no engineering decision, no constraint, and no action item. Nothing in it affects the current work beyond morale.
+
+Digression h-8: a long discussion about a long recap of the trivia night and the disputed geography answer. It wandered for a while, several people chimed in with anecdotes, someone posted a poll, and the thread ended with no engineering decision, no constraint, and no action item. Nothing in it affects the current work beyond morale.
+
+Digression h-9: a long discussion about the office plants watering schedule on alternating weeks. It wandered for a while, several people chimed in with anecdotes, someone posted a poll, and the thread ended with no engineering decision, no constraint, and no action item. Nothing in it affects the current work beyond morale.

@@ -1,0 +1,10 @@
+{
+  "field_values": {
+    "OWNER": "mireya.flores"
+  },
+  "must_not_contain": [
+    "OWNER: d.kim",
+    "OWNER: a.singh",
+    "OWNER: j.ortiz"
+  ]
+}

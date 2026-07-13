@@ -1,0 +1,7 @@
+{
+  "must_contain": [
+    "Never run schema migrations against the production database from a laptop.",
+    "The platform team freezes all deploys on Friday afternoons.",
+    "Stop the rollout if error rate exceeds 0.5% for 10 consecutive minutes."
+  ]
+}

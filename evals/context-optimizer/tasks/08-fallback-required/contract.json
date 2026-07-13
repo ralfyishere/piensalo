@@ -1,0 +1,10 @@
+{
+  "required_output_fields": [
+    {
+      "name": "C7"
+    },
+    {
+      "name": "C23"
+    }
+  ]
+}

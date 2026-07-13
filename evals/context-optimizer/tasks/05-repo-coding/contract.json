@@ -1,0 +1,13 @@
+{
+  "required_output_fields": [
+    {
+      "name": "FILE"
+    },
+    {
+      "name": "FUNCTION"
+    },
+    {
+      "name": "COMMAND"
+    }
+  ]
+}

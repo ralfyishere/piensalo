@@ -1,0 +1,13 @@
+{
+  "required_output_fields": [
+    {
+      "name": "COMMAND"
+    },
+    {
+      "name": "COMMIT"
+    },
+    {
+      "name": "HOSTING"
+    }
+  ]
+}
