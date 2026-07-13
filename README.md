@@ -146,7 +146,6 @@ never corrupting cognition. That is why abstention is the default posture.
   [src/piensalo/core/](src/piensalo/core/)
 - Architecture, methodology, evidence levels: [docs/](docs/) · export
   provenance and hash manifest: [docs/provenance/](docs/provenance/)
-- Optional Obsidian studio: [integrations/obsidian/](integrations/obsidian/)
 
 ## Security
 
