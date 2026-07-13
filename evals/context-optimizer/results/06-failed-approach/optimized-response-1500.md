@@ -1,0 +1,2 @@
+APPROACH: Cache per-entity fragments with version-keyed invalidation instead of whole responses.
+AVOID: Caching whole responses in Redis; cache invalidation bugs produced stale order totals in checkout and the approach was abandoned.

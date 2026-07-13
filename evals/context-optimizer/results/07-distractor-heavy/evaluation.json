@@ -1,0 +1,125 @@
+{
+  "baseline_full_context": {
+    "grade": {
+      "method": "deterministic contract + oracle (no model judge)",
+      "passed": true,
+      "requirements": [
+        {
+          "id": "contract:OWNER",
+          "kind": "contract",
+          "passed": true
+        },
+        {
+          "detail": null,
+          "id": "must_not_contain:OWNER: d.kim",
+          "kind": "oracle",
+          "passed": true
+        },
+        {
+          "detail": null,
+          "id": "must_not_contain:OWNER: a.singh",
+          "kind": "oracle",
+          "passed": true
+        },
+        {
+          "detail": null,
+          "id": "must_not_contain:OWNER: j.ortiz",
+          "kind": "oracle",
+          "passed": true
+        },
+        {
+          "detail": null,
+          "id": "value:OWNER",
+          "kind": "oracle",
+          "passed": true
+        }
+      ],
+      "status": "DETERMINISTIC TASK VERIFIED"
+    },
+    "note": "benchmark-only baseline; not part of deployable runtime cost",
+    "prompt_tokens_est": 3487,
+    "requested_model": "claude-haiku-4-5-20251001",
+    "resolved_model": "claude-haiku-4-5-20251001",
+    "tokens_in": 27265,
+    "tokens_out": 283,
+    "wall_seconds": 7.77
+  },
+  "budgets": [
+    {
+      "attempts": [
+        {
+          "added_chunk_ids": [],
+          "grade_passed": true,
+          "grade_status": "DETERMINISTIC TASK VERIFIED",
+          "label": "optimized",
+          "prompt_tokens_est": 310,
+          "requested_model": "claude-haiku-4-5-20251001",
+          "resolved_model": "claude-haiku-4-5-20251001",
+          "tokens_in": 24513,
+          "tokens_out": 144,
+          "wall_seconds": 4.05
+        }
+      ],
+      "budget": 1200,
+      "expansions": 0,
+      "fallback": false,
+      "gross_context_reduction": 0.9274,
+      "model_tokens_in_billed": 24513,
+      "model_tokens_out": 144,
+      "optimized_context_tokens_est": 246,
+      "optimized_grade": {
+        "method": "deterministic contract + oracle (no model judge)",
+        "passed": true,
+        "requirements": [
+          {
+            "id": "contract:OWNER",
+            "kind": "contract",
+            "passed": true
+          },
+          {
+            "detail": null,
+            "id": "must_not_contain:OWNER: d.kim",
+            "kind": "oracle",
+            "passed": true
+          },
+          {
+            "detail": null,
+            "id": "must_not_contain:OWNER: a.singh",
+            "kind": "oracle",
+            "passed": true
+          },
+          {
+            "detail": null,
+            "id": "must_not_contain:OWNER: j.ortiz",
+            "kind": "oracle",
+            "passed": true
+          },
+          {
+            "detail": null,
+            "id": "value:OWNER",
+            "kind": "oracle",
+            "passed": true
+          }
+        ],
+        "status": "DETERMINISTIC TASK VERIFIED"
+      },
+      "optimized_prompt_tokens_est_total": 310,
+      "outcome": "OPTIMIZED CONTEXT ACCEPTED",
+      "response_hash": "5e139e4d7a8fc3da20f99097ba41a598f0f5e9f3b1afdac176c2993f712ad86a",
+      "response_text": "OWNER: mireya.flores",
+      "runtime_net_input_savings_est": 0.9111,
+      "savings_note": "prompt-token estimate: what PIENSALO controls. Billed adapter totals include constant harness overhead (e.g. claude CLI system prompt) identical in both arms; see model_tokens_in_billed vs baseline tokens_in.",
+      "source_context_tokens_est": 3390,
+      "verdict": "MAINTAINED"
+    }
+  ],
+  "deterministic_settings": {
+    "note": "adapter exposes no temperature/seed control; single-sample comparison, recorded as such"
+  },
+  "full_response_text": "OWNER: mireya.flores",
+  "grader": "deterministic contract + oracle (identical for both arms)",
+  "source_context_hash": "93575999dbf5d5bbe1097952311033659a2c88f726b724b8b83729722003cf65",
+  "target_requested_model": "claude-haiku-4-5-20251001",
+  "target_resolved_model": "claude-haiku-4-5-20251001",
+  "task": "From the project context: who owns the pager rotation fix? Answer with exactly:\nOWNER: <exact username>"
+}

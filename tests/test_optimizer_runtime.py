@@ -227,9 +227,10 @@ def test_evaluate_pairs_full_and_optimized_with_benchmark_separation():
     assert b["verdict"] == "MAINTAINED"
     assert b["outcome"] == "OPTIMIZED CONTEXT ACCEPTED"
     # Benchmark tokens never leak into the optimized arm's cost.
-    baseline_in = report["baseline_full_context"]["tokens_in"]
-    assert b["model_tokens_in"] < baseline_in
-    assert b["runtime_net_savings_vs_baseline_in"] > 0
+    baseline_prompt = report["baseline_full_context"]["prompt_tokens_est"]
+    assert b["optimized_prompt_tokens_est_total"] < baseline_prompt
+    assert b["runtime_net_input_savings_est"] > 0
+    assert "billed" in b["savings_note"]
     assert report["target_resolved_model"] == "fake-model-1"
 
 

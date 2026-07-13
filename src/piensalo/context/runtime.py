@@ -119,12 +119,16 @@ def run_optimized(*, task_text: str, items, budget: int, adapter,
             "runtime_token_cost": runtime_cost,
             "full_context_prompt_tokens_est": full_prompt_est,
             "runtime_net_savings_vs_full_est": (
-                None if not model_in else round(
-                    1.0 - (model_in / max(1, full_prompt_est)), 4)),
+                None if not attempts else round(
+                    1.0 - (sum(a.prompt_tokens_est for a in attempts)
+                           / max(1, full_prompt_est)), 4)),
             "runtime_net_savings_note": (
-                "input-side estimate vs the full-context prompt this request "
-                "would have sent; output tokens are equal-cost either way. "
-                "No baseline was executed for this request."),
+                "estimate: prompt tokens actually sent (all attempts, incl. "
+                "expansions/fallback) vs the full-context prompt this "
+                "request would have sent. Adapter-billed totals are in "
+                "model_input_tokens and may include constant harness "
+                "overhead (e.g. the claude CLI system prompt) identical in "
+                "either path. No baseline was executed for this request."),
             "expansions": sum(1 for a in attempts
                               if a.label.startswith("expansion")),
             "fallback": outcome.startswith("SAFE FALLBACK"),

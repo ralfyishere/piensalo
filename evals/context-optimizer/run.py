@@ -68,28 +68,34 @@ def main() -> int:
             "fallback": b["fallback"],
             "baseline_tokens_in": base["tokens_in"],
             "baseline_tokens_out": base["tokens_out"],
-            "optimized_tokens_in": b["model_tokens_in"],
+            "optimized_tokens_in_billed": b["model_tokens_in_billed"],
             "optimized_tokens_out": b["model_tokens_out"],
-            "runtime_net_savings_vs_baseline_in":
-                b["runtime_net_savings_vs_baseline_in"],
+            "optimized_prompt_tokens_est": b["optimized_prompt_tokens_est_total"],
+            "baseline_prompt_tokens_est":
+                base["prompt_tokens_est"],
+            "runtime_net_input_savings_est":
+                b["runtime_net_input_savings_est"],
             "resolved_model": report["target_resolved_model"],
         }
         rows.append(row)
         print(f"   verdict={row['verdict']} outcome={row['outcome']} "
               f"reduction={row['gross_context_reduction']} "
-              f"net_in_savings={row['runtime_net_savings_vs_baseline_in']}",
+              f"net_in_savings={row['runtime_net_input_savings_est']}",
               flush=True)
 
     reductions = [r["gross_context_reduction"] for r in rows
                   if r["gross_context_reduction"] is not None]
-    savings = [r["runtime_net_savings_vs_baseline_in"] for r in rows
-               if r["runtime_net_savings_vs_baseline_in"] is not None]
+    savings = [r["runtime_net_input_savings_est"] for r in rows
+               if r["runtime_net_input_savings_est"] is not None
+               and not r["task"].startswith("08")]
     regressions = [r["task"] for r in rows if r["verdict"] == "REGRESSION"]
     safe_optimized = [r["task"] for r in rows if r["verdict"] in SAFE_VERDICTS
                       and r["outcome"] == "OPTIMIZED CONTEXT ACCEPTED"]
-    fallbacks = [r["task"] for r in rows if r["fallback"]]
-    fallback_task_ok = any(r["task"].startswith("08") and r["fallback"]
-                           for r in rows)
+    fallbacks = [r["task"] for r in rows if r["verdict"] == "SAFE FALLBACK"]
+    fallback_task_ok = any(
+        r["task"].startswith("08") and r["verdict"] == "SAFE FALLBACK"
+        and r["full_grade_passed"] is True  # the full-context path works
+        for r in rows)
 
     summary = {
         "model": args.model,

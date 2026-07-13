@@ -63,6 +63,7 @@ def evaluate(*, task_text: str, items, budgets: list[int], adapter,
         verdict = quality.compare_verdict(full_grade, opt_grade,
                                           optimized_accepted=accepted)
         optimized_in = sum(a.tokens_in for a in run.attempts)
+        opt_prompt_sum = sum(a.prompt_tokens_est for a in run.attempts)
         budget_results.append({
             "budget": budget,
             "outcome": run.outcome,
@@ -75,11 +76,18 @@ def evaluate(*, task_text: str, items, budgets: list[int], adapter,
                 run.ledger["optimized_context_tokens_est"],
             "source_context_tokens_est":
                 run.ledger["source_context_tokens_est"],
-            "model_tokens_in": optimized_in,
+            "optimized_prompt_tokens_est_total": opt_prompt_sum,
+            "model_tokens_in_billed": optimized_in,
             "model_tokens_out": sum(a.tokens_out for a in run.attempts),
-            "runtime_net_savings_vs_baseline_in": (
-                None if not (optimized_in and full_resp.tokens_in) else
-                round(1.0 - optimized_in / full_resp.tokens_in, 4)),
+            "runtime_net_input_savings_est": (
+                None if not run.attempts else round(
+                    1.0 - opt_prompt_sum
+                    / max(1, baseline["prompt_tokens_est"]), 4)),
+            "savings_note": (
+                "prompt-token estimate: what PIENSALO controls. Billed "
+                "adapter totals include constant harness overhead (e.g. "
+                "claude CLI system prompt) identical in both arms; see "
+                "model_tokens_in_billed vs baseline tokens_in."),
             "attempts": run.provenance["attempts"],
             "response_hash": (schema.sha256_text(run.response_text)
                               if run.response_text else None),

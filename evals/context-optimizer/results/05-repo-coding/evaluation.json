@@ -1,0 +1,151 @@
+{
+  "baseline_full_context": {
+    "grade": {
+      "method": "deterministic contract + oracle (no model judge)",
+      "passed": true,
+      "requirements": [
+        {
+          "id": "contract:FILE",
+          "kind": "contract",
+          "passed": true
+        },
+        {
+          "id": "contract:FUNCTION",
+          "kind": "contract",
+          "passed": true
+        },
+        {
+          "id": "contract:COMMAND",
+          "kind": "contract",
+          "passed": true
+        },
+        {
+          "detail": null,
+          "id": "must_contain:services/widgets/src/store/pool.py",
+          "kind": "oracle",
+          "passed": true
+        },
+        {
+          "detail": null,
+          "id": "must_contain:acquire",
+          "kind": "oracle",
+          "passed": true
+        },
+        {
+          "detail": null,
+          "id": "must_contain:pytest -q tests/store",
+          "kind": "oracle",
+          "passed": true
+        }
+      ],
+      "status": "DETERMINISTIC TASK VERIFIED"
+    },
+    "note": "benchmark-only baseline; not part of deployable runtime cost",
+    "prompt_tokens_est": 1895,
+    "requested_model": "claude-haiku-4-5-20251001",
+    "resolved_model": "claude-haiku-4-5-20251001",
+    "tokens_in": 25955,
+    "tokens_out": 390,
+    "wall_seconds": 6.75
+  },
+  "budgets": [
+    {
+      "attempts": [
+        {
+          "added_chunk_ids": [],
+          "grade_passed": false,
+          "grade_status": "REGRESSION-CANDIDATE",
+          "label": "optimized",
+          "prompt_tokens_est": 382,
+          "requested_model": "claude-haiku-4-5-20251001",
+          "resolved_model": "claude-haiku-4-5-20251001",
+          "tokens_in": 102836,
+          "tokens_out": 1167,
+          "wall_seconds": 23.0
+        },
+        {
+          "added_chunk_ids": [
+            "block-01f71c8b74da",
+            "block-3f9e68c33d67",
+            "block-5b87444a2f9d",
+            "block-b31c06d9c852",
+            "block-b4e55097b323"
+          ],
+          "grade_passed": true,
+          "grade_status": "DETERMINISTIC TASK VERIFIED",
+          "label": "expansion-1",
+          "prompt_tokens_est": 1294,
+          "requested_model": "claude-haiku-4-5-20251001",
+          "resolved_model": "claude-haiku-4-5-20251001",
+          "tokens_in": 25552,
+          "tokens_out": 338,
+          "wall_seconds": 7.01
+        }
+      ],
+      "budget": 1500,
+      "expansions": 1,
+      "fallback": false,
+      "gross_context_reduction": 0.8336,
+      "model_tokens_in_billed": 128388,
+      "model_tokens_out": 1505,
+      "optimized_context_tokens_est": 290,
+      "optimized_grade": {
+        "method": "deterministic contract + oracle (no model judge)",
+        "passed": true,
+        "requirements": [
+          {
+            "id": "contract:FILE",
+            "kind": "contract",
+            "passed": true
+          },
+          {
+            "id": "contract:FUNCTION",
+            "kind": "contract",
+            "passed": true
+          },
+          {
+            "id": "contract:COMMAND",
+            "kind": "contract",
+            "passed": true
+          },
+          {
+            "detail": null,
+            "id": "must_contain:services/widgets/src/store/pool.py",
+            "kind": "oracle",
+            "passed": true
+          },
+          {
+            "detail": null,
+            "id": "must_contain:acquire",
+            "kind": "oracle",
+            "passed": true
+          },
+          {
+            "detail": null,
+            "id": "must_contain:pytest -q tests/store",
+            "kind": "oracle",
+            "passed": true
+          }
+        ],
+        "status": "DETERMINISTIC TASK VERIFIED"
+      },
+      "optimized_prompt_tokens_est_total": 1676,
+      "outcome": "OPTIMIZED CONTEXT ACCEPTED",
+      "response_hash": "03a41a76eaa765c29070e79267dcb985f7cf1521d6e161af16b476b8ad08811c",
+      "response_text": "FILE: services/widgets/src/store/pool.py\nFUNCTION: acquire\nCOMMAND: pytest -q tests/store",
+      "runtime_net_input_savings_est": 0.1156,
+      "savings_note": "prompt-token estimate: what PIENSALO controls. Billed adapter totals include constant harness overhead (e.g. claude CLI system prompt) identical in both arms; see model_tokens_in_billed vs baseline tokens_in.",
+      "source_context_tokens_est": 1743,
+      "verdict": "MAINTAINED"
+    }
+  ],
+  "deterministic_settings": {
+    "note": "adapter exposes no temperature/seed control; single-sample comparison, recorded as such"
+  },
+  "full_response_text": "FILE: services/widgets/src/store/pool.py\nFUNCTION: acquire\nCOMMAND: pytest -q tests/store",
+  "grader": "deterministic contract + oracle (identical for both arms)",
+  "source_context_hash": "e4c6a4915492c88c45f2ec16c5b3a87688b2b21f46937e5b7393e22473db2069",
+  "target_requested_model": "claude-haiku-4-5-20251001",
+  "target_resolved_model": "claude-haiku-4-5-20251001",
+  "task": "Based on the project context: which file and function must change to fix the flaky CI timeout, and what exact command reproduces it? Answer with exactly:\nFILE: <exact path>\nFUNCTION: <name>\nCOMMAND: <exact command>"
+}

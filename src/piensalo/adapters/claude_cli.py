@@ -67,12 +67,18 @@ class ClaudeCliAdapter(ModelAdapter):
             raise AdapterError("claude CLI result has no modelUsage — provenance unverifiable")
 
         usage = result.get("usage", {})
+        # Total billed input: the CLI splits the prompt across
+        # input_tokens and the cache-accounting buckets; reporting only
+        # input_tokens (often ~9) silently understates real usage.
+        tokens_in = (usage.get("input_tokens", 0)
+                     + usage.get("cache_creation_input_tokens", 0)
+                     + usage.get("cache_read_input_tokens", 0))
         return ModelResponse(
             text=result.get("result", ""),
             requested_model=self.requested_model,
             resolved_model=resolved,
             provider=self.provider,
-            tokens_in=usage.get("input_tokens", 0),
+            tokens_in=tokens_in,
             tokens_out=usage.get("output_tokens", 0),
             wall_seconds=wall,
             raw=result,

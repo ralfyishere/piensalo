@@ -1,0 +1,74 @@
+{
+  "baseline_full_context": {
+    "grade": {
+      "method": "deterministic contract + oracle (no model judge)",
+      "passed": true,
+      "requirements": [
+        {
+          "id": "contract:C7",
+          "kind": "contract",
+          "passed": true
+        },
+        {
+          "id": "contract:C23",
+          "kind": "contract",
+          "passed": true
+        },
+        {
+          "detail": null,
+          "id": "must_contain:Binding rule 07: subsystem-07 must keep its p99 under 157 ms",
+          "kind": "oracle",
+          "passed": true
+        },
+        {
+          "detail": null,
+          "id": "must_contain:Binding rule 23: subsystem-23 must keep its p99 under 173 ms",
+          "kind": "oracle",
+          "passed": true
+        }
+      ],
+      "status": "DETERMINISTIC TASK VERIFIED"
+    },
+    "note": "benchmark-only baseline; not part of deployable runtime cost",
+    "prompt_tokens_est": 1159,
+    "requested_model": "claude-haiku-4-5-20251001",
+    "resolved_model": "claude-haiku-4-5-20251001",
+    "tokens_in": 25711,
+    "tokens_out": 1046,
+    "wall_seconds": 10.33
+  },
+  "budgets": [
+    {
+      "attempts": [],
+      "budget": 400,
+      "expansions": 0,
+      "fallback": false,
+      "gross_context_reduction": null,
+      "model_tokens_in_billed": 0,
+      "model_tokens_out": 0,
+      "optimized_context_tokens_est": 0,
+      "optimized_grade": {
+        "passed": null,
+        "requirements": [],
+        "status": "UNMEASURED"
+      },
+      "optimized_prompt_tokens_est_total": 0,
+      "outcome": "OPTIMIZATION REJECTED — FULL CONTEXT REQUIRED",
+      "response_hash": null,
+      "response_text": null,
+      "runtime_net_input_savings_est": null,
+      "savings_note": "prompt-token estimate: what PIENSALO controls. Billed adapter totals include constant harness overhead (e.g. claude CLI system prompt) identical in both arms; see model_tokens_in_billed vs baseline tokens_in.",
+      "source_context_tokens_est": 1044,
+      "verdict": "SAFE FALLBACK"
+    }
+  ],
+  "deterministic_settings": {
+    "note": "adapter exposes no temperature/seed control; single-sample comparison, recorded as such"
+  },
+  "full_response_text": "C7: Binding rule 07: subsystem-07 must keep its p99 under 157 ms and abort on breach.\nC23: Binding rule 23: subsystem-23 must keep its p99 under 173 ms and abort on breach.",
+  "grader": "deterministic contract + oracle (identical for both arms)",
+  "source_context_hash": "f0f9a52e812816d7f70b137c09afc881236f3289cb0bb891c28cd33f5bf82d5e",
+  "target_requested_model": "claude-haiku-4-5-20251001",
+  "target_resolved_model": "claude-haiku-4-5-20251001",
+  "task": "Quote binding rule 07 and binding rule 23 byte-for-byte from the context. Answer with exactly:\nC7: <exact rule text>\nC23: <exact rule text>"
+}

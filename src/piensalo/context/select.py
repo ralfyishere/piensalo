@@ -197,13 +197,28 @@ def chunk_items(items: list[NormalizedItem]) -> list[Chunk]:
 
 def score_chunks(chunks: list[Chunk], task_text: str,
                  task_artifacts: tuple[str, ...] = ()) -> None:
-    """Attach inspectable score factors to every chunk (in place)."""
+    """Attach inspectable score factors to every chunk (in place).
+
+    Task relevance counts only DISCRIMINATIVE shared words: a word that
+    appears across a large share of chunks (corpus boilerplate like
+    "decision" in every meeting recap) carries no signal about THIS
+    chunk, so it is excluded by document frequency. Deterministic and
+    recorded per chunk.
+    """
     task_words = _words(task_text) | _words(" ".join(task_artifacts))
     total = max(1, len(chunks))
+    df: dict[str, int] = {}
+    chunk_words: list[set[str]] = []
     for c in chunks:
         cw = _words(c.content)
-        shared = sorted(task_words & cw)
-        relevance = min(1.0, len(shared) / 6.0)
+        chunk_words.append(cw)
+        for w in cw:
+            df[w] = df.get(w, 0) + 1
+    generic_at = max(3, round(0.3 * total))
+    for c, cw in zip(chunks, chunk_words):
+        shared = sorted(w for w in (task_words & cw)
+                        if df[w] < generic_at)
+        relevance = min(1.0, len(shared) / 4.0)
         criticality = _CRITICALITY.get(c.record_type or "", 0.0) \
             if c.kind == "marker_record" else \
             (_ROLE_WEIGHT.get(c.role, 0.4) * 0.5)
