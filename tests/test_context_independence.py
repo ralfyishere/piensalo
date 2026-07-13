@@ -49,15 +49,28 @@ def test_context_source_imports_no_provider_or_network_module():
 
 
 def test_context_runtime_loads_no_provider_or_adapter_module(project_root):
+    """Runs in a fresh interpreter: pytest collection itself imports
+    piensalo.adapters (fake-adapter tests), so in-process sys.modules
+    cannot measure what the context core loads."""
+    import subprocess
     src = project_root / "t.txt"
     src.write_text(TRANSCRIPT, encoding="utf-8")
-    compile_to_dir(str(src), str(project_root / "out"), goal="g",
-                   token_budget=5000)
-    verify.verify_dir(str(project_root / "out"))
-    loaded = set(sys.modules)
-    for banned in ("anthropic", "openai", "requests", "httpx",
-                   "piensalo.adapters"):
-        assert banned not in loaded, f"{banned} was imported by the context core"
+    code = (
+        "import sys\n"
+        f"sys.path.insert(0, {str(CONTEXT_SRC.parent.parent)!r})\n"
+        "from piensalo.context.compiler import compile_to_dir\n"
+        "from piensalo.context import verify\n"
+        "compile_to_dir('t.txt', 'out', goal='g', token_budget=5000)\n"
+        "verify.verify_dir('out')\n"
+        "loaded = [m for m in sys.modules if m.startswith(("
+        "'anthropic', 'openai', 'requests', 'httpx', 'piensalo.adapters'))]\n"
+        "assert not loaded, loaded\n"
+        "print('CLEAN')\n"
+    )
+    proc = subprocess.run([sys.executable, "-c", code], capture_output=True,
+                          text=True, cwd=str(project_root))
+    assert proc.returncode == 0, proc.stderr
+    assert "CLEAN" in proc.stdout
 
 
 def test_full_pipeline_with_no_credentials_and_no_network(project_root,

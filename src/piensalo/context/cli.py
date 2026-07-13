@@ -183,6 +183,118 @@ def cmd_diff(args) -> int:
     return EXIT_OK
 
 
+def _get_adapter(name: str | None, model: str | None,
+                 response_file: str | None = None):
+    """Build an adapter from explicit CLI configuration only."""
+    if name is None:
+        return None
+    from piensalo.adapters import get_adapter
+    resolved = {"openai": "openai-compat"}.get(name, name)
+    if resolved != "manual" and not model:
+        raise ValueError(f"--adapter {name} requires an explicit --model")
+    kwargs: dict = {}
+    if model:
+        kwargs["model"] = model
+    if resolved == "manual" and response_file:
+        kwargs["response_file"] = response_file
+    return get_adapter(resolved, **kwargs)
+
+
+def cmd_optimize(args) -> int:
+    from piensalo.context.ingest import IngestError
+    from piensalo.context.optimize import optimize_to_dir
+    try:
+        extraction = _get_adapter(args.extraction_adapter,
+                                  args.extraction_model)
+        result = optimize_to_dir(
+            task_path=args.task, context_path=args.context,
+            artifact_paths=args.artifact, budget=args.budget,
+            output_dir=args.output, source_model=args.source_model,
+            mode=args.mode, extraction_adapter=extraction)
+    except (ValueError, IngestError) as e:
+        print(f"piensalo context optimize: {e}", file=sys.stderr)
+        return EXIT_USAGE
+    r = result.report
+    out = Path(args.output)
+    for name in ("optimized-context.md", "selection-manifest.json",
+                 "optimization-report.json", "capsule.json"):
+        print(f"wrote {out / name}")
+    if result.refused:
+        print("OPTIMIZATION REFUSED — FULL CONTEXT REQUIRED", file=sys.stderr)
+        print(result.selection.refusal_reason, file=sys.stderr)
+        return EXIT_EXPANSION
+    print(f"original tokens (est): {r['original_tokens_est']}  "
+          f"optimized: {r['optimized_context_tokens']}  "
+          f"gross reduction: {r['gross_reduction']:.0%}")
+    print(f"mandatory: {r['mandatory_context_tokens']}  "
+          f"selected: {r['selected_context_tokens']}  "
+          f"omitted: {r['omitted_context_tokens']}")
+    print("behavioral status: UNMEASURED (no model was run)")
+    return EXIT_OK
+
+
+def cmd_run(args) -> int:
+    from piensalo.adapters.base import AdapterError
+    from piensalo.context.ingest import IngestError
+    from piensalo.context.runtime import run_to_dir
+    try:
+        adapter = _get_adapter(args.adapter, args.model, args.response_file)
+        result = run_to_dir(
+            task_path=args.task, context_path=args.context,
+            artifact_paths=args.artifact, budget=args.budget,
+            adapter=adapter, contract_path=args.contract,
+            expectations_path=args.expected,
+            max_expansions=args.max_expansions, fallback=args.fallback,
+            output_dir=args.output)
+    except (ValueError, IngestError, AdapterError, OSError) as e:
+        print(f"piensalo context run: {e}", file=sys.stderr)
+        return EXIT_USAGE
+    print(f"outcome: {result.outcome}")
+    for a in result.attempts:
+        print(f"  {a.label}: requested={a.requested_model} "
+              f"resolved={a.resolved_model} in/out={a.tokens_in}/"
+              f"{a.tokens_out} grade={a.grade.get('status')}")
+    ledger = result.ledger
+    print(f"gross context reduction: {ledger['gross_context_reduction']}")
+    print(f"runtime net savings vs full (input est): "
+          f"{ledger['runtime_net_savings_vs_full_est']}")
+    print(f"expansions: {ledger['expansions']}  "
+          f"fallback: {ledger['fallback']}")
+    if result.outcome == "OPTIMIZED CONTEXT ACCEPTED":
+        return EXIT_OK
+    if result.outcome.startswith("SAFE FALLBACK"):
+        return EXIT_OK if result.response_text is not None else EXIT_EXPANSION
+    return EXIT_EXPANSION
+
+
+def cmd_evaluate(args) -> int:
+    from piensalo.adapters.base import AdapterError
+    from piensalo.context.evaluate import evaluate_to_dir
+    from piensalo.context.ingest import IngestError
+    try:
+        budgets = [int(b) for b in args.budgets.split(",") if b.strip()]
+        if not budgets:
+            raise ValueError("--budgets must list at least one integer")
+        adapter = _get_adapter(args.adapter, args.model)
+        report = evaluate_to_dir(
+            task_path=args.task, context_path=args.context, budgets=budgets,
+            adapter=adapter, contract_path=args.contract,
+            expectations_path=args.expected, output_dir=args.output,
+            max_expansions=args.max_expansions)
+    except (ValueError, IngestError, AdapterError, OSError) as e:
+        print(f"piensalo context evaluate: {e}", file=sys.stderr)
+        return EXIT_USAGE
+    print(f"baseline (benchmark-only): resolved="
+          f"{report['target_resolved_model']} grade="
+          f"{report['baseline_full_context']['grade']['status']}")
+    for b in report["budgets"]:
+        print(f"budget {b['budget']}: verdict={b['verdict']} "
+              f"outcome={b['outcome']} reduction="
+              f"{b['gross_context_reduction']} expansions={b['expansions']}")
+    print(f"wrote {Path(args.output) / 'evaluation.json'}")
+    return EXIT_OK
+
+
 def add_context_parser(sub) -> None:
     """Wire `piensalo context ...` into the main argparse tree."""
     p = sub.add_parser(
@@ -227,3 +339,65 @@ def add_context_parser(sub) -> None:
     c.add_argument("--json", action="store_true",
                    help="machine-readable canonical JSON output")
     c.set_defaults(func=cmd_diff)
+
+    c = csub.add_parser(
+        "optimize",
+        help="build a task-specific budgeted context packet (offline)")
+    c.add_argument("--task", required=True, help="task file")
+    c.add_argument("--context", required=True,
+                   help="context file (text, markers, JSON, or JSONL)")
+    c.add_argument("--artifact", action="append", default=[],
+                   help="file or directory artifact (repeatable)")
+    c.add_argument("--budget", required=True, type=int)
+    c.add_argument("--output", required=True, help="output directory")
+    c.add_argument("--source-model", default=None,
+                   help="optional provenance metadata (any provider)")
+    c.add_argument("--mode",
+                   choices=("deterministic", "adapter-assisted", "hybrid"),
+                   default="deterministic")
+    c.add_argument("--extraction-adapter", default=None,
+                   help="adapter for adapter-assisted/hybrid extraction "
+                        "(never called in deterministic mode)")
+    c.add_argument("--extraction-model", default=None)
+    c.set_defaults(func=cmd_optimize)
+
+    c = csub.add_parser(
+        "run",
+        help="optimize, execute the target model, verify, expand or "
+             "fall back")
+    c.add_argument("--task", required=True)
+    c.add_argument("--context", required=True)
+    c.add_argument("--artifact", action="append", default=[])
+    c.add_argument("--budget", required=True, type=int)
+    c.add_argument("--adapter", required=True,
+                   choices=("manual", "claude-cli", "openai", "ollama"))
+    c.add_argument("--model", default=None,
+                   help="explicit target model id (required except manual)")
+    c.add_argument("--contract", default=None, help="output-contract JSON")
+    c.add_argument("--expected", default=None,
+                   help="deterministic oracle JSON (must_contain / "
+                        "must_not_contain / field_values)")
+    c.add_argument("--max-expansions", type=int, default=2)
+    c.add_argument("--fallback", choices=("recommend", "run"),
+                   default="recommend")
+    c.add_argument("--output", required=True)
+    c.add_argument("--response-file", default=None,
+                   help="manual adapter only")
+    c.set_defaults(func=cmd_run)
+
+    c = csub.add_parser(
+        "evaluate",
+        help="paired full-vs-optimized evidence run (benchmark cost is "
+             "ledgered separately)")
+    c.add_argument("--task", required=True)
+    c.add_argument("--context", required=True)
+    c.add_argument("--adapter", required=True,
+                   choices=("manual", "claude-cli", "openai", "ollama"))
+    c.add_argument("--model", default=None)
+    c.add_argument("--contract", default=None)
+    c.add_argument("--expected", default=None)
+    c.add_argument("--budgets", required=True,
+                   help="comma-separated token budgets, e.g. 2000,4000")
+    c.add_argument("--max-expansions", type=int, default=2)
+    c.add_argument("--output", required=True)
+    c.set_defaults(func=cmd_evaluate)
