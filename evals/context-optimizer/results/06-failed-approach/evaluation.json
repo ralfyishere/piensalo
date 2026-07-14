@@ -33,9 +33,9 @@
     "prompt_tokens_est": 2025,
     "requested_model": "claude-haiku-4-5-20251001",
     "resolved_model": "claude-haiku-4-5-20251001",
-    "tokens_in": 25932,
-    "tokens_out": 417,
-    "wall_seconds": 7.94
+    "tokens_in": 9000,
+    "tokens_out": 428,
+    "wall_seconds": 5.71
   },
   "budgets": [
     {
@@ -45,21 +45,21 @@
           "grade_passed": true,
           "grade_status": "DETERMINISTIC TASK VERIFIED",
           "label": "optimized",
-          "prompt_tokens_est": 333,
+          "prompt_tokens_est": 389,
           "requested_model": "claude-haiku-4-5-20251001",
           "resolved_model": "claude-haiku-4-5-20251001",
-          "tokens_in": 24512,
-          "tokens_out": 358,
-          "wall_seconds": 4.33
+          "tokens_in": 7512,
+          "tokens_out": 441,
+          "wall_seconds": 6.71
         }
       ],
       "budget": 1500,
       "expansions": 0,
       "fallback": false,
-      "gross_context_reduction": 0.8642,
-      "model_tokens_in_billed": 24512,
-      "model_tokens_out": 358,
-      "optimized_context_tokens_est": 255,
+      "gross_context_reduction": 0.8344,
+      "model_tokens_in_billed": 7512,
+      "model_tokens_out": 441,
+      "optimized_context_tokens_est": 311,
       "optimized_grade": {
         "method": "deterministic contract + oracle (no model judge)",
         "passed": true,
@@ -89,11 +89,11 @@
         ],
         "status": "DETERMINISTIC TASK VERIFIED"
       },
-      "optimized_prompt_tokens_est_total": 333,
+      "optimized_prompt_tokens_est_total": 389,
       "outcome": "OPTIMIZED CONTEXT ACCEPTED",
       "response_hash": "1d2d4f424a57e113651c8a90c24bfbd829b88c1cbc54900d1034a69e135a9d96",
       "response_text": "APPROACH: Cache per-entity fragments with version-keyed invalidation instead of whole responses.\nAVOID: Caching whole responses in Redis; cache invalidation bugs produced stale order totals in checkout and the approach was abandoned.",
-      "runtime_net_input_savings_est": 0.8356,
+      "runtime_net_input_savings_est": 0.8079,
       "savings_note": "prompt-token estimate: what PIENSALO controls. Billed adapter totals include constant harness overhead (e.g. claude CLI system prompt) identical in both arms; see model_tokens_in_billed vs baseline tokens_in.",
       "source_context_tokens_est": 1878,
       "verdict": "MAINTAINED"
@@ -102,7 +102,7 @@
   "deterministic_settings": {
     "note": "adapter exposes no temperature/seed control; single-sample comparison, recorded as such"
   },
-  "full_response_text": "APPROACH: Cache per-entity fragments with version-keyed invalidation to avoid stale data bugs inherent in whole-response caching.\nAVOID: Caching whole responses in Redis; cache invalidation bugs produced stale order totals in checkout and the approach was abandoned.",
+  "full_response_text": "APPROACH: Cache per-entity fragments with version-keyed invalidation instead of whole responses.\nAVOID: Caching whole responses in Redis; cache invalidation bugs produced stale order totals in checkout and the approach was abandoned.",
   "grader": "deterministic contract + oracle (identical for both arms)",
   "source_context_hash": "f35b441b4e86823a8abf4f730752efcf943545342fd8cc952975bab1c89c18bc",
   "target_requested_model": "claude-haiku-4-5-20251001",

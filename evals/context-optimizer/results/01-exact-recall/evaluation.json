@@ -50,9 +50,9 @@
     "prompt_tokens_est": 2413,
     "requested_model": "claude-haiku-4-5-20251001",
     "resolved_model": "claude-haiku-4-5-20251001",
-    "tokens_in": 26445,
-    "tokens_out": 630,
-    "wall_seconds": 11.96
+    "tokens_in": 9411,
+    "tokens_out": 663,
+    "wall_seconds": 12.17
   },
   "budgets": [
     {
@@ -62,21 +62,21 @@
           "grade_passed": true,
           "grade_status": "DETERMINISTIC TASK VERIFIED",
           "label": "optimized",
-          "prompt_tokens_est": 570,
+          "prompt_tokens_est": 626,
           "requested_model": "claude-haiku-4-5-20251001",
           "resolved_model": "claude-haiku-4-5-20251001",
-          "tokens_in": 24696,
-          "tokens_out": 388,
-          "wall_seconds": 3.99
+          "tokens_in": 7814,
+          "tokens_out": 314,
+          "wall_seconds": 5.91
         }
       ],
       "budget": 1600,
       "expansions": 0,
       "fallback": false,
-      "gross_context_reduction": 0.7857,
-      "model_tokens_in_billed": 24696,
-      "model_tokens_out": 388,
-      "optimized_context_tokens_est": 478,
+      "gross_context_reduction": 0.7611,
+      "model_tokens_in_billed": 7814,
+      "model_tokens_out": 314,
+      "optimized_context_tokens_est": 533,
       "optimized_grade": {
         "method": "deterministic contract + oracle (no model judge)",
         "passed": true,
@@ -123,11 +123,11 @@
         ],
         "status": "DETERMINISTIC TASK VERIFIED"
       },
-      "optimized_prompt_tokens_est_total": 570,
+      "optimized_prompt_tokens_est_total": 626,
       "outcome": "OPTIMIZED CONTEXT ACCEPTED",
       "response_hash": "7d7012fa98f06923f8a9b17d01364d97a6f5a11ed74c58c09275d3a37fd423c3",
       "response_text": "COMMAND: make deploy ENV=staging TAG=beta\nCOMMIT: 4f2a9c1e7b3d5a20\nHOSTING: Host the beta on a dedicated small cluster after the March latency incident.",
-      "runtime_net_input_savings_est": 0.7638,
+      "runtime_net_input_savings_est": 0.7406,
       "savings_note": "prompt-token estimate: what PIENSALO controls. Billed adapter totals include constant harness overhead (e.g. claude CLI system prompt) identical in both arms; see model_tokens_in_billed vs baseline tokens_in.",
       "source_context_tokens_est": 2231,
       "verdict": "MAINTAINED"

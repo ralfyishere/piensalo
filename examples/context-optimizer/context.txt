@@ -1,0 +1,72 @@
+Digression w-1: a long thread about the summer offsite venue and whether the lake house fits everyone. People chimed in with anecdotes, someone posted a poll, and it petered out with nothing binding for the project and nothing anyone must do.
+
+Digression w-2: a long thread about the espresso machine descaling rota and its laminated instructions. People chimed in with anecdotes, someone posted a poll, and it petered out with nothing binding for the project and nothing anyone must do.
+
+Digression w-3: a long thread about whether the team mascot should be a heron or an axolotl. People chimed in with anecdotes, someone posted a poll, and it petered out with nothing binding for the project and nothing anyone must do.
+
+Digression w-4: a long thread about parking garage badge readers rebooting every Tuesday. People chimed in with anecdotes, someone posted a poll, and it petered out with nothing binding for the project and nothing anyone must do.
+
+Digression w-5: a long thread about the potluck signup sheet and three people all bringing hummus. People chimed in with anecdotes, someone posted a poll, and it petered out with nothing binding for the project and nothing anyone must do.
+
+Digression w-6: a long thread about lunch options near the office and the new dumpling place. People chimed in with anecdotes, someone posted a poll, and it petered out with nothing binding for the project and nothing anyone must do.
+
+Digression w-7: a long thread about the design team's font pairing debate for the newsletter. People chimed in with anecdotes, someone posted a poll, and it petered out with nothing binding for the project and nothing anyone must do.
+
+Digression w-8: a long thread about a birthday card circulating for someone in another department. People chimed in with anecdotes, someone posted a poll, and it petered out with nothing binding for the project and nothing anyone must do.
+
+Digression w-9: a long thread about the ergonomics vendor demo and the chair with too many levers. People chimed in with anecdotes, someone posted a poll, and it petered out with nothing binding for the project and nothing anyone must do.
+
+Digression w-10: a long thread about the never-ending wiki thread that resolved nothing. People chimed in with anecdotes, someone posted a poll, and it petered out with nothing binding for the project and nothing anyone must do.
+
+Digression w-11: a long thread about trivia night and the disputed geography answer. People chimed in with anecdotes, someone posted a poll, and it petered out with nothing binding for the project and nothing anyone must do.
+
+Digression w-12: a long thread about the office plants watering schedule on alternating weeks. People chimed in with anecdotes, someone posted a poll, and it petered out with nothing binding for the project and nothing anyone must do.
+
+OBJECTIVE: Harden the acme-widgets service for the beta cut.
+SUCCESS CONDITION: Staging runs 24h without a p95 regression.
+DECISION: Host the beta on the shared acme-platform cluster.
+DECISION: Host the beta on a dedicated small cluster after the March
+  latency incident.
+SUPERSEDES: Host the beta on the shared acme-platform cluster.
+CONSTRAINT [EXACT]: Deploy to staging only with `make deploy ENV=staging TAG=beta`.
+CONSTRAINT [EXACT]: Keep p95 read latency under 250 ms at 400 rps.
+ARTIFACT: services/widgets/src/store/pool.py
+ARTIFACT: commit 4f2a9c1e7b3d5a20
+STOP CONDITION: Stop the rollout if error rate exceeds 0.5% for 10 consecutive minutes.
+FAILED APPROACH: Caching whole responses in Redis; stale order totals in checkout.
+
+The pool module's acquire() helper hardcodes timeout=5 and the CI runner is
+slower than laptops, so tests/store/test_pool.py::test_acquire_timeout
+flakes in CI. The team agreed the timeout in acquire() must become
+configurable before the beta tag.
+
+NEXT ACTION: Reproduce the CI failure locally with `pytest -q tests/store`.
+
+
+Digression z-1: a long thread about the summer offsite venue and whether the lake house fits everyone. People chimed in with anecdotes, someone posted a poll, and it petered out with nothing binding for the project and nothing anyone must do.
+
+Digression z-2: a long thread about the espresso machine descaling rota and its laminated instructions. People chimed in with anecdotes, someone posted a poll, and it petered out with nothing binding for the project and nothing anyone must do.
+
+Digression z-3: a long thread about whether the team mascot should be a heron or an axolotl. People chimed in with anecdotes, someone posted a poll, and it petered out with nothing binding for the project and nothing anyone must do.
+
+Digression z-4: a long thread about parking garage badge readers rebooting every Tuesday. People chimed in with anecdotes, someone posted a poll, and it petered out with nothing binding for the project and nothing anyone must do.
+
+Digression z-5: a long thread about the potluck signup sheet and three people all bringing hummus. People chimed in with anecdotes, someone posted a poll, and it petered out with nothing binding for the project and nothing anyone must do.
+
+Digression z-6: a long thread about lunch options near the office and the new dumpling place. People chimed in with anecdotes, someone posted a poll, and it petered out with nothing binding for the project and nothing anyone must do.
+
+Digression z-7: a long thread about the design team's font pairing debate for the newsletter. People chimed in with anecdotes, someone posted a poll, and it petered out with nothing binding for the project and nothing anyone must do.
+
+Digression z-8: a long thread about a birthday card circulating for someone in another department. People chimed in with anecdotes, someone posted a poll, and it petered out with nothing binding for the project and nothing anyone must do.
+
+Digression z-9: a long thread about the ergonomics vendor demo and the chair with too many levers. People chimed in with anecdotes, someone posted a poll, and it petered out with nothing binding for the project and nothing anyone must do.
+
+Digression z-10: a long thread about the never-ending wiki thread that resolved nothing. People chimed in with anecdotes, someone posted a poll, and it petered out with nothing binding for the project and nothing anyone must do.
+
+Digression z-11: a long thread about trivia night and the disputed geography answer. People chimed in with anecdotes, someone posted a poll, and it petered out with nothing binding for the project and nothing anyone must do.
+
+Digression z-12: a long thread about the office plants watering schedule on alternating weeks. People chimed in with anecdotes, someone posted a poll, and it petered out with nothing binding for the project and nothing anyone must do.
+
+Digression z-13: a long thread about the summer offsite venue and whether the lake house fits everyone. People chimed in with anecdotes, someone posted a poll, and it petered out with nothing binding for the project and nothing anyone must do.
+
+Digression z-14: a long thread about the espresso machine descaling rota and its laminated instructions. People chimed in with anecdotes, someone posted a poll, and it petered out with nothing binding for the project and nothing anyone must do.

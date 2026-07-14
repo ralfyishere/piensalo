@@ -1,0 +1,9 @@
+{
+  "must_contain": [
+    "services/widgets/src/store/pool.py",
+    "acquire",
+    "pytest -q tests/store",
+    "make deploy ENV=staging TAG=beta"
+  ],
+  "must_not_contain": ["shared acme-platform cluster is the host"]
+}

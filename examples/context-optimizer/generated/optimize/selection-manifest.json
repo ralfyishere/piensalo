@@ -1,0 +1,1187 @@
+{
+  "chunks": [
+    {
+      "disposition": "INCLUDED_MANDATORY",
+      "exactness": "SEMANTIC",
+      "id": "objective-5ee3e1e7971c",
+      "kind": "marker_record",
+      "reason": "active objective: omission changes behavior",
+      "record_type": "objective",
+      "score": 0.286316,
+      "score_factors": {
+        "artifact_dependency": 0.0,
+        "criticality": 0.9,
+        "exactness_weight": 0.6,
+        "recency": 0.0263,
+        "shared_terms": [],
+        "status_weight": 1.0,
+        "task_relevance": 0.0,
+        "token_cost": 13
+      },
+      "source": {
+        "access_policy": "local",
+        "artifact_id": "context.txt",
+        "content_hash": "150b1474ffc68b1b783553595c0245f9274d3dc17f4912ca73a50fca81790948",
+        "content_type": "text/plain",
+        "location": "file+lines:25-25"
+      },
+      "status": "ACTIVE",
+      "superseded_by": null,
+      "supersedes": null,
+      "tokens": 13
+    },
+    {
+      "disposition": "INCLUDED_MANDATORY",
+      "exactness": "SEMANTIC",
+      "id": "success_condition-6a6271f3a1a9",
+      "kind": "marker_record",
+      "reason": "active success_condition: omission changes behavior",
+      "record_type": "success_condition",
+      "score": 0.386316,
+      "score_factors": {
+        "artifact_dependency": 0.0,
+        "criticality": 0.85,
+        "exactness_weight": 0.6,
+        "recency": 0.0263,
+        "shared_terms": [
+          "staging"
+        ],
+        "status_weight": 1.0,
+        "task_relevance": 0.25,
+        "token_cost": 11
+      },
+      "source": {
+        "access_policy": "local",
+        "artifact_id": "context.txt",
+        "content_hash": "ab937e061ab87191f9da5a9a2523e22ebd316fbe4f8eaaf8bad255e2014468a5",
+        "content_type": "text/plain",
+        "location": "file+lines:26-26"
+      },
+      "status": "ACTIVE",
+      "superseded_by": null,
+      "supersedes": null,
+      "tokens": 11
+    },
+    {
+      "disposition": "OMITTED_SUPERSEDED",
+      "exactness": "SEMANTIC",
+      "id": "decision-60a3bd6ec1e3",
+      "kind": "marker_record",
+      "reason": "superseded/expired: historical truth, recoverable by reference, never rendered as current",
+      "record_type": "decision",
+      "score": 0.028632,
+      "score_factors": {
+        "artifact_dependency": 0.0,
+        "criticality": 0.9,
+        "exactness_weight": 0.6,
+        "recency": 0.0263,
+        "shared_terms": [],
+        "status_weight": 0.0,
+        "task_relevance": 0.0,
+        "token_cost": 13
+      },
+      "source": {
+        "access_policy": "local",
+        "artifact_id": "context.txt",
+        "content_hash": "9ade1c79f02100a6c29f5ba99f7d46276399e5fddb920584f845f2013e4b88a8",
+        "content_type": "text/plain",
+        "location": "file+lines:27-27"
+      },
+      "status": "SUPERSEDED",
+      "superseded_by": "decision-65ccb27fdcb2",
+      "supersedes": null,
+      "tokens": 13
+    },
+    {
+      "disposition": "INCLUDED_MANDATORY",
+      "exactness": "SEMANTIC",
+      "id": "decision-65ccb27fdcb2",
+      "kind": "marker_record",
+      "reason": "active decision: omission changes behavior",
+      "record_type": "decision",
+      "score": 0.286316,
+      "score_factors": {
+        "artifact_dependency": 0.0,
+        "criticality": 0.9,
+        "exactness_weight": 0.6,
+        "recency": 0.0263,
+        "shared_terms": [],
+        "status_weight": 1.0,
+        "task_relevance": 0.0,
+        "token_cost": 19
+      },
+      "source": {
+        "access_policy": "local",
+        "artifact_id": "context.txt",
+        "content_hash": "16daa3493fd5e192e534cbf79d3366c9294d20f3af3ef03855bde241fc2e5a78",
+        "content_type": "text/plain",
+        "location": "file+lines:28-29"
+      },
+      "status": "ACTIVE",
+      "superseded_by": null,
+      "supersedes": "decision-60a3bd6ec1e3",
+      "tokens": 19
+    },
+    {
+      "disposition": "INCLUDED_MANDATORY",
+      "exactness": "EXACT",
+      "id": "constraint-0a393a3af227",
+      "kind": "marker_record",
+      "reason": "active constraint: omission changes behavior",
+      "record_type": "constraint",
+      "score": 0.576316,
+      "score_factors": {
+        "artifact_dependency": 0.0,
+        "criticality": 1.0,
+        "exactness_weight": 1.0,
+        "recency": 0.0263,
+        "shared_terms": [
+          "deploy",
+          "staging"
+        ],
+        "status_weight": 1.0,
+        "task_relevance": 0.5,
+        "token_cost": 16
+      },
+      "source": {
+        "access_policy": "local",
+        "artifact_id": "context.txt",
+        "content_hash": "7af7c460ecd0a11f1ba4f4a37e27593fe87739fbcd407c34b57b6b67272d4aa8",
+        "content_type": "text/plain",
+        "location": "file+lines:31-31"
+      },
+      "status": "ACTIVE",
+      "superseded_by": null,
+      "supersedes": null,
+      "tokens": 16
+    },
+    {
+      "disposition": "INCLUDED_MANDATORY",
+      "exactness": "EXACT",
+      "id": "constraint-4d485a4c8da4",
+      "kind": "marker_record",
+      "reason": "active constraint: omission changes behavior",
+      "record_type": "constraint",
+      "score": 0.351316,
+      "score_factors": {
+        "artifact_dependency": 0.0,
+        "criticality": 1.0,
+        "exactness_weight": 1.0,
+        "recency": 0.0263,
+        "shared_terms": [],
+        "status_weight": 1.0,
+        "task_relevance": 0.0,
+        "token_cost": 12
+      },
+      "source": {
+        "access_policy": "local",
+        "artifact_id": "context.txt",
+        "content_hash": "8eeafe38e531f41caf862969e6182227d697a1f855c84397eded208c35e50e17",
+        "content_type": "text/plain",
+        "location": "file+lines:32-32"
+      },
+      "status": "ACTIVE",
+      "superseded_by": null,
+      "supersedes": null,
+      "tokens": 12
+    },
+    {
+      "disposition": "INCLUDED_MANDATORY",
+      "exactness": "EXACT",
+      "id": "artifact-926f0ae1e0ea",
+      "kind": "marker_record",
+      "reason": "active artifact: omission changes behavior",
+      "record_type": "artifact",
+      "score": 0.301316,
+      "score_factors": {
+        "artifact_dependency": 0.0,
+        "criticality": 0.8,
+        "exactness_weight": 1.0,
+        "recency": 0.0263,
+        "shared_terms": [],
+        "status_weight": 1.0,
+        "task_relevance": 0.0,
+        "token_cost": 9
+      },
+      "source": {
+        "access_policy": "local",
+        "artifact_id": "context.txt",
+        "content_hash": "a7ff10285d0081f32d0a2c48dc1bb8809c6be8c76e9ffd99790188e828e97f3c",
+        "content_type": "text/plain",
+        "location": "file+lines:33-33"
+      },
+      "status": "ACTIVE",
+      "superseded_by": null,
+      "supersedes": null,
+      "tokens": 9
+    },
+    {
+      "disposition": "INCLUDED_MANDATORY",
+      "exactness": "EXACT",
+      "id": "artifact-5ccfe899544c",
+      "kind": "marker_record",
+      "reason": "active artifact: omission changes behavior",
+      "record_type": "artifact",
+      "score": 0.301316,
+      "score_factors": {
+        "artifact_dependency": 0.0,
+        "criticality": 0.8,
+        "exactness_weight": 1.0,
+        "recency": 0.0263,
+        "shared_terms": [],
+        "status_weight": 1.0,
+        "task_relevance": 0.0,
+        "token_cost": 6
+      },
+      "source": {
+        "access_policy": "local",
+        "artifact_id": "context.txt",
+        "content_hash": "f82bc89c0931aad9f56160b2ad3e1d070e7f9d98f4b0b26fe155ddf653bde29c",
+        "content_type": "text/plain",
+        "location": "file+lines:34-34"
+      },
+      "status": "ACTIVE",
+      "superseded_by": null,
+      "supersedes": null,
+      "tokens": 6
+    },
+    {
+      "disposition": "INCLUDED_MANDATORY",
+      "exactness": "EXACT",
+      "id": "stop_condition-f7c8530c7c17",
+      "kind": "marker_record",
+      "reason": "active stop_condition: omission changes behavior",
+      "record_type": "stop_condition",
+      "score": 0.351316,
+      "score_factors": {
+        "artifact_dependency": 0.0,
+        "criticality": 1.0,
+        "exactness_weight": 1.0,
+        "recency": 0.0263,
+        "shared_terms": [],
+        "status_weight": 1.0,
+        "task_relevance": 0.0,
+        "token_cost": 18
+      },
+      "source": {
+        "access_policy": "local",
+        "artifact_id": "context.txt",
+        "content_hash": "98f70a2013537433383fe9e280445d53132edadeedbc8564d30ee51a34281918",
+        "content_type": "text/plain",
+        "location": "file+lines:35-35"
+      },
+      "status": "ACTIVE",
+      "superseded_by": null,
+      "supersedes": null,
+      "tokens": 18
+    },
+    {
+      "disposition": "INCLUDED_RELEVANT",
+      "exactness": "SEMANTIC",
+      "id": "failed_approach-3781971f8182",
+      "kind": "marker_record",
+      "reason": "score 0.273816: task_relevance=0.0, criticality=0.85, artifact_dependency=0.0",
+      "record_type": "failed_approach",
+      "score": 0.273816,
+      "score_factors": {
+        "artifact_dependency": 0.0,
+        "criticality": 0.85,
+        "exactness_weight": 0.6,
+        "recency": 0.0263,
+        "shared_terms": [],
+        "status_weight": 1.0,
+        "task_relevance": 0.0,
+        "token_cost": 17
+      },
+      "source": {
+        "access_policy": "local",
+        "artifact_id": "context.txt",
+        "content_hash": "bcdfceb686459bd647b68e6453f9be6b7ff20c2b85341be693f5d33193c190e0",
+        "content_type": "text/plain",
+        "location": "file+lines:36-36"
+      },
+      "status": "ACTIVE",
+      "superseded_by": null,
+      "supersedes": null,
+      "tokens": 17
+    },
+    {
+      "disposition": "INCLUDED_MANDATORY",
+      "exactness": "SEMANTIC",
+      "id": "next_action-2618f14339cb",
+      "kind": "marker_record",
+      "reason": "active next_action: omission changes behavior",
+      "record_type": "next_action",
+      "score": 0.511316,
+      "score_factors": {
+        "artifact_dependency": 0.0,
+        "criticality": 0.9,
+        "exactness_weight": 0.6,
+        "recency": 0.0263,
+        "shared_terms": [
+          "ci",
+          "failure"
+        ],
+        "status_weight": 1.0,
+        "task_relevance": 0.5,
+        "token_cost": 16
+      },
+      "source": {
+        "access_policy": "local",
+        "artifact_id": "context.txt",
+        "content_hash": "d8cce92e0e738defe067c0c20a3da1f7fd96e2a7f794332614a755d7fedd5acb",
+        "content_type": "text/plain",
+        "location": "file+lines:43-43"
+      },
+      "status": "ACTIVE",
+      "superseded_by": null,
+      "supersedes": null,
+      "tokens": 16
+    },
+    {
+      "disposition": "OMITTED_LOW_RELEVANCE",
+      "exactness": "SEMANTIC",
+      "id": "block-2279a3a63892",
+      "kind": "block",
+      "reason": "no lexical or structural connection to the task (score 0.123816, shared terms [])",
+      "record_type": null,
+      "score": 0.123816,
+      "score_factors": {
+        "artifact_dependency": 0.0,
+        "criticality": 0.25,
+        "exactness_weight": 0.6,
+        "recency": 0.0263,
+        "shared_terms": [],
+        "status_weight": 1.0,
+        "task_relevance": 0.0,
+        "token_cost": 61
+      },
+      "source": {
+        "access_policy": "local",
+        "artifact_id": "context.txt",
+        "content_hash": "c5778b85419f7c5092e75d58b59f5ccbf095d2e2f4a7826741c30777524a32eb",
+        "content_type": "text/plain",
+        "location": "file+lines:1-1"
+      },
+      "status": "ACTIVE",
+      "superseded_by": null,
+      "supersedes": null,
+      "tokens": 61
+    },
+    {
+      "disposition": "OMITTED_LOW_RELEVANCE",
+      "exactness": "SEMANTIC",
+      "id": "block-16bb38f5ef65",
+      "kind": "block",
+      "reason": "no lexical or structural connection to the task (score 0.123816, shared terms [])",
+      "record_type": null,
+      "score": 0.123816,
+      "score_factors": {
+        "artifact_dependency": 0.0,
+        "criticality": 0.25,
+        "exactness_weight": 0.6,
+        "recency": 0.0263,
+        "shared_terms": [],
+        "status_weight": 1.0,
+        "task_relevance": 0.0,
+        "token_cost": 61
+      },
+      "source": {
+        "access_policy": "local",
+        "artifact_id": "context.txt",
+        "content_hash": "a2a033d9aa3a8c0292c935138c0a4b28d3c33bb4bed01bc1f3ae78b5d861c739",
+        "content_type": "text/plain",
+        "location": "file+lines:3-3"
+      },
+      "status": "ACTIVE",
+      "superseded_by": null,
+      "supersedes": null,
+      "tokens": 61
+    },
+    {
+      "disposition": "OMITTED_LOW_RELEVANCE",
+      "exactness": "SEMANTIC",
+      "id": "block-8206bb523653",
+      "kind": "block",
+      "reason": "no lexical or structural connection to the task (score 0.123816, shared terms [])",
+      "record_type": null,
+      "score": 0.123816,
+      "score_factors": {
+        "artifact_dependency": 0.0,
+        "criticality": 0.25,
+        "exactness_weight": 0.6,
+        "recency": 0.0263,
+        "shared_terms": [],
+        "status_weight": 1.0,
+        "task_relevance": 0.0,
+        "token_cost": 58
+      },
+      "source": {
+        "access_policy": "local",
+        "artifact_id": "context.txt",
+        "content_hash": "e3c395a73d519bc0078966ef1db9252e0bd9d8144951fd188dfe195994371923",
+        "content_type": "text/plain",
+        "location": "file+lines:5-5"
+      },
+      "status": "ACTIVE",
+      "superseded_by": null,
+      "supersedes": null,
+      "tokens": 58
+    },
+    {
+      "disposition": "OMITTED_LOW_RELEVANCE",
+      "exactness": "SEMANTIC",
+      "id": "block-d5b3c2d21db7",
+      "kind": "block",
+      "reason": "no lexical or structural connection to the task (score 0.123816, shared terms [])",
+      "record_type": null,
+      "score": 0.123816,
+      "score_factors": {
+        "artifact_dependency": 0.0,
+        "criticality": 0.25,
+        "exactness_weight": 0.6,
+        "recency": 0.0263,
+        "shared_terms": [],
+        "status_weight": 1.0,
+        "task_relevance": 0.0,
+        "token_cost": 58
+      },
+      "source": {
+        "access_policy": "local",
+        "artifact_id": "context.txt",
+        "content_hash": "c83bdfb898d42f13be48b4ce4e6f97c64635966d723d32c1594c248026957b0f",
+        "content_type": "text/plain",
+        "location": "file+lines:7-7"
+      },
+      "status": "ACTIVE",
+      "superseded_by": null,
+      "supersedes": null,
+      "tokens": 58
+    },
+    {
+      "disposition": "OMITTED_LOW_RELEVANCE",
+      "exactness": "SEMANTIC",
+      "id": "block-072224c5c5a3",
+      "kind": "block",
+      "reason": "no lexical or structural connection to the task (score 0.123816, shared terms [])",
+      "record_type": null,
+      "score": 0.123816,
+      "score_factors": {
+        "artifact_dependency": 0.0,
+        "criticality": 0.25,
+        "exactness_weight": 0.6,
+        "recency": 0.0263,
+        "shared_terms": [],
+        "status_weight": 1.0,
+        "task_relevance": 0.0,
+        "token_cost": 60
+      },
+      "source": {
+        "access_policy": "local",
+        "artifact_id": "context.txt",
+        "content_hash": "9372757936f81e0937c74ff08a9a951f49ddabdaf331b8cc1b60aabf488d9b60",
+        "content_type": "text/plain",
+        "location": "file+lines:9-9"
+      },
+      "status": "ACTIVE",
+      "superseded_by": null,
+      "supersedes": null,
+      "tokens": 60
+    },
+    {
+      "disposition": "OMITTED_LOW_RELEVANCE",
+      "exactness": "SEMANTIC",
+      "id": "block-73c3d686dc7e",
+      "kind": "block",
+      "reason": "no lexical or structural connection to the task (score 0.123816, shared terms [])",
+      "record_type": null,
+      "score": 0.123816,
+      "score_factors": {
+        "artifact_dependency": 0.0,
+        "criticality": 0.25,
+        "exactness_weight": 0.6,
+        "recency": 0.0263,
+        "shared_terms": [],
+        "status_weight": 1.0,
+        "task_relevance": 0.0,
+        "token_cost": 59
+      },
+      "source": {
+        "access_policy": "local",
+        "artifact_id": "context.txt",
+        "content_hash": "ebd87a843e8fe850ae6734e95120a39461f9808dfdf335116d8ac7ca0952a414",
+        "content_type": "text/plain",
+        "location": "file+lines:11-11"
+      },
+      "status": "ACTIVE",
+      "superseded_by": null,
+      "supersedes": null,
+      "tokens": 59
+    },
+    {
+      "disposition": "OMITTED_LOW_RELEVANCE",
+      "exactness": "SEMANTIC",
+      "id": "block-25e9a91a1039",
+      "kind": "block",
+      "reason": "no lexical or structural connection to the task (score 0.123816, shared terms [])",
+      "record_type": null,
+      "score": 0.123816,
+      "score_factors": {
+        "artifact_dependency": 0.0,
+        "criticality": 0.25,
+        "exactness_weight": 0.6,
+        "recency": 0.0263,
+        "shared_terms": [],
+        "status_weight": 1.0,
+        "task_relevance": 0.0,
+        "token_cost": 59
+      },
+      "source": {
+        "access_policy": "local",
+        "artifact_id": "context.txt",
+        "content_hash": "040562c6cde25430254e8aa1a6d63fa6530c762cefd989a241c3a1fbb80714ad",
+        "content_type": "text/plain",
+        "location": "file+lines:13-13"
+      },
+      "status": "ACTIVE",
+      "superseded_by": null,
+      "supersedes": null,
+      "tokens": 59
+    },
+    {
+      "disposition": "OMITTED_LOW_RELEVANCE",
+      "exactness": "SEMANTIC",
+      "id": "block-8167f12e059b",
+      "kind": "block",
+      "reason": "no lexical or structural connection to the task (score 0.123816, shared terms [])",
+      "record_type": null,
+      "score": 0.123816,
+      "score_factors": {
+        "artifact_dependency": 0.0,
+        "criticality": 0.25,
+        "exactness_weight": 0.6,
+        "recency": 0.0263,
+        "shared_terms": [],
+        "status_weight": 1.0,
+        "task_relevance": 0.0,
+        "token_cost": 60
+      },
+      "source": {
+        "access_policy": "local",
+        "artifact_id": "context.txt",
+        "content_hash": "f10d15a5d498144daa844eeaeb283e12302353869d6203413bcc8251362b2e86",
+        "content_type": "text/plain",
+        "location": "file+lines:15-15"
+      },
+      "status": "ACTIVE",
+      "superseded_by": null,
+      "supersedes": null,
+      "tokens": 60
+    },
+    {
+      "disposition": "OMITTED_LOW_RELEVANCE",
+      "exactness": "SEMANTIC",
+      "id": "block-4e77d3af7273",
+      "kind": "block",
+      "reason": "no lexical or structural connection to the task (score 0.123816, shared terms [])",
+      "record_type": null,
+      "score": 0.123816,
+      "score_factors": {
+        "artifact_dependency": 0.0,
+        "criticality": 0.25,
+        "exactness_weight": 0.6,
+        "recency": 0.0263,
+        "shared_terms": [],
+        "status_weight": 1.0,
+        "task_relevance": 0.0,
+        "token_cost": 60
+      },
+      "source": {
+        "access_policy": "local",
+        "artifact_id": "context.txt",
+        "content_hash": "1c71f703a229a952ef7fd18f812d19e8288770481f22d023a8480cb0cddf84ff",
+        "content_type": "text/plain",
+        "location": "file+lines:17-17"
+      },
+      "status": "ACTIVE",
+      "superseded_by": null,
+      "supersedes": null,
+      "tokens": 60
+    },
+    {
+      "disposition": "OMITTED_LOW_RELEVANCE",
+      "exactness": "SEMANTIC",
+      "id": "block-73a8a3197814",
+      "kind": "block",
+      "reason": "no lexical or structural connection to the task (score 0.123816, shared terms [])",
+      "record_type": null,
+      "score": 0.123816,
+      "score_factors": {
+        "artifact_dependency": 0.0,
+        "criticality": 0.25,
+        "exactness_weight": 0.6,
+        "recency": 0.0263,
+        "shared_terms": [],
+        "status_weight": 1.0,
+        "task_relevance": 0.0,
+        "token_cost": 57
+      },
+      "source": {
+        "access_policy": "local",
+        "artifact_id": "context.txt",
+        "content_hash": "52d56acd1183c12933cec6ee2485d19e41cc57336a267fc678d41a0bba31ede8",
+        "content_type": "text/plain",
+        "location": "file+lines:19-19"
+      },
+      "status": "ACTIVE",
+      "superseded_by": null,
+      "supersedes": null,
+      "tokens": 57
+    },
+    {
+      "disposition": "OMITTED_LOW_RELEVANCE",
+      "exactness": "SEMANTIC",
+      "id": "block-bfa5dbc0353d",
+      "kind": "block",
+      "reason": "no lexical or structural connection to the task (score 0.123816, shared terms [])",
+      "record_type": null,
+      "score": 0.123816,
+      "score_factors": {
+        "artifact_dependency": 0.0,
+        "criticality": 0.25,
+        "exactness_weight": 0.6,
+        "recency": 0.0263,
+        "shared_terms": [],
+        "status_weight": 1.0,
+        "task_relevance": 0.0,
+        "token_cost": 56
+      },
+      "source": {
+        "access_policy": "local",
+        "artifact_id": "context.txt",
+        "content_hash": "4670b6f88f0da1f9808f681eb74aa0f9b4f3db0ee451945b020359de146fcca5",
+        "content_type": "text/plain",
+        "location": "file+lines:21-21"
+      },
+      "status": "ACTIVE",
+      "superseded_by": null,
+      "supersedes": null,
+      "tokens": 56
+    },
+    {
+      "disposition": "OMITTED_LOW_RELEVANCE",
+      "exactness": "SEMANTIC",
+      "id": "block-85dde2d75c6b",
+      "kind": "block",
+      "reason": "no lexical or structural connection to the task (score 0.123816, shared terms [])",
+      "record_type": null,
+      "score": 0.123816,
+      "score_factors": {
+        "artifact_dependency": 0.0,
+        "criticality": 0.25,
+        "exactness_weight": 0.6,
+        "recency": 0.0263,
+        "shared_terms": [],
+        "status_weight": 1.0,
+        "task_relevance": 0.0,
+        "token_cost": 59
+      },
+      "source": {
+        "access_policy": "local",
+        "artifact_id": "context.txt",
+        "content_hash": "254516370dbf255bb5ba2c0af1e823bb54f4de400d6616abf48da4f86671286b",
+        "content_type": "text/plain",
+        "location": "file+lines:23-23"
+      },
+      "status": "ACTIVE",
+      "superseded_by": null,
+      "supersedes": null,
+      "tokens": 59
+    },
+    {
+      "disposition": "INCLUDED_RELEVANT",
+      "exactness": "SEMANTIC",
+      "id": "block-043da639061d",
+      "kind": "block",
+      "reason": "score 0.236316: task_relevance=0.25, criticality=0.25, artifact_dependency=0.0",
+      "record_type": null,
+      "score": 0.236316,
+      "score_factors": {
+        "artifact_dependency": 0.0,
+        "criticality": 0.25,
+        "exactness_weight": 0.6,
+        "recency": 0.0263,
+        "shared_terms": [
+          "ci"
+        ],
+        "status_weight": 1.0,
+        "task_relevance": 0.25,
+        "token_cost": 62
+      },
+      "source": {
+        "access_policy": "local",
+        "artifact_id": "context.txt",
+        "content_hash": "71e800df07f8574a69bcf29276e14075dbeb6c306fb8204e57a81eec0ecba6ec",
+        "content_type": "text/plain",
+        "location": "file+lines:38-41"
+      },
+      "status": "ACTIVE",
+      "superseded_by": null,
+      "supersedes": null,
+      "tokens": 62
+    },
+    {
+      "disposition": "OMITTED_LOW_RELEVANCE",
+      "exactness": "SEMANTIC",
+      "id": "block-36d6115eeb85",
+      "kind": "block",
+      "reason": "no lexical or structural connection to the task (score 0.123816, shared terms [])",
+      "record_type": null,
+      "score": 0.123816,
+      "score_factors": {
+        "artifact_dependency": 0.0,
+        "criticality": 0.25,
+        "exactness_weight": 0.6,
+        "recency": 0.0263,
+        "shared_terms": [],
+        "status_weight": 1.0,
+        "task_relevance": 0.0,
+        "token_cost": 61
+      },
+      "source": {
+        "access_policy": "local",
+        "artifact_id": "context.txt",
+        "content_hash": "034939f17d1ec219736d2065b09453f77082d8a1e3c009cf0758771212852cab",
+        "content_type": "text/plain",
+        "location": "file+lines:46-46"
+      },
+      "status": "ACTIVE",
+      "superseded_by": null,
+      "supersedes": null,
+      "tokens": 61
+    },
+    {
+      "disposition": "OMITTED_LOW_RELEVANCE",
+      "exactness": "SEMANTIC",
+      "id": "block-ce78293c7478",
+      "kind": "block",
+      "reason": "no lexical or structural connection to the task (score 0.123816, shared terms [])",
+      "record_type": null,
+      "score": 0.123816,
+      "score_factors": {
+        "artifact_dependency": 0.0,
+        "criticality": 0.25,
+        "exactness_weight": 0.6,
+        "recency": 0.0263,
+        "shared_terms": [],
+        "status_weight": 1.0,
+        "task_relevance": 0.0,
+        "token_cost": 61
+      },
+      "source": {
+        "access_policy": "local",
+        "artifact_id": "context.txt",
+        "content_hash": "cc56cb14efb7dbdb1036fc68f8696ea0c7ba5bd056a1b1bc612c492f91cb1e67",
+        "content_type": "text/plain",
+        "location": "file+lines:48-48"
+      },
+      "status": "ACTIVE",
+      "superseded_by": null,
+      "supersedes": null,
+      "tokens": 61
+    },
+    {
+      "disposition": "OMITTED_LOW_RELEVANCE",
+      "exactness": "SEMANTIC",
+      "id": "block-bccc4db465aa",
+      "kind": "block",
+      "reason": "no lexical or structural connection to the task (score 0.123816, shared terms [])",
+      "record_type": null,
+      "score": 0.123816,
+      "score_factors": {
+        "artifact_dependency": 0.0,
+        "criticality": 0.25,
+        "exactness_weight": 0.6,
+        "recency": 0.0263,
+        "shared_terms": [],
+        "status_weight": 1.0,
+        "task_relevance": 0.0,
+        "token_cost": 58
+      },
+      "source": {
+        "access_policy": "local",
+        "artifact_id": "context.txt",
+        "content_hash": "a91cc84acef4969094fcd7a14ca78a73cd1f5120dc8e4207464aea4c1527403c",
+        "content_type": "text/plain",
+        "location": "file+lines:50-50"
+      },
+      "status": "ACTIVE",
+      "superseded_by": null,
+      "supersedes": null,
+      "tokens": 58
+    },
+    {
+      "disposition": "OMITTED_LOW_RELEVANCE",
+      "exactness": "SEMANTIC",
+      "id": "block-73e943b2669d",
+      "kind": "block",
+      "reason": "no lexical or structural connection to the task (score 0.123816, shared terms [])",
+      "record_type": null,
+      "score": 0.123816,
+      "score_factors": {
+        "artifact_dependency": 0.0,
+        "criticality": 0.25,
+        "exactness_weight": 0.6,
+        "recency": 0.0263,
+        "shared_terms": [],
+        "status_weight": 1.0,
+        "task_relevance": 0.0,
+        "token_cost": 58
+      },
+      "source": {
+        "access_policy": "local",
+        "artifact_id": "context.txt",
+        "content_hash": "9388de763cb50fa6f273e406866ec564c82e57bcf41bf3bb7f6b0be6f6260dd0",
+        "content_type": "text/plain",
+        "location": "file+lines:52-52"
+      },
+      "status": "ACTIVE",
+      "superseded_by": null,
+      "supersedes": null,
+      "tokens": 58
+    },
+    {
+      "disposition": "OMITTED_LOW_RELEVANCE",
+      "exactness": "SEMANTIC",
+      "id": "block-56b4272805a5",
+      "kind": "block",
+      "reason": "no lexical or structural connection to the task (score 0.123816, shared terms [])",
+      "record_type": null,
+      "score": 0.123816,
+      "score_factors": {
+        "artifact_dependency": 0.0,
+        "criticality": 0.25,
+        "exactness_weight": 0.6,
+        "recency": 0.0263,
+        "shared_terms": [],
+        "status_weight": 1.0,
+        "task_relevance": 0.0,
+        "token_cost": 60
+      },
+      "source": {
+        "access_policy": "local",
+        "artifact_id": "context.txt",
+        "content_hash": "ad25c1e465bd1a95e12337f61892d292b66b24523daf4f7ee4a0de078dd86ba3",
+        "content_type": "text/plain",
+        "location": "file+lines:54-54"
+      },
+      "status": "ACTIVE",
+      "superseded_by": null,
+      "supersedes": null,
+      "tokens": 60
+    },
+    {
+      "disposition": "OMITTED_LOW_RELEVANCE",
+      "exactness": "SEMANTIC",
+      "id": "block-a1747c3bd0be",
+      "kind": "block",
+      "reason": "no lexical or structural connection to the task (score 0.123816, shared terms [])",
+      "record_type": null,
+      "score": 0.123816,
+      "score_factors": {
+        "artifact_dependency": 0.0,
+        "criticality": 0.25,
+        "exactness_weight": 0.6,
+        "recency": 0.0263,
+        "shared_terms": [],
+        "status_weight": 1.0,
+        "task_relevance": 0.0,
+        "token_cost": 59
+      },
+      "source": {
+        "access_policy": "local",
+        "artifact_id": "context.txt",
+        "content_hash": "fc918b3662f4885a9f34225be29b9461596b0836fab382921c33fbe3acc7a2d2",
+        "content_type": "text/plain",
+        "location": "file+lines:56-56"
+      },
+      "status": "ACTIVE",
+      "superseded_by": null,
+      "supersedes": null,
+      "tokens": 59
+    },
+    {
+      "disposition": "OMITTED_LOW_RELEVANCE",
+      "exactness": "SEMANTIC",
+      "id": "block-5432f37536ca",
+      "kind": "block",
+      "reason": "no lexical or structural connection to the task (score 0.123816, shared terms [])",
+      "record_type": null,
+      "score": 0.123816,
+      "score_factors": {
+        "artifact_dependency": 0.0,
+        "criticality": 0.25,
+        "exactness_weight": 0.6,
+        "recency": 0.0263,
+        "shared_terms": [],
+        "status_weight": 1.0,
+        "task_relevance": 0.0,
+        "token_cost": 59
+      },
+      "source": {
+        "access_policy": "local",
+        "artifact_id": "context.txt",
+        "content_hash": "d602a7d805a58b2c4bcb208adbb0f885c34ff81d7cc9f92079882ddd2b9d4026",
+        "content_type": "text/plain",
+        "location": "file+lines:58-58"
+      },
+      "status": "ACTIVE",
+      "superseded_by": null,
+      "supersedes": null,
+      "tokens": 59
+    },
+    {
+      "disposition": "OMITTED_LOW_RELEVANCE",
+      "exactness": "SEMANTIC",
+      "id": "block-6fb5d2171856",
+      "kind": "block",
+      "reason": "no lexical or structural connection to the task (score 0.123816, shared terms [])",
+      "record_type": null,
+      "score": 0.123816,
+      "score_factors": {
+        "artifact_dependency": 0.0,
+        "criticality": 0.25,
+        "exactness_weight": 0.6,
+        "recency": 0.0263,
+        "shared_terms": [],
+        "status_weight": 1.0,
+        "task_relevance": 0.0,
+        "token_cost": 60
+      },
+      "source": {
+        "access_policy": "local",
+        "artifact_id": "context.txt",
+        "content_hash": "13095f1d4525b9f1ee873e1c55a2de1de376d1384b75f3593c1bb36d9cdbc434",
+        "content_type": "text/plain",
+        "location": "file+lines:60-60"
+      },
+      "status": "ACTIVE",
+      "superseded_by": null,
+      "supersedes": null,
+      "tokens": 60
+    },
+    {
+      "disposition": "OMITTED_LOW_RELEVANCE",
+      "exactness": "SEMANTIC",
+      "id": "block-7bd465b65525",
+      "kind": "block",
+      "reason": "no lexical or structural connection to the task (score 0.123816, shared terms [])",
+      "record_type": null,
+      "score": 0.123816,
+      "score_factors": {
+        "artifact_dependency": 0.0,
+        "criticality": 0.25,
+        "exactness_weight": 0.6,
+        "recency": 0.0263,
+        "shared_terms": [],
+        "status_weight": 1.0,
+        "task_relevance": 0.0,
+        "token_cost": 60
+      },
+      "source": {
+        "access_policy": "local",
+        "artifact_id": "context.txt",
+        "content_hash": "efd17187246ec84b3734fb78cffe51a9f1a2046ec2471333cc425880ba1c9a46",
+        "content_type": "text/plain",
+        "location": "file+lines:62-62"
+      },
+      "status": "ACTIVE",
+      "superseded_by": null,
+      "supersedes": null,
+      "tokens": 60
+    },
+    {
+      "disposition": "OMITTED_LOW_RELEVANCE",
+      "exactness": "SEMANTIC",
+      "id": "block-0ad4ba1f541b",
+      "kind": "block",
+      "reason": "no lexical or structural connection to the task (score 0.123816, shared terms [])",
+      "record_type": null,
+      "score": 0.123816,
+      "score_factors": {
+        "artifact_dependency": 0.0,
+        "criticality": 0.25,
+        "exactness_weight": 0.6,
+        "recency": 0.0263,
+        "shared_terms": [],
+        "status_weight": 1.0,
+        "task_relevance": 0.0,
+        "token_cost": 57
+      },
+      "source": {
+        "access_policy": "local",
+        "artifact_id": "context.txt",
+        "content_hash": "d6c0d67fd59a78ddbe378bcac86b539ae7a91b37db4a01a6d63b0e3fdb09e2ba",
+        "content_type": "text/plain",
+        "location": "file+lines:64-64"
+      },
+      "status": "ACTIVE",
+      "superseded_by": null,
+      "supersedes": null,
+      "tokens": 57
+    },
+    {
+      "disposition": "OMITTED_LOW_RELEVANCE",
+      "exactness": "SEMANTIC",
+      "id": "block-8bfecfc1ce6d",
+      "kind": "block",
+      "reason": "no lexical or structural connection to the task (score 0.123816, shared terms [])",
+      "record_type": null,
+      "score": 0.123816,
+      "score_factors": {
+        "artifact_dependency": 0.0,
+        "criticality": 0.25,
+        "exactness_weight": 0.6,
+        "recency": 0.0263,
+        "shared_terms": [],
+        "status_weight": 1.0,
+        "task_relevance": 0.0,
+        "token_cost": 56
+      },
+      "source": {
+        "access_policy": "local",
+        "artifact_id": "context.txt",
+        "content_hash": "88e98dadb4b28055907e461335d81fe5947c5578eb8a9275e245377d65bf7ed3",
+        "content_type": "text/plain",
+        "location": "file+lines:66-66"
+      },
+      "status": "ACTIVE",
+      "superseded_by": null,
+      "supersedes": null,
+      "tokens": 56
+    },
+    {
+      "disposition": "OMITTED_LOW_RELEVANCE",
+      "exactness": "SEMANTIC",
+      "id": "block-b97c613420dc",
+      "kind": "block",
+      "reason": "no lexical or structural connection to the task (score 0.123816, shared terms [])",
+      "record_type": null,
+      "score": 0.123816,
+      "score_factors": {
+        "artifact_dependency": 0.0,
+        "criticality": 0.25,
+        "exactness_weight": 0.6,
+        "recency": 0.0263,
+        "shared_terms": [],
+        "status_weight": 1.0,
+        "task_relevance": 0.0,
+        "token_cost": 59
+      },
+      "source": {
+        "access_policy": "local",
+        "artifact_id": "context.txt",
+        "content_hash": "22908bdea446c9bca09210c8210cdd542393d14237ddefac9260662ad88cd17a",
+        "content_type": "text/plain",
+        "location": "file+lines:68-68"
+      },
+      "status": "ACTIVE",
+      "superseded_by": null,
+      "supersedes": null,
+      "tokens": 59
+    },
+    {
+      "disposition": "OMITTED_LOW_RELEVANCE",
+      "exactness": "SEMANTIC",
+      "id": "block-524b8d4e3f40",
+      "kind": "block",
+      "reason": "no lexical or structural connection to the task (score 0.123816, shared terms [])",
+      "record_type": null,
+      "score": 0.123816,
+      "score_factors": {
+        "artifact_dependency": 0.0,
+        "criticality": 0.25,
+        "exactness_weight": 0.6,
+        "recency": 0.0263,
+        "shared_terms": [],
+        "status_weight": 1.0,
+        "task_relevance": 0.0,
+        "token_cost": 61
+      },
+      "source": {
+        "access_policy": "local",
+        "artifact_id": "context.txt",
+        "content_hash": "5367977468098bb0b390c278b2b0757bfe5dea810ac6b9557e7a3b70f6badcc7",
+        "content_type": "text/plain",
+        "location": "file+lines:70-70"
+      },
+      "status": "ACTIVE",
+      "superseded_by": null,
+      "supersedes": null,
+      "tokens": 61
+    },
+    {
+      "disposition": "OMITTED_LOW_RELEVANCE",
+      "exactness": "SEMANTIC",
+      "id": "block-934cfad5ec83",
+      "kind": "block",
+      "reason": "no lexical or structural connection to the task (score 0.123816, shared terms [])",
+      "record_type": null,
+      "score": 0.123816,
+      "score_factors": {
+        "artifact_dependency": 0.0,
+        "criticality": 0.25,
+        "exactness_weight": 0.6,
+        "recency": 0.0263,
+        "shared_terms": [],
+        "status_weight": 1.0,
+        "task_relevance": 0.0,
+        "token_cost": 61
+      },
+      "source": {
+        "access_policy": "local",
+        "artifact_id": "context.txt",
+        "content_hash": "425fc9751626573e377fe8fce52a40eceddc37b281fcb38cb003aae45980f050",
+        "content_type": "text/plain",
+        "location": "file+lines:72-72"
+      },
+      "status": "ACTIVE",
+      "superseded_by": null,
+      "supersedes": null,
+      "tokens": 61
+    }
+  ],
+  "expansion_queue": [
+    "block-8bfecfc1ce6d",
+    "block-bfa5dbc0353d",
+    "block-0ad4ba1f541b",
+    "block-73a8a3197814",
+    "block-73e943b2669d",
+    "block-8206bb523653",
+    "block-bccc4db465aa",
+    "block-d5b3c2d21db7",
+    "block-25e9a91a1039",
+    "block-5432f37536ca",
+    "block-73c3d686dc7e",
+    "block-85dde2d75c6b",
+    "block-a1747c3bd0be",
+    "block-b97c613420dc",
+    "block-072224c5c5a3",
+    "block-4e77d3af7273",
+    "block-56b4272805a5",
+    "block-6fb5d2171856",
+    "block-7bd465b65525",
+    "block-8167f12e059b",
+    "block-16bb38f5ef65",
+    "block-2279a3a63892",
+    "block-36d6115eeb85",
+    "block-524b8d4e3f40",
+    "block-934cfad5ec83",
+    "block-ce78293c7478"
+  ],
+  "mandatory_tokens": 120,
+  "omitted_tokens": 1551,
+  "refusal_reason": null,
+  "refused": false,
+  "selected_tokens": 79
+}

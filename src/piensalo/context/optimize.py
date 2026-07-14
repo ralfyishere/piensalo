@@ -114,15 +114,22 @@ def render_packet(task_text: str, sel: Selection, *,
                if c.disposition.startswith("OMITTED")
                or c.disposition == "REFERENCED_NOT_INLINE"]
     add("")
-    add("## Known omissions")
+    add("## Note on omitted material")
     add("")
     if omitted:
-        add(f"{len(omitted)} chunk(s) were omitted from this packet "
-            "(reasons in selection-manifest.json). They remain recoverable "
-            "from the source context by content-hashed reference; nothing "
-            "was deleted.")
+        # Operational phrasing matters: an alarming "N chunks were
+        # omitted!" makes models refuse to answer even when every needed
+        # fact is present (observed with a real model during evaluation).
+        add("Material judged irrelevant to this task "
+            f"({len(omitted)} chunk(s), mostly unrelated discussion) was "
+            "deliberately filtered out; the sections above contain "
+            "everything assessed as necessary for this task, and exact "
+            "identifiers are quoted verbatim. Answer directly from the "
+            "context above. Only if a fact you are explicitly required to "
+            "report is genuinely absent, state that it is missing instead "
+            "of guessing.")
     else:
-        add("No chunks were omitted.")
+        add("Nothing was omitted; the full source context is above.")
     handles = [c.id for c in sel.chunks
                if c.disposition in ("REQUIRES_EXPANSION",
                                     "REFERENCED_NOT_INLINE")

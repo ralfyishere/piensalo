@@ -1,43 +1,34 @@
 # Five-Step Beta Rollout Plan for Widgets Service
 
-## Step 1: Pre-Flight Validation & Local Testing
-- Run `pytest -q tests/store` locally to reproduce and confirm resolution of the CI failure
-- Verify the store pool configuration in `services/widgets/src/store/pool.py` matches the dedicated small-cluster requirements
-- Tag the validated commit (4f2a9c1e7b3d5a20) for deployment reference
-- **Timeline:** Complete before scheduling staging deployment
+## Step 1: Pre-flight Infrastructure & Validation
+- Confirm the dedicated small cluster (post-March incident architecture) is provisioned and network-ready
+- Review and test `services/widgets/src/store/pool.py` locally against commit 4f2a9c1e7b3d5a20
+- Run `pytest -q tests/store` locally to verify no CI regressions
+- Confirm schema migration strategy: all migrations must run through CI/CD pipeline, never from a laptop
 
-## Step 2: Staging Deployment (Non-Friday)
-- Coordinate with platform team to identify an available window (not Friday afternoon)
-- Execute staging deployment using **only** the prescribed command: `make deploy ENV=staging TAG=beta`
-- Avoid any schema migrations; if needed, run those separately from a non-laptop environment (CI/CD pipeline or shared runner)
-- Deploy to the dedicated small cluster as per the March latency incident decision
-- **Timeline:** Day 1–2 of rollout window
+## Step 2: Staging Deployment & Baseline
+- Deploy to staging using `make deploy ENV=staging TAG=beta` (exactly as specified)
+- Begin continuous monitoring of p95 latency, error rate, and resource utilization
+- Establish 24-hour observation window to detect any p95 regression
 
-## Step 3: Staging Stability Monitoring (24 Hours)
-- Monitor p95 latency, error rates, and core metrics continuously
-- Set up alerts for error rate exceeding 0.5%
-- Track p95 regression tolerance—success criterion is 24h without p95 regression
-- **Timeline:** 24-hour observation period immediately following deployment
+## Step 3: 24-Hour Stability Gate
+- Monitor error rate continuously; halt immediately if exceeds 0.5% for 10 consecutive minutes
+- Verify no cache invalidation issues (avoid the Redis whole-response caching trap that broke checkout)
+- Confirm staging remains stable through full 24-hour window
+- Document baseline metrics for production comparison
 
-## Step 4: Error Rate Checkpoint
-- If error rate exceeds 0.5% for 10 consecutive minutes at any point → **STOP and rollback**
-- Triage failure (avoid caching-layer pitfalls from prior Redis approach)
-- If clean, proceed only after the 24h window closes with no p95 regression
-- **Timeline:** Continuous during Step 3
+## Step 4: Schedule Production Deployment
+- Identify a deployment window **before Friday afternoon** (respect platform team freeze window)
+- Coordinate with on-call and platform team for the cutover
+- Prepare rollback plan and error-rate monitoring dashboards
 
-## Step 5: Production Readiness & Beta Go-Live
-- Confirm all staging metrics healthy
-- Schedule production deployment for a non-Friday window
-- Prepare runbooks and oncall briefing
-- Execute production deployment to dedicated beta cluster
-- **Timeline:** Day 3+ of rollout
+## Step 5: Beta Cut to Production
+- Execute `make deploy ENV=staging TAG=beta` promotion to production cluster
+- Begin error-rate and latency surveillance immediately post-deploy
+- Maintain stop-condition monitoring: halt rollout if error rate exceeds 0.5% for 10 consecutive minutes
 
 ---
 
-## Binding Constraints (Byte-for-Byte)
-
 MIGRATION_RULE: Never run schema migrations against the production database from a laptop.
-
 FREEZE_RULE: The platform team freezes all deploys on Friday afternoons.
-
 STOP_RULE: Stop the rollout if error rate exceeds 0.5% for 10 consecutive minutes.

@@ -130,8 +130,11 @@ def evaluate_to_dir(*, task_path: str, context_path: str, budgets: list[int],
                                          encoding="utf-8")
     (out / "full-response.md").write_text(report["full_response_text"],
                                           encoding="utf-8")
+    for stale in out.glob("optimized-response-*.md"):
+        stale.unlink()  # never leave a previous run's response behind
     for b in report["budgets"]:
-        if b["response_text"] is not None:
-            (out / f"optimized-response-{b['budget']}.md").write_text(
-                b["response_text"], encoding="utf-8")
+        (out / f"optimized-response-{b['budget']}.md").write_text(
+            b["response_text"] if b["response_text"] is not None
+            else f"(no accepted optimized response: {b['outcome']})\n",
+            encoding="utf-8")
     return report

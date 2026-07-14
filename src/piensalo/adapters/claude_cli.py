@@ -22,10 +22,17 @@ class ClaudeCliAdapter(ModelAdapter):
 
     provider = "claude-cli"
 
-    def __init__(self, model: str, timeout: int = 600, executable: str = "claude"):
+    def __init__(self, model: str, timeout: int = 600,
+                 executable: str = "claude", tools: str = ""):
         super().__init__(model)
         self.timeout = timeout
         self.executable = executable
+        # "" disables all tools: this adapter's contract is ONE prompt ->
+        # ONE completion. Leaving tools on lets the model explore the
+        # local machine, which both breaks that contract and contaminates
+        # any context-limited comparison (the model can read the full
+        # context off disk).
+        self.tools = tools
 
     def complete(self, prompt: str) -> ModelResponse:
         if shutil.which(self.executable) is None:
@@ -42,6 +49,8 @@ class ClaudeCliAdapter(ModelAdapter):
                 self.requested_model,
                 "--output-format",
                 "json",
+                "--tools",
+                self.tools,
             ],
             input=prompt,
             capture_output=True,

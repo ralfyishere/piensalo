@@ -89,8 +89,10 @@ def test_bounded_expansion_recovers_omitted_fact():
     assert labels == ["optimized", "expansion-1"]
     assert result.attempts[1].added_chunk_ids, "expansion must record chunks"
     assert result.ledger["expansions"] == 1
-    # The expanded packet actually grew.
-    assert len(adapter.prompts[1]) > len(adapter.prompts[0])
+    # The expanded packet carries content the first packet omitted.
+    added_content = "summer offsite venue"
+    assert added_content not in adapter.prompts[0]
+    assert added_content in adapter.prompts[1]
 
 
 def test_expansion_limit_is_bounded_then_safe_fallback_recommended():

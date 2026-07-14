@@ -1,0 +1,23 @@
+{
+  "behavioral_status": "UNMEASURED",
+  "critical_records_retained": 9,
+  "exact_records_retained": 5,
+  "gross_reduction": 0.6774,
+  "known_omissions": 27,
+  "mandatory_context_tokens": 120,
+  "mode": "deterministic",
+  "omitted_context_tokens": 1551,
+  "optimized_context_tokens": 583,
+  "original_tokens_est": 1807,
+  "refusal_reason": null,
+  "refused": false,
+  "risk": {
+    "behavioral_equivalence": "UNMEASURED",
+    "notes": []
+  },
+  "selected_context_tokens": 79,
+  "selection_method": "deterministic lexical+structural ranking v1 (inspectable factors; no model call)",
+  "source_context_hash": "a1792ce388cfafcff4212c3ae5d812f04975ebd5949efbdc112d8d3fc9e01a21",
+  "task": "Fix the flaky CI failure in the widgets service. From the project context,\nreport exactly which file and function must change, the exact command that\nreproduces the failure, and the exact staging deploy command — quote\ncommands byte-for-byte. Answer with exactly these lines:\n\nFILE: <exact path>\nFUNCTION: <name>\nREPRO: <exact command>\nDEPLOY: <exact command>",
+  "token_estimator": "chars/4 heuristic (provider-independent estimate)"
+}

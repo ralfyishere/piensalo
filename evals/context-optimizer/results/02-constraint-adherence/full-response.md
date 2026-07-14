@@ -1,38 +1,21 @@
-# Five-Step Beta Rollout Plan for acme-widgets Service
+# Five-Step Beta Rollout Plan for acme-widgets
 
-## Step 1: Pre-flight Validation & Infrastructure Setup
-- Verify the dedicated small cluster is provisioned and healthy (supersedes shared platform cluster per the March latency incident decision)
-- Run schema migrations (if needed) through CI/CD pipeline, never from a laptop
-- Establish baseline metrics: p95 latency, error rate, throughput, connection pool health (artifact: services/widgets/src/store/pool.py)
-- Set up dashboards and alerting to track the success condition: 24-hour stability window without p95 regression
+## Step 1: Staging Hardening
+Deploy to staging using `make deploy ENV=staging TAG=beta` and establish 24-hour baseline metrics. Monitor p95 latency and error rates to confirm the success condition (no p95 regression over 24h). Use this window to identify any performance bottlenecks related to the pool.py store layer.
 
-## Step 2: Staging Deployment & Validation
-- Deploy beta build using the exact command: `make deploy ENV=staging TAG=beta`
-- Run 24-hour observation period in staging to validate p95 latency stability
-- Verify no cache invalidation issues like the abandoned Redis response-caching approach that caused stale order totals
-- Sign off on staging readiness; document baseline metrics for comparison
+## Step 2: Pre-deployment Schema Review
+Identify any required schema migrations and execute them against production from a proper production machine (not a laptop). Complete this before Friday to avoid the platform team's afternoon deploy freeze. This ensures no blocking schema work remains for the rollout window.
 
-## Step 3: Schedule & Deploy to Dedicated Beta Cluster
-- Schedule beta deployment **before Friday afternoon** to respect the platform team's Friday deploy freeze
-- Deploy to the dedicated small cluster using CI/CD (never from a laptop)
-- Confirm deployment status using commit baseline (4f2a9c1e7b3d5a20)
-- Activate comprehensive monitoring immediately post-deployment
+## Step 3: Dedicated Cluster Preparation
+Provision the dedicated small cluster for beta hosting (per decision after the March latency incident). Configure monitoring, alerting, and logging for error rate tracking with special attention to the 0.5% threshold. Validate that baseline cluster health meets expectations.
 
-## Step 4: Continuous Monitoring & Rollback Readiness
-- Track error rate and p95 latency in real-time against staging baselines
-- Maintain 10-minute observation windows for error rate threshold evaluation
-- Have rollback plan ready with isolated infrastructure on dedicated cluster
-- Verify pool.py behavior under production load
+## Step 4: Canary Deployment
+Deploy the beta build to the dedicated cluster with an initial small traffic percentage (5–10% of beta users). Monitor error rate continuously in real-time. If error rate exceeds 0.5% for 10 consecutive minutes, immediately halt and roll back. Use this phase to validate the failed Redis caching approach has been resolved.
 
-## Step 5: Progressive Traffic Migration
-- Route initial 5-10% of production traffic to beta cluster
-- Monitor error rate and latency drift for 4+ hours
-- Expand traffic in increments (25% → 50% → 100%) if metrics remain stable
-- Maintain deployment freeze compliance for any follow-up deploys
+## Step 5: Graduated Rollout
+Assuming canary metrics remain clean, gradually increase beta traffic (25% → 50% → 100%) over the course of 3–5 days. Maintain continuous error rate monitoring throughout. Schedule the transition away from Friday afternoons to respect the platform freeze window and allow for swift incident response if needed.
 
 ---
-
-## Binding Constraints (Exact)
 
 MIGRATION_RULE: Never run schema migrations against the production database from a laptop.
 FREEZE_RULE: The platform team freezes all deploys on Friday afternoons.

@@ -52,6 +52,7 @@ _ROLE_WEIGHT = {"system": 0.9, "user": 0.7, "assistant": 0.5, "tool": 0.4,
                 "artifact": 0.5, "text": 0.5}
 
 _WORD_RE = re.compile(r"[a-z0-9_./\\-]{3,}")
+_ACRONYM_RE = re.compile(r"\b[A-Z]{2,3}\b")  # CI, DB, PR, SRE, QA ...
 _STOPWORDS = frozenset(
     "the and for with that this from are was were been being have has had "
     "not you your our they them then than into onto over under about after "
@@ -62,7 +63,14 @@ _STOPWORDS = frozenset(
 
 
 def _words(text: str) -> set[str]:
-    return {w for w in _WORD_RE.findall(text.lower()) if w not in _STOPWORDS}
+    """Content words (3+ chars, stopword-filtered) plus short uppercase
+    acronyms from the original casing — "CI"/"DB"/"SRE" carry real signal
+    in engineering contexts and would otherwise fall under the length
+    minimum."""
+    words = {w for w in _WORD_RE.findall(text.lower())
+             if w not in _STOPWORDS}
+    words.update(a.lower() for a in _ACRONYM_RE.findall(text))
+    return words
 
 
 @dataclass

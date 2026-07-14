@@ -34,9 +34,9 @@
     "prompt_tokens_est": 1743,
     "requested_model": "claude-haiku-4-5-20251001",
     "resolved_model": "claude-haiku-4-5-20251001",
-    "tokens_in": 25924,
-    "tokens_out": 304,
-    "wall_seconds": 6.14
+    "tokens_in": 8762,
+    "tokens_out": 236,
+    "wall_seconds": 4.27
   },
   "budgets": [
     {
@@ -46,21 +46,21 @@
           "grade_passed": true,
           "grade_status": "DETERMINISTIC TASK VERIFIED",
           "label": "optimized",
-          "prompt_tokens_est": 323,
+          "prompt_tokens_est": 378,
           "requested_model": "claude-haiku-4-5-20251001",
           "resolved_model": "claude-haiku-4-5-20251001",
-          "tokens_in": 24396,
-          "tokens_out": 173,
-          "wall_seconds": 5.7
+          "tokens_in": 7510,
+          "tokens_out": 124,
+          "wall_seconds": 3.24
         }
       ],
       "budget": 1400,
       "expansions": 0,
       "fallback": false,
-      "gross_context_reduction": 0.8404,
-      "model_tokens_in_billed": 24396,
-      "model_tokens_out": 173,
-      "optimized_context_tokens_est": 259,
+      "gross_context_reduction": 0.8059,
+      "model_tokens_in_billed": 7510,
+      "model_tokens_out": 124,
+      "optimized_context_tokens_est": 315,
       "optimized_grade": {
         "method": "deterministic contract + oracle (no model judge)",
         "passed": true,
@@ -91,11 +91,11 @@
         ],
         "status": "DETERMINISTIC TASK VERIFIED"
       },
-      "optimized_prompt_tokens_est_total": 323,
+      "optimized_prompt_tokens_est_total": 378,
       "outcome": "OPTIMIZED CONTEXT ACCEPTED",
       "response_hash": "29f4b8a689a0c182e091b8db81e1aa2e2e8809d9ff6c7309981c3116993bb5e9",
       "response_text": "240 + 60 + 100 = 400\n\nTOTAL: 400",
-      "runtime_net_input_savings_est": 0.8147,
+      "runtime_net_input_savings_est": 0.7831,
       "savings_note": "prompt-token estimate: what PIENSALO controls. Billed adapter totals include constant harness overhead (e.g. claude CLI system prompt) identical in both arms; see model_tokens_in_billed vs baseline tokens_in.",
       "source_context_tokens_est": 1623,
       "verdict": "MAINTAINED"

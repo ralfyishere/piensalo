@@ -1,0 +1,408 @@
+{
+  "active_artifacts": [
+    {
+      "confidence": "stated",
+      "content": "services/widgets/src/store/pool.py",
+      "created_at": null,
+      "exactness": "EXACT",
+      "expiry": null,
+      "id": "artifact-926f0ae1e0ea",
+      "importance": "normal",
+      "provenance": "context file+lines:33-33",
+      "record_type": "artifact",
+      "risk_if_omitted": null,
+      "risk_if_stale": null,
+      "source_reference": {
+        "access_policy": "local",
+        "artifact_id": "context.txt",
+        "content_hash": "a7ff10285d0081f32d0a2c48dc1bb8809c6be8c76e9ffd99790188e828e97f3c",
+        "content_type": "text/plain",
+        "location": "file+lines:33-33"
+      },
+      "status": "ACTIVE",
+      "superseded_by": null,
+      "supersedes": null
+    },
+    {
+      "confidence": "stated",
+      "content": "commit 4f2a9c1e7b3d5a20",
+      "created_at": null,
+      "exactness": "EXACT",
+      "expiry": null,
+      "id": "artifact-5ccfe899544c",
+      "importance": "normal",
+      "provenance": "context file+lines:34-34",
+      "record_type": "artifact",
+      "risk_if_omitted": null,
+      "risk_if_stale": null,
+      "source_reference": {
+        "access_policy": "local",
+        "artifact_id": "context.txt",
+        "content_hash": "f82bc89c0931aad9f56160b2ad3e1d070e7f9d98f4b0b26fe155ddf653bde29c",
+        "content_type": "text/plain",
+        "location": "file+lines:34-34"
+      },
+      "status": "ACTIVE",
+      "superseded_by": null,
+      "supersedes": null
+    }
+  ],
+  "capsule_id": "cap-9d65c6ce08871ba1",
+  "compiled_for": {
+    "goal": "Fix the flaky CI failure in the widgets service. From the project context,",
+    "source_model": null,
+    "target_model": null,
+    "token_budget": 1500
+  },
+  "completed": [],
+  "decisions": [
+    {
+      "confidence": "stated",
+      "content": "Host the beta on the shared acme-platform cluster.",
+      "created_at": null,
+      "exactness": "SEMANTIC",
+      "expiry": null,
+      "id": "decision-60a3bd6ec1e3",
+      "importance": "normal",
+      "provenance": "context file+lines:27-27",
+      "record_type": "decision",
+      "risk_if_omitted": null,
+      "risk_if_stale": null,
+      "source_reference": {
+        "access_policy": "local",
+        "artifact_id": "context.txt",
+        "content_hash": "9ade1c79f02100a6c29f5ba99f7d46276399e5fddb920584f845f2013e4b88a8",
+        "content_type": "text/plain",
+        "location": "file+lines:27-27"
+      },
+      "status": "SUPERSEDED",
+      "superseded_by": "decision-65ccb27fdcb2",
+      "supersedes": null
+    },
+    {
+      "confidence": "stated",
+      "content": "Host the beta on a dedicated small cluster after the March\nlatency incident.",
+      "created_at": null,
+      "exactness": "SEMANTIC",
+      "expiry": null,
+      "id": "decision-65ccb27fdcb2",
+      "importance": "normal",
+      "provenance": "context file+lines:28-29",
+      "record_type": "decision",
+      "risk_if_omitted": null,
+      "risk_if_stale": null,
+      "source_reference": {
+        "access_policy": "local",
+        "artifact_id": "context.txt",
+        "content_hash": "16daa3493fd5e192e534cbf79d3366c9294d20f3af3ef03855bde241fc2e5a78",
+        "content_type": "text/plain",
+        "location": "file+lines:28-29"
+      },
+      "status": "ACTIVE",
+      "superseded_by": null,
+      "supersedes": "decision-60a3bd6ec1e3"
+    }
+  ],
+  "failed_approaches": [
+    {
+      "confidence": "stated",
+      "content": "Caching whole responses in Redis; stale order totals in checkout.",
+      "created_at": null,
+      "exactness": "SEMANTIC",
+      "expiry": null,
+      "id": "failed_approach-3781971f8182",
+      "importance": "normal",
+      "provenance": "context file+lines:36-36",
+      "record_type": "failed_approach",
+      "risk_if_omitted": null,
+      "risk_if_stale": null,
+      "source_reference": {
+        "access_policy": "local",
+        "artifact_id": "context.txt",
+        "content_hash": "bcdfceb686459bd647b68e6453f9be6b7ff20c2b85341be693f5d33193c190e0",
+        "content_type": "text/plain",
+        "location": "file+lines:36-36"
+      },
+      "status": "ACTIVE",
+      "superseded_by": null,
+      "supersedes": null
+    }
+  ],
+  "invariants": [
+    {
+      "confidence": "stated",
+      "content": "Deploy to staging only with `make deploy ENV=staging TAG=beta`.",
+      "created_at": null,
+      "exactness": "EXACT",
+      "expiry": null,
+      "id": "constraint-0a393a3af227",
+      "importance": "normal",
+      "provenance": "context file+lines:31-31",
+      "record_type": "constraint",
+      "risk_if_omitted": null,
+      "risk_if_stale": null,
+      "source_reference": {
+        "access_policy": "local",
+        "artifact_id": "context.txt",
+        "content_hash": "7af7c460ecd0a11f1ba4f4a37e27593fe87739fbcd407c34b57b6b67272d4aa8",
+        "content_type": "text/plain",
+        "location": "file+lines:31-31"
+      },
+      "status": "ACTIVE",
+      "superseded_by": null,
+      "supersedes": null
+    },
+    {
+      "confidence": "stated",
+      "content": "Keep p95 read latency under 250 ms at 400 rps.",
+      "created_at": null,
+      "exactness": "EXACT",
+      "expiry": null,
+      "id": "constraint-4d485a4c8da4",
+      "importance": "normal",
+      "provenance": "context file+lines:32-32",
+      "record_type": "constraint",
+      "risk_if_omitted": null,
+      "risk_if_stale": null,
+      "source_reference": {
+        "access_policy": "local",
+        "artifact_id": "context.txt",
+        "content_hash": "8eeafe38e531f41caf862969e6182227d697a1f855c84397eded208c35e50e17",
+        "content_type": "text/plain",
+        "location": "file+lines:32-32"
+      },
+      "status": "ACTIVE",
+      "superseded_by": null,
+      "supersedes": null
+    }
+  ],
+  "known_omissions": [
+    {
+      "detail": "superseded/expired: historical truth, recoverable by reference, never rendered as current",
+      "kind": "omitted_superseded",
+      "lines": "file+lines:27-27",
+      "preview": "Host the beta on the shared acme-platform cluster."
+    },
+    {
+      "detail": "no lexical or structural connection to the task (score 0.123816, shared terms [])",
+      "kind": "omitted_low_relevance",
+      "lines": "file+lines:1-1",
+      "preview": "Digression w-1: a long thread about the summer offsite venue and whether the lake house fits everyone. People chimed in "
+    },
+    {
+      "detail": "no lexical or structural connection to the task (score 0.123816, shared terms [])",
+      "kind": "omitted_low_relevance",
+      "lines": "file+lines:3-3",
+      "preview": "Digression w-2: a long thread about the espresso machine descaling rota and its laminated instructions. People chimed in"
+    },
+    {
+      "detail": "no lexical or structural connection to the task (score 0.123816, shared terms [])",
+      "kind": "omitted_low_relevance",
+      "lines": "file+lines:5-5",
+      "preview": "Digression w-3: a long thread about whether the team mascot should be a heron or an axolotl. People chimed in with anecd"
+    },
+    {
+      "detail": "no lexical or structural connection to the task (score 0.123816, shared terms [])",
+      "kind": "omitted_low_relevance",
+      "lines": "file+lines:7-7",
+      "preview": "Digression w-4: a long thread about parking garage badge readers rebooting every Tuesday. People chimed in with anecdote"
+    },
+    {
+      "detail": "no lexical or structural connection to the task (score 0.123816, shared terms [])",
+      "kind": "omitted_low_relevance",
+      "lines": "file+lines:9-9",
+      "preview": "Digression w-5: a long thread about the potluck signup sheet and three people all bringing hummus. People chimed in with"
+    },
+    {
+      "detail": "no lexical or structural connection to the task (score 0.123816, shared terms [])",
+      "kind": "omitted_low_relevance",
+      "lines": "file+lines:11-11",
+      "preview": "Digression w-6: a long thread about lunch options near the office and the new dumpling place. People chimed in with anec"
+    },
+    {
+      "detail": "no lexical or structural connection to the task (score 0.123816, shared terms [])",
+      "kind": "omitted_low_relevance",
+      "lines": "file+lines:13-13",
+      "preview": "Digression w-7: a long thread about the design team's font pairing debate for the newsletter. People chimed in with anec"
+    },
+    {
+      "detail": "no lexical or structural connection to the task (score 0.123816, shared terms [])",
+      "kind": "omitted_low_relevance",
+      "lines": "file+lines:15-15",
+      "preview": "Digression w-8: a long thread about a birthday card circulating for someone in another department. People chimed in with"
+    },
+    {
+      "detail": "no lexical or structural connection to the task (score 0.123816, shared terms [])",
+      "kind": "omitted_low_relevance",
+      "lines": "file+lines:17-17",
+      "preview": "Digression w-9: a long thread about the ergonomics vendor demo and the chair with too many levers. People chimed in with"
+    },
+    {
+      "detail": "no lexical or structural connection to the task (score 0.123816, shared terms [])",
+      "kind": "omitted_low_relevance",
+      "lines": "file+lines:19-19",
+      "preview": "Digression w-10: a long thread about the never-ending wiki thread that resolved nothing. People chimed in with anecdotes"
+    },
+    {
+      "detail": "no lexical or structural connection to the task (score 0.123816, shared terms [])",
+      "kind": "omitted_low_relevance",
+      "lines": "file+lines:21-21",
+      "preview": "Digression w-11: a long thread about trivia night and the disputed geography answer. People chimed in with anecdotes, so"
+    },
+    {
+      "detail": "no lexical or structural connection to the task (score 0.123816, shared terms [])",
+      "kind": "omitted_low_relevance",
+      "lines": "file+lines:23-23",
+      "preview": "Digression w-12: a long thread about the office plants watering schedule on alternating weeks. People chimed in with ane"
+    },
+    {
+      "detail": "no lexical or structural connection to the task (score 0.123816, shared terms [])",
+      "kind": "omitted_low_relevance",
+      "lines": "file+lines:46-46",
+      "preview": "Digression z-1: a long thread about the summer offsite venue and whether the lake house fits everyone. People chimed in "
+    },
+    {
+      "detail": "no lexical or structural connection to the task (score 0.123816, shared terms [])",
+      "kind": "omitted_low_relevance",
+      "lines": "file+lines:48-48",
+      "preview": "Digression z-2: a long thread about the espresso machine descaling rota and its laminated instructions. People chimed in"
+    },
+    {
+      "detail": "no lexical or structural connection to the task (score 0.123816, shared terms [])",
+      "kind": "omitted_low_relevance",
+      "lines": "file+lines:50-50",
+      "preview": "Digression z-3: a long thread about whether the team mascot should be a heron or an axolotl. People chimed in with anecd"
+    },
+    {
+      "detail": "no lexical or structural connection to the task (score 0.123816, shared terms [])",
+      "kind": "omitted_low_relevance",
+      "lines": "file+lines:52-52",
+      "preview": "Digression z-4: a long thread about parking garage badge readers rebooting every Tuesday. People chimed in with anecdote"
+    },
+    {
+      "detail": "no lexical or structural connection to the task (score 0.123816, shared terms [])",
+      "kind": "omitted_low_relevance",
+      "lines": "file+lines:54-54",
+      "preview": "Digression z-5: a long thread about the potluck signup sheet and three people all bringing hummus. People chimed in with"
+    },
+    {
+      "detail": "no lexical or structural connection to the task (score 0.123816, shared terms [])",
+      "kind": "omitted_low_relevance",
+      "lines": "file+lines:56-56",
+      "preview": "Digression z-6: a long thread about lunch options near the office and the new dumpling place. People chimed in with anec"
+    },
+    {
+      "detail": "no lexical or structural connection to the task (score 0.123816, shared terms [])",
+      "kind": "omitted_low_relevance",
+      "lines": "file+lines:58-58",
+      "preview": "Digression z-7: a long thread about the design team's font pairing debate for the newsletter. People chimed in with anec"
+    },
+    {
+      "detail": "no lexical or structural connection to the task (score 0.123816, shared terms [])",
+      "kind": "omitted_low_relevance",
+      "lines": "file+lines:60-60",
+      "preview": "Digression z-8: a long thread about a birthday card circulating for someone in another department. People chimed in with"
+    },
+    {
+      "detail": "no lexical or structural connection to the task (score 0.123816, shared terms [])",
+      "kind": "omitted_low_relevance",
+      "lines": "file+lines:62-62",
+      "preview": "Digression z-9: a long thread about the ergonomics vendor demo and the chair with too many levers. People chimed in with"
+    },
+    {
+      "detail": "no lexical or structural connection to the task (score 0.123816, shared terms [])",
+      "kind": "omitted_low_relevance",
+      "lines": "file+lines:64-64",
+      "preview": "Digression z-10: a long thread about the never-ending wiki thread that resolved nothing. People chimed in with anecdotes"
+    },
+    {
+      "detail": "no lexical or structural connection to the task (score 0.123816, shared terms [])",
+      "kind": "omitted_low_relevance",
+      "lines": "file+lines:66-66",
+      "preview": "Digression z-11: a long thread about trivia night and the disputed geography answer. People chimed in with anecdotes, so"
+    },
+    {
+      "detail": "no lexical or structural connection to the task (score 0.123816, shared terms [])",
+      "kind": "omitted_low_relevance",
+      "lines": "file+lines:68-68",
+      "preview": "Digression z-12: a long thread about the office plants watering schedule on alternating weeks. People chimed in with ane"
+    },
+    {
+      "detail": "no lexical or structural connection to the task (score 0.123816, shared terms [])",
+      "kind": "omitted_low_relevance",
+      "lines": "file+lines:70-70",
+      "preview": "Digression z-13: a long thread about the summer offsite venue and whether the lake house fits everyone. People chimed in"
+    },
+    {
+      "detail": "no lexical or structural connection to the task (score 0.123816, shared terms [])",
+      "kind": "omitted_low_relevance",
+      "lines": "file+lines:72-72",
+      "preview": "Digression z-14: a long thread about the espresso machine descaling rota and its laminated instructions. People chimed i"
+    }
+  ],
+  "metrics": {
+    "gross_compression_ratio_est": 3.1,
+    "net_savings": "UNMEASURED (reported by the runtime token ledger)",
+    "original_tokens_est": 1807,
+    "resume_tokens_est": 583,
+    "resume_within_budget": true,
+    "token_budget": 1500,
+    "token_estimator": "chars/4 heuristic (provider-independent estimate)"
+  },
+  "mission": {
+    "objective": "Harden the acme-widgets service for the beta cut.",
+    "success_conditions": [
+      "Staging runs 24h without a p95 regression."
+    ]
+  },
+  "next_action": "Reproduce the CI failure locally with `pytest -q tests/store`.",
+  "open_actions": [],
+  "open_questions": [],
+  "references": {
+    "context": {
+      "access_policy": "local",
+      "artifact_id": "context",
+      "content_hash": "a1792ce388cfafcff4212c3ae5d812f04975ebd5949efbdc112d8d3fc9e01a21",
+      "content_type": "text/plain",
+      "location": "file:context.txt"
+    }
+  },
+  "risk": {
+    "behavioral_equivalence": "UNMEASURED",
+    "notes": [],
+    "unsafe_omissions": []
+  },
+  "schema_version": "context-capsule/1",
+  "source_hash": "a1792ce388cfafcff4212c3ae5d812f04975ebd5949efbdc112d8d3fc9e01a21",
+  "source_path": "context.txt",
+  "state": {},
+  "stop_conditions": [
+    {
+      "confidence": "stated",
+      "content": "Stop the rollout if error rate exceeds 0.5% for 10 consecutive minutes.",
+      "created_at": null,
+      "exactness": "EXACT",
+      "expiry": null,
+      "id": "stop_condition-f7c8530c7c17",
+      "importance": "normal",
+      "provenance": "context file+lines:35-35",
+      "record_type": "stop_condition",
+      "risk_if_omitted": null,
+      "risk_if_stale": null,
+      "source_reference": {
+        "access_policy": "local",
+        "artifact_id": "context.txt",
+        "content_hash": "98f70a2013537433383fe9e280445d53132edadeedbc8564d30ee51a34281918",
+        "content_type": "text/plain",
+        "location": "file+lines:35-35"
+      },
+      "status": "ACTIVE",
+      "superseded_by": null,
+      "supersedes": null
+    }
+  ],
+  "verification_tests": [
+    "schema_valid",
+    "capsule_id_stable"
+  ]
+}
