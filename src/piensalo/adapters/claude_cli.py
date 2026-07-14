@@ -12,6 +12,7 @@ from __future__ import annotations
 import json
 import shutil
 import subprocess
+import tempfile
 import time
 
 from piensalo.adapters.base import AdapterError, ModelAdapter, ModelResponse
@@ -33,6 +34,11 @@ class ClaudeCliAdapter(ModelAdapter):
         # any context-limited comparison (the model can read the full
         # context off disk).
         self.tools = tools
+        # Neutral empty working directory: the CLI injects cwd/git context
+        # into completions even with tools disabled, which contaminates
+        # answers with local-project state and can leak machine paths
+        # into recorded artifacts.
+        self.workdir = tempfile.mkdtemp(prefix="piensalo-adapter-")
 
     def complete(self, prompt: str) -> ModelResponse:
         if shutil.which(self.executable) is None:
@@ -56,6 +62,7 @@ class ClaudeCliAdapter(ModelAdapter):
             capture_output=True,
             text=True,
             timeout=self.timeout,
+            cwd=self.workdir,
         )
         wall = time.monotonic() - start
         if proc.returncode != 0:

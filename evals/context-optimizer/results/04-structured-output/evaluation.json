@@ -38,9 +38,9 @@
     "prompt_tokens_est": 1692,
     "requested_model": "claude-haiku-4-5-20251001",
     "resolved_model": "claude-haiku-4-5-20251001",
-    "tokens_in": 8739,
-    "tokens_out": 367,
-    "wall_seconds": 4.49
+    "tokens_in": 8013,
+    "tokens_out": 315,
+    "wall_seconds": 4.14
   },
   "budgets": [
     {
@@ -53,17 +53,17 @@
           "prompt_tokens_est": 587,
           "requested_model": "claude-haiku-4-5-20251001",
           "resolved_model": "claude-haiku-4-5-20251001",
-          "tokens_in": 7757,
-          "tokens_out": 512,
-          "wall_seconds": 6.67
+          "tokens_in": 7031,
+          "tokens_out": 264,
+          "wall_seconds": 4.81
         }
       ],
       "budget": 1300,
       "expansions": 0,
       "fallback": false,
       "gross_context_reduction": 0.6862,
-      "model_tokens_in_billed": 7757,
-      "model_tokens_out": 512,
+      "model_tokens_in_billed": 7031,
+      "model_tokens_out": 264,
       "optimized_context_tokens_est": 481,
       "optimized_grade": {
         "method": "deterministic contract + oracle (no model judge)",

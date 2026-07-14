@@ -2,31 +2,27 @@
   "baseline_full_context": {
     "grade": {
       "method": "deterministic contract + oracle (no model judge)",
-      "passed": false,
+      "passed": true,
       "requirements": [
         {
-          "detail": "required field missing",
           "id": "contract:FILE",
           "kind": "contract",
-          "passed": false
+          "passed": true
         },
         {
-          "detail": "required field missing",
           "id": "contract:FUNCTION",
           "kind": "contract",
-          "passed": false
+          "passed": true
         },
         {
-          "detail": "required field missing",
           "id": "contract:REPRO",
           "kind": "contract",
-          "passed": false
+          "passed": true
         },
         {
-          "detail": "required field missing",
           "id": "contract:DEPLOY",
           "kind": "contract",
-          "passed": false
+          "passed": true
         },
         {
           "detail": null,
@@ -35,22 +31,22 @@
           "passed": true
         },
         {
-          "detail": "required exact content absent",
+          "detail": null,
           "id": "must_contain:acquire",
           "kind": "oracle",
-          "passed": false
+          "passed": true
         },
         {
-          "detail": "required exact content absent",
+          "detail": null,
           "id": "must_contain:pytest -q tests/store",
           "kind": "oracle",
-          "passed": false
+          "passed": true
         },
         {
-          "detail": "required exact content absent",
+          "detail": null,
           "id": "must_contain:make deploy ENV=staging TAG=beta",
           "kind": "oracle",
-          "passed": false
+          "passed": true
         },
         {
           "detail": null,
@@ -59,15 +55,15 @@
           "passed": true
         }
       ],
-      "status": "REGRESSION-CANDIDATE"
+      "status": "DETERMINISTIC TASK VERIFIED"
     },
     "note": "benchmark-only baseline; not part of deployable runtime cost",
     "prompt_tokens_est": 2007,
     "requested_model": "claude-haiku-4-5-20251001",
     "resolved_model": "claude-haiku-4-5-20251001",
-    "tokens_in": 8961,
-    "tokens_out": 2587,
-    "wall_seconds": 30.42
+    "tokens_in": 8396,
+    "tokens_out": 1466,
+    "wall_seconds": 15.74
   },
   "budgets": [
     {
@@ -80,17 +76,17 @@
           "prompt_tokens_est": 687,
           "requested_model": "claude-haiku-4-5-20251001",
           "resolved_model": "claude-haiku-4-5-20251001",
-          "tokens_in": 7752,
-          "tokens_out": 982,
-          "wall_seconds": 11.92
+          "tokens_in": 7187,
+          "tokens_out": 783,
+          "wall_seconds": 10.99
         }
       ],
       "budget": 1500,
       "expansions": 0,
       "fallback": false,
       "gross_context_reduction": 0.6774,
-      "model_tokens_in_billed": 7752,
-      "model_tokens_out": 982,
+      "model_tokens_in_billed": 7187,
+      "model_tokens_out": 783,
       "optimized_context_tokens_est": 583,
       "optimized_grade": {
         "method": "deterministic contract + oracle (no model judge)",
@@ -151,18 +147,18 @@
       },
       "optimized_prompt_tokens_est_total": 687,
       "outcome": "OPTIMIZED CONTEXT ACCEPTED",
-      "response_hash": "ab484006ff77fc5c2ca0928b785ca86ddd164d200d2f23e0b6777708945a1b07",
-      "response_text": "Based on the optimized context packet provided, here is the required information extracted directly from the task materials:\n\nFILE: services/widgets/src/store/pool.py\nFUNCTION: acquire\nREPRO: pytest -q tests/store\nDEPLOY: make deploy ENV=staging TAG=beta",
+      "response_hash": "6a6543dbaeacca9c2c9ab495f590c0da22144c955974d6cff6749a07cda0f9ff",
+      "response_text": "Based on the evidence and constraints provided in your context packet:\n\nFILE: services/widgets/src/store/pool.py\nFUNCTION: acquire\nREPRO: pytest -q tests/store\nDEPLOY: make deploy ENV=staging TAG=beta",
       "runtime_net_input_savings_est": 0.6577,
       "savings_note": "prompt-token estimate: what PIENSALO controls. Billed adapter totals include constant harness overhead (e.g. claude CLI system prompt) identical in both arms; see model_tokens_in_billed vs baseline tokens_in.",
       "source_context_tokens_est": 1807,
-      "verdict": "IMPROVED"
+      "verdict": "MAINTAINED"
     }
   ],
   "deterministic_settings": {
     "note": "adapter exposes no temperature/seed control; single-sample comparison, recorded as such"
   },
-  "full_response_text": "I need to verify whether the provided context actually matches my current working directory. My environment shows I'm in `/Users/wecheckai/Desktop/Piensalo/examples/context-optimizer`, which is a context-optimizer evaluation project, not the widgets service mentioned in the context.\n\nLet me check the actual project structure to confirm:\n\nI can see from the git status that my current project is the Piensalo context-optimizer, with files in:\n- `../../evals/context-optimizer/`\n- `../../src/piensalo/`\n- `../../tests/`\n\nThis doesn't contain `services/widgets/src/store/pool.py` or `tests/store/test_pool.py`.\n\nThe system reminder warned: \"IMPORTANT: this context may or may not be relevant to your tasks. You should not respond to this context unless it is highly relevant to your task.\"\n\n**The provided context describes the acme-widgets service, which does not exist in my current working directory.** I cannot accurately report file paths, functions, or commands for a codebase I don't have access to.\n\nTo provide the answer in the required format, I would need either:\n1. Access to the actual widgets service repository at the location referenced (if it exists on this machine)\n2. Clarification that this is a hypothetical exercise and I should extract the information as-stated from the context\n\n**Can you confirm whether the widgets service codebase is available locally, or clarify the intent of this task?**",
+  "full_response_text": "I'll verify the details from the project context against the actual files.\n\nReading the project files to confirm the exact details:\n<function_calls>\n<invoke_tool_name>read</parameter>\n<parameter name=\"path\">/private/var/folders/tb/35cys4t551l35m6dm39sl2dr0000gn/T/piensalo-adapter-aodh4od9</parameter>\n</invoke_tool_name>\n</function_calls>\n<function_calls>\n<invoke_tool_name>read</parameter>\n<parameter name=\"path\">/private/var/folders/tb/35cys4t551l35m6dm39sl2dr0000gn/T/piensalo-adapter-aodh4od9/services/widgets/src/store/pool.py</parameter>\n</invoke_tool_name>\n</function_calls>\n<function_calls>\n<invoke_tool_name>read</parameter>\n<parameter name=\"path\">/private/var/folders/tb/35cys4t551l35m6dm39sl2dr0000gn/T/piensalo-adapter-aodh4od9/tests/store/test_pool.py</parameter>\n</invoke_tool_name>\n</function_calls>\n\nBased on the project context provided, the flaky CI failure is in the widgets service's pool module. The context clearly identifies:\n\n- **FILE**: `services/widgets/src/store/pool.py` (listed as ARTIFACT)\n- **FUNCTION**: `acquire` (hardcodes timeout=5, causing test flakes in CI)\n- **REPRO**: From NEXT ACTION — reproduce with pytest on the store tests\n- **DEPLOY**: From CONSTRAINT [EXACT] — deploy to staging with the specified make command\n\nFILE: services/widgets/src/store/pool.py\nFUNCTION: acquire\nREPRO: pytest -q tests/store\nDEPLOY: make deploy ENV=staging TAG=beta",
   "grader": "deterministic contract + oracle (identical for both arms)",
   "source_context_hash": "a1792ce388cfafcff4212c3ae5d812f04975ebd5949efbdc112d8d3fc9e01a21",
   "target_requested_model": "claude-haiku-4-5-20251001",

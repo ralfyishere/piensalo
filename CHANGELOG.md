@@ -5,6 +5,38 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 Versioning: [SemVer](https://semver.org/) once we reach 0.1.0; until then,
 everything may change.
 
+## [0.1.0-alpha.4] — 2026-07-14
+
+### Added
+- **PIÉNSALO Context** subsystem (`piensalo context …`):
+  - `compile` / `inspect` / `verify` / `diff` — deterministic Continuation
+    Capsules: typed consequence records, active vs superseded decisions,
+    exactness classes, content-addressed source references, byte-stable
+    serialization, honest budget refusal; behavioral equivalence reported
+    UNMEASURED (structural verification only).
+  - `optimize` / `run` / `evaluate` — task-specific Context Optimizer:
+    normalizes plain text, marker transcripts, generic JSONL/chat JSON,
+    tool records, and file artifacts; inspectable per-chunk selection with
+    mandatory-context preservation and OPTIMIZATION REFUSED when mandatory
+    content exceeds the budget; explicit-adapter execution with
+    deterministic verification, bounded expansion (default 2), safe
+    fallback that is never counted as optimized success, and a full token
+    ledger separating benchmark cost from deployable runtime cost.
+- Pre-registered 8-task paired evaluation suite with committed results
+  (`evals/context-optimizer/`): median gross context reduction 80.2%,
+  median runtime net input savings 76.9%, zero critical regressions,
+  designed fallback task refused safely (one model family, single samples).
+- Demos with anti-drift tests: `examples/context/` (deterministic,
+  byte-for-byte) and `examples/context-optimizer/` (deterministic step
+  byte-for-byte plus one real recorded model run).
+
+### Fixed
+- `claude-cli` adapter: disables tools (`--tools ""`) so a completion is a
+  single turn (with tools on, the model could explore the machine —
+  breaking provenance and any context-limited comparison), and reports
+  real billed input (`input + cache_creation + cache_read`; previously
+  only `input_tokens`, e.g. 9 for a 2.4k-token prompt).
+
 ## [0.1.0-alpha.3] — 2026-07-13
 
 ### Fixed

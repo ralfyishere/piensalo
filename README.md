@@ -118,6 +118,42 @@ TASK → DRAFT → INSPECT → ABSTAIN or TARGETED REPAIR → VERIFY → FINAL A
 - Silent model fallback is prohibited by design: adapters record requested
   and resolved model and stop on mismatch.
 
+## Use less context. Lose none of the intelligence.
+
+`piensalo context` turns long transcripts and chatter-heavy project context
+into the smallest task-specific packet that preserves decisions (with
+supersession), constraints, failed approaches, exact identifiers, and stop
+conditions — then verifies the model's response deterministically and
+expands or falls back when verification fails.
+
+```sh
+# offline + deterministic: capsule / packet construction
+piensalo context compile transcript.txt --goal "continue" --budget 3000 --output out/
+piensalo context optimize --task task.md --context session.jsonl --budget 4000 --output opt/
+
+# explicit-adapter execution with verification, bounded expansion, safe fallback
+piensalo context run --task task.md --context session.jsonl --budget 4000 \
+  --adapter claude-cli --model <model> --contract contract.json --output run/
+
+# paired full-vs-optimized evidence run (benchmark cost ledgered separately)
+piensalo context evaluate --task task.md --context session.jsonl \
+  --adapter claude-cli --model <model> --budgets 2000,4000 --output eval/
+```
+
+Measured, not promised — on the pre-registered 8-task suite
+([evals/context-optimizer/](evals/context-optimizer/), graders frozen
+before any run, `claude-haiku-4-5-20251001`, single samples): median gross
+context reduction **80.2%**, median runtime net input savings **76.9%**,
+7/7 optimizable tasks **MAINTAINED** every deterministic requirement with
+zero regressions, and the designed uncompressible task **refused
+optimization and fell back safely**. A committed demo run
+([examples/context-optimizer/](examples/context-optimizer/)) passes all
+seven requirements from a packet 66% smaller than the full prompt
+(**MAINTAINED**, single sample). Scope honestly: one model family,
+deterministic graders, chatter-heavy contexts — broader behavioral
+equivalence is UNMEASURED, and a task that needs full context gets full
+context.
+
 ## Why trust it
 
 **Every capability ships with receipts.** Two pre-registered 120-cell

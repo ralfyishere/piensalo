@@ -54,6 +54,23 @@ def test_demo_packet_preserves_task_critical_content(regenerated):
     assert regenerated.report["behavioral_status"] == "UNMEASURED"
 
 
+def test_no_private_paths_in_committed_artifacts():
+    """Recorded model runs must never leak machine paths: the CLI injects
+    cwd/git context into completions, so the adapter runs from a neutral
+    temp dir and this test guards every committed artifact."""
+    roots = [EXAMPLE,
+             EXAMPLE.parent / "context",
+             EXAMPLE.parent.parent / "evals" / "context-optimizer" / "results"]
+    for root in roots:
+        for f in root.rglob("*"):
+            if f.is_file() and f.suffix in (".json", ".md", ".txt"):
+                text = f.read_text(encoding="utf-8", errors="replace")
+                for needle in ("/Users/", "wecheckai", "C:\\Users\\"):
+                    if needle == "C:\\Users\\" and "example" in f.name:
+                        continue
+                    assert needle not in text, f"{needle!r} leaked into {f}"
+
+
 def test_committed_evaluation_is_structurally_honest():
     ev = json.loads((EXAMPLE / "generated" / "evaluation"
                      / "evaluation.json").read_text(encoding="utf-8"))

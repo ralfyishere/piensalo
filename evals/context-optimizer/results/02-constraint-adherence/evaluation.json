@@ -44,9 +44,9 @@
     "prompt_tokens_est": 2410,
     "requested_model": "claude-haiku-4-5-20251001",
     "resolved_model": "claude-haiku-4-5-20251001",
-    "tokens_in": 9433,
-    "tokens_out": 1417,
-    "wall_seconds": 18.07
+    "tokens_in": 8703,
+    "tokens_out": 1210,
+    "wall_seconds": 13.99
   },
   "budgets": [
     {
@@ -59,17 +59,17 @@
           "prompt_tokens_est": 627,
           "requested_model": "claude-haiku-4-5-20251001",
           "resolved_model": "claude-haiku-4-5-20251001",
-          "tokens_in": 7835,
-          "tokens_out": 1059,
-          "wall_seconds": 13.25
+          "tokens_in": 7105,
+          "tokens_out": 1074,
+          "wall_seconds": 11.74
         }
       ],
       "budget": 1700,
       "expansions": 0,
       "fallback": false,
       "gross_context_reduction": 0.7629,
-      "model_tokens_in_billed": 7835,
-      "model_tokens_out": 1059,
+      "model_tokens_in_billed": 7105,
+      "model_tokens_out": 1074,
       "optimized_context_tokens_est": 528,
       "optimized_grade": {
         "method": "deterministic contract + oracle (no model judge)",
@@ -113,8 +113,8 @@
       },
       "optimized_prompt_tokens_est_total": 627,
       "outcome": "OPTIMIZED CONTEXT ACCEPTED",
-      "response_hash": "a59049bfb18316e4abf631b4bf7b1039606743a23b56ecec98f7db75af5a282d",
-      "response_text": "# Five-Step Beta Rollout Plan for Widgets Service\n\n## Step 1: Pre-flight Infrastructure & Validation\n- Confirm the dedicated small cluster (post-March incident architecture) is provisioned and network-ready\n- Review and test `services/widgets/src/store/pool.py` locally against commit 4f2a9c1e7b3d5a20\n- Run `pytest -q tests/store` locally to verify no CI regressions\n- Confirm schema migration strategy: all migrations must run through CI/CD pipeline, never from a laptop\n\n## Step 2: Staging Deployment & Baseline\n- Deploy to staging using `make deploy ENV=staging TAG=beta` (exactly as specified)\n- Begin continuous monitoring of p95 latency, error rate, and resource utilization\n- Establish 24-hour observation window to detect any p95 regression\n\n## Step 3: 24-Hour Stability Gate\n- Monitor error rate continuously; halt immediately if exceeds 0.5% for 10 consecutive minutes\n- Verify no cache invalidation issues (avoid the Redis whole-response caching trap that broke checkout)\n- Confirm staging remains stable through full 24-hour window\n- Document baseline metrics for production comparison\n\n## Step 4: Schedule Production Deployment\n- Identify a deployment window **before Friday afternoon** (respect platform team freeze window)\n- Coordinate with on-call and platform team for the cutover\n- Prepare rollback plan and error-rate monitoring dashboards\n\n## Step 5: Beta Cut to Production\n- Execute `make deploy ENV=staging TAG=beta` promotion to production cluster\n- Begin error-rate and latency surveillance immediately post-deploy\n- Maintain stop-condition monitoring: halt rollout if error rate exceeds 0.5% for 10 consecutive minutes\n\n---\n\nMIGRATION_RULE: Never run schema migrations against the production database from a laptop.\nFREEZE_RULE: The platform team freezes all deploys on Friday afternoons.\nSTOP_RULE: Stop the rollout if error rate exceeds 0.5% for 10 consecutive minutes.",
+      "response_hash": "96f0a6b2b87e83180d69d2f88cdc24eabcc2d5c574bdae34a0ba4a7acfad373e",
+      "response_text": "# Five-Step Beta Rollout Plan for acme-widgets Service\n\n## Step 1: Pre-Rollout Validation\nReproduce and resolve the CI failure locally using `pytest -q tests/store`. Verify the store pool implementation in `services/widgets/src/store/pool.py` (commit 4f2a9c1e7b3d5a20). Confirm all schema migrations are reviewed and documented for staging-only execution.\n\n## Step 2: Staging Deployment\nDeploy to staging using the enforced command: `make deploy ENV=staging TAG=beta`. This is the only approved path for staging deployment and ensures consistency with platform standards.\n\n## Step 3: 24-Hour Staging Validation\nMonitor staging continuously for 24 hours without a p95 latency regression. Track error rates, response times, and resource utilization on the dedicated small cluster infrastructure. Do not proceed if the success condition (24h clean run) is not met.\n\n## Step 4: Production Readiness Scheduling\nSchedule production deployment for a weekday morning, explicitly avoiding Friday afternoons when the platform team freezes all deploys. Prepare the rollback plan and ensure schema migration steps are staged correctly.\n\n## Step 5: Dedicated Cluster Beta Deployment\nDeploy to the dedicated small cluster (per March latency incident decision) with active error rate monitoring. Begin the rollout only if staging validation passed. Maintain continuous observation of the 0.5% error rate threshold.\n\n---\n\n## Required Constraint Quotations\n\nMIGRATION_RULE: Never run schema migrations against the production database from a laptop.\n\nFREEZE_RULE: The platform team freezes all deploys on Friday afternoons.\n\nSTOP_RULE: Stop the rollout if error rate exceeds 0.5% for 10 consecutive minutes.",
       "runtime_net_input_savings_est": 0.7398,
       "savings_note": "prompt-token estimate: what PIENSALO controls. Billed adapter totals include constant harness overhead (e.g. claude CLI system prompt) identical in both arms; see model_tokens_in_billed vs baseline tokens_in.",
       "source_context_tokens_est": 2227,
@@ -124,7 +124,7 @@
   "deterministic_settings": {
     "note": "adapter exposes no temperature/seed control; single-sample comparison, recorded as such"
   },
-  "full_response_text": "# Five-Step Beta Rollout Plan for acme-widgets\n\n## Step 1: Staging Hardening\nDeploy to staging using `make deploy ENV=staging TAG=beta` and establish 24-hour baseline metrics. Monitor p95 latency and error rates to confirm the success condition (no p95 regression over 24h). Use this window to identify any performance bottlenecks related to the pool.py store layer.\n\n## Step 2: Pre-deployment Schema Review\nIdentify any required schema migrations and execute them against production from a proper production machine (not a laptop). Complete this before Friday to avoid the platform team's afternoon deploy freeze. This ensures no blocking schema work remains for the rollout window.\n\n## Step 3: Dedicated Cluster Preparation\nProvision the dedicated small cluster for beta hosting (per decision after the March latency incident). Configure monitoring, alerting, and logging for error rate tracking with special attention to the 0.5% threshold. Validate that baseline cluster health meets expectations.\n\n## Step 4: Canary Deployment\nDeploy the beta build to the dedicated cluster with an initial small traffic percentage (5–10% of beta users). Monitor error rate continuously in real-time. If error rate exceeds 0.5% for 10 consecutive minutes, immediately halt and roll back. Use this phase to validate the failed Redis caching approach has been resolved.\n\n## Step 5: Graduated Rollout\nAssuming canary metrics remain clean, gradually increase beta traffic (25% → 50% → 100%) over the course of 3–5 days. Maintain continuous error rate monitoring throughout. Schedule the transition away from Friday afternoons to respect the platform freeze window and allow for swift incident response if needed.\n\n---\n\nMIGRATION_RULE: Never run schema migrations against the production database from a laptop.\nFREEZE_RULE: The platform team freezes all deploys on Friday afternoons.\nSTOP_RULE: Stop the rollout if error rate exceeds 0.5% for 10 consecutive minutes.",
+  "full_response_text": "# Five-Step Beta Rollout Plan for Acme-Widgets Service\n\n## Step 1: Local Validation & CI Resolution\nReproduce and resolve the CI failure locally using `pytest -q tests/store`. Verify hardening changes in `services/widgets/src/store/pool.py` (commit 4f2a9c1e7b3d5a20) against the failed Redis caching approach. Ensure no schema migration scripts are prepared on local machines.\n\n## Step 2: Staging Deployment & 24-Hour Stability Test\nDeploy to staging using the required command: `make deploy ENV=staging TAG=beta`. Run for 24 consecutive hours and confirm zero p95 latency regressions. Schedule this deployment outside Friday afternoons (platform team freeze window) to avoid scheduling conflicts.\n\n## Step 3: Dedicated Cluster Preparation\nProvision the small dedicated cluster (per the March latency incident decision, superseding the shared platform cluster approach). Validate networking, monitoring, and alert thresholds are in place before beta traffic.\n\n## Step 4: Pre-Rollout Checkpoint\nConfirm staging success criteria met. Verify error-rate monitoring is live and configured to trigger at 0.5% threshold. Stage any schema migrations via proper change management (never from a laptop). Confirm rollback procedures are documented.\n\n## Step 5: Monitored Beta Rollout\nDeploy to the dedicated cluster. Continuously monitor error rates for the first 4 hours. Maintain on-call readiness to stop the rollout immediately if error rate exceeds 0.5% for 10 consecutive minutes.\n\n---\n\nMIGRATION_RULE: Never run schema migrations against the production database from a laptop.\nFREEZE_RULE: The platform team freezes all deploys on Friday afternoons.\nSTOP_RULE: Stop the rollout if error rate exceeds 0.5% for 10 consecutive minutes.",
   "grader": "deterministic contract + oracle (identical for both arms)",
   "source_context_hash": "352aab220d917d0c28dcbe09adcc103d26bdb65701b6f4860661d8c9c2238417",
   "target_requested_model": "claude-haiku-4-5-20251001",

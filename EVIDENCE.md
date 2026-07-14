@@ -164,6 +164,38 @@ Cognitive-core operations not listed above carry `DESIGNED` or
 `SMOKE_TESTED` in their skill cards (`skills/`, `micro-skills/`) and have
 not yet earned controlled-run records.
 
+## PIÉNSALO Context (added in 0.1.0-alpha.4)
+
+**Context capsule compiler** (`piensalo context compile|inspect|verify|diff`)
+```json
+{
+  "mechanism": "continuation-capsule compiler (deterministic)",
+  "claim": "compiles marker transcripts into schema-validated, content-addressed capsules; superseded decisions never render as current; EXACT content survives byte-for-byte; refuses under-budget renders",
+  "evidence": "75 deterministic tests + committed anti-drift demo (examples/context/); byte-identical recompilation verified in a clean environment",
+  "known_confounds": ["behavioral equivalence of a resumed session is UNMEASURED — structural checks only"],
+  "evidence_level": "SMOKE_TESTED",
+  "next_kill_test": "a resumed-session behavioral probe battery (adapter-backed) showing capsule-resumed behavior diverging from full-history behavior"
+}
+```
+
+**Context Optimizer** (`piensalo context optimize|run|evaluate`)
+```json
+{
+  "mechanism": "task-specific context optimization with deterministic response verification",
+  "claim": "on the pre-registered 8-task suite (evals/context-optimizer/, graders frozen before any run): median gross context reduction 80.2%, median runtime net input savings 76.9%, 7/7 optimizable tasks verdict MAINTAINED with zero critical regressions, and the designed uncompressible task refused optimization and fell back safely",
+  "evidence": "one controlled paired run, full context vs optimized context, same task/model/contract/grader both arms; target model claude-haiku-4-5-20251001 via claude-cli (tools disabled, single-turn); results committed under evals/context-optimizer/results/",
+  "known_confounds": [
+    "single model family; single sample per arm (the CLI exposes no temperature/seed control)",
+    "reductions measured on chatter-heavy contexts (the intended use case); marker-dense contexts compress far less and can refuse",
+    "deterministic graders (contract + exact-content oracle) — broader behavioral equivalence remains UNMEASURED",
+    "token savings are prompt-side estimates plus adapter-billed totals; the claude CLI carries constant harness overhead in both arms, reported separately"
+  ],
+  "evidence_level": "EXPERIMENTALLY_TESTED",
+  "verdict": "optimized context maintained every deterministic requirement on 7/8 tasks and refused safely on the 8th; the committed demo run (examples/context-optimizer/) is MAINTAINED at 67.7% reduction",
+  "next_kill_test": "an independent rerun on a second model family, or any accepted optimized response that fails a requirement full context passes"
+}
+```
+
 ## What we will not claim
 
 - No claim that any mechanism improves every model. Gains were measured on
@@ -172,3 +204,8 @@ not yet earned controlled-run records.
 - No claim of statistical certainty: n = 8 tasks per run; results are
   directional and pre-registered, not powered.
 - No claim survives without its counterindication attached.
+- No claim of universal token reduction or guaranteed quality
+  preservation: Context Optimizer numbers hold for the tested tasks,
+  budgets, and one model family; a smaller prompt is not automatically a
+  better one, and SAFE FALLBACK exists because some tasks need full
+  context.

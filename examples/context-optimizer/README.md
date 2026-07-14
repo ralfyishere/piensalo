@@ -26,17 +26,21 @@ runs and the evaluation records exactly what happened):
 
 | | full context | optimized context |
 |---|---|---|
-| prompt tokens (est) | 2,007 | 649 |
-| verification | failed all 7 requirements | passed all 7 |
-| outcome | asked a clarifying question instead of answering | complete correct answer |
+| prompt tokens (est) | 2,007 | 687 |
+| verification | passed all 7 requirements | passed all 7 requirements |
 
 - Gross context reduction: **67.7%** (1,807 → 496 estimated tokens even
   before the contract envelope); runtime net input savings est **65.8%**.
-- Verdict: **IMPROVED** — the optimized packet passed requirements the
-  full-context response failed, with zero regressions. In this run the
-  distractor-heavy full context confused the model into refusing;
-  removing irrelevant context made the answer *better*, not just cheaper.
+- Verdict: **MAINTAINED** — the optimized packet passed every
+  deterministic requirement the full-context response passed, from a
+  prompt roughly one third the size.
 - Expansions: 0 · Fallback: none needed.
+- During development we also recorded the opposite failure mode: with
+  local workspace context contaminating the call (since fixed — the
+  adapter now runs the CLI from a neutral empty directory, tools
+  disabled), the full-context arm refused to answer while the optimized
+  packet succeeded. That artifact was not kept because the comparison
+  was contaminated; the committed run above is the clean one.
 
 This is one sample on one task — not proof of universal improvement. The
 pre-registered eight-task evidence suite lives in

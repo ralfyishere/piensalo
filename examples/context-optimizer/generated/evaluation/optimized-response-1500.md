@@ -1,4 +1,4 @@
-Based on the optimized context packet provided, here is the required information extracted directly from the task materials:
+Based on the evidence and constraints provided in your context packet:
 
 FILE: services/widgets/src/store/pool.py
 FUNCTION: acquire

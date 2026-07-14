@@ -1,34 +1,26 @@
-# Five-Step Beta Rollout Plan for Widgets Service
+# Five-Step Beta Rollout Plan for acme-widgets Service
 
-## Step 1: Pre-flight Infrastructure & Validation
-- Confirm the dedicated small cluster (post-March incident architecture) is provisioned and network-ready
-- Review and test `services/widgets/src/store/pool.py` locally against commit 4f2a9c1e7b3d5a20
-- Run `pytest -q tests/store` locally to verify no CI regressions
-- Confirm schema migration strategy: all migrations must run through CI/CD pipeline, never from a laptop
+## Step 1: Pre-Rollout Validation
+Reproduce and resolve the CI failure locally using `pytest -q tests/store`. Verify the store pool implementation in `services/widgets/src/store/pool.py` (commit 4f2a9c1e7b3d5a20). Confirm all schema migrations are reviewed and documented for staging-only execution.
 
-## Step 2: Staging Deployment & Baseline
-- Deploy to staging using `make deploy ENV=staging TAG=beta` (exactly as specified)
-- Begin continuous monitoring of p95 latency, error rate, and resource utilization
-- Establish 24-hour observation window to detect any p95 regression
+## Step 2: Staging Deployment
+Deploy to staging using the enforced command: `make deploy ENV=staging TAG=beta`. This is the only approved path for staging deployment and ensures consistency with platform standards.
 
-## Step 3: 24-Hour Stability Gate
-- Monitor error rate continuously; halt immediately if exceeds 0.5% for 10 consecutive minutes
-- Verify no cache invalidation issues (avoid the Redis whole-response caching trap that broke checkout)
-- Confirm staging remains stable through full 24-hour window
-- Document baseline metrics for production comparison
+## Step 3: 24-Hour Staging Validation
+Monitor staging continuously for 24 hours without a p95 latency regression. Track error rates, response times, and resource utilization on the dedicated small cluster infrastructure. Do not proceed if the success condition (24h clean run) is not met.
 
-## Step 4: Schedule Production Deployment
-- Identify a deployment window **before Friday afternoon** (respect platform team freeze window)
-- Coordinate with on-call and platform team for the cutover
-- Prepare rollback plan and error-rate monitoring dashboards
+## Step 4: Production Readiness Scheduling
+Schedule production deployment for a weekday morning, explicitly avoiding Friday afternoons when the platform team freezes all deploys. Prepare the rollback plan and ensure schema migration steps are staged correctly.
 
-## Step 5: Beta Cut to Production
-- Execute `make deploy ENV=staging TAG=beta` promotion to production cluster
-- Begin error-rate and latency surveillance immediately post-deploy
-- Maintain stop-condition monitoring: halt rollout if error rate exceeds 0.5% for 10 consecutive minutes
+## Step 5: Dedicated Cluster Beta Deployment
+Deploy to the dedicated small cluster (per March latency incident decision) with active error rate monitoring. Begin the rollout only if staging validation passed. Maintain continuous observation of the 0.5% error rate threshold.
 
 ---
 
+## Required Constraint Quotations
+
 MIGRATION_RULE: Never run schema migrations against the production database from a laptop.
+
 FREEZE_RULE: The platform team freezes all deploys on Friday afternoons.
+
 STOP_RULE: Stop the rollout if error rate exceeds 0.5% for 10 consecutive minutes.

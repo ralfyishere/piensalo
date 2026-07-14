@@ -44,9 +44,9 @@
     "prompt_tokens_est": 1895,
     "requested_model": "claude-haiku-4-5-20251001",
     "resolved_model": "claude-haiku-4-5-20251001",
-    "tokens_in": 8915,
-    "tokens_out": 426,
-    "wall_seconds": 6.64
+    "tokens_in": 8190,
+    "tokens_out": 371,
+    "wall_seconds": 6.88
   },
   "budgets": [
     {
@@ -59,17 +59,17 @@
           "prompt_tokens_est": 437,
           "requested_model": "claude-haiku-4-5-20251001",
           "resolved_model": "claude-haiku-4-5-20251001",
-          "tokens_in": 7596,
-          "tokens_out": 459,
-          "wall_seconds": 6.14
+          "tokens_in": 6871,
+          "tokens_out": 278,
+          "wall_seconds": 4.92
         }
       ],
       "budget": 1500,
       "expansions": 0,
       "fallback": false,
       "gross_context_reduction": 0.8015,
-      "model_tokens_in_billed": 7596,
-      "model_tokens_out": 459,
+      "model_tokens_in_billed": 6871,
+      "model_tokens_out": 278,
       "optimized_context_tokens_est": 346,
       "optimized_grade": {
         "method": "deterministic contract + oracle (no model judge)",
@@ -113,8 +113,8 @@
       },
       "optimized_prompt_tokens_est_total": 437,
       "outcome": "OPTIMIZED CONTEXT ACCEPTED",
-      "response_hash": "03a41a76eaa765c29070e79267dcb985f7cf1521d6e161af16b476b8ad08811c",
-      "response_text": "FILE: services/widgets/src/store/pool.py\nFUNCTION: acquire\nCOMMAND: pytest -q tests/store",
+      "response_hash": "09ef0a75d5204d246b5f086081dc912af1b49f8b77cf26aa06df39c69da95581",
+      "response_text": "FILE: services/widgets/src/store/pool.py\nFUNCTION: acquire()\nCOMMAND: pytest -q tests/store",
       "runtime_net_input_savings_est": 0.7694,
       "savings_note": "prompt-token estimate: what PIENSALO controls. Billed adapter totals include constant harness overhead (e.g. claude CLI system prompt) identical in both arms; see model_tokens_in_billed vs baseline tokens_in.",
       "source_context_tokens_est": 1743,
@@ -124,7 +124,7 @@
   "deterministic_settings": {
     "note": "adapter exposes no temperature/seed control; single-sample comparison, recorded as such"
   },
-  "full_response_text": "FILE: services/widgets/src/store/pool.py\nFUNCTION: acquire\nCOMMAND: pytest -q tests/store",
+  "full_response_text": "Based on the artifact and context provided:\n\nFILE: services/widgets/src/store/pool.py\nFUNCTION: acquire\nCOMMAND: pytest -q tests/store",
   "grader": "deterministic contract + oracle (identical for both arms)",
   "source_context_hash": "e4c6a4915492c88c45f2ec16c5b3a87688b2b21f46937e5b7393e22473db2069",
   "target_requested_model": "claude-haiku-4-5-20251001",
