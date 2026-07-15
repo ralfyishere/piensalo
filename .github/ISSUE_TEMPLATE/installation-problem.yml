@@ -1,0 +1,71 @@
+name: Installation problem
+description: piensalo would not install or run — help us fix the on-ramp.
+labels: ["installation", "needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Sorry the install didn't go smoothly — that's a bug in our on-ramp, not
+        in you. A few concrete details make it fixable fast.
+
+        Please don't paste secrets. `piensalo doctor` output is safe to share
+        (it does not print credentials), but still skim it before pasting.
+  - type: input
+    id: os
+    attributes:
+      label: Operating system
+      placeholder: "e.g. macOS 15.5 (Apple Silicon), Ubuntu 24.04, Windows 11 + WSL2"
+    validations:
+      required: true
+  - type: input
+    id: python
+    attributes:
+      label: Python version
+      description: Output of `python3 --version` (piensalo needs >= 3.10).
+      placeholder: "e.g. Python 3.12.4"
+    validations:
+      required: true
+  - type: dropdown
+    id: method
+    attributes:
+      label: Installation method
+      options:
+        - "uvx piensalo doctor"
+        - "pipx install piensalo"
+        - "uvx --from git+https://github.com/ralfyishere/piensalo"
+        - "git clone + uv sync"
+        - "pip install piensalo"
+        - "npx skills add (skills only)"
+        - Other (describe below)
+    validations:
+      required: true
+  - type: textarea
+    id: command
+    attributes:
+      label: Exact command you ran
+      render: shell
+    validations:
+      required: true
+  - type: textarea
+    id: error
+    attributes:
+      label: Exact error output
+      description: The full error, copied verbatim (not a paraphrase).
+      render: shell
+    validations:
+      required: true
+  - type: textarea
+    id: doctor
+    attributes:
+      label: "`piensalo doctor` output (if it runs at all)"
+      description: If piensalo installed but misbehaves, paste `piensalo doctor`. If it never installed, write "did not install".
+      render: text
+    validations:
+      required: false
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Confirm
+      options:
+        - label: I removed any secrets or private paths from everything pasted above
+          required: true

@@ -1,0 +1,115 @@
+name: Real task result (Context Optimizer)
+description: Report what happened when you optimized context for a real task — every outcome is valuable, including "it fell back" and "it invented a problem".
+labels: ["real-task-result", "context-optimizer"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        This is the most valuable contribution you can make: a real result from
+        `piensalo context run` / `context evaluate` on your own work.
+
+        **All outcomes count** — a correct fallback and an invented problem are
+        as useful to us as a clean win. Please do **not** paste API keys,
+        credentials, or sensitive/proprietary context. A redacted reproduction
+        is better than a leaked one.
+  - type: input
+    id: model
+    attributes:
+      label: Model / provider (as recorded by provenance)
+      description: The requested + resolved model from provenance.json, and the adapter.
+      placeholder: "e.g. claude-haiku-4-5 via claude-cli, or gpt-4o-mini via openai-compat, or llama3.1:8b via ollama"
+    validations:
+      required: true
+  - type: dropdown
+    id: task-type
+    attributes:
+      label: Task type
+      options:
+        - Coding / repository task
+        - Research / analysis
+        - Exact fact or decision recall
+        - Structured / contract output
+        - Quantitative reasoning
+        - Writing / content
+        - Agent session continuation
+        - Other (describe below)
+    validations:
+      required: true
+  - type: input
+    id: original-size
+    attributes:
+      label: Original context size
+      description: Tokens (estimated is fine) or characters of the full context.
+      placeholder: "e.g. ~1,800 tokens (chars/4) or 7,200 chars"
+    validations:
+      required: true
+  - type: input
+    id: optimized-size
+    attributes:
+      label: Optimized context size
+      description: Tokens/characters of the optimized packet (or "N/A — refused").
+      placeholder: "e.g. ~580 tokens"
+    validations:
+      required: true
+  - type: dropdown
+    id: quality-outcome
+    attributes:
+      label: Quality outcome
+      description: How did the optimized-context answer compare to full context on this task?
+      options:
+        - HELPED
+        - MAINTAINED QUALITY
+        - IMPROVED QUALITY
+        - HARMED
+        - INVENTED A PROBLEM
+        - FELL BACK CORRECTLY
+        - FAILED TO FALL BACK
+    validations:
+      required: true
+  - type: dropdown
+    id: expansion
+    attributes:
+      label: Expansion result
+      options:
+        - No expansion needed (accepted first try)
+        - Expanded and then accepted
+        - Expanded and still failed
+        - Not applicable (refused up front)
+    validations:
+      required: true
+  - type: dropdown
+    id: fallback
+    attributes:
+      label: Fallback result
+      options:
+        - No fallback (optimized accepted)
+        - Fell back to full context correctly
+        - Should have fallen back but did not
+        - Refused optimization up front (mandatory over budget)
+    validations:
+      required: true
+  - type: textarea
+    id: verification
+    attributes:
+      label: How did you verify quality?
+      description: Contract, deterministic oracle, executable grader, human judgment — and the verdict it produced.
+      placeholder: "e.g. deterministic contract (4 fields) + must_contain oracle; verdict MAINTAINED, 9/9 requirements."
+    validations:
+      required: true
+  - type: textarea
+    id: repro
+    attributes:
+      label: Reproduction steps
+      description: The exact commands you ran (redact any private paths/content). Attach token-ledger.json / verification.json if you can.
+      render: shell
+    validations:
+      required: true
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Confirm
+      options:
+        - label: I removed API keys, credentials, private paths, and sensitive context from everything pasted above
+          required: true
+        - label: This is a real result (not hypothetical) — or clearly labeled otherwise
+          required: true
