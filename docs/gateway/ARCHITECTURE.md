@@ -93,6 +93,17 @@ recommendation stays bounded, recorded, and overridable.
 
 ---
 
+### Forward-compatibility with the Cortex Vault
+
+The event and provenance schemas are built so the future **Cortex Vault**
+(persistent cognitive memory, under CONTEXT — see
+[docs/context/CORTEX-VAULT.md](../context/CORTEX-VAULT.md)) can attach without a
+core redesign. `GatewayEvent` carries `memory_refs_read` and
+`memory_updates_proposed` seams, **always empty in observe mode**: the gateway is
+read-only with respect to durable memory and never lets an unverified response
+become trusted memory. Memory writes, when they exist, are proposed changes with
+provenance/validation/diff/rollback — and only in a future verified mode.
+
 ## 4. Modes and maturity (honest)
 
 | Mode | Status | What it does |

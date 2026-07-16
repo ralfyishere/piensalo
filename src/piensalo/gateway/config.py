@@ -79,7 +79,8 @@ class GatewayConfig:
     upstream_base_url: str = ""
     upstream_model: str = ""
     # Security / privacy
-    auth_token: str | None = None
+    auth_token: str | None = None  # if set, clients must present it (gateway auth)
+    upstream_api_key: str | None = None  # if set, replaces client Authorization to upstream
     allow_non_loopback_bind: bool = False
     allow_non_loopback_upstream: bool = False  # opt in to non-loopback upstream IPs
     allowed_upstream_prefixes: tuple[str, ...] = ()  # if set, upstream URL must match one

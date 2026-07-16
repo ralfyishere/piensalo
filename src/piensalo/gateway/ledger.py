@@ -67,6 +67,13 @@ class GatewayEvent:
     router_confidence: float = 0.0
     router_features: dict = field(default_factory=dict)
     cortex_operations_activated: list[str] = field(default_factory=list)  # observe: always []
+    # Forward-compat seam for the future Cortex Vault (see docs/context/
+    # CORTEX-VAULT.md). In observe mode these are ALWAYS empty: the gateway is
+    # read-only with respect to durable memory and never proposes a write from
+    # an unverified response. Records which memory refs a request read (L3), and
+    # any PROPOSED (never auto-applied) memory updates a verified outcome made.
+    memory_refs_read: list[str] = field(default_factory=list)  # observe: always []
+    memory_updates_proposed: list[dict] = field(default_factory=list)  # observe: always []
     source_context_tokens_est: int = 0
     selected_context_tokens_est: int = 0  # observe: == source (no selection)
     model_tokens_in: int = 0
