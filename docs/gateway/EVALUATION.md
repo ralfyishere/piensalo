@@ -43,8 +43,10 @@ Observe mode can only honestly report *fidelity* and *shadow* metrics:
 | secret redaction / no body retention | yes | UNIT TESTED |
 | SSRF / auth / size / loop guards | yes | UNIT TESTED |
 | real CLI serve → request → ledger | yes | SMOKE TESTED |
-| shadow would-intervene rate on real traffic | pending real corpus | DESIGNED |
-| latency added by observe | pending measured corpus | DESIGNED |
+| response semantically identical vs direct (real provider) | yes — Ollama qwen2.5:0.5b | LIVE TESTED |
+| streamed content identical vs direct (real provider) | yes — 8 SSE events, [DONE] preserved | LIVE TESTED |
+| latency added by observe | +3.4 ms median (Ollama, local) | LIVE TESTED |
+| shadow would-intervene rate on real traffic | pending broader corpus | DESIGNED |
 
 ## Discipline
 

@@ -204,15 +204,16 @@ not yet earned controlled-run records.
 {
   "mechanism": "observe-mode cortex gateway (byte-faithful pass-through + shadow router)",
   "claim": "sits between an AI client and an OpenAI-compatible upstream, forwards requests verbatim and non-stream responses byte-for-byte, forwards SSE streams in order (application payload byte-identical in aggregate), preserves tool-call ids/arguments, runs the deterministic Cortex Router in SHADOW (recorded, never acted on), and records a redact-by-default local event ledger",
-  "evidence": "41 gateway tests against an in-process mock upstream (non-stream identity, request-verbatim, streaming faithfulness, tool-call fidelity, SSRF/auth/size/loop guards, secret redaction, upstream-error relay) + a live smoke via the real `piensalo serve` binary against a local mock (examples/gateway/)",
+  "evidence": "42 gateway tests against an in-process mock upstream (non-stream identity, request-verbatim, streaming faithfulness, tool-call fidelity, SSRF/auth/size/loop guards, secret redaction, upstream-error relay) + LIVE TESTED against a real Ollama upstream (qwen2.5:0.5b) via the real `piensalo serve` binary: gateway response SEMANTICALLY IDENTICAL to a direct call (content, finish_reason, usage; zero extra fields), streamed content identical (8 SSE events, [DONE] preserved), median added latency +3.4ms, ledger recorded resolved_model=qwen2.5:0.5b with measured usage and additional_cortex_tokens=0",
   "known_confounds": [
-    "no live provider tested — real-time token interleaving and provider-specific stream quirks are NOT yet LIVE TESTED",
-    "streaming faithfulness proven on aggregate ordered payload against a per-event-flushing mock, not against a slow real upstream",
+    "LIVE TESTED on ONE local model family (Ollama qwen2.5:0.5b) on one machine; no cloud provider, no independent reproduction",
+    "faithfulness compared on the semantic payload of a deterministic (temp=0, seed) request, excluding volatile fields (id/created); not a byte-diff of the whole envelope",
+    "streaming faithfulness verified on reassembled content, not wall-clock token interleaving",
     "token estimates are chars/4 and labelled estimates; only provider-reported usage is measured"
   ],
   "evidence_level": "SMOKE_TESTED",
-  "verdict": "observe mode is a pass-through + measurement surface; it does NOT modify responses and makes NO performance claim. Ships at exactly that scope.",
-  "next_kill_test": "any live OpenAI-compatible provider where an observed response byte-differs from a direct call, or a streamed tool-call whose ids/arguments the ledger reassembles incorrectly"
+  "verdict": "observe mode is a pass-through + measurement surface; it does NOT modify responses and makes NO performance claim. LIVE TESTED faithful against Ollama; ships at exactly that scope. The live run caught and fixed a real defect: base `/v1` + client `/v1/...` path duplication returned 404 against a real provider (masked by the path-agnostic mock).",
+  "next_kill_test": "a cloud OpenAI-compatible provider or a tool-calling live model where an observed response semantically differs from a direct call, or a streamed tool-call whose ids/arguments the ledger reassembles incorrectly"
 }
 ```
 

@@ -123,7 +123,7 @@ class ObserveHandler(BaseHTTPRequestHandler):
             decision = router.decide(norm_req, shadow=True)
 
         # Build the upstream request. Forward bytes verbatim.
-        upstream_url = cfg.upstream_base_url.rstrip("/") + self.path
+        upstream_url = _join_upstream(cfg.upstream_base_url, self.path)
         fwd_headers = self._forward_headers(cfg)
         up_req = urllib.request.Request(
             upstream_url, data=body if body else None, headers=fwd_headers, method=self.command
@@ -338,6 +338,29 @@ class ObserveHandler(BaseHTTPRequestHandler):
         self.end_headers()
         self.wfile.write(body)
         self.wfile.flush()
+
+
+def _join_upstream(base_url: str, client_path: str) -> str:
+    """Join the configured upstream base URL with the incoming request path
+    without duplicating a shared path prefix.
+
+    An OpenAI client configured against the gateway's ``…/v1`` sends the HTTP
+    path ``/v1/chat/completions``. If the operator also configured the upstream
+    as ``http://host/v1`` (the documented, natural form), a naive concatenation
+    would produce ``…/v1/v1/chat/completions`` — a 404 on a real provider.
+
+    Rule: if the client path already begins with the base URL's path segment,
+    forward to ``scheme://host`` + client path (the prefix is already present);
+    otherwise append the client path to the full base. Handles base URLs with
+    no path (``http://host``) and deeper prefixes (``…/api/v1``). Query strings
+    on the client path are preserved.
+    """
+    p = urlparse(base_url)
+    host_root = f"{p.scheme}://{p.netloc}"
+    base_path = p.path.rstrip("/")  # "" or "/v1" or "/api/v1"
+    if base_path and (client_path == base_path or client_path.startswith(base_path + "/")):
+        return host_root + client_path
+    return host_root + base_path + client_path
 
 
 def _status_word(http_status: int) -> str:

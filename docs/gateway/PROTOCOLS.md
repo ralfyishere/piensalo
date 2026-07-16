@@ -17,8 +17,9 @@ We never collapse these into a vague "supported":
 
 | Boundary | Direction | Status | Notes |
 |---|---|---|---|
-| OpenAI Chat Completions (`/v1/chat/completions`) | client ⇄ gateway ⇄ upstream | **UNIT TESTED + SMOKE TESTED** | non-stream, SSE streaming, tool-calls |
-| OpenAI-compatible upstreams (Ollama, LM Studio, llama.cpp, OpenRouter) | gateway → upstream | **DESIGNED** (protocol is identical; not yet **LIVE TESTED** per server) | same wire format |
+| OpenAI Chat Completions (`/v1/chat/completions`) | client ⇄ gateway ⇄ upstream | **LIVE TESTED** (Ollama) | non-stream, SSE streaming, tool-calls |
+| Ollama (`/v1`) | gateway → upstream | **LIVE TESTED** | qwen2.5:0.5b: response semantically identical to direct, stream identical, +3.4 ms median overhead |
+| LM Studio, llama.cpp, OpenRouter (`/v1`) | gateway → upstream | **DESIGNED** (protocol identical to Ollama; not yet **LIVE TESTED** per server) | same wire format |
 | Anthropic Messages | client ⇄ gateway | **DESIGNED** | Stage 3 target (Claude Code's native boundary) |
 | OpenAI Responses | client ⇄ gateway | **DESIGNED** | Stage 3 target |
 
@@ -50,6 +51,13 @@ neutral types. Token counts derived here are **estimates** (labelled
 - **Tool calls:** tool-call ids and arguments are preserved (they ride inside
   the untouched response body); the ledger additionally tallies them.
 
+**Path join.** An OpenAI client points its base URL at the gateway's `…/v1` and
+sends `/v1/chat/completions`; the upstream is also configured as `…/v1`. The
+gateway joins these without duplicating the shared prefix (it does **not**
+produce `…/v1/v1/…`). This was found by the live Ollama test — the path-agnostic
+mock upstream had masked it — and is now covered by a regression test.
+
 What is **not** yet proven: real-time token-by-token interleaving against a live
-streaming provider (that is **LIVE TESTED**, a later step). The unit tests prove
-ordered, faithful aggregate delivery against a mock that flushes per event.
+streaming provider, and any cloud/tool-calling provider. The Ollama live test
+proves ordered, faithful aggregate delivery and semantic identity against a real
+local model; the unit tests prove the same against a per-event-flushing mock.
