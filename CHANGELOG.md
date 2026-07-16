@@ -5,6 +5,24 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 Versioning: [SemVer](https://semver.org/) once we reach 0.1.0; until then,
 everything may change.
 
+## [0.1.0-alpha.6] — 2026-07-16
+
+### Fixed
+- **Gateway upstream path duplication** — when the upstream was configured with
+  a `/v1` suffix (the documented form) and the client sent `/v1/chat/completions`,
+  the gateway forwarded to `…/v1/v1/chat/completions`, a **404** on a real
+  provider. The path is now joined without duplicating a shared prefix (handles
+  bare hosts and deeper prefixes like `…/api/v1`; preserves query strings).
+  Found by the first live test against Ollama; the path-agnostic mock upstream
+  had masked it. Regression test added.
+
+### Evidence
+- Observe-mode gateway **LIVE TESTED** against a real Ollama upstream
+  (`qwen2.5:0.5b`): gateway response semantically identical to a direct call
+  (content, finish_reason, usage; zero added fields), streamed content identical
+  (8 SSE events, `[DONE]` preserved), **+3.4 ms** median added latency. Docs and
+  EVIDENCE updated (`docs/gateway/{PROTOCOLS,EVALUATION}.md`).
+
 ## [0.1.0-alpha.5] — 2026-07-16
 
 ### Added

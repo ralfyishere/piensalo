@@ -52,6 +52,21 @@ piensalo gateway inspect --ledger-dir .piensalo/gateway --last 5
 piensalo gateway doctor --upstream-base-url http://127.0.0.1:8991/v1
 ```
 
+## Live test against a real provider
+
+`live_test.py` is the reproducible harness behind the **LIVE TESTED** claim in
+[../../docs/gateway/PROTOCOLS.md](../../docs/gateway/PROTOCOLS.md). With Ollama
+running (`ollama serve` + `ollama pull qwen2.5:0.5b`):
+
+```bash
+python examples/gateway/live_test.py
+```
+
+It confirms the gateway response is semantically identical to a direct call,
+the SSE stream is forwarded faithfully, latency overhead is a few ms, and the
+ledger records the resolved model + measured usage with zero added cortex
+tokens. Point it at any OpenAI-compatible server with `--direct/--upstream/--model`.
+
 ## Point it at a real local model
 
 The same commands work in front of any OpenAI-compatible upstream — for example

@@ -91,6 +91,31 @@ class MockUpstream(BaseHTTPRequestHandler):
         self.wfile.write(payload)
 
 
+def test_join_upstream_does_not_duplicate_path_prefix():
+    # Regression: a live Ollama returned 404 because base "/v1" + client
+    # "/v1/chat/completions" was concatenated to "/v1/v1/chat/completions".
+    from piensalo.gateway.server import _join_upstream
+
+    # base has /v1, client already carries /v1 -> no duplication
+    assert _join_upstream("http://127.0.0.1:11434/v1", "/v1/chat/completions") == \
+        "http://127.0.0.1:11434/v1/chat/completions"
+    # base has /v1, client omits it -> base prefix supplied
+    assert _join_upstream("http://127.0.0.1:11434/v1", "/chat/completions") == \
+        "http://127.0.0.1:11434/v1/chat/completions"
+    # base has no path -> client path used as-is
+    assert _join_upstream("http://127.0.0.1:11434", "/v1/chat/completions") == \
+        "http://127.0.0.1:11434/v1/chat/completions"
+    # deeper prefix (OpenRouter-style), client already carries it
+    assert _join_upstream("https://openrouter.ai/api/v1", "/api/v1/chat/completions") == \
+        "https://openrouter.ai/api/v1/chat/completions"
+    # trailing slash on base is tolerated
+    assert _join_upstream("http://127.0.0.1:11434/v1/", "/v1/models") == \
+        "http://127.0.0.1:11434/v1/models"
+    # query string preserved
+    assert _join_upstream("http://127.0.0.1:11434/v1", "/v1/models?x=1") == \
+        "http://127.0.0.1:11434/v1/models?x=1"
+
+
 def _free_port() -> int:
     s = socket.socket()
     s.bind(("127.0.0.1", 0))
