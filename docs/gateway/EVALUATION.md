@@ -45,6 +45,7 @@ Observe mode can only honestly report *fidelity* and *shadow* metrics:
 | real CLI serve → request → ledger | yes | SMOKE TESTED |
 | response semantically identical vs direct (real provider) | yes — Ollama qwen2.5:0.5b | LIVE TESTED |
 | streamed content identical vs direct (real provider) | yes — 8 SSE events, [DONE] preserved | LIVE TESTED |
+| streamed tool-call fidelity vs direct (real provider) | yes — Ollama qwen2.5:7b (name+arguments reassemble identically) | LIVE TESTED |
 | latency added by observe | +3.4 ms median (Ollama, local) | LIVE TESTED |
 | shadow would-intervene rate on real traffic | pending broader corpus | DESIGNED |
 

@@ -67,6 +67,16 @@ the SSE stream is forwarded faithfully, latency overhead is a few ms, and the
 ledger records the resolved model + measured usage with zero added cortex
 tokens. Point it at any OpenAI-compatible server with `--direct/--upstream/--model`.
 
+`live_tool_test.py` does the same for **streamed tool-calls** (needs a
+tool-capable model, e.g. `ollama pull qwen2.5:7b`):
+
+```bash
+python examples/gateway/live_tool_test.py
+```
+
+It verifies the gateway reassembles tool-call name + arguments — both
+non-stream and from the SSE stream — identically to a direct call.
+
 ## Point it at a real local model
 
 The same commands work in front of any OpenAI-compatible upstream — for example

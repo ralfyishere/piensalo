@@ -17,8 +17,8 @@ We never collapse these into a vague "supported":
 
 | Boundary | Direction | Status | Notes |
 |---|---|---|---|
-| OpenAI Chat Completions (`/v1/chat/completions`) | client ⇄ gateway ⇄ upstream | **LIVE TESTED** (Ollama) | non-stream, SSE streaming, tool-calls |
-| Ollama (`/v1`) | gateway → upstream | **LIVE TESTED** | qwen2.5:0.5b: response semantically identical to direct, stream identical, +3.4 ms median overhead |
+| OpenAI Chat Completions (`/v1/chat/completions`) | client ⇄ gateway ⇄ upstream | **LIVE TESTED** (Ollama) | non-stream, SSE streaming, **streamed tool-calls** |
+| Ollama (`/v1`) | gateway → upstream | **LIVE TESTED** | qwen2.5:0.5b: response semantically identical to direct, stream identical, +3.4 ms median overhead. qwen2.5:7b: non-stream **and streamed tool-calls** (name+arguments) reassemble identically to a direct call |
 | LM Studio, llama.cpp, OpenRouter (`/v1`) | gateway → upstream | **DESIGNED** (protocol identical to Ollama; not yet **LIVE TESTED** per server) | same wire format |
 | Anthropic Messages | client ⇄ gateway | **DESIGNED** | Stage 3 target (Claude Code's native boundary) |
 | OpenAI Responses | client ⇄ gateway | **DESIGNED** | Stage 3 target |
