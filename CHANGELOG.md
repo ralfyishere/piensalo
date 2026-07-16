@@ -5,6 +5,37 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 Versioning: [SemVer](https://semver.org/) once we reach 0.1.0; until then,
 everything may change.
 
+## [Unreleased] — branch `cortex-gateway`
+
+### Added
+- **Cortex Gateway (observe mode)** — the delivery layer that makes the
+  THINK · CHECK · CONTEXT cortex reachable from existing AI tools. It does
+  **not** add a fourth brand and does **not** own the model.
+  - `piensalo serve --mode observe --upstream-base-url <url> --upstream-model <id>`:
+    a loopback HTTP gateway on the OpenAI Chat Completions boundary. Forwards
+    requests **verbatim** and non-stream responses **byte-for-byte**; forwards
+    SSE streams in order (application payload byte-identical); preserves
+    tool-call ids/arguments; runs the deterministic **Cortex Router** in
+    **shadow** (recorded, never acted on); writes a redact-by-default local
+    event ledger.
+  - `piensalo gateway status|inspect|report|replay|doctor` — read-side over the
+    local event ledger (JSON/JSONL, no dashboard).
+  - Security defaults fail closed: loopback-only bind, SSRF-guarded upstream
+    (scheme allow-list + link-local/metadata/reserved block + optional prefix
+    allow-list), bearer auth (401), body cap (413), recursive-loop guard (508),
+    secret-header redaction, no body retention by default.
+  - Docs: `docs/gateway/{ARCHITECTURE,SECURITY,PROTOCOLS,ROUTING,PRIVACY,EVALUATION}.md`;
+    offline demo `examples/gateway/`.
+- **Cortex Vault** (persistent cognitive memory) reserved as a DESIGNED future
+  stage under CONTEXT (`docs/context/CORTEX-VAULT.md`); gateway event schema
+  gains empty-in-observe `memory_refs_read`/`memory_updates_proposed` seams so
+  the memory layer can attach without a core redesign.
+
+### Scope note
+- **Observe mode is a pass-through + measurement surface. It does not modify
+  responses and makes no performance claim.** Intervention modes
+  (`optimize-safe`, `verified`) are DESIGNED, not implemented.
+
 ## [0.1.0-alpha.4] — 2026-07-14
 
 ### Added
