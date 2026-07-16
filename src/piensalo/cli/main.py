@@ -648,6 +648,10 @@ def _build_parser() -> argparse.ArgumentParser:
 
     add_context_parser(sub)
 
+    from piensalo.gateway.cli import add_gateway_parser
+
+    add_gateway_parser(sub)
+
     p = sub.add_parser("loop", help="bounded loop controller")
     p.add_argument("loop_args", nargs=argparse.REMAINDER, help="loop subcommand and args")
     p.set_defaults(func=cmd_loop)

@@ -196,8 +196,31 @@ not yet earned controlled-run records.
 }
 ```
 
+## Cortex Gateway (observe mode — added in 0.1.0-alpha.5)
+
+**Observe-mode gateway** (`piensalo serve --mode observe`,
+`piensalo gateway status|inspect|report|replay|doctor`)
+```json
+{
+  "mechanism": "observe-mode cortex gateway (byte-faithful pass-through + shadow router)",
+  "claim": "sits between an AI client and an OpenAI-compatible upstream, forwards requests verbatim and non-stream responses byte-for-byte, forwards SSE streams in order (application payload byte-identical in aggregate), preserves tool-call ids/arguments, runs the deterministic Cortex Router in SHADOW (recorded, never acted on), and records a redact-by-default local event ledger",
+  "evidence": "41 gateway tests against an in-process mock upstream (non-stream identity, request-verbatim, streaming faithfulness, tool-call fidelity, SSRF/auth/size/loop guards, secret redaction, upstream-error relay) + a live smoke via the real `piensalo serve` binary against a local mock (examples/gateway/)",
+  "known_confounds": [
+    "no live provider tested — real-time token interleaving and provider-specific stream quirks are NOT yet LIVE TESTED",
+    "streaming faithfulness proven on aggregate ordered payload against a per-event-flushing mock, not against a slow real upstream",
+    "token estimates are chars/4 and labelled estimates; only provider-reported usage is measured"
+  ],
+  "evidence_level": "SMOKE_TESTED",
+  "verdict": "observe mode is a pass-through + measurement surface; it does NOT modify responses and makes NO performance claim. Ships at exactly that scope.",
+  "next_kill_test": "any live OpenAI-compatible provider where an observed response byte-differs from a direct call, or a streamed tool-call whose ids/arguments the ledger reassembles incorrectly"
+}
+```
+
 ## What we will not claim
 
+- **Observe mode is not a performance improvement.** It forwards traffic
+  unchanged and measures; it does not make any model better and is never
+  described as doing so.
 - No claim that any mechanism improves every model. Gains were measured on
   one small-model family; a competent model was measurably *harmed* by more
   prompting in specific classes.

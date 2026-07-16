@@ -245,6 +245,31 @@ serialization, honest budget refusal — and behavioral equivalence reported
 model behaves identically. Deterministic capsule demo:
 [examples/context/](examples/context/).
 
+## Cortex Gateway — observe mode (new in 0.1.0-alpha.5)
+
+PIÉNSALO can sit **between the AI tools you already use and the model you
+choose**. The first delivery mode is `observe`: it forwards your traffic
+**unchanged**, runs the **Cortex Router** in *shadow* to record what THINK,
+CHECK, or CONTEXT *would* do, and writes a local, redact-by-default event
+ledger. It does **not** modify responses and makes **no** performance claim —
+it is a pass-through + measurement surface.
+
+```sh
+# in front of any OpenAI-compatible upstream (local model, LM Studio, Ollama, OpenRouter, …)
+piensalo serve --mode observe \
+  --upstream-base-url http://127.0.0.1:11434/v1 --upstream-model <id>
+
+# what would the cortex have done? (shadow only — nothing was intervened on)
+piensalo gateway report
+piensalo gateway inspect --last 20
+```
+
+Loopback-only by default, SSRF-guarded upstream, bearer-auth optional, no body
+retention. Try it with **zero credentials** via the offline demo:
+[examples/gateway/](examples/gateway/) · design:
+[docs/gateway/ARCHITECTURE.md](docs/gateway/ARCHITECTURE.md). Intervention modes
+(`optimize-safe`, `verified`) are DESIGNED, not yet implemented.
+
 ## Evidence and limitations
 
 **Every capability ships with receipts.** Two pre-registered 120-cell
