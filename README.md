@@ -245,7 +245,7 @@ serialization, honest budget refusal — and behavioral equivalence reported
 model behaves identically. Deterministic capsule demo:
 [examples/context/](examples/context/).
 
-## Cortex Gateway — observe mode (new, on `cortex-gateway`)
+## Cortex Gateway — observe mode (new in 0.1.0-alpha.5)
 
 PIÉNSALO can sit **between the AI tools you already use and the model you
 choose**. The first delivery mode is `observe`: it forwards your traffic

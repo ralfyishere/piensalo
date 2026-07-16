@@ -5,7 +5,7 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 Versioning: [SemVer](https://semver.org/) once we reach 0.1.0; until then,
 everything may change.
 
-## [Unreleased] — branch `cortex-gateway`
+## [0.1.0-alpha.5] — 2026-07-16
 
 ### Added
 - **Cortex Gateway (observe mode)** — the delivery layer that makes the

@@ -196,7 +196,7 @@ not yet earned controlled-run records.
 }
 ```
 
-## Cortex Gateway (observe mode — added on branch `cortex-gateway`)
+## Cortex Gateway (observe mode — added in 0.1.0-alpha.5)
 
 **Observe-mode gateway** (`piensalo serve --mode observe`,
 `piensalo gateway status|inspect|report|replay|doctor`)
