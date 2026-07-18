@@ -108,6 +108,11 @@ optimization on value-exact tasks. Expansion policy needs a
 selection-integrity signal (can each required field be traced to a selected
 chunk?), not just line presence.
 
+**Repair verified (frozen rerun):** the selection-integrity layer
+(`context/integrity.py`) eliminated both wrong-value regressions — one via
+in-budget evidence expansion, one via full-context fallback — with zero new
+regressions. Evidence: `evals/cortex-value/results/integrity-repair/`.
+
 ---
 
 ## NR-10 · A repair "improvement" signal disagreed with the contract — and won
@@ -124,6 +129,11 @@ available deterministic check (the output contract), never on the detector's
 own defect count. A repair that increases contract violations is a rejection,
 whatever the scanner thinks.
 
+**Repair verified (frozen rerun):** contract-gated acceptance
+(`verify/acceptance.py`) preserved the compliant draft byte-for-byte with
+zero repair calls (CORRECT_ABSTENTION). Evidence:
+`evals/cortex-value/results/integrity-repair/`.
+
 ---
 
 ## NR-11 · A full cognitive program harmed a competent model's exact-format work
@@ -137,6 +147,11 @@ passed direct, so the program added tokens and latency for zero lift.
 **Design consequence:** THINK must be gated away from tasks with exact output
 contracts on models that pass them directly; replicates NR-1/NR-8 on a second
 model family, live, at scale.
+
+**Repair verified (frozen rerun):** the EXACT_DELIVERY_CONTRACT router signal
+suppressed full THINK on such tasks; all five regressions disappeared and
+condition-C tokens fell 72%. Evidence:
+`evals/cortex-value/results/integrity-repair/`.
 
 ---
 

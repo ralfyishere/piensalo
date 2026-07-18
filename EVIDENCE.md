@@ -243,6 +243,31 @@ not yet earned controlled-run records.
 }
 ```
 
+## Integrity repair (branch `cortex-integrity-repair`)
+
+**Repaired mechanisms, re-verified on the unchanged frozen evaluation**
+```json
+{
+  "mechanism": "selection integrity + contract-gated repair acceptance + EXACT_DELIVERY THINK suppression",
+  "claim": "the three root-caused failures from the cortex-value run (NR-9/10/11) are eliminated on the identical frozen evaluation with zero new critical regressions",
+  "evidence": "same 12 frozen tasks/graders/budgets/model/settings/gate (preregistration df4c819 untouched); original run preserved; rerun at evals/cortex-value/results/integrity-repair/: CONTEXT 9->11/12, THINK+CONTEXT 7->11/12 (tokens -72%, wall -90%), FULL CORTEX 9->10/12 (tokens -67%); all 8 prior regression cells individually flipped; frozen gate PASS 8/8 (was FAIL on criteria 1 and 7)",
+  "result": {
+    "earned_positive": "contract envelope + CHECK abstention on draft/exact-contract tasks (improved twice; correct draft preserved at zero token cost)",
+    "earned_safety_only": "integrity-gated optimization: zero wrong-value acceptances, correct fallbacks; NO net token savings demonstrated on these tasks",
+    "earned_harm_avoidance": "THINK suppressed on exact-delivery contracts; its positive case remains unproven on this model",
+    "router": "repaired router scored under the ORIGINAL frozen rules: 9/12 = 75%, a boundary pass (down from 11/12; 03/04 suppressions counted as misses)"
+  },
+  "known_confounds": [
+    "one model, one machine, n=1 per cell (deterministic settings)",
+    "near-ceiling direct baseline: proves failure elimination, not broad uplift",
+    "12-D grader artifact unchanged and documented (values correct, arm never optimized)"
+  ],
+  "evidence_level": "EXPERIMENTALLY_TESTED",
+  "verdict": "optimize-safe is EVIDENCE-ELIGIBLE for exactly the narrow earned classes above; observe remains the default; nothing merged or released without review",
+  "next_kill_test": "a task class where integrity-gated optimization shows net token savings WITH maintained correctness; and an independent rerun on a second model family"
+}
+```
+
 ## What we will not claim
 
 - **Observe mode is not a performance improvement.** It forwards traffic

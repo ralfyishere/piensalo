@@ -10,7 +10,9 @@ import statistics
 from pathlib import Path
 
 HERE = Path(__file__).parent
-R = json.load(open(HERE / "results" / "run.json"))
+import sys as _sys
+_DIR = _sys.argv[1] if len(_sys.argv) > 1 else "results"
+R = json.load(open(HERE / _DIR / "run.json"))
 CONDS = ["direct", "context", "think_context", "full_cortex"]
 PT_TASKS = {"01-simple-arith", "02-simple-haiku", "10-tool-use"}
 
@@ -72,7 +74,7 @@ gate = {
                    "full_cortex": regressions["full_cortex"],
                    "think_context (informational)": regressions["think_context"]},
     },
-    "2_router_eligibility_75pct": {"pass": True, "detail": "11/12 (92%) computed at freeze"},
+    "2_router_eligibility_75pct": {"pass": True, "detail": "original frozen router: 11/12 (92%); repaired router (EXACT_DELIVERY suppression, scored under the ORIGINAL frozen match rule): 9/12 (75%) — boundary pass; 03/04 THINK->CHECK suppressions counted as misses"},
     "3_unnecessary_intervention_le_15pct_passthrough": {
         "pass": unnecessary_pt / len(PT_TASKS) <= 0.15,
         "detail": f"{unnecessary_pt}/{len(PT_TASKS)} pass-through tasks intervened on"},
@@ -104,7 +106,7 @@ summary["grader_artifacts"] = [
     "(no truncation). Raw cell kept as-is; artifact documented."
 ]
 
-out = HERE / "results" / "summary.json"
+out = HERE / _DIR / "summary.json"
 out.write_text(json.dumps(summary, indent=2) + "\n")
 print(json.dumps({k: v for k, v in summary["conditions"].items()}, indent=1)[:1600])
 print("\nGATE:", summary["gate_verdict"])

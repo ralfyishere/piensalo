@@ -1,0 +1,161 @@
+{
+  "model": "qwen2.5:7b",
+  "settings": {
+    "temperature": 0,
+    "seed": 42
+  },
+  "conditions": {
+    "direct": {
+      "critical_pass_count": 10,
+      "tokens_in": 3873,
+      "tokens_out": 472,
+      "model_calls": 12,
+      "wall_s": 49.4,
+      "median_crit_frac": 1.0,
+      "verdicts": null,
+      "per_task_verdict": null
+    },
+    "context": {
+      "critical_pass_count": 11,
+      "tokens_in": 5183,
+      "tokens_out": 437,
+      "model_calls": 12,
+      "wall_s": 48.3,
+      "median_crit_frac": 1.0,
+      "verdicts": {
+        "IMPROVED": 1,
+        "MAINTAINED": 9,
+        "SAFE FALLBACK": 2
+      },
+      "per_task_verdict": {
+        "01-simple-arith": "MAINTAINED",
+        "02-simple-haiku": "MAINTAINED",
+        "03-plan-schedule": "MAINTAINED",
+        "04-plan-migration": "MAINTAINED",
+        "05-longctx-release": "MAINTAINED",
+        "06-longctx-decisions": "SAFE FALLBACK",
+        "07-exact-json": "MAINTAINED",
+        "08-exact-fields": "MAINTAINED",
+        "09-code-function": "MAINTAINED",
+        "10-tool-use": "MAINTAINED",
+        "11-already-correct": "IMPROVED",
+        "12-unsafe-budget": "SAFE FALLBACK"
+      },
+      "token_overhead_vs_direct": 1275,
+      "latency_overhead_s": -1.1
+    },
+    "think_context": {
+      "critical_pass_count": 11,
+      "tokens_in": 6364,
+      "tokens_out": 437,
+      "model_calls": 12,
+      "wall_s": 29.8,
+      "median_crit_frac": 1.0,
+      "verdicts": {
+        "IMPROVED": 1,
+        "MAINTAINED": 9,
+        "SAFE FALLBACK": 2
+      },
+      "per_task_verdict": {
+        "01-simple-arith": "MAINTAINED",
+        "02-simple-haiku": "MAINTAINED",
+        "03-plan-schedule": "MAINTAINED",
+        "04-plan-migration": "MAINTAINED",
+        "05-longctx-release": "MAINTAINED",
+        "06-longctx-decisions": "SAFE FALLBACK",
+        "07-exact-json": "MAINTAINED",
+        "08-exact-fields": "MAINTAINED",
+        "09-code-function": "MAINTAINED",
+        "10-tool-use": "MAINTAINED",
+        "11-already-correct": "IMPROVED",
+        "12-unsafe-budget": "SAFE FALLBACK"
+      },
+      "token_overhead_vs_direct": 2456,
+      "latency_overhead_s": -19.6
+    },
+    "full_cortex": {
+      "critical_pass_count": 10,
+      "tokens_in": 4227,
+      "tokens_out": 424,
+      "model_calls": 11,
+      "wall_s": 21.9,
+      "median_crit_frac": 1.0,
+      "verdicts": {
+        "CORRECT ABSTENTION": 5,
+        "MAINTAINED": 6,
+        "SAFE FALLBACK": 1
+      },
+      "per_task_verdict": {
+        "01-simple-arith": "MAINTAINED",
+        "02-simple-haiku": "MAINTAINED",
+        "03-plan-schedule": "CORRECT ABSTENTION",
+        "04-plan-migration": "CORRECT ABSTENTION",
+        "05-longctx-release": "MAINTAINED",
+        "06-longctx-decisions": "SAFE FALLBACK",
+        "07-exact-json": "CORRECT ABSTENTION",
+        "08-exact-fields": "CORRECT ABSTENTION",
+        "09-code-function": "MAINTAINED",
+        "10-tool-use": "MAINTAINED",
+        "11-already-correct": "CORRECT ABSTENTION",
+        "12-unsafe-budget": "MAINTAINED"
+      },
+      "token_overhead_vs_direct": 306,
+      "latency_overhead_s": -27.5
+    }
+  },
+  "gate": {
+    "1_zero_accepted_critical_regressions": {
+      "pass": true,
+      "detail": {
+        "context": [],
+        "full_cortex": [],
+        "think_context (informational)": []
+      }
+    },
+    "2_router_eligibility_75pct": {
+      "pass": true,
+      "detail": "original frozen router: 11/12 (92%); repaired router (EXACT_DELIVERY suppression, scored under the ORIGINAL frozen match rule): 9/12 (75%) \u2014 boundary pass; 03/04 THINK->CHECK suppressions counted as misses"
+    },
+    "3_unnecessary_intervention_le_15pct_passthrough": {
+      "pass": true,
+      "detail": "0/3 pass-through tasks intervened on"
+    },
+    "4_at_least_one_genuine_improvement": {
+      "pass": true,
+      "detail": {
+        "context": [
+          "11-already-correct"
+        ],
+        "think_context": [
+          "11-already-correct"
+        ],
+        "full_cortex": []
+      }
+    },
+    "5_no_median_requirement_reduction": {
+      "pass": true,
+      "detail": {
+        "direct": 1.0,
+        "context": 1.0,
+        "think_context": 1.0,
+        "full_cortex": 1.0
+      }
+    },
+    "6_safe_fallback_on_unsafe_task": {
+      "pass": true,
+      "detail": "B and C (the arms that optimized) refused and fell back; D never optimized (documented router miss)"
+    },
+    "7_already_correct_not_damaged_by_check": {
+      "pass": true,
+      "detail": "draft intact"
+    },
+    "8_all_costs_reported": {
+      "pass": true,
+      "detail": "full per-call ledgers in run.json"
+    }
+  },
+  "gate_verdict": "PASS",
+  "grader_artifacts": [
+    "12/full_cortex: spec_values applies optimizer-refusal criteria to a cortex arm that never optimized (router routed CHECK, documented at freeze); its answer values were correct and produced from FULL context (no truncation). Raw cell kept as-is; artifact documented."
+  ]
+}

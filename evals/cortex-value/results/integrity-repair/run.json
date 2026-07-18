@@ -4,46 +4,46 @@
     "temperature": 0,
     "seed": 42
   },
-  "mock": true,
+  "mock": false,
   "tasks": {
     "01-simple-arith": {
       "direct": {
         "grade": {
           "critical": {
-            "correct_value": false
+            "correct_value": true
           },
           "requirements": {
-            "only_number": false
+            "only_number": true
           },
           "forbidden_hit": [],
-          "critical_pass": false
+          "critical_pass": true
         },
         "meta": {},
         "calls": [
           {
             "purpose": "execute",
-            "tokens_in": 11,
-            "tokens_out": 1,
-            "wall_s": 0.0
+            "tokens_in": 45,
+            "tokens_out": 4,
+            "wall_s": 4.7
           }
         ],
-        "tokens_in": 11,
-        "tokens_out": 1,
-        "wall_s": 0.0,
+        "tokens_in": 45,
+        "tokens_out": 4,
+        "wall_s": 4.7,
         "error": null,
-        "response_text": "MOCK",
+        "response_text": "391",
         "tool_calls": null
       },
       "context": {
         "grade": {
           "critical": {
-            "correct_value": false
+            "correct_value": true
           },
           "requirements": {
-            "only_number": false
+            "only_number": true
           },
           "forbidden_hit": [],
-          "critical_pass": false
+          "critical_pass": true
         },
         "meta": {
           "outcome": "OPTIMIZED CONTEXT ACCEPTED",
@@ -55,29 +55,29 @@
         "calls": [
           {
             "purpose": "optimized",
-            "tokens_in": 89,
-            "tokens_out": 1,
-            "wall_s": 0.0
+            "tokens_in": 108,
+            "tokens_out": 4,
+            "wall_s": 0.78
           }
         ],
-        "tokens_in": 89,
-        "tokens_out": 1,
-        "wall_s": 0.0,
+        "tokens_in": 108,
+        "tokens_out": 4,
+        "wall_s": 0.79,
         "error": null,
-        "response_text": "MOCK",
+        "response_text": "391",
         "tool_calls": null,
         "verdict": "MAINTAINED"
       },
       "think_context": {
         "grade": {
           "critical": {
-            "correct_value": false
+            "correct_value": true
           },
           "requirements": {
-            "only_number": false
+            "only_number": true
           },
           "forbidden_hit": [],
-          "critical_pass": false
+          "critical_pass": true
         },
         "meta": {
           "outcome": "OPTIMIZED CONTEXT ACCEPTED",
@@ -90,29 +90,29 @@
         "calls": [
           {
             "purpose": "optimized",
-            "tokens_in": 89,
-            "tokens_out": 1,
-            "wall_s": 0.0
+            "tokens_in": 108,
+            "tokens_out": 4,
+            "wall_s": 0.3
           }
         ],
-        "tokens_in": 89,
-        "tokens_out": 1,
-        "wall_s": 0.0,
+        "tokens_in": 108,
+        "tokens_out": 4,
+        "wall_s": 0.3,
         "error": null,
-        "response_text": "MOCK",
+        "response_text": "391",
         "tool_calls": null,
         "verdict": "MAINTAINED"
       },
       "full_cortex": {
         "grade": {
           "critical": {
-            "correct_value": false
+            "correct_value": true
           },
           "requirements": {
-            "only_number": false
+            "only_number": true
           },
           "forbidden_hit": [],
-          "critical_pass": false
+          "critical_pass": true
         },
         "meta": {
           "router_decision": "PASS_THROUGH",
@@ -123,16 +123,16 @@
         "calls": [
           {
             "purpose": "execute",
-            "tokens_in": 11,
-            "tokens_out": 1,
-            "wall_s": 0.0
+            "tokens_in": 45,
+            "tokens_out": 4,
+            "wall_s": 0.42
           }
         ],
-        "tokens_in": 11,
-        "tokens_out": 1,
-        "wall_s": 0.0,
+        "tokens_in": 45,
+        "tokens_out": 4,
+        "wall_s": 0.42,
         "error": null,
-        "response_text": "MOCK",
+        "response_text": "391",
         "tool_calls": null,
         "verdict": "MAINTAINED"
       }
@@ -141,38 +141,38 @@
       "direct": {
         "grade": {
           "critical": {
-            "three_lines": false,
+            "three_lines": true,
             "no_meta": true
           },
           "requirements": {},
           "forbidden_hit": [],
-          "critical_pass": false
+          "critical_pass": true
         },
         "meta": {},
         "calls": [
           {
             "purpose": "execute",
-            "tokens_in": 28,
-            "tokens_out": 1,
-            "wall_s": 0.0
+            "tokens_in": 54,
+            "tokens_out": 22,
+            "wall_s": 1.28
           }
         ],
-        "tokens_in": 28,
-        "tokens_out": 1,
-        "wall_s": 0.0,
+        "tokens_in": 54,
+        "tokens_out": 22,
+        "wall_s": 1.28,
         "error": null,
-        "response_text": "MOCK",
+        "response_text": "Whispers of the tide,\nMystic blue cradles secrets,\nWaves kiss sandy shores.",
         "tool_calls": null
       },
       "context": {
         "grade": {
           "critical": {
-            "three_lines": false,
+            "three_lines": true,
             "no_meta": true
           },
           "requirements": {},
           "forbidden_hit": [],
-          "critical_pass": false
+          "critical_pass": true
         },
         "meta": {
           "outcome": "OPTIMIZED CONTEXT ACCEPTED",
@@ -184,28 +184,28 @@
         "calls": [
           {
             "purpose": "optimized",
-            "tokens_in": 106,
-            "tokens_out": 1,
-            "wall_s": 0.0
+            "tokens_in": 117,
+            "tokens_out": 22,
+            "wall_s": 1.56
           }
         ],
-        "tokens_in": 106,
-        "tokens_out": 1,
-        "wall_s": 0.0,
+        "tokens_in": 117,
+        "tokens_out": 22,
+        "wall_s": 1.56,
         "error": null,
-        "response_text": "MOCK",
+        "response_text": "Whispers of the tide,\nMystic blue cradles dreams,\nWaves kiss sandy shores.",
         "tool_calls": null,
         "verdict": "MAINTAINED"
       },
       "think_context": {
         "grade": {
           "critical": {
-            "three_lines": false,
+            "three_lines": true,
             "no_meta": true
           },
           "requirements": {},
           "forbidden_hit": [],
-          "critical_pass": false
+          "critical_pass": true
         },
         "meta": {
           "outcome": "OPTIMIZED CONTEXT ACCEPTED",
@@ -218,28 +218,28 @@
         "calls": [
           {
             "purpose": "optimized",
-            "tokens_in": 106,
-            "tokens_out": 1,
-            "wall_s": 0.0
+            "tokens_in": 117,
+            "tokens_out": 22,
+            "wall_s": 1.13
           }
         ],
-        "tokens_in": 106,
-        "tokens_out": 1,
-        "wall_s": 0.0,
+        "tokens_in": 117,
+        "tokens_out": 22,
+        "wall_s": 1.13,
         "error": null,
-        "response_text": "MOCK",
+        "response_text": "Whispers of the tide,\nMystic blue cradles dreams,\nWaves kiss sandy shores.",
         "tool_calls": null,
         "verdict": "MAINTAINED"
       },
       "full_cortex": {
         "grade": {
           "critical": {
-            "three_lines": false,
+            "three_lines": true,
             "no_meta": true
           },
           "requirements": {},
           "forbidden_hit": [],
-          "critical_pass": false
+          "critical_pass": true
         },
         "meta": {
           "router_decision": "PASS_THROUGH",
@@ -250,16 +250,16 @@
         "calls": [
           {
             "purpose": "execute",
-            "tokens_in": 28,
-            "tokens_out": 1,
-            "wall_s": 0.0
+            "tokens_in": 54,
+            "tokens_out": 22,
+            "wall_s": 1.13
           }
         ],
-        "tokens_in": 28,
-        "tokens_out": 1,
-        "wall_s": 0.0,
+        "tokens_in": 54,
+        "tokens_out": 22,
+        "wall_s": 1.13,
         "error": null,
-        "response_text": "MOCK",
+        "response_text": "Whispers of the tide,\nMystic blue cradles secrets,\nWaves kiss sandy shores.",
         "tool_calls": null,
         "verdict": "MAINTAINED"
       }
@@ -268,48 +268,48 @@
       "direct": {
         "grade": {
           "critical": {
-            "parse_ok": false,
-            "durations_ok": false,
-            "deps_ok": false,
-            "no_overlap": false,
-            "makespan_consistent": false
+            "parse_ok": true,
+            "durations_ok": true,
+            "deps_ok": true,
+            "no_overlap": true,
+            "makespan_consistent": true
           },
           "requirements": {
             "optimal_makespan_6": false
           },
           "forbidden_hit": [],
-          "critical_pass": false
+          "critical_pass": true
         },
         "meta": {},
         "calls": [
           {
             "purpose": "execute",
-            "tokens_in": 154,
-            "tokens_out": 1,
-            "wall_s": 0.0
+            "tokens_in": 220,
+            "tokens_out": 68,
+            "wall_s": 4.55
           }
         ],
-        "tokens_in": 154,
-        "tokens_out": 1,
-        "wall_s": 0.0,
+        "tokens_in": 220,
+        "tokens_out": 68,
+        "wall_s": 4.55,
         "error": null,
-        "response_text": "MOCK",
+        "response_text": "A: worker=1 start=0 end=2\nB: worker=2 start=0 end=1\nC: worker=1 start=2 end=5\nD: worker=2 start=1 end=3\nE: worker=1 start=5 end=9\nMAKESPAN: 9",
         "tool_calls": null
       },
       "context": {
         "grade": {
           "critical": {
-            "parse_ok": false,
-            "durations_ok": false,
-            "deps_ok": false,
-            "no_overlap": false,
-            "makespan_consistent": false
+            "parse_ok": true,
+            "durations_ok": true,
+            "deps_ok": true,
+            "no_overlap": true,
+            "makespan_consistent": true
           },
           "requirements": {
             "optimal_makespan_6": false
           },
           "forbidden_hit": [],
-          "critical_pass": false
+          "critical_pass": true
         },
         "meta": {
           "outcome": "OPTIMIZED CONTEXT ACCEPTED",
@@ -321,33 +321,33 @@
         "calls": [
           {
             "purpose": "optimized",
-            "tokens_in": 232,
-            "tokens_out": 1,
-            "wall_s": 0.0
+            "tokens_in": 283,
+            "tokens_out": 68,
+            "wall_s": 4.52
           }
         ],
-        "tokens_in": 232,
-        "tokens_out": 1,
-        "wall_s": 0.0,
+        "tokens_in": 283,
+        "tokens_out": 68,
+        "wall_s": 4.52,
         "error": null,
-        "response_text": "MOCK",
+        "response_text": "A: worker=1 start=0 end=2\nB: worker=2 start=0 end=1\nC: worker=1 start=2 end=5\nD: worker=2 start=1 end=3\nE: worker=1 start=5 end=9\nMAKESPAN: 9",
         "tool_calls": null,
         "verdict": "MAINTAINED"
       },
       "think_context": {
         "grade": {
           "critical": {
-            "parse_ok": false,
-            "durations_ok": false,
-            "deps_ok": false,
-            "no_overlap": false,
-            "makespan_consistent": false
+            "parse_ok": true,
+            "durations_ok": true,
+            "deps_ok": true,
+            "no_overlap": true,
+            "makespan_consistent": true
           },
           "requirements": {
             "optimal_makespan_6": false
           },
           "forbidden_hit": [],
-          "critical_pass": false
+          "critical_pass": true
         },
         "meta": {
           "outcome": "OPTIMIZED CONTEXT ACCEPTED",
@@ -360,33 +360,33 @@
         "calls": [
           {
             "purpose": "optimized",
-            "tokens_in": 232,
-            "tokens_out": 1,
-            "wall_s": 0.0
+            "tokens_in": 283,
+            "tokens_out": 68,
+            "wall_s": 3.29
           }
         ],
-        "tokens_in": 232,
-        "tokens_out": 1,
-        "wall_s": 0.0,
+        "tokens_in": 283,
+        "tokens_out": 68,
+        "wall_s": 3.3,
         "error": null,
-        "response_text": "MOCK",
+        "response_text": "A: worker=1 start=0 end=2\nB: worker=2 start=0 end=1\nC: worker=1 start=2 end=5\nD: worker=2 start=1 end=3\nE: worker=1 start=5 end=9\nMAKESPAN: 9",
         "tool_calls": null,
         "verdict": "MAINTAINED"
       },
       "full_cortex": {
         "grade": {
           "critical": {
-            "parse_ok": false,
-            "durations_ok": false,
-            "deps_ok": false,
-            "no_overlap": false,
-            "makespan_consistent": false
+            "parse_ok": true,
+            "durations_ok": true,
+            "deps_ok": true,
+            "no_overlap": true,
+            "makespan_consistent": true
           },
           "requirements": {
             "optimal_makespan_6": false
           },
           "forbidden_hit": [],
-          "critical_pass": false
+          "critical_pass": true
         },
         "meta": {
           "check_ran": true,
@@ -403,54 +403,54 @@
         "calls": [
           {
             "purpose": "execute",
-            "tokens_in": 154,
-            "tokens_out": 1,
-            "wall_s": 0.0
+            "tokens_in": 220,
+            "tokens_out": 68,
+            "wall_s": 3.38
           }
         ],
-        "tokens_in": 154,
-        "tokens_out": 1,
-        "wall_s": 0.0,
+        "tokens_in": 220,
+        "tokens_out": 68,
+        "wall_s": 3.38,
         "error": null,
-        "response_text": "MOCK",
+        "response_text": "A: worker=1 start=0 end=2\nB: worker=2 start=0 end=1\nC: worker=1 start=2 end=5\nD: worker=2 start=1 end=3\nE: worker=1 start=5 end=9\nMAKESPAN: 9",
         "tool_calls": null,
-        "verdict": "MAINTAINED"
+        "verdict": "CORRECT ABSTENTION"
       }
     },
     "04-plan-migration": {
       "direct": {
         "grade": {
           "critical": {
-            "exact_order": false
+            "exact_order": true
           },
           "requirements": {},
           "forbidden_hit": [],
-          "critical_pass": false
+          "critical_pass": true
         },
         "meta": {},
         "calls": [
           {
             "purpose": "execute",
-            "tokens_in": 134,
-            "tokens_out": 1,
-            "wall_s": 0.0
+            "tokens_in": 168,
+            "tokens_out": 9,
+            "wall_s": 1.37
           }
         ],
-        "tokens_in": 134,
-        "tokens_out": 1,
-        "wall_s": 0.0,
+        "tokens_in": 168,
+        "tokens_out": 9,
+        "wall_s": 1.37,
         "error": null,
-        "response_text": "MOCK",
+        "response_text": "ORDER: B,R,S,D,V,C",
         "tool_calls": null
       },
       "context": {
         "grade": {
           "critical": {
-            "exact_order": false
+            "exact_order": true
           },
           "requirements": {},
           "forbidden_hit": [],
-          "critical_pass": false
+          "critical_pass": true
         },
         "meta": {
           "outcome": "OPTIMIZED CONTEXT ACCEPTED",
@@ -462,27 +462,27 @@
         "calls": [
           {
             "purpose": "optimized",
-            "tokens_in": 212,
-            "tokens_out": 1,
-            "wall_s": 0.0
+            "tokens_in": 231,
+            "tokens_out": 9,
+            "wall_s": 1.69
           }
         ],
-        "tokens_in": 212,
-        "tokens_out": 1,
-        "wall_s": 0.0,
+        "tokens_in": 231,
+        "tokens_out": 9,
+        "wall_s": 1.7,
         "error": null,
-        "response_text": "MOCK",
+        "response_text": "ORDER: B,R,S,D,V,C",
         "tool_calls": null,
         "verdict": "MAINTAINED"
       },
       "think_context": {
         "grade": {
           "critical": {
-            "exact_order": false
+            "exact_order": true
           },
           "requirements": {},
           "forbidden_hit": [],
-          "critical_pass": false
+          "critical_pass": true
         },
         "meta": {
           "outcome": "OPTIMIZED CONTEXT ACCEPTED",
@@ -495,27 +495,27 @@
         "calls": [
           {
             "purpose": "optimized",
-            "tokens_in": 212,
-            "tokens_out": 1,
-            "wall_s": 0.0
+            "tokens_in": 231,
+            "tokens_out": 9,
+            "wall_s": 0.51
           }
         ],
-        "tokens_in": 212,
-        "tokens_out": 1,
-        "wall_s": 0.0,
+        "tokens_in": 231,
+        "tokens_out": 9,
+        "wall_s": 0.51,
         "error": null,
-        "response_text": "MOCK",
+        "response_text": "ORDER: B,R,S,D,V,C",
         "tool_calls": null,
         "verdict": "MAINTAINED"
       },
       "full_cortex": {
         "grade": {
           "critical": {
-            "exact_order": false
+            "exact_order": true
           },
           "requirements": {},
           "forbidden_hit": [],
-          "critical_pass": false
+          "critical_pass": true
         },
         "meta": {
           "check_ran": true,
@@ -532,174 +532,138 @@
         "calls": [
           {
             "purpose": "execute",
-            "tokens_in": 134,
-            "tokens_out": 1,
-            "wall_s": 0.0
+            "tokens_in": 168,
+            "tokens_out": 9,
+            "wall_s": 0.5
           }
         ],
-        "tokens_in": 134,
-        "tokens_out": 1,
-        "wall_s": 0.0,
+        "tokens_in": 168,
+        "tokens_out": 9,
+        "wall_s": 0.5,
         "error": null,
-        "response_text": "MOCK",
+        "response_text": "ORDER: B,R,S,D,V,C",
         "tool_calls": null,
-        "verdict": "MAINTAINED"
+        "verdict": "CORRECT ABSTENTION"
       }
     },
     "05-longctx-release": {
       "direct": {
         "grade": {
           "critical": {
-            "SERVICE_correct": false,
-            "PORT_correct": false,
-            "VERSION_correct": false,
-            "DATE_correct": false
+            "SERVICE_correct": true,
+            "PORT_correct": true,
+            "VERSION_correct": true,
+            "DATE_correct": true
           },
           "requirements": {},
           "forbidden_hit": [],
-          "critical_pass": false
+          "critical_pass": true
         },
         "meta": {},
         "calls": [
           {
             "purpose": "execute",
-            "tokens_in": 1059,
-            "tokens_out": 1,
-            "wall_s": 0.0
+            "tokens_in": 988,
+            "tokens_out": 35,
+            "wall_s": 7.1
           }
         ],
-        "tokens_in": 1059,
-        "tokens_out": 1,
-        "wall_s": 0.0,
+        "tokens_in": 988,
+        "tokens_out": 35,
+        "wall_s": 7.1,
         "error": null,
-        "response_text": "MOCK",
+        "response_text": "SERVICE: atlas\nPORT: 9443\nVERSION: 2.4.1\nDATE: 2026-09-15",
         "tool_calls": null
       },
       "context": {
         "grade": {
           "critical": {
-            "SERVICE_correct": false,
-            "PORT_correct": false,
-            "VERSION_correct": false,
-            "DATE_correct": false
+            "SERVICE_correct": true,
+            "PORT_correct": true,
+            "VERSION_correct": true,
+            "DATE_correct": true
           },
           "requirements": {},
           "forbidden_hit": [],
-          "critical_pass": false
+          "critical_pass": true
         },
         "meta": {
-          "outcome": "SAFE FALLBACK (EXECUTED)",
+          "outcome": "OPTIMIZED CONTEXT ACCEPTED",
           "optimizer_refused": false,
-          "fallback_executed": true,
+          "fallback_executed": false,
           "silent_truncation": false,
-          "expansion_rounds": 2
+          "expansion_rounds": 0
         },
         "calls": [
           {
             "purpose": "optimized",
-            "tokens_in": 1288,
-            "tokens_out": 1,
-            "wall_s": 0.0
-          },
-          {
-            "purpose": "expansion-1",
-            "tokens_in": 1717,
-            "tokens_out": 1,
-            "wall_s": 0.0
-          },
-          {
-            "purpose": "expansion-2",
-            "tokens_in": 1951,
-            "tokens_out": 1,
-            "wall_s": 0.0
-          },
-          {
-            "purpose": "fallback-full",
-            "tokens_in": 1164,
-            "tokens_out": 1,
-            "wall_s": 0.0
+            "tokens_in": 1391,
+            "tokens_out": 35,
+            "wall_s": 9.15
           }
         ],
-        "tokens_in": 6120,
-        "tokens_out": 4,
-        "wall_s": 0.0,
+        "tokens_in": 1391,
+        "tokens_out": 35,
+        "wall_s": 9.15,
         "error": null,
-        "response_text": "MOCK",
+        "response_text": "SERVICE: atlas\nPORT: 9443\nVERSION: 2.4.1\nDATE: 2026-09-15",
         "tool_calls": null,
         "verdict": "MAINTAINED"
       },
       "think_context": {
         "grade": {
           "critical": {
-            "SERVICE_correct": false,
-            "PORT_correct": false,
-            "VERSION_correct": false,
-            "DATE_correct": false
+            "SERVICE_correct": true,
+            "PORT_correct": true,
+            "VERSION_correct": true,
+            "DATE_correct": true
           },
           "requirements": {},
           "forbidden_hit": [],
-          "critical_pass": false
+          "critical_pass": true
         },
         "meta": {
-          "outcome": "SAFE FALLBACK (EXECUTED)",
+          "outcome": "OPTIMIZED CONTEXT ACCEPTED",
           "optimizer_refused": false,
-          "fallback_executed": true,
+          "fallback_executed": false,
           "silent_truncation": false,
-          "expansion_rounds": 2,
+          "expansion_rounds": 0,
           "think_abstained": "EXACT_DELIVERY_CONTRACT"
         },
         "calls": [
           {
             "purpose": "optimized",
-            "tokens_in": 1288,
-            "tokens_out": 1,
-            "wall_s": 0.0
-          },
-          {
-            "purpose": "expansion-1",
-            "tokens_in": 1717,
-            "tokens_out": 1,
-            "wall_s": 0.0
-          },
-          {
-            "purpose": "expansion-2",
-            "tokens_in": 1951,
-            "tokens_out": 1,
-            "wall_s": 0.0
-          },
-          {
-            "purpose": "fallback-full",
-            "tokens_in": 1164,
-            "tokens_out": 1,
-            "wall_s": 0.0
+            "tokens_in": 1391,
+            "tokens_out": 35,
+            "wall_s": 1.74
           }
         ],
-        "tokens_in": 6120,
-        "tokens_out": 4,
-        "wall_s": 0.0,
+        "tokens_in": 1391,
+        "tokens_out": 35,
+        "wall_s": 1.74,
         "error": null,
-        "response_text": "MOCK",
+        "response_text": "SERVICE: atlas\nPORT: 9443\nVERSION: 2.4.1\nDATE: 2026-09-15",
         "tool_calls": null,
         "verdict": "MAINTAINED"
       },
       "full_cortex": {
         "grade": {
           "critical": {
-            "SERVICE_correct": false,
-            "PORT_correct": false,
-            "VERSION_correct": false,
-            "DATE_correct": false
+            "SERVICE_correct": true,
+            "PORT_correct": true,
+            "VERSION_correct": true,
+            "DATE_correct": true
           },
           "requirements": {},
           "forbidden_hit": [],
-          "critical_pass": false
+          "critical_pass": true
         },
         "meta": {
-          "outcome": "SAFE FALLBACK (EXECUTED)",
+          "outcome": "OPTIMIZED CONTEXT ACCEPTED",
           "optimizer_refused": false,
-          "fallback_executed": true,
+          "fallback_executed": false,
           "silent_truncation": false,
-          "expansion_rounds": 2,
+          "expansion_rounds": 0,
           "router_decision": "CONTEXT",
           "router_reasons": [
             "THINK suppressed: EXACT_DELIVERY_CONTRACT (2 exact-output signal(s)) \u2014 full plan scaffolding measurably harms exact-format delivery",
@@ -709,34 +673,16 @@
         "calls": [
           {
             "purpose": "optimized",
-            "tokens_in": 1288,
-            "tokens_out": 1,
-            "wall_s": 0.0
-          },
-          {
-            "purpose": "expansion-1",
-            "tokens_in": 1717,
-            "tokens_out": 1,
-            "wall_s": 0.0
-          },
-          {
-            "purpose": "expansion-2",
-            "tokens_in": 1951,
-            "tokens_out": 1,
-            "wall_s": 0.0
-          },
-          {
-            "purpose": "fallback-full",
-            "tokens_in": 1164,
-            "tokens_out": 1,
-            "wall_s": 0.0
+            "tokens_in": 1391,
+            "tokens_out": 35,
+            "wall_s": 1.74
           }
         ],
-        "tokens_in": 6120,
-        "tokens_out": 4,
-        "wall_s": 0.0,
+        "tokens_in": 1391,
+        "tokens_out": 35,
+        "wall_s": 1.74,
         "error": null,
-        "response_text": "MOCK",
+        "response_text": "SERVICE: atlas\nPORT: 9443\nVERSION: 2.4.1\nDATE: 2026-09-15",
         "tool_calls": null,
         "verdict": "MAINTAINED"
       }
@@ -745,40 +691,40 @@
       "direct": {
         "grade": {
           "critical": {
-            "DB_correct": false,
-            "RETENTION_correct": false,
-            "REGION_correct": false
+            "DB_correct": true,
+            "RETENTION_correct": true,
+            "REGION_correct": true
           },
           "requirements": {},
           "forbidden_hit": [],
-          "critical_pass": false
+          "critical_pass": true
         },
         "meta": {},
         "calls": [
           {
             "purpose": "execute",
-            "tokens_in": 921,
-            "tokens_out": 1,
-            "wall_s": 0.0
+            "tokens_in": 846,
+            "tokens_out": 18,
+            "wall_s": 5.52
           }
         ],
-        "tokens_in": 921,
-        "tokens_out": 1,
-        "wall_s": 0.0,
+        "tokens_in": 846,
+        "tokens_out": 18,
+        "wall_s": 5.52,
         "error": null,
-        "response_text": "MOCK",
+        "response_text": "DB: postgres\nRETENTION: 30\nREGION: eu-west-1",
         "tool_calls": null
       },
       "context": {
         "grade": {
           "critical": {
-            "DB_correct": false,
-            "RETENTION_correct": false,
-            "REGION_correct": false
+            "DB_correct": true,
+            "RETENTION_correct": true,
+            "REGION_correct": true
           },
           "requirements": {},
           "forbidden_hit": [],
-          "critical_pass": false
+          "critical_pass": true
         },
         "meta": {
           "outcome": "SAFE FALLBACK (EXECUTED)",
@@ -790,29 +736,29 @@
         "calls": [
           {
             "purpose": "fallback-full",
-            "tokens_in": 1014,
-            "tokens_out": 1,
-            "wall_s": 0.0
+            "tokens_in": 940,
+            "tokens_out": 18,
+            "wall_s": 6.08
           }
         ],
-        "tokens_in": 1014,
-        "tokens_out": 1,
-        "wall_s": 0.0,
+        "tokens_in": 940,
+        "tokens_out": 18,
+        "wall_s": 6.09,
         "error": null,
-        "response_text": "MOCK",
+        "response_text": "DB: postgres\nRETENTION: 30\nREGION: eu-west-1",
         "tool_calls": null,
-        "verdict": "MAINTAINED"
+        "verdict": "SAFE FALLBACK"
       },
       "think_context": {
         "grade": {
           "critical": {
-            "DB_correct": false,
-            "RETENTION_correct": false,
-            "REGION_correct": false
+            "DB_correct": true,
+            "RETENTION_correct": true,
+            "REGION_correct": true
           },
           "requirements": {},
           "forbidden_hit": [],
-          "critical_pass": false
+          "critical_pass": true
         },
         "meta": {
           "outcome": "SAFE FALLBACK (EXECUTED)",
@@ -825,29 +771,29 @@
         "calls": [
           {
             "purpose": "fallback-full",
-            "tokens_in": 1014,
-            "tokens_out": 1,
-            "wall_s": 0.0
+            "tokens_in": 940,
+            "tokens_out": 18,
+            "wall_s": 0.96
           }
         ],
-        "tokens_in": 1014,
-        "tokens_out": 1,
-        "wall_s": 0.0,
+        "tokens_in": 940,
+        "tokens_out": 18,
+        "wall_s": 0.96,
         "error": null,
-        "response_text": "MOCK",
+        "response_text": "DB: postgres\nRETENTION: 30\nREGION: eu-west-1",
         "tool_calls": null,
-        "verdict": "MAINTAINED"
+        "verdict": "SAFE FALLBACK"
       },
       "full_cortex": {
         "grade": {
           "critical": {
-            "DB_correct": false,
-            "RETENTION_correct": false,
-            "REGION_correct": false
+            "DB_correct": true,
+            "RETENTION_correct": true,
+            "REGION_correct": true
           },
           "requirements": {},
           "forbidden_hit": [],
-          "critical_pass": false
+          "critical_pass": true
         },
         "meta": {
           "outcome": "SAFE FALLBACK (EXECUTED)",
@@ -864,64 +810,64 @@
         "calls": [
           {
             "purpose": "fallback-full",
-            "tokens_in": 1014,
-            "tokens_out": 1,
-            "wall_s": 0.0
+            "tokens_in": 940,
+            "tokens_out": 18,
+            "wall_s": 0.99
           }
         ],
-        "tokens_in": 1014,
-        "tokens_out": 1,
-        "wall_s": 0.0,
+        "tokens_in": 940,
+        "tokens_out": 18,
+        "wall_s": 0.99,
         "error": null,
-        "response_text": "MOCK",
+        "response_text": "DB: postgres\nRETENTION: 30\nREGION: eu-west-1",
         "tool_calls": null,
-        "verdict": "MAINTAINED"
+        "verdict": "SAFE FALLBACK"
       }
     },
     "07-exact-json": {
       "direct": {
         "grade": {
           "critical": {
-            "parses_exact_keys": false,
-            "price_number": false,
-            "stock_bool": false,
-            "tags_exact": false,
-            "name_correct": false,
-            "only_json": false
+            "parses_exact_keys": true,
+            "price_number": true,
+            "stock_bool": true,
+            "tags_exact": true,
+            "name_correct": true,
+            "only_json": true
           },
           "requirements": {},
           "forbidden_hit": [],
-          "critical_pass": false
+          "critical_pass": true
         },
         "meta": {},
         "calls": [
           {
             "purpose": "execute",
-            "tokens_in": 112,
-            "tokens_out": 1,
-            "wall_s": 0.0
+            "tokens_in": 153,
+            "tokens_out": 49,
+            "wall_s": 3.24
           }
         ],
-        "tokens_in": 112,
-        "tokens_out": 1,
-        "wall_s": 0.0,
+        "tokens_in": 153,
+        "tokens_out": 49,
+        "wall_s": 3.24,
         "error": null,
-        "response_text": "MOCK",
+        "response_text": "{\n    \"name\": \"Northwind Kettle\",\n    \"price_usd\": 49.9,\n    \"in_stock\": true,\n    \"tags\": [\"kitchen\", \"steel\", \"1.7-liter\"]\n}",
         "tool_calls": null
       },
       "context": {
         "grade": {
           "critical": {
-            "parses_exact_keys": false,
-            "price_number": false,
-            "stock_bool": false,
-            "tags_exact": false,
-            "name_correct": false,
-            "only_json": false
+            "parses_exact_keys": true,
+            "price_number": true,
+            "stock_bool": true,
+            "tags_exact": true,
+            "name_correct": true,
+            "only_json": true
           },
           "requirements": {},
           "forbidden_hit": [],
-          "critical_pass": false
+          "critical_pass": true
         },
         "meta": {
           "outcome": "OPTIMIZED CONTEXT ACCEPTED",
@@ -933,32 +879,32 @@
         "calls": [
           {
             "purpose": "optimized",
-            "tokens_in": 190,
-            "tokens_out": 1,
-            "wall_s": 0.0
+            "tokens_in": 216,
+            "tokens_out": 50,
+            "wall_s": 3.43
           }
         ],
-        "tokens_in": 190,
-        "tokens_out": 1,
-        "wall_s": 0.0,
+        "tokens_in": 216,
+        "tokens_out": 50,
+        "wall_s": 3.43,
         "error": null,
-        "response_text": "MOCK",
+        "response_text": "{\n    \"name\": \"Northwind Kettle\",\n    \"price_usd\": 49.90,\n    \"in_stock\": true,\n    \"tags\": [\"kitchen\", \"steel\", \"1.7-liter\"]\n}",
         "tool_calls": null,
         "verdict": "MAINTAINED"
       },
       "think_context": {
         "grade": {
           "critical": {
-            "parses_exact_keys": false,
-            "price_number": false,
-            "stock_bool": false,
-            "tags_exact": false,
-            "name_correct": false,
-            "only_json": false
+            "parses_exact_keys": true,
+            "price_number": true,
+            "stock_bool": true,
+            "tags_exact": true,
+            "name_correct": true,
+            "only_json": true
           },
           "requirements": {},
           "forbidden_hit": [],
-          "critical_pass": false
+          "critical_pass": true
         },
         "meta": {
           "outcome": "OPTIMIZED CONTEXT ACCEPTED",
@@ -971,32 +917,32 @@
         "calls": [
           {
             "purpose": "optimized",
-            "tokens_in": 190,
-            "tokens_out": 1,
-            "wall_s": 0.0
+            "tokens_in": 216,
+            "tokens_out": 50,
+            "wall_s": 2.51
           }
         ],
-        "tokens_in": 190,
-        "tokens_out": 1,
-        "wall_s": 0.0,
+        "tokens_in": 216,
+        "tokens_out": 50,
+        "wall_s": 2.51,
         "error": null,
-        "response_text": "MOCK",
+        "response_text": "{\n    \"name\": \"Northwind Kettle\",\n    \"price_usd\": 49.90,\n    \"in_stock\": true,\n    \"tags\": [\"kitchen\", \"steel\", \"1.7-liter\"]\n}",
         "tool_calls": null,
         "verdict": "MAINTAINED"
       },
       "full_cortex": {
         "grade": {
           "critical": {
-            "parses_exact_keys": false,
-            "price_number": false,
-            "stock_bool": false,
-            "tags_exact": false,
-            "name_correct": false,
-            "only_json": false
+            "parses_exact_keys": true,
+            "price_number": true,
+            "stock_bool": true,
+            "tags_exact": true,
+            "name_correct": true,
+            "only_json": true
           },
           "requirements": {},
           "forbidden_hit": [],
-          "critical_pass": false
+          "critical_pass": true
         },
         "meta": {
           "check_ran": true,
@@ -1012,67 +958,67 @@
         "calls": [
           {
             "purpose": "execute",
-            "tokens_in": 112,
-            "tokens_out": 1,
-            "wall_s": 0.0
+            "tokens_in": 153,
+            "tokens_out": 49,
+            "wall_s": 2.35
           }
         ],
-        "tokens_in": 112,
-        "tokens_out": 1,
-        "wall_s": 0.0,
+        "tokens_in": 153,
+        "tokens_out": 49,
+        "wall_s": 2.35,
         "error": null,
-        "response_text": "MOCK",
+        "response_text": "{\n    \"name\": \"Northwind Kettle\",\n    \"price_usd\": 49.9,\n    \"in_stock\": true,\n    \"tags\": [\"kitchen\", \"steel\", \"1.7-liter\"]\n}",
         "tool_calls": null,
-        "verdict": "MAINTAINED"
+        "verdict": "CORRECT ABSTENTION"
       }
     },
     "08-exact-fields": {
       "direct": {
         "grade": {
           "critical": {
-            "four_lines_in_order": false,
-            "risk_high": false,
-            "confidence_int": false
+            "four_lines_in_order": true,
+            "risk_high": true,
+            "confidence_int": true
           },
           "requirements": {
-            "summary_25_words": false,
-            "action_12_words": false
+            "summary_25_words": true,
+            "action_12_words": true
           },
           "forbidden_hit": [],
-          "critical_pass": false
+          "critical_pass": true
         },
         "meta": {},
         "calls": [
           {
             "purpose": "execute",
-            "tokens_in": 135,
-            "tokens_out": 1,
-            "wall_s": 0.0
+            "tokens_in": 168,
+            "tokens_out": 31,
+            "wall_s": 2.43
           }
         ],
-        "tokens_in": 135,
-        "tokens_out": 1,
-        "wall_s": 0.0,
+        "tokens_in": 168,
+        "tokens_out": 31,
+        "wall_s": 2.43,
         "error": null,
-        "response_text": "MOCK",
+        "response_text": "SUMMARY: Payment service down due to expired TLS certificate.\nRISK: HIGH\nACTION: Rotate certificate immediately.\nCONFIDENCE: 95",
         "tool_calls": null
       },
       "context": {
         "grade": {
           "critical": {
-            "four_lines_in_order": false,
-            "risk_high": false,
-            "confidence_int": false
+            "four_lines_in_order": true,
+            "risk_high": true,
+            "confidence_int": true
           },
           "requirements": {
-            "summary_25_words": false,
-            "action_12_words": false
+            "summary_25_words": true,
+            "action_12_words": true
           },
           "forbidden_hit": [],
-          "critical_pass": false
+          "critical_pass": true
         },
         "meta": {
-          "outcome": "SAFE FALLBACK (RECOMMENDED)",
+          "outcome": "OPTIMIZED CONTEXT ACCEPTED",
           "optimizer_refused": false,
           "fallback_executed": false,
           "silent_truncation": false,
@@ -1081,35 +1027,35 @@
         "calls": [
           {
             "purpose": "optimized",
-            "tokens_in": 320,
-            "tokens_out": 1,
-            "wall_s": 0.0
+            "tokens_in": 344,
+            "tokens_out": 33,
+            "wall_s": 3.3
           }
         ],
-        "tokens_in": 320,
-        "tokens_out": 1,
-        "wall_s": 0.0,
+        "tokens_in": 344,
+        "tokens_out": 33,
+        "wall_s": 3.3,
         "error": null,
-        "response_text": "",
+        "response_text": "SUMMARY: Payment service rejects transactions due to expired TLS certificate.\nRISK: HIGH\nACTION: Rotate certificate immediately.\nCONFIDENCE: 100",
         "tool_calls": null,
         "verdict": "MAINTAINED"
       },
       "think_context": {
         "grade": {
           "critical": {
-            "four_lines_in_order": false,
-            "risk_high": false,
-            "confidence_int": false
+            "four_lines_in_order": true,
+            "risk_high": true,
+            "confidence_int": true
           },
           "requirements": {
-            "summary_25_words": false,
-            "action_12_words": false
+            "summary_25_words": true,
+            "action_12_words": true
           },
           "forbidden_hit": [],
-          "critical_pass": false
+          "critical_pass": true
         },
         "meta": {
-          "outcome": "SAFE FALLBACK (RECOMMENDED)",
+          "outcome": "OPTIMIZED CONTEXT ACCEPTED",
           "optimizer_refused": false,
           "fallback_executed": false,
           "silent_truncation": false,
@@ -1119,43 +1065,39 @@
         "calls": [
           {
             "purpose": "optimized",
-            "tokens_in": 320,
-            "tokens_out": 1,
-            "wall_s": 0.0
+            "tokens_in": 344,
+            "tokens_out": 33,
+            "wall_s": 1.69
           }
         ],
-        "tokens_in": 320,
-        "tokens_out": 1,
-        "wall_s": 0.0,
+        "tokens_in": 344,
+        "tokens_out": 33,
+        "wall_s": 1.69,
         "error": null,
-        "response_text": "",
+        "response_text": "SUMMARY: Payment service rejects transactions due to expired TLS certificate.\nRISK: HIGH\nACTION: Rotate certificate immediately.\nCONFIDENCE: 100",
         "tool_calls": null,
         "verdict": "MAINTAINED"
       },
       "full_cortex": {
         "grade": {
           "critical": {
-            "four_lines_in_order": false,
-            "risk_high": false,
-            "confidence_int": false
+            "four_lines_in_order": true,
+            "risk_high": true,
+            "confidence_int": true
           },
           "requirements": {
-            "summary_25_words": false,
-            "action_12_words": false
+            "summary_25_words": true,
+            "action_12_words": true
           },
           "forbidden_hit": [],
-          "critical_pass": false
+          "critical_pass": true
         },
         "meta": {
           "check_ran": true,
-          "abstained": false,
-          "repair_attempted": true,
+          "abstained": true,
+          "repair_attempted": false,
           "repair_accepted": false,
-          "defects": 1,
-          "contract_missing": 4,
-          "repair_skill": "final-answer-completeness",
-          "acceptance_verdict": "REJECTED_NO_IMPROVEMENT",
-          "acceptance_reason": "repair does not strictly improve the contract verdict",
+          "acceptance_verdict": "CORRECT_ABSTENTION",
           "router_decision": "CHECK",
           "router_reasons": [
             "4 deterministic output requirement(s) detected (>= threshold 3)"
@@ -1164,24 +1106,18 @@
         "calls": [
           {
             "purpose": "execute",
-            "tokens_in": 135,
-            "tokens_out": 1,
-            "wall_s": 0.0
-          },
-          {
-            "purpose": "repair",
-            "tokens_in": 901,
-            "tokens_out": 1,
-            "wall_s": 0.0
+            "tokens_in": 168,
+            "tokens_out": 31,
+            "wall_s": 1.62
           }
         ],
-        "tokens_in": 1036,
-        "tokens_out": 2,
-        "wall_s": 0.0,
+        "tokens_in": 168,
+        "tokens_out": 31,
+        "wall_s": 1.62,
         "error": null,
-        "response_text": "MOCK",
+        "response_text": "SUMMARY: Payment service down due to expired TLS certificate.\nRISK: HIGH\nACTION: Rotate certificate immediately.\nCONFIDENCE: 95",
         "tool_calls": null,
-        "verdict": "MAINTAINED"
+        "verdict": "CORRECT ABSTENTION"
       }
     },
     "09-code-function": {
@@ -1190,7 +1126,7 @@
           "critical": {
             "value_cases": false,
             "error_cases": false,
-            "single_block_function_only": false
+            "single_block_function_only": true
           },
           "requirements": {},
           "forbidden_hit": [],
@@ -1200,16 +1136,16 @@
         "calls": [
           {
             "purpose": "execute",
-            "tokens_in": 112,
-            "tokens_out": 1,
-            "wall_s": 0.0
+            "tokens_in": 164,
+            "tokens_out": 150,
+            "wall_s": 8.23
           }
         ],
-        "tokens_in": 112,
-        "tokens_out": 1,
-        "wall_s": 0.0,
+        "tokens_in": 164,
+        "tokens_out": 150,
+        "wall_s": 8.23,
         "error": null,
-        "response_text": "MOCK",
+        "response_text": "```python\ndef parse_duration(s):\n    if not s:\n        raise ValueError(\"Input string cannot be empty\")\n    \n    units = {'h': 60, 'm': 1}\n    parts = s.strip().lower().split(' ')\n    if len(parts) > 2 or (len(parts) == 2 and any(p not in units for p in parts)):\n        raise ValueError(\"Malformed input\")\n    \n    total_minutes = 0\n    for part in parts:\n        if part.endswith('h'):\n            total_minutes += int(part[:-1]) * units['h']\n        elif part.endswith('m'):\n            total_minutes += int(part[:-1]) * units['m']\n    \n    return total_minutes\n```",
         "tool_calls": null
       },
       "context": {
@@ -1217,7 +1153,7 @@
           "critical": {
             "value_cases": false,
             "error_cases": false,
-            "single_block_function_only": false
+            "single_block_function_only": true
           },
           "requirements": {},
           "forbidden_hit": [],
@@ -1233,16 +1169,16 @@
         "calls": [
           {
             "purpose": "optimized",
-            "tokens_in": 190,
-            "tokens_out": 1,
-            "wall_s": 0.0
+            "tokens_in": 227,
+            "tokens_out": 123,
+            "wall_s": 7.26
           }
         ],
-        "tokens_in": 190,
-        "tokens_out": 1,
-        "wall_s": 0.0,
+        "tokens_in": 227,
+        "tokens_out": 123,
+        "wall_s": 7.26,
         "error": null,
-        "response_text": "MOCK",
+        "response_text": "```python\ndef parse_duration(s):\n    if not s:\n        raise ValueError(\"Input string cannot be empty\")\n    \n    parts = s.replace('h', '').replace('m', '').split()\n    if len(parts) > 2 or len(parts) == 0:\n        raise ValueError(\"Malformed input\")\n\n    hours, minutes = 0, 0\n    for part in parts:\n        if part.endswith('h'):\n            hours = int(part[:-1])\n        elif part.endswith('m'):\n            minutes = int(part[:-1])\n\n    return hours * 60 + minutes\n```",
         "tool_calls": null,
         "verdict": "MAINTAINED"
       },
@@ -1251,7 +1187,7 @@
           "critical": {
             "value_cases": false,
             "error_cases": false,
-            "single_block_function_only": false
+            "single_block_function_only": true
           },
           "requirements": {},
           "forbidden_hit": [],
@@ -1268,16 +1204,16 @@
         "calls": [
           {
             "purpose": "optimized",
-            "tokens_in": 190,
-            "tokens_out": 1,
-            "wall_s": 0.0
+            "tokens_in": 227,
+            "tokens_out": 123,
+            "wall_s": 5.88
           }
         ],
-        "tokens_in": 190,
-        "tokens_out": 1,
-        "wall_s": 0.0,
+        "tokens_in": 227,
+        "tokens_out": 123,
+        "wall_s": 5.88,
         "error": null,
-        "response_text": "MOCK",
+        "response_text": "```python\ndef parse_duration(s):\n    if not s:\n        raise ValueError(\"Input string cannot be empty\")\n    \n    parts = s.replace('h', '').replace('m', '').split()\n    if len(parts) > 2 or len(parts) == 0:\n        raise ValueError(\"Malformed input\")\n\n    hours, minutes = 0, 0\n    for part in parts:\n        if part.endswith('h'):\n            hours = int(part[:-1])\n        elif part.endswith('m'):\n            minutes = int(part[:-1])\n\n    return hours * 60 + minutes\n```",
         "tool_calls": null,
         "verdict": "MAINTAINED"
       },
@@ -1286,7 +1222,7 @@
           "critical": {
             "value_cases": false,
             "error_cases": false,
-            "single_block_function_only": false
+            "single_block_function_only": true
           },
           "requirements": {},
           "forbidden_hit": [],
@@ -1306,16 +1242,16 @@
         "calls": [
           {
             "purpose": "execute",
-            "tokens_in": 112,
-            "tokens_out": 1,
-            "wall_s": 0.0
+            "tokens_in": 164,
+            "tokens_out": 150,
+            "wall_s": 7.38
           }
         ],
-        "tokens_in": 112,
-        "tokens_out": 1,
-        "wall_s": 0.0,
+        "tokens_in": 164,
+        "tokens_out": 150,
+        "wall_s": 7.38,
         "error": null,
-        "response_text": "MOCK",
+        "response_text": "```python\ndef parse_duration(s):\n    if not s:\n        raise ValueError(\"Input string cannot be empty\")\n    \n    units = {'h': 60, 'm': 1}\n    parts = s.strip().lower().split(' ')\n    if len(parts) > 2 or (len(parts) == 2 and any(p not in units for p in parts)):\n        raise ValueError(\"Malformed input\")\n    \n    total_minutes = 0\n    for part in parts:\n        if part.endswith('h'):\n            total_minutes += int(part[:-1]) * units['h']\n        elif part.endswith('m'):\n            total_minutes += int(part[:-1]) * units['m']\n    \n    return total_minutes\n```",
         "tool_calls": null,
         "verdict": "MAINTAINED"
       }
@@ -1336,14 +1272,14 @@
         "calls": [
           {
             "purpose": "execute",
-            "tokens_in": 37,
-            "tokens_out": 1,
-            "wall_s": 0.0
+            "tokens_in": 218,
+            "tokens_out": 21,
+            "wall_s": 2.37
           }
         ],
-        "tokens_in": 37,
-        "tokens_out": 1,
-        "wall_s": 0.0,
+        "tokens_in": 218,
+        "tokens_out": 21,
+        "wall_s": 2.37,
         "error": null,
         "response_text": "",
         "tool_calls": [
@@ -1370,14 +1306,14 @@
         "calls": [
           {
             "purpose": "execute",
-            "tokens_in": 37,
-            "tokens_out": 1,
-            "wall_s": 0.0
+            "tokens_in": 218,
+            "tokens_out": 21,
+            "wall_s": 1.13
           }
         ],
-        "tokens_in": 37,
-        "tokens_out": 1,
-        "wall_s": 0.0,
+        "tokens_in": 218,
+        "tokens_out": 21,
+        "wall_s": 1.13,
         "error": null,
         "response_text": "",
         "tool_calls": [
@@ -1405,14 +1341,14 @@
         "calls": [
           {
             "purpose": "execute",
-            "tokens_in": 1470,
-            "tokens_out": 1,
-            "wall_s": 0.0
+            "tokens_in": 1399,
+            "tokens_out": 21,
+            "wall_s": 8.73
           }
         ],
-        "tokens_in": 1470,
-        "tokens_out": 1,
-        "wall_s": 0.0,
+        "tokens_in": 1399,
+        "tokens_out": 21,
+        "wall_s": 8.73,
         "error": null,
         "response_text": "",
         "tool_calls": [
@@ -1443,14 +1379,14 @@
         "calls": [
           {
             "purpose": "execute",
-            "tokens_in": 37,
-            "tokens_out": 1,
-            "wall_s": 0.0
+            "tokens_in": 218,
+            "tokens_out": 21,
+            "wall_s": 1.49
           }
         ],
-        "tokens_in": 37,
-        "tokens_out": 1,
-        "wall_s": 0.0,
+        "tokens_in": 218,
+        "tokens_out": 21,
+        "wall_s": 1.49,
         "error": null,
         "response_text": "",
         "tool_calls": [
@@ -1466,10 +1402,10 @@
       "direct": {
         "grade": {
           "critical": {
-            "STATUS_intact": false,
-            "OWNER_intact": false,
-            "DEADLINE_intact": false,
-            "TICKET_intact": false,
+            "STATUS_intact": true,
+            "OWNER_intact": true,
+            "DEADLINE_intact": true,
+            "TICKET_intact": true,
             "no_extra_lines": false
           },
           "requirements": {},
@@ -1480,33 +1416,33 @@
         "calls": [
           {
             "purpose": "execute",
-            "tokens_in": 96,
-            "tokens_out": 1,
-            "wall_s": 0.0
+            "tokens_in": 143,
+            "tokens_out": 48,
+            "wall_s": 3.16
           }
         ],
-        "tokens_in": 96,
-        "tokens_out": 1,
-        "wall_s": 0.0,
+        "tokens_in": 143,
+        "tokens_out": 48,
+        "wall_s": 3.16,
         "error": null,
-        "response_text": "MOCK",
+        "response_text": "STATUS: APPROVED\nOWNER: platform-security\nDEADLINE: 2026-08-01\nTICKET: SEC-4211\n\nThe draft triage block satisfies the required format.",
         "tool_calls": null
       },
       "context": {
         "grade": {
           "critical": {
-            "STATUS_intact": false,
-            "OWNER_intact": false,
-            "DEADLINE_intact": false,
-            "TICKET_intact": false,
-            "no_extra_lines": false
+            "STATUS_intact": true,
+            "OWNER_intact": true,
+            "DEADLINE_intact": true,
+            "TICKET_intact": true,
+            "no_extra_lines": true
           },
           "requirements": {},
           "forbidden_hit": [],
-          "critical_pass": false
+          "critical_pass": true
         },
         "meta": {
-          "outcome": "SAFE FALLBACK (RECOMMENDED)",
+          "outcome": "OPTIMIZED CONTEXT ACCEPTED",
           "optimizer_refused": false,
           "fallback_executed": false,
           "silent_truncation": false,
@@ -1515,34 +1451,34 @@
         "calls": [
           {
             "purpose": "optimized",
-            "tokens_in": 279,
-            "tokens_out": 1,
-            "wall_s": 0.0
+            "tokens_in": 320,
+            "tokens_out": 37,
+            "wall_s": 3.78
           }
         ],
-        "tokens_in": 279,
-        "tokens_out": 1,
-        "wall_s": 0.0,
+        "tokens_in": 320,
+        "tokens_out": 37,
+        "wall_s": 3.78,
         "error": null,
-        "response_text": "",
+        "response_text": "STATUS: APPROVED\nOWNER: platform-security\nDEADLINE: 2026-08-01\nTICKET: SEC-4211",
         "tool_calls": null,
-        "verdict": "MAINTAINED"
+        "verdict": "IMPROVED"
       },
       "think_context": {
         "grade": {
           "critical": {
-            "STATUS_intact": false,
-            "OWNER_intact": false,
-            "DEADLINE_intact": false,
-            "TICKET_intact": false,
-            "no_extra_lines": false
+            "STATUS_intact": true,
+            "OWNER_intact": true,
+            "DEADLINE_intact": true,
+            "TICKET_intact": true,
+            "no_extra_lines": true
           },
           "requirements": {},
           "forbidden_hit": [],
-          "critical_pass": false
+          "critical_pass": true
         },
         "meta": {
-          "outcome": "SAFE FALLBACK (RECOMMENDED)",
+          "outcome": "OPTIMIZED CONTEXT ACCEPTED",
           "optimizer_refused": false,
           "fallback_executed": false,
           "silent_truncation": false,
@@ -1552,18 +1488,18 @@
         "calls": [
           {
             "purpose": "optimized",
-            "tokens_in": 279,
-            "tokens_out": 1,
-            "wall_s": 0.0
+            "tokens_in": 320,
+            "tokens_out": 37,
+            "wall_s": 2.09
           }
         ],
-        "tokens_in": 279,
-        "tokens_out": 1,
-        "wall_s": 0.0,
+        "tokens_in": 320,
+        "tokens_out": 37,
+        "wall_s": 2.09,
         "error": null,
-        "response_text": "",
+        "response_text": "STATUS: APPROVED\nOWNER: platform-security\nDEADLINE: 2026-08-01\nTICKET: SEC-4211",
         "tool_calls": null,
-        "verdict": "MAINTAINED"
+        "verdict": "IMPROVED"
       },
       "full_cortex": {
         "grade": {
@@ -1600,40 +1536,40 @@
       "direct": {
         "grade": {
           "critical": {
-            "x7_correct": false,
-            "checksum_correct": false
+            "x7_correct": true,
+            "checksum_correct": true
           },
           "requirements": {},
           "forbidden_hit": [],
-          "critical_pass": false
+          "critical_pass": true
         },
         "meta": {},
         "calls": [
           {
             "purpose": "execute",
-            "tokens_in": 721,
-            "tokens_out": 1,
-            "wall_s": 0.0
+            "tokens_in": 706,
+            "tokens_out": 17,
+            "wall_s": 5.48
           }
         ],
-        "tokens_in": 721,
-        "tokens_out": 1,
-        "wall_s": 0.0,
+        "tokens_in": 706,
+        "tokens_out": 17,
+        "wall_s": 5.48,
         "error": null,
-        "response_text": "MOCK",
+        "response_text": "X7: 512\nCHECKSUM: crc32-hex",
         "tool_calls": null
       },
       "context": {
         "grade": {
           "critical": {
-            "x7_correct": false,
-            "checksum_correct": false,
+            "x7_correct": true,
+            "checksum_correct": true,
             "optimizer_refused": true,
             "safe_fallback_executed": true
           },
           "requirements": {},
           "forbidden_hit": [],
-          "critical_pass": false
+          "critical_pass": true
         },
         "meta": {
           "outcome": "SAFE FALLBACK (EXECUTED)",
@@ -1645,30 +1581,30 @@
         "calls": [
           {
             "purpose": "fallback-full",
-            "tokens_in": 800,
-            "tokens_out": 1,
-            "wall_s": 0.0
+            "tokens_in": 788,
+            "tokens_out": 17,
+            "wall_s": 5.59
           }
         ],
-        "tokens_in": 800,
-        "tokens_out": 1,
-        "wall_s": 0.0,
+        "tokens_in": 788,
+        "tokens_out": 17,
+        "wall_s": 5.59,
         "error": null,
-        "response_text": "MOCK",
+        "response_text": "X7: 512\nCHECKSUM: crc32-hex",
         "tool_calls": null,
-        "verdict": "MAINTAINED"
+        "verdict": "SAFE FALLBACK"
       },
       "think_context": {
         "grade": {
           "critical": {
-            "x7_correct": false,
-            "checksum_correct": false,
+            "x7_correct": true,
+            "checksum_correct": true,
             "optimizer_refused": true,
             "safe_fallback_executed": true
           },
           "requirements": {},
           "forbidden_hit": [],
-          "critical_pass": false
+          "critical_pass": true
         },
         "meta": {
           "outcome": "SAFE FALLBACK (EXECUTED)",
@@ -1681,24 +1617,24 @@
         "calls": [
           {
             "purpose": "fallback-full",
-            "tokens_in": 800,
-            "tokens_out": 1,
-            "wall_s": 0.0
+            "tokens_in": 788,
+            "tokens_out": 17,
+            "wall_s": 0.91
           }
         ],
-        "tokens_in": 800,
-        "tokens_out": 1,
-        "wall_s": 0.0,
+        "tokens_in": 788,
+        "tokens_out": 17,
+        "wall_s": 0.91,
         "error": null,
-        "response_text": "MOCK",
+        "response_text": "X7: 512\nCHECKSUM: crc32-hex",
         "tool_calls": null,
-        "verdict": "MAINTAINED"
+        "verdict": "SAFE FALLBACK"
       },
       "full_cortex": {
         "grade": {
           "critical": {
-            "x7_correct": false,
-            "checksum_correct": false,
+            "x7_correct": true,
+            "checksum_correct": true,
             "optimizer_refused": false,
             "safe_fallback_executed": false
           },
@@ -1708,14 +1644,10 @@
         },
         "meta": {
           "check_ran": true,
-          "abstained": false,
-          "repair_attempted": true,
+          "abstained": true,
+          "repair_attempted": false,
           "repair_accepted": false,
-          "defects": 1,
-          "contract_missing": 2,
-          "repair_skill": "final-answer-completeness",
-          "acceptance_verdict": "REJECTED_NO_IMPROVEMENT",
-          "acceptance_reason": "repair does not strictly improve the contract verdict",
+          "acceptance_verdict": "CORRECT_ABSTENTION",
           "router_decision": "CHECK",
           "router_reasons": [
             "9 deterministic output requirement(s) detected (>= threshold 3)"
@@ -1724,22 +1656,16 @@
         "calls": [
           {
             "purpose": "execute",
-            "tokens_in": 721,
-            "tokens_out": 1,
-            "wall_s": 0.0
-          },
-          {
-            "purpose": "repair",
-            "tokens_in": 801,
-            "tokens_out": 1,
-            "wall_s": 0.0
+            "tokens_in": 706,
+            "tokens_out": 17,
+            "wall_s": 0.91
           }
         ],
-        "tokens_in": 1522,
-        "tokens_out": 2,
-        "wall_s": 0.0,
+        "tokens_in": 706,
+        "tokens_out": 17,
+        "wall_s": 0.91,
         "error": null,
-        "response_text": "MOCK",
+        "response_text": "X7: 512\nCHECKSUM: crc32-hex",
         "tool_calls": null,
         "verdict": "MAINTAINED"
       }
