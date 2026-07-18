@@ -5,6 +5,42 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 Versioning: [SemVer](https://semver.org/) once we reach 0.1.0; until then,
 everything may change.
 
+## [0.1.0-alpha.7] — 2026-07-18
+
+### Added — safety repairs (measured, then shipped)
+PIÉNSALO now guards context optimization with deterministic
+selection-integrity checks, rejects repairs that damage stronger output
+contracts, and suppresses full THINK scaffolding on exact-delivery tasks
+where it was measured to cause harm.
+
+- **Selection integrity** (`piensalo.context.integrity` + runtime pre-flight):
+  before any model call, every contract requirement must trace to selected
+  context (verdicts SUPPORTED / AMBIGUOUS / UNSUPPORTED / CONFLICTED /
+  SUPERSEDED_ONLY / UNMEASURED — UNMEASURED never counts as support). Missing
+  evidence triggers zero-model-token minimum expansion, then safe full-context
+  fallback. Superseded records never count as current support. (NR-9,
+  repaired + re-verified.)
+- **Contract-gated repair acceptance** (`piensalo.verify.acceptance`): the
+  strongest output contract — never the detector that proposed the repair —
+  judges acceptance. Fully-passing originals return byte-for-byte with
+  CORRECT_ABSTENTION and zero repair calls. (NR-10, repaired + re-verified.)
+- **EXACT_DELIVERY_CONTRACT routing signal**: full THINK suppressed on
+  verbatim-output tasks, suppression reason recorded. (NR-11, repaired +
+  re-verified.)
+- Deterministic adapter options (`OpenAICompatAdapter(extra_body=…)`) for
+  reproducible runs; gateway tool-fidelity live matrix vs a real local model.
+
+### Evidence scope (stated plainly)
+One local 7B model (`qwen2.5:7b`, Q4_K_M) · one machine · 12 frozen tasks ·
+single samples per cell · integrity is **lexical/deterministic, not semantic
+proof** · no broad capability-amplification claim. The frozen rerun flipped
+every previously identified regression with zero new critical regressions
+(`evals/cortex-value/results/integrity-repair/`).
+
+### Not included
+**optimize-safe remains unavailable.** Observe stays the gateway default; no
+default traffic intervention. +33 tests (288 total).
+
 ## [0.1.0-alpha.6] — 2026-07-16
 
 ### Fixed

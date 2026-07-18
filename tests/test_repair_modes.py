@@ -135,3 +135,68 @@ def test_non_manual_adapter_requires_model(project_root, capsys):
                    "--adapter", adapter])
         assert rc == 1
         assert "--model" in capsys.readouterr().err
+
+
+# --- contract-gated acceptance in the CLI (NR-10 guard, release review) ---
+
+_CONTRACT_JSON = {
+    "required_output_fields": [{"name": "TOTAL"}, {"name": "OWNER"}],
+    "no_extra_lines": True,
+}
+_BROKEN_TWO = "TOTAL: 1795.86\n"  # OWNER missing -> repair genuinely needed
+_GOOD_TWO = "TOTAL: 1795.86\nOWNER: finance\n"
+_DAMAGING = "```\nTOTAL: 1795.86\nOWNER: finance\n```\nAs requested, here is the fix.\n"
+
+
+def _contract_fixture(root):
+    p = root / "contract.json"
+    p.write_text(json.dumps(_CONTRACT_JSON), encoding="utf-8")
+    return p
+
+
+def test_cli_rejects_damaging_repair_and_preserves_original(project_root, capsys):
+    task, draft = _fixtures(project_root, _BROKEN_TWO)
+    contract = _contract_fixture(project_root)
+    response = project_root / "resp.md"
+    response.write_text(_DAMAGING, encoding="utf-8")
+    rc = main(["repair", "--task", str(task), "--draft", str(draft),
+               "--contract", str(contract),
+               "--adapter", "manual", "--response-file", str(response)])
+    assert rc == 0
+    out = (project_root / "draft.repaired.md").read_text(encoding="utf-8")
+    assert out == _BROKEN_TWO  # original preserved byte-for-byte
+    printed = capsys.readouterr().out
+    assert "REPAIR REJECTED" in printed
+    prov = json.loads(
+        (project_root / "draft.repaired.md.provenance.json").read_text())
+    assert prov["acceptance"]["accepted"] is False
+    assert prov["acceptance"]["verdict"].startswith("REJECTED")
+
+
+def test_cli_accepts_strictly_improving_repair(project_root, capsys):
+    task, draft = _fixtures(project_root, _BROKEN_TWO)
+    contract = _contract_fixture(project_root)
+    response = project_root / "resp.md"
+    response.write_text(_GOOD_TWO, encoding="utf-8")
+    rc = main(["repair", "--task", str(task), "--draft", str(draft),
+               "--contract", str(contract),
+               "--adapter", "manual", "--response-file", str(response)])
+    assert rc == 0
+    out = (project_root / "draft.repaired.md").read_text(encoding="utf-8")
+    assert out == _GOOD_TWO
+    prov = json.loads(
+        (project_root / "draft.repaired.md.provenance.json").read_text())
+    assert prov["acceptance"]["accepted"] is True
+
+
+def test_cli_without_contract_records_unmeasured_acceptance(project_root):
+    task, draft = _fixtures(project_root)  # BROKEN, no contract
+    response = project_root / "resp.md"
+    response.write_text(REPAIRED, encoding="utf-8")
+    rc = main(["repair", "--task", str(task), "--draft", str(draft),
+               "--adapter", "manual", "--response-file", str(response)])
+    assert rc == 0
+    prov = json.loads(
+        (project_root / "draft.repaired.md.provenance.json").read_text())
+    assert prov["acceptance"]["verdict"] == "UNMEASURED"
+    assert prov["acceptance"]["accepted"] is None

@@ -58,13 +58,21 @@ _AMBIGUITY_SIGNALS = re.compile(
 # a competent model (5/12 critical regressions in the cortex-value run), so
 # THINK is suppressed when this signal fires. Inspectable like every signal.
 _EXACT_DELIVERY = re.compile(
-    r"\b(output only|only the (?:json|number|function|table|code)|"
+    r"\b(output only|(?:only|just) the (?:json|number|function|table|code)|"
     r"reply with only|nothing else|no prose|no commentary|no preamble|"
     r"output exactly|exactly (?:this|one|two|three|four|five|\d+|these)|"
     r"verbatim|json only|code only|single (?:```|code block)|"
-    r"exactly in this format|in exactly this format)\b",
+    r"exactly in this format|in exactly this format|"
+    r"(?:json|number|function|code|answer|object) (?:object )?alone|"
+    r"entire (?:reply|response|output) must be)\b",
     re.IGNORECASE,
 )
+# Known limitations (documented, tested): the trigger set is lexical and
+# cannot be exhaustive — novel phrasings can miss (false negative = THINK
+# applies as before, the pre-repair status quo); and exact-format wording
+# QUOTED inside source material fires the signal (false positive = THINK is
+# skipped, which is abstention, not damage). Both err toward the measured-
+# safe side. No model-assisted classification in this layer.
 
 
 @dataclass

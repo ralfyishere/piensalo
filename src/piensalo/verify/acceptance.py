@@ -43,13 +43,15 @@ def _contract_state(contract: dict, text: str) -> dict:
     state = {"present": present, "missing": missing,
              "fenced": bool(_FENCE.search(text or ""))}
     if contract.get("exact_format"):
+        # search(), not match(): mirrors contract.check's own matching so a
+        # custom unanchored pattern classifies lines identically here.
         field_pats = [re.compile(f["pattern"]) for f in contract.get("fields", [])]
         extra = 0
         for ln in (text or "").strip().splitlines():
             ln = ln.strip()
             if not ln:
                 continue
-            if not any(p.match(ln) for p in field_pats):
+            if not any(p.search(ln) for p in field_pats):
                 extra += 1
         state["extra_lines"] = extra
     else:
