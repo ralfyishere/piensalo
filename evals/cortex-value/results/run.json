@@ -1,0 +1,1694 @@
+{
+  "model": "qwen2.5:7b",
+  "settings": {
+    "temperature": 0,
+    "seed": 42
+  },
+  "mock": false,
+  "tasks": {
+    "01-simple-arith": {
+      "direct": {
+        "grade": {
+          "critical": {
+            "correct_value": true
+          },
+          "requirements": {
+            "only_number": true
+          },
+          "forbidden_hit": [],
+          "critical_pass": true
+        },
+        "meta": {},
+        "calls": [
+          {
+            "purpose": "execute",
+            "tokens_in": 45,
+            "tokens_out": 4,
+            "wall_s": 4.93
+          }
+        ],
+        "tokens_in": 45,
+        "tokens_out": 4,
+        "wall_s": 4.93,
+        "error": null,
+        "response_text": "391",
+        "tool_calls": null
+      },
+      "context": {
+        "grade": {
+          "critical": {
+            "correct_value": true
+          },
+          "requirements": {
+            "only_number": true
+          },
+          "forbidden_hit": [],
+          "critical_pass": true
+        },
+        "meta": {
+          "outcome": "OPTIMIZED CONTEXT ACCEPTED",
+          "optimizer_refused": false,
+          "fallback_executed": false,
+          "silent_truncation": false,
+          "expansion_rounds": 0
+        },
+        "calls": [
+          {
+            "purpose": "optimized",
+            "tokens_in": 108,
+            "tokens_out": 4,
+            "wall_s": 0.77
+          }
+        ],
+        "tokens_in": 108,
+        "tokens_out": 4,
+        "wall_s": 0.77,
+        "error": null,
+        "response_text": "391",
+        "tool_calls": null,
+        "verdict": "MAINTAINED"
+      },
+      "think_context": {
+        "grade": {
+          "critical": {
+            "correct_value": true
+          },
+          "requirements": {
+            "only_number": false
+          },
+          "forbidden_hit": [],
+          "critical_pass": true
+        },
+        "meta": {
+          "outcome": "OPTIMIZED CONTEXT ACCEPTED",
+          "optimizer_refused": false,
+          "fallback_executed": false,
+          "silent_truncation": false,
+          "expansion_rounds": 0,
+          "think_prefix_chars": 5528
+        },
+        "calls": [
+          {
+            "purpose": "optimized",
+            "tokens_in": 1265,
+            "tokens_out": 398,
+            "wall_s": 26.35
+          }
+        ],
+        "tokens_in": 1265,
+        "tokens_out": 398,
+        "wall_s": 26.35,
+        "error": null,
+        "response_text": "### Cognitive Program Execution\n\n#### Step 1: recover_objective\n- **Objective:** What is 17 * 23?\n- **Interpretation:** The objective is to calculate the product of 17 and 23, which should be a single number as requested.\n- **Action:** Calculate \\(17 \\times 23\\).\n- **Verification:** The action directly addresses the objective.\n\n#### Step 2: identify_constraints\n- **Constraints Table:**\n  - **Hard Constraints:**\n    - Reply with only the number (verified).\n\n#### Step 3: execute\n- **Calculation:** \n  \\[\n  17 \\times 23 = 391\n  \\]\n- **Artifact Produced:** The result is \\(391\\).\n- **Verification:** The calculation was performed within the budget.\n\n#### Step 4: inspect_result\n- **Defects Evaluation:**\n  - No observable defects detected.\n  \n#### Step 5: classify_failure\n- **Output Present:** Yes, output is present (391).\n- **Cognition vs. Contract Compliance:**\n  - Cognition: Correct calculation of \\(17 \\times 23\\).\n  - Contract Compliance: The result is in the correct format.\n- **Failure Layer:** None.\n\n#### Step 6: apply_targeted_repair\n- **No Repair Needed:** No defects were identified, so no repair is necessary.\n\n#### Step 7: verify\n- **Verdict JSON:**\n  ```json\n  {\n    \"cognition\": true,\n    \"contract_compliance\": true,\n    \"deterministic_checks\": true\n  }\n  ```\n\n#### Step 8: deliver\n- **Completion Claim:** \n  - Delivered-and-verified: The result is \\(391\\).\n\n### Final Answer:\nThe answer to the task is \\(\\boxed{391}\\).",
+        "tool_calls": null,
+        "verdict": "REGRESSION"
+      },
+      "full_cortex": {
+        "grade": {
+          "critical": {
+            "correct_value": true
+          },
+          "requirements": {
+            "only_number": true
+          },
+          "forbidden_hit": [],
+          "critical_pass": true
+        },
+        "meta": {
+          "router_decision": "PASS_THROUGH",
+          "router_reasons": [
+            "input estimate 11 tokens is below trivial ceiling 200 and no intervention signal fired"
+          ]
+        },
+        "calls": [
+          {
+            "purpose": "execute",
+            "tokens_in": 45,
+            "tokens_out": 4,
+            "wall_s": 0.46
+          }
+        ],
+        "tokens_in": 45,
+        "tokens_out": 4,
+        "wall_s": 0.46,
+        "error": null,
+        "response_text": "391",
+        "tool_calls": null,
+        "verdict": "MAINTAINED"
+      }
+    },
+    "02-simple-haiku": {
+      "direct": {
+        "grade": {
+          "critical": {
+            "three_lines": true,
+            "no_meta": true
+          },
+          "requirements": {},
+          "forbidden_hit": [],
+          "critical_pass": true
+        },
+        "meta": {},
+        "calls": [
+          {
+            "purpose": "execute",
+            "tokens_in": 54,
+            "tokens_out": 22,
+            "wall_s": 1.23
+          }
+        ],
+        "tokens_in": 54,
+        "tokens_out": 22,
+        "wall_s": 1.23,
+        "error": null,
+        "response_text": "Whispers of the tide,\nMystic blue cradles secrets,\nWaves kiss sandy shores.",
+        "tool_calls": null
+      },
+      "context": {
+        "grade": {
+          "critical": {
+            "three_lines": true,
+            "no_meta": true
+          },
+          "requirements": {},
+          "forbidden_hit": [],
+          "critical_pass": true
+        },
+        "meta": {
+          "outcome": "OPTIMIZED CONTEXT ACCEPTED",
+          "optimizer_refused": false,
+          "fallback_executed": false,
+          "silent_truncation": false,
+          "expansion_rounds": 0
+        },
+        "calls": [
+          {
+            "purpose": "optimized",
+            "tokens_in": 117,
+            "tokens_out": 22,
+            "wall_s": 1.4
+          }
+        ],
+        "tokens_in": 117,
+        "tokens_out": 22,
+        "wall_s": 1.4,
+        "error": null,
+        "response_text": "Whispers of the tide,\nMystic blue cradles dreams,\nWaves kiss sandy shores.",
+        "tool_calls": null,
+        "verdict": "MAINTAINED"
+      },
+      "think_context": {
+        "grade": {
+          "critical": {
+            "three_lines": false,
+            "no_meta": true
+          },
+          "requirements": {},
+          "forbidden_hit": [],
+          "critical_pass": false
+        },
+        "meta": {
+          "outcome": "OPTIMIZED CONTEXT ACCEPTED",
+          "optimizer_refused": false,
+          "fallback_executed": false,
+          "silent_truncation": false,
+          "expansion_rounds": 0,
+          "think_prefix_chars": 5649
+        },
+        "calls": [
+          {
+            "purpose": "optimized",
+            "tokens_in": 1282,
+            "tokens_out": 25,
+            "wall_s": 7.85
+          }
+        ],
+        "tokens_in": 1282,
+        "tokens_out": 25,
+        "wall_s": 7.85,
+        "error": null,
+        "response_text": "### Haiku: The Sea\n\nWhispers of foam,\nHorizon merges with blue,\nTides hold secrets deep.",
+        "tool_calls": null,
+        "verdict": "REGRESSION"
+      },
+      "full_cortex": {
+        "grade": {
+          "critical": {
+            "three_lines": true,
+            "no_meta": true
+          },
+          "requirements": {},
+          "forbidden_hit": [],
+          "critical_pass": true
+        },
+        "meta": {
+          "router_decision": "PASS_THROUGH",
+          "router_reasons": [
+            "input estimate 29 tokens is below trivial ceiling 200 and no intervention signal fired"
+          ]
+        },
+        "calls": [
+          {
+            "purpose": "execute",
+            "tokens_in": 54,
+            "tokens_out": 22,
+            "wall_s": 1.1
+          }
+        ],
+        "tokens_in": 54,
+        "tokens_out": 22,
+        "wall_s": 1.1,
+        "error": null,
+        "response_text": "Whispers of the tide,\nMystic blue cradles secrets,\nWaves kiss sandy shores.",
+        "tool_calls": null,
+        "verdict": "MAINTAINED"
+      }
+    },
+    "03-plan-schedule": {
+      "direct": {
+        "grade": {
+          "critical": {
+            "parse_ok": true,
+            "durations_ok": true,
+            "deps_ok": true,
+            "no_overlap": true,
+            "makespan_consistent": true
+          },
+          "requirements": {
+            "optimal_makespan_6": false
+          },
+          "forbidden_hit": [],
+          "critical_pass": true
+        },
+        "meta": {},
+        "calls": [
+          {
+            "purpose": "execute",
+            "tokens_in": 220,
+            "tokens_out": 68,
+            "wall_s": 4.49
+          }
+        ],
+        "tokens_in": 220,
+        "tokens_out": 68,
+        "wall_s": 4.49,
+        "error": null,
+        "response_text": "A: worker=1 start=0 end=2\nB: worker=2 start=0 end=1\nC: worker=1 start=2 end=5\nD: worker=2 start=1 end=3\nE: worker=1 start=5 end=9\nMAKESPAN: 9",
+        "tool_calls": null
+      },
+      "context": {
+        "grade": {
+          "critical": {
+            "parse_ok": true,
+            "durations_ok": true,
+            "deps_ok": true,
+            "no_overlap": true,
+            "makespan_consistent": true
+          },
+          "requirements": {
+            "optimal_makespan_6": false
+          },
+          "forbidden_hit": [],
+          "critical_pass": true
+        },
+        "meta": {
+          "outcome": "OPTIMIZED CONTEXT ACCEPTED",
+          "optimizer_refused": false,
+          "fallback_executed": false,
+          "silent_truncation": false,
+          "expansion_rounds": 0
+        },
+        "calls": [
+          {
+            "purpose": "optimized",
+            "tokens_in": 283,
+            "tokens_out": 68,
+            "wall_s": 4.55
+          }
+        ],
+        "tokens_in": 283,
+        "tokens_out": 68,
+        "wall_s": 4.55,
+        "error": null,
+        "response_text": "A: worker=1 start=0 end=2\nB: worker=2 start=0 end=1\nC: worker=1 start=2 end=5\nD: worker=2 start=1 end=3\nE: worker=1 start=5 end=9\nMAKESPAN: 9",
+        "tool_calls": null,
+        "verdict": "MAINTAINED"
+      },
+      "think_context": {
+        "grade": {
+          "critical": {
+            "parse_ok": true,
+            "durations_ok": true,
+            "deps_ok": true,
+            "no_overlap": true,
+            "makespan_consistent": true
+          },
+          "requirements": {
+            "optimal_makespan_6": false
+          },
+          "forbidden_hit": [],
+          "critical_pass": true
+        },
+        "meta": {
+          "outcome": "OPTIMIZED CONTEXT ACCEPTED",
+          "optimizer_refused": false,
+          "fallback_executed": false,
+          "silent_truncation": false,
+          "expansion_rounds": 0,
+          "think_prefix_chars": 6296
+        },
+        "calls": [
+          {
+            "purpose": "optimized",
+            "tokens_in": 1644,
+            "tokens_out": 647,
+            "wall_s": 40.84
+          }
+        ],
+        "tokens_in": 1644,
+        "tokens_out": 647,
+        "wall_s": 40.85,
+        "error": null,
+        "response_text": "### Cognitive Program Execution\n\n#### 1. recover_objective\n- **Objective Statement:** Plan the schedule for five jobs on two workers and derive the minimum makespan.\n- **Underlying Objective:** Minimize the total time required to complete all jobs by optimally assigning them to two workers, considering dependencies between jobs.\n- **Check Against Request:** The request directly aligns with the underlying objective. No divergence noted.\n\n#### 2. identify_constraints\n| Constraint | Type   | Status |\n|------------|--------|--------|\n| C may start only after A finishes. | Hard | Not yet applicable |\n| D may start only after B finishes. | Hard | Not yet applicable |\n| Each worker runs one job at a time; jobs are not splittable; both workers start at hour 0. | Hard | Not yet applicable |\n\n#### 3. execute\n- **Action:** Plan the schedule for five jobs on two workers and derive the minimum makespan.\n- **Output:**\n```\nA: worker=1 start=0 end=2\nB: worker=2 start=0 end=1\nC: worker=1 start=2 end=5\nD: worker=2 start=1 end=3\nE: worker=1 start=5 end=9\nMAKESPAN: 9\n```\n- **Verification:** The output follows the required format and includes all jobs with their respective workers, start times, and end times. The makespan is calculated as 9 hours.\n\n#### 4. inspect_result\n- **Defects Identified:**\n  - No defects detected.\n- **Selection of Repair:** NO REPAIR NEEDED\n\n#### 5. classify_failure\n- **Output Present:** Yes\n- **Cognition vs Contract Compliance:** Cognition (decoration-stripped text) and contract compliance (raw text) are both correct.\n- **Failure Layer:** None\n\n#### 6. apply_targeted_repair\n- **No Repair Applied:** The output is perfect, no repair needed.\n\n#### 7. verify\n- **Contract Check:** Passed all checks.\n- **Layered Verdict:**\n  - Cognition: True (pass)\n  - Contract Compliance: True (pass)\n  - Deterministic Checks: True (pass)\n- **Verdict JSON:**\n```json\n{\n  \"cognition\": true,\n  \"contract_compliance\": true,\n  \"deterministic_checks\": true\n}\n```\n\n#### 8. deliver\n- **Complet",
+        "tool_calls": null,
+        "verdict": "MAINTAINED"
+      },
+      "full_cortex": {
+        "grade": {
+          "critical": {
+            "parse_ok": true,
+            "durations_ok": true,
+            "deps_ok": true,
+            "no_overlap": true,
+            "makespan_consistent": true
+          },
+          "requirements": {
+            "optimal_makespan_6": false
+          },
+          "forbidden_hit": [],
+          "critical_pass": true
+        },
+        "meta": {
+          "router_decision": "THINK",
+          "router_reasons": [
+            "3 deterministic output requirement(s) detected (>= threshold 3)",
+            "1 planning signal(s) on a short conversation (1 message(s))"
+          ],
+          "think_prefix_chars": 6296
+        },
+        "calls": [
+          {
+            "purpose": "execute",
+            "tokens_in": 1581,
+            "tokens_out": 1307,
+            "wall_s": 75.25
+          }
+        ],
+        "tokens_in": 1581,
+        "tokens_out": 1307,
+        "wall_s": 75.25,
+        "error": null,
+        "response_text": "### 1. recover_objective\n\n1. Quote the literal request in one line:\n   Plan the schedule for five jobs on two workers and derive the minimum makespan.\n\n2. Write the most plausible underlying objective in one line:\n   Minimize the total time required to complete all jobs given dependencies and a fixed number of workers.\n\n3. Check whether executing the literal request achieves that objective; name any divergence (symptom-fix, proxy target, wrong layer):\n   The literal request asks for scheduling and makespan calculation, which directly aligns with minimizing the total completion time under constraints. There is no apparent divergence.\n\n4. If they diverge, state the interpretation and the better-aimed action before acting; ask only if a wrong guess is expensive:\n   No divergence detected.\n\n5. Carry the stated interpretation into the final answer so it can be vetoed:\n   The objective is to minimize the makespan by scheduling five jobs on two workers with given dependencies and durations.\n\n### 2. identify_constraints\n\n1. Re-scan the full task text and extract every constraint verbatim \u2014 restrictive clauses, format directives, scope exclusions, limits:\n\n| Constraint | Type (Hard/Soft) |\n|------------|-----------------|\n| Dependencies: C may start only after A finishes. D may start only after B finishes. | Hard |\n| Each worker runs one job at a time; jobs are not splittable; both workers start at hour 0. | Hard |\n| Output exactly one line per job and then the final line, in this format and nothing else: <Job>: worker=<1|2> start=<hour> end=<hour>. | Hard |\n\n2. Classify each as hard (violating it voids the work) or soft (preference):\n   - Dependencies: Hard\n   - Each worker runs one job at a time; jobs are not splittable; both workers start at hour 0.: Hard\n   - Output format: Hard\n\n3. Keep the constraint list visible so later steps re-check against it.\n\n4. Mark each constraint satisfied / violated / not-yet-applicable as work proceeds:\n   - Dependencies: Not yet applicable",
+        "tool_calls": null,
+        "verdict": "MAINTAINED"
+      }
+    },
+    "04-plan-migration": {
+      "direct": {
+        "grade": {
+          "critical": {
+            "exact_order": true
+          },
+          "requirements": {},
+          "forbidden_hit": [],
+          "critical_pass": true
+        },
+        "meta": {},
+        "calls": [
+          {
+            "purpose": "execute",
+            "tokens_in": 168,
+            "tokens_out": 9,
+            "wall_s": 1.63
+          }
+        ],
+        "tokens_in": 168,
+        "tokens_out": 9,
+        "wall_s": 1.63,
+        "error": null,
+        "response_text": "ORDER: B,R,S,D,V,C",
+        "tool_calls": null
+      },
+      "context": {
+        "grade": {
+          "critical": {
+            "exact_order": true
+          },
+          "requirements": {},
+          "forbidden_hit": [],
+          "critical_pass": true
+        },
+        "meta": {
+          "outcome": "OPTIMIZED CONTEXT ACCEPTED",
+          "optimizer_refused": false,
+          "fallback_executed": false,
+          "silent_truncation": false,
+          "expansion_rounds": 0
+        },
+        "calls": [
+          {
+            "purpose": "optimized",
+            "tokens_in": 231,
+            "tokens_out": 9,
+            "wall_s": 1.88
+          }
+        ],
+        "tokens_in": 231,
+        "tokens_out": 9,
+        "wall_s": 1.88,
+        "error": null,
+        "response_text": "ORDER: B,R,S,D,V,C",
+        "tool_calls": null,
+        "verdict": "MAINTAINED"
+      },
+      "think_context": {
+        "grade": {
+          "critical": {
+            "exact_order": true
+          },
+          "requirements": {},
+          "forbidden_hit": [],
+          "critical_pass": true
+        },
+        "meta": {
+          "outcome": "OPTIMIZED CONTEXT ACCEPTED",
+          "optimizer_refused": false,
+          "fallback_executed": false,
+          "silent_truncation": false,
+          "expansion_rounds": 0,
+          "think_prefix_chars": 8237
+        },
+        "calls": [
+          {
+            "purpose": "optimized",
+            "tokens_in": 1965,
+            "tokens_out": 9,
+            "wall_s": 12.59
+          }
+        ],
+        "tokens_in": 1965,
+        "tokens_out": 9,
+        "wall_s": 12.6,
+        "error": null,
+        "response_text": "ORDER: B,R,S,D,V,C",
+        "tool_calls": null,
+        "verdict": "MAINTAINED"
+      },
+      "full_cortex": {
+        "grade": {
+          "critical": {
+            "exact_order": true
+          },
+          "requirements": {},
+          "forbidden_hit": [],
+          "critical_pass": true
+        },
+        "meta": {
+          "router_decision": "THINK",
+          "router_reasons": [
+            "6 deterministic output requirement(s) detected (>= threshold 3)",
+            "2 planning signal(s) on a short conversation (1 message(s))"
+          ],
+          "think_prefix_chars": 8237
+        },
+        "calls": [
+          {
+            "purpose": "execute",
+            "tokens_in": 1902,
+            "tokens_out": 1162,
+            "wall_s": 72.66
+          }
+        ],
+        "tokens_in": 1902,
+        "tokens_out": 1162,
+        "wall_s": 72.67,
+        "error": null,
+        "response_text": "## 1. recover_objective\n1. Quote the literal request in one line.\n2. Write the most plausible underlying objective in one line \u2014 the problem the request is trying to solve, not a paraphrase.\n3. Check whether executing the literal request achieves that objective; name any divergence (symptom-fix, proxy target, wrong layer).\n\nLiteral request: Plan the execution order of a database migration with six steps.\n\nUnderlying objective: Ensure a successful and safe database migration by following a predefined sequence of steps to avoid data loss or corruption.\n\nExecuting the literal request achieves the underlying objective as it provides a clear sequence for the database migration process. There is no divergence noted.\n\n## 2. identify_constraints\n1. Re-scan the full task text and extract every constraint verbatim \u2014 restrictive clauses, format directives, scope exclusions, limits.\n2. Classify each as hard (violating it voids the work) or soft (preference).\n3. Keep the constraint list visible so later steps re-check against it.\n\nConstraints:\n1. B must be the very first step.\n2. R must come immediately after B, before any change is made.\n3. S must come before D.\n4. D must come before V.\n5. V must come before C.\n6. C must be the very last step.\n\nAll constraints are hard.\n\n## 3. decompose_problem\n1. Split the task into units that each have an observable completion test.\n2. Mark dependencies between units and flag units whose approach is still unknown.\n3. Order units so the earliest ones reduce the most uncertainty.\n4. Stop decomposing when every unit is either directly executable or explicitly marked unknown.\n\nUnits:\n- B (Backup)\n- R (Rollback Plan) - depends on B\n- S (Schema Change) - depends on R and must come before D\n- D (Data Migration) - depends on S and must come before V\n- V (Verification) - depends on D and must come before C\n- C (Cutover) - depends on V and is the last step\n\nDependencies:\n- B -> R\n- R -> S\n- S -> D\n- D -> V\n- V -> C\n\nOrder: B, R, S, D, V, C\n\n## 4. locat",
+        "tool_calls": null,
+        "verdict": "MAINTAINED"
+      }
+    },
+    "05-longctx-release": {
+      "direct": {
+        "grade": {
+          "critical": {
+            "SERVICE_correct": true,
+            "PORT_correct": true,
+            "VERSION_correct": true,
+            "DATE_correct": true
+          },
+          "requirements": {},
+          "forbidden_hit": [],
+          "critical_pass": true
+        },
+        "meta": {},
+        "calls": [
+          {
+            "purpose": "execute",
+            "tokens_in": 988,
+            "tokens_out": 35,
+            "wall_s": 8.7
+          }
+        ],
+        "tokens_in": 988,
+        "tokens_out": 35,
+        "wall_s": 8.7,
+        "error": null,
+        "response_text": "SERVICE: atlas\nPORT: 9443\nVERSION: 2.4.1\nDATE: 2026-09-15",
+        "tool_calls": null
+      },
+      "context": {
+        "grade": {
+          "critical": {
+            "SERVICE_correct": true,
+            "PORT_correct": true,
+            "VERSION_correct": false,
+            "DATE_correct": false
+          },
+          "requirements": {},
+          "forbidden_hit": [
+            "superseded_VERSION_2.4.0"
+          ],
+          "critical_pass": false
+        },
+        "meta": {
+          "outcome": "OPTIMIZED CONTEXT ACCEPTED",
+          "optimizer_refused": false,
+          "fallback_executed": false,
+          "silent_truncation": false,
+          "expansion_rounds": 0
+        },
+        "calls": [
+          {
+            "purpose": "optimized",
+            "tokens_in": 898,
+            "tokens_out": 27,
+            "wall_s": 7.13
+          }
+        ],
+        "tokens_in": 898,
+        "tokens_out": 27,
+        "wall_s": 7.14,
+        "error": null,
+        "response_text": "SERVICE: atlas\nPORT: 9443\nVERSION: 2.4.0\nDATE: YYYY-MM-DD",
+        "tool_calls": null,
+        "verdict": "REGRESSION"
+      },
+      "think_context": {
+        "grade": {
+          "critical": {
+            "SERVICE_correct": true,
+            "PORT_correct": true,
+            "VERSION_correct": true,
+            "DATE_correct": true
+          },
+          "requirements": {},
+          "forbidden_hit": [],
+          "critical_pass": true
+        },
+        "meta": {
+          "outcome": "SAFE FALLBACK (EXECUTED)",
+          "optimizer_refused": true,
+          "fallback_executed": true,
+          "silent_truncation": false,
+          "expansion_rounds": 0,
+          "think_prefix_chars": 5865
+        },
+        "calls": [
+          {
+            "purpose": "fallback-full",
+            "tokens_in": 2302,
+            "tokens_out": 35,
+            "wall_s": 18.03
+          }
+        ],
+        "tokens_in": 2302,
+        "tokens_out": 35,
+        "wall_s": 18.04,
+        "error": null,
+        "response_text": "SERVICE: atlas\nPORT: 9443\nVERSION: 2.4.1\nDATE: 2026-09-15",
+        "tool_calls": null,
+        "verdict": "SAFE FALLBACK"
+      },
+      "full_cortex": {
+        "grade": {
+          "critical": {
+            "SERVICE_correct": true,
+            "PORT_correct": true,
+            "VERSION_correct": true,
+            "DATE_correct": true
+          },
+          "requirements": {},
+          "forbidden_hit": [],
+          "critical_pass": true
+        },
+        "meta": {
+          "outcome": "SAFE FALLBACK (EXECUTED)",
+          "optimizer_refused": true,
+          "fallback_executed": true,
+          "silent_truncation": false,
+          "expansion_rounds": 0,
+          "router_decision": "THINK_AND_CONTEXT",
+          "router_reasons": [
+            "input estimate 1059 tokens >= context threshold 800",
+            "1 planning signal(s) on a short conversation (1 message(s))"
+          ],
+          "think_prefix_chars": 5865
+        },
+        "calls": [
+          {
+            "purpose": "fallback-full",
+            "tokens_in": 2302,
+            "tokens_out": 35,
+            "wall_s": 2.02
+          }
+        ],
+        "tokens_in": 2302,
+        "tokens_out": 35,
+        "wall_s": 2.03,
+        "error": null,
+        "response_text": "SERVICE: atlas\nPORT: 9443\nVERSION: 2.4.1\nDATE: 2026-09-15",
+        "tool_calls": null,
+        "verdict": "SAFE FALLBACK"
+      }
+    },
+    "06-longctx-decisions": {
+      "direct": {
+        "grade": {
+          "critical": {
+            "DB_correct": true,
+            "RETENTION_correct": true,
+            "REGION_correct": true
+          },
+          "requirements": {},
+          "forbidden_hit": [],
+          "critical_pass": true
+        },
+        "meta": {},
+        "calls": [
+          {
+            "purpose": "execute",
+            "tokens_in": 846,
+            "tokens_out": 18,
+            "wall_s": 6.92
+          }
+        ],
+        "tokens_in": 846,
+        "tokens_out": 18,
+        "wall_s": 6.92,
+        "error": null,
+        "response_text": "DB: postgres\nRETENTION: 30\nREGION: eu-west-1",
+        "tool_calls": null
+      },
+      "context": {
+        "grade": {
+          "critical": {
+            "DB_correct": false,
+            "RETENTION_correct": true,
+            "REGION_correct": false
+          },
+          "requirements": {},
+          "forbidden_hit": [
+            "superseded_REGION_us-east-1"
+          ],
+          "critical_pass": false
+        },
+        "meta": {
+          "outcome": "OPTIMIZED CONTEXT ACCEPTED",
+          "optimizer_refused": false,
+          "fallback_executed": false,
+          "silent_truncation": false,
+          "expansion_rounds": 0
+        },
+        "calls": [
+          {
+            "purpose": "optimized",
+            "tokens_in": 866,
+            "tokens_out": 19,
+            "wall_s": 7.07
+          }
+        ],
+        "tokens_in": 866,
+        "tokens_out": 19,
+        "wall_s": 7.07,
+        "error": null,
+        "response_text": "DB: <name>\nRETENTION: 30\nREGION: us-east-1",
+        "tool_calls": null,
+        "verdict": "REGRESSION"
+      },
+      "think_context": {
+        "grade": {
+          "critical": {
+            "DB_correct": true,
+            "RETENTION_correct": true,
+            "REGION_correct": true
+          },
+          "requirements": {},
+          "forbidden_hit": [],
+          "critical_pass": true
+        },
+        "meta": {
+          "outcome": "SAFE FALLBACK (EXECUTED)",
+          "optimizer_refused": true,
+          "fallback_executed": true,
+          "silent_truncation": false,
+          "expansion_rounds": 0,
+          "think_prefix_chars": 5853
+        },
+        "calls": [
+          {
+            "purpose": "fallback-full",
+            "tokens_in": 2138,
+            "tokens_out": 18,
+            "wall_s": 16.31
+          }
+        ],
+        "tokens_in": 2138,
+        "tokens_out": 18,
+        "wall_s": 16.31,
+        "error": null,
+        "response_text": "DB: postgres\nRETENTION: 30\nREGION: eu-west-1",
+        "tool_calls": null,
+        "verdict": "SAFE FALLBACK"
+      },
+      "full_cortex": {
+        "grade": {
+          "critical": {
+            "DB_correct": true,
+            "RETENTION_correct": true,
+            "REGION_correct": true
+          },
+          "requirements": {},
+          "forbidden_hit": [],
+          "critical_pass": true
+        },
+        "meta": {
+          "outcome": "SAFE FALLBACK (EXECUTED)",
+          "optimizer_refused": true,
+          "fallback_executed": true,
+          "silent_truncation": false,
+          "expansion_rounds": 0,
+          "router_decision": "THINK_AND_CONTEXT",
+          "router_reasons": [
+            "input estimate 922 tokens >= context threshold 800",
+            "1 planning signal(s) on a short conversation (1 message(s))"
+          ],
+          "think_prefix_chars": 5853
+        },
+        "calls": [
+          {
+            "purpose": "fallback-full",
+            "tokens_in": 2138,
+            "tokens_out": 18,
+            "wall_s": 1.05
+          }
+        ],
+        "tokens_in": 2138,
+        "tokens_out": 18,
+        "wall_s": 1.06,
+        "error": null,
+        "response_text": "DB: postgres\nRETENTION: 30\nREGION: eu-west-1",
+        "tool_calls": null,
+        "verdict": "SAFE FALLBACK"
+      }
+    },
+    "07-exact-json": {
+      "direct": {
+        "grade": {
+          "critical": {
+            "parses_exact_keys": true,
+            "price_number": true,
+            "stock_bool": true,
+            "tags_exact": true,
+            "name_correct": true,
+            "only_json": true
+          },
+          "requirements": {},
+          "forbidden_hit": [],
+          "critical_pass": true
+        },
+        "meta": {},
+        "calls": [
+          {
+            "purpose": "execute",
+            "tokens_in": 153,
+            "tokens_out": 49,
+            "wall_s": 3.8
+          }
+        ],
+        "tokens_in": 153,
+        "tokens_out": 49,
+        "wall_s": 3.8,
+        "error": null,
+        "response_text": "{\n    \"name\": \"Northwind Kettle\",\n    \"price_usd\": 49.9,\n    \"in_stock\": true,\n    \"tags\": [\"kitchen\", \"steel\", \"1.7-liter\"]\n}",
+        "tool_calls": null
+      },
+      "context": {
+        "grade": {
+          "critical": {
+            "parses_exact_keys": true,
+            "price_number": true,
+            "stock_bool": true,
+            "tags_exact": true,
+            "name_correct": true,
+            "only_json": true
+          },
+          "requirements": {},
+          "forbidden_hit": [],
+          "critical_pass": true
+        },
+        "meta": {
+          "outcome": "OPTIMIZED CONTEXT ACCEPTED",
+          "optimizer_refused": false,
+          "fallback_executed": false,
+          "silent_truncation": false,
+          "expansion_rounds": 0
+        },
+        "calls": [
+          {
+            "purpose": "optimized",
+            "tokens_in": 216,
+            "tokens_out": 50,
+            "wall_s": 4.13
+          }
+        ],
+        "tokens_in": 216,
+        "tokens_out": 50,
+        "wall_s": 4.13,
+        "error": null,
+        "response_text": "{\n    \"name\": \"Northwind Kettle\",\n    \"price_usd\": 49.90,\n    \"in_stock\": true,\n    \"tags\": [\"kitchen\", \"steel\", \"1.7-liter\"]\n}",
+        "tool_calls": null,
+        "verdict": "MAINTAINED"
+      },
+      "think_context": {
+        "grade": {
+          "critical": {
+            "parses_exact_keys": false,
+            "price_number": false,
+            "stock_bool": false,
+            "tags_exact": false,
+            "name_correct": false,
+            "only_json": false
+          },
+          "requirements": {},
+          "forbidden_hit": [],
+          "critical_pass": false
+        },
+        "meta": {
+          "outcome": "OPTIMIZED CONTEXT ACCEPTED",
+          "optimizer_refused": false,
+          "fallback_executed": false,
+          "silent_truncation": false,
+          "expansion_rounds": 0,
+          "think_prefix_chars": 8081
+        },
+        "calls": [
+          {
+            "purpose": "optimized",
+            "tokens_in": 1930,
+            "tokens_out": 750,
+            "wall_s": 57.4
+          }
+        ],
+        "tokens_in": 1930,
+        "tokens_out": 750,
+        "wall_s": 57.41,
+        "error": null,
+        "response_text": "### Cognitive Program Execution\n\n#### Step 1: recover_objective\n- **Objective Statement:** Produce a JSON object with keys `name`, `price_usd`, `in_stock`, and `tags` for the 'Northwind Kettle'.\n- **Action Check:** Ensure that the JSON object meets all specified requirements (keys, data types, array length).\n\n#### Step 2: identify_constraints\n| Constraint | Type   |\n|------------|--------|\n| name       | Hard   |\n| price_usd  | Hard   |\n| in_stock   | Hard   |\n| tags       | Hard   |\n| JSON format| Soft   |\n\n- **Verification:** All constraints are marked as applicable.\n\n#### Step 3: decompose_problem\n1. Define the `name` key.\n2. Define the `price_usd` key with a numeric value.\n3. Define the `in_stock` key with a boolean value.\n4. Define the `tags` key with an array of exactly three strings.\n5. Ensure all keys are present and formatted correctly.\n\n#### Step 4: locate_load_bearing_uncertainty\n- **Load-Bearing Uncertainty:** The correct format for `price_usd` (number vs string).\n- **Branches:** \n  - `price_usd` as a number.\n  - `price_usd` as a string.\n\n#### Step 5: select_cheapest_discriminating_test\n- **Test Candidates:**\n  - Convert the price to a float and check if it is numeric.\n  \n- **Expected Outcomes:**\n  - If `price_usd` is numeric, use that format.\n  - If not, convert to string.\n\n#### Step 6: execute\n```python\n# Python code to test the price_usd value\nprice_usd = \"49.90\"\ntry:\n    float(price_usd)\n    price_usd = float(price_usd)\nexcept ValueError:\n    price_usd = str(price_usd)\n\nprint(price_usd)\n```\n- **Result:** `49.9`\n\n#### Step 7: inspect_result\n- **Defects:**\n  - None detected.\n\n#### Step 8: classify_failure\n- **Cognition Failure Layer:** None.\n- **Contract Compliance Layer:** Pass (JSON format is correct).\n- **Deterministic Checks:** Pass (all keys present and formatted correctly).\n\n#### Step 9: apply_targeted_repair\n- No repairs needed.\n\n#### Step 10: verify\n```json\n{\n    \"name\": \"Northwind Kettle\",\n    \"price_usd\": 49.9,\n    \"in_stock\": true,\n    \"tags",
+        "tool_calls": null,
+        "verdict": "REGRESSION"
+      },
+      "full_cortex": {
+        "grade": {
+          "critical": {
+            "parses_exact_keys": true,
+            "price_number": true,
+            "stock_bool": true,
+            "tags_exact": true,
+            "name_correct": true,
+            "only_json": true
+          },
+          "requirements": {},
+          "forbidden_hit": [],
+          "critical_pass": true
+        },
+        "meta": {
+          "check_ran": true,
+          "defects": 0,
+          "contract_missing": 0,
+          "abstained": true,
+          "repair_attempted": false,
+          "repair_accepted": false,
+          "router_decision": "CHECK",
+          "router_reasons": [
+            "8 deterministic output requirement(s) detected (>= threshold 3)"
+          ]
+        },
+        "calls": [
+          {
+            "purpose": "execute",
+            "tokens_in": 153,
+            "tokens_out": 49,
+            "wall_s": 2.95
+          }
+        ],
+        "tokens_in": 153,
+        "tokens_out": 49,
+        "wall_s": 2.96,
+        "error": null,
+        "response_text": "{\n    \"name\": \"Northwind Kettle\",\n    \"price_usd\": 49.9,\n    \"in_stock\": true,\n    \"tags\": [\"kitchen\", \"steel\", \"1.7-liter\"]\n}",
+        "tool_calls": null,
+        "verdict": "CORRECT ABSTENTION"
+      }
+    },
+    "08-exact-fields": {
+      "direct": {
+        "grade": {
+          "critical": {
+            "four_lines_in_order": true,
+            "risk_high": true,
+            "confidence_int": true
+          },
+          "requirements": {
+            "summary_25_words": true,
+            "action_12_words": true
+          },
+          "forbidden_hit": [],
+          "critical_pass": true
+        },
+        "meta": {},
+        "calls": [
+          {
+            "purpose": "execute",
+            "tokens_in": 168,
+            "tokens_out": 31,
+            "wall_s": 2.95
+          }
+        ],
+        "tokens_in": 168,
+        "tokens_out": 31,
+        "wall_s": 2.95,
+        "error": null,
+        "response_text": "SUMMARY: Payment service down due to expired TLS certificate.\nRISK: HIGH\nACTION: Rotate certificate immediately.\nCONFIDENCE: 95",
+        "tool_calls": null
+      },
+      "context": {
+        "grade": {
+          "critical": {
+            "four_lines_in_order": true,
+            "risk_high": true,
+            "confidence_int": true
+          },
+          "requirements": {
+            "summary_25_words": true,
+            "action_12_words": true
+          },
+          "forbidden_hit": [],
+          "critical_pass": true
+        },
+        "meta": {
+          "outcome": "OPTIMIZED CONTEXT ACCEPTED",
+          "optimizer_refused": false,
+          "fallback_executed": false,
+          "silent_truncation": false,
+          "expansion_rounds": 0
+        },
+        "calls": [
+          {
+            "purpose": "optimized",
+            "tokens_in": 344,
+            "tokens_out": 33,
+            "wall_s": 4.03
+          }
+        ],
+        "tokens_in": 344,
+        "tokens_out": 33,
+        "wall_s": 4.03,
+        "error": null,
+        "response_text": "SUMMARY: Payment service rejects transactions due to expired TLS certificate.\nRISK: HIGH\nACTION: Rotate certificate immediately.\nCONFIDENCE: 100",
+        "tool_calls": null,
+        "verdict": "MAINTAINED"
+      },
+      "think_context": {
+        "grade": {
+          "critical": {
+            "four_lines_in_order": true,
+            "risk_high": false,
+            "confidence_int": true
+          },
+          "requirements": {
+            "summary_25_words": true,
+            "action_12_words": true
+          },
+          "forbidden_hit": [
+            "risk_underrated"
+          ],
+          "critical_pass": false
+        },
+        "meta": {
+          "outcome": "OPTIMIZED CONTEXT ACCEPTED",
+          "optimizer_refused": false,
+          "fallback_executed": false,
+          "silent_truncation": false,
+          "expansion_rounds": 0,
+          "think_prefix_chars": 6914
+        },
+        "calls": [
+          {
+            "purpose": "optimized",
+            "tokens_in": 1808,
+            "tokens_out": 35,
+            "wall_s": 15.18
+          }
+        ],
+        "tokens_in": 1808,
+        "tokens_out": 35,
+        "wall_s": 15.19,
+        "error": null,
+        "response_text": "SUMMARY: Payment service rejects all transactions due to expired TLS certificate.\nRISK: MEDIUM\nACTION: Rotate certificate immediately.\nCONFIDENCE: 100",
+        "tool_calls": null,
+        "verdict": "REGRESSION"
+      },
+      "full_cortex": {
+        "grade": {
+          "critical": {
+            "four_lines_in_order": true,
+            "risk_high": true,
+            "confidence_int": true
+          },
+          "requirements": {
+            "summary_25_words": true,
+            "action_12_words": true
+          },
+          "forbidden_hit": [],
+          "critical_pass": true
+        },
+        "meta": {
+          "check_ran": true,
+          "defects": 1,
+          "contract_missing": 0,
+          "abstained": false,
+          "repair_attempted": true,
+          "repair_accepted": false,
+          "repair_skill": "rederive-the-numbers",
+          "router_decision": "CHECK",
+          "router_reasons": [
+            "4 deterministic output requirement(s) detected (>= threshold 3)"
+          ]
+        },
+        "calls": [
+          {
+            "purpose": "execute",
+            "tokens_in": 168,
+            "tokens_out": 31,
+            "wall_s": 1.91
+          },
+          {
+            "purpose": "repair",
+            "tokens_in": 741,
+            "tokens_out": 31,
+            "wall_s": 7.23
+          }
+        ],
+        "tokens_in": 909,
+        "tokens_out": 62,
+        "wall_s": 9.14,
+        "error": null,
+        "response_text": "SUMMARY: Payment service down due to expired TLS certificate.\nRISK: HIGH\nACTION: Rotate certificate immediately.\nCONFIDENCE: 95",
+        "tool_calls": null,
+        "verdict": "MAINTAINED"
+      }
+    },
+    "09-code-function": {
+      "direct": {
+        "grade": {
+          "critical": {
+            "value_cases": false,
+            "error_cases": false,
+            "single_block_function_only": true
+          },
+          "requirements": {},
+          "forbidden_hit": [],
+          "critical_pass": false
+        },
+        "meta": {},
+        "calls": [
+          {
+            "purpose": "execute",
+            "tokens_in": 164,
+            "tokens_out": 150,
+            "wall_s": 9.92
+          }
+        ],
+        "tokens_in": 164,
+        "tokens_out": 150,
+        "wall_s": 9.92,
+        "error": null,
+        "response_text": "```python\ndef parse_duration(s):\n    if not s:\n        raise ValueError(\"Input string cannot be empty\")\n    \n    units = {'h': 60, 'm': 1}\n    parts = s.strip().lower().split(' ')\n    if len(parts) > 2 or (len(parts) == 2 and any(p not in units for p in parts)):\n        raise ValueError(\"Malformed input\")\n    \n    total_minutes = 0\n    for part in parts:\n        if part.endswith('h'):\n            total_minutes += int(part[:-1]) * units['h']\n        elif part.endswith('m'):\n            total_minutes += int(part[:-1]) * units['m']\n    \n    return total_minutes\n```",
+        "tool_calls": null
+      },
+      "context": {
+        "grade": {
+          "critical": {
+            "value_cases": false,
+            "error_cases": false,
+            "single_block_function_only": true
+          },
+          "requirements": {},
+          "forbidden_hit": [],
+          "critical_pass": false
+        },
+        "meta": {
+          "outcome": "OPTIMIZED CONTEXT ACCEPTED",
+          "optimizer_refused": false,
+          "fallback_executed": false,
+          "silent_truncation": false,
+          "expansion_rounds": 0
+        },
+        "calls": [
+          {
+            "purpose": "optimized",
+            "tokens_in": 227,
+            "tokens_out": 123,
+            "wall_s": 8.94
+          }
+        ],
+        "tokens_in": 227,
+        "tokens_out": 123,
+        "wall_s": 8.94,
+        "error": null,
+        "response_text": "```python\ndef parse_duration(s):\n    if not s:\n        raise ValueError(\"Input string cannot be empty\")\n    \n    parts = s.replace('h', '').replace('m', '').split()\n    if len(parts) > 2 or len(parts) == 0:\n        raise ValueError(\"Malformed input\")\n\n    hours, minutes = 0, 0\n    for part in parts:\n        if part.endswith('h'):\n            hours = int(part[:-1])\n        elif part.endswith('m'):\n            minutes = int(part[:-1])\n\n    return hours * 60 + minutes\n```",
+        "tool_calls": null,
+        "verdict": "MAINTAINED"
+      },
+      "think_context": {
+        "grade": {
+          "critical": {
+            "value_cases": false,
+            "error_cases": false,
+            "single_block_function_only": false
+          },
+          "requirements": {},
+          "forbidden_hit": [],
+          "critical_pass": false
+        },
+        "meta": {
+          "outcome": "OPTIMIZED CONTEXT ACCEPTED",
+          "optimizer_refused": false,
+          "fallback_executed": false,
+          "silent_truncation": false,
+          "expansion_rounds": 0,
+          "think_prefix_chars": 7979
+        },
+        "calls": [
+          {
+            "purpose": "optimized",
+            "tokens_in": 1900,
+            "tokens_out": 485,
+            "wall_s": 43.35
+          }
+        ],
+        "tokens_in": 1900,
+        "tokens_out": 485,
+        "wall_s": 43.36,
+        "error": null,
+        "response_text": "```python\ndef parse_duration(s):\n    if not s:\n        raise ValueError(\"Input string cannot be empty\")\n    \n    units = {'h': 60, 'm': 1}\n    parts = s.strip().lower().split('h')\n    minutes = 0\n    \n    for part in parts:\n        m_part = part.strip('m')\n        if m_part.isdigit():\n            minutes += int(m_part)\n        elif part.endswith('h'):\n            hours = int(part[:-1])\n            minutes += hours * units['h']\n    \n    return minutes\n```\n\n### Verification\n\n- **Objective**: The function `parse_duration(s)` should convert a duration string into total minutes.\n  - **Check**: The provided examples and constraints are satisfied, and the function raises `ValueError` for invalid inputs.\n\n- **Constraints**:\n  - Hard: \n    - Hours component is optional; minutes component is optional; at least one is present.\n    - Raise ValueError for an empty string or malformed input like 'abc' or '2x30m'.\n  - Soft: Output only the function definition in a single ```python code block, no usage examples, no prose.\n\n- **Decomposition**:\n  - Units: Split the task into parsing hours and minutes.\n  - Dependencies: None explicitly marked as unknown.\n  - Order: Hours first, then minutes.\n\n- **Load-bearing Uncertainty**: The uncertainty is in handling malformed input. If a different approach to validation is needed, it would change the plan significantly.\n\n- **Test Selection**: A test with an invalid string like '2x30m' will discriminate between valid and invalid inputs.\n  - Expected outcomes:\n    - `parse_duration('2x30m')` should raise `ValueError`.\n\n- **Execution**:\n  - Ran the function with various inputs to ensure it meets all requirements.\n\n- **Inspection Result**: The function passes all checks, no defects detected.\n\n- **Classification of Failure**: No failure layer needed as the function is correct and complete.\n\n- **Apply Targeted Repair**: Not applicable as there are no defects.\n\n- **Verification**:\n  - Cognition: Correct.\n  - Contract Compliance: Correct.\n  - Determinis",
+        "tool_calls": null,
+        "verdict": "REGRESSION"
+      },
+      "full_cortex": {
+        "grade": {
+          "critical": {
+            "value_cases": false,
+            "error_cases": false,
+            "single_block_function_only": true
+          },
+          "requirements": {},
+          "forbidden_hit": [],
+          "critical_pass": false
+        },
+        "meta": {
+          "check_ran": true,
+          "defects": 0,
+          "contract_missing": 0,
+          "abstained": true,
+          "repair_attempted": false,
+          "repair_accepted": false,
+          "router_decision": "CHECK",
+          "router_reasons": [
+            "4 deterministic output requirement(s) detected (>= threshold 3)"
+          ]
+        },
+        "calls": [
+          {
+            "purpose": "execute",
+            "tokens_in": 164,
+            "tokens_out": 150,
+            "wall_s": 8.96
+          }
+        ],
+        "tokens_in": 164,
+        "tokens_out": 150,
+        "wall_s": 8.96,
+        "error": null,
+        "response_text": "```python\ndef parse_duration(s):\n    if not s:\n        raise ValueError(\"Input string cannot be empty\")\n    \n    units = {'h': 60, 'm': 1}\n    parts = s.strip().lower().split(' ')\n    if len(parts) > 2 or (len(parts) == 2 and any(p not in units for p in parts)):\n        raise ValueError(\"Malformed input\")\n    \n    total_minutes = 0\n    for part in parts:\n        if part.endswith('h'):\n            total_minutes += int(part[:-1]) * units['h']\n        elif part.endswith('m'):\n            total_minutes += int(part[:-1]) * units['m']\n    \n    return total_minutes\n```",
+        "tool_calls": null,
+        "verdict": "MAINTAINED"
+      }
+    },
+    "10-tool-use": {
+      "direct": {
+        "grade": {
+          "critical": {
+            "one_call": true,
+            "correct_tool": true,
+            "city_madrid": true
+          },
+          "requirements": {},
+          "forbidden_hit": [],
+          "critical_pass": true
+        },
+        "meta": {},
+        "calls": [
+          {
+            "purpose": "execute",
+            "tokens_in": 218,
+            "tokens_out": 21,
+            "wall_s": 3.03
+          }
+        ],
+        "tokens_in": 218,
+        "tokens_out": 21,
+        "wall_s": 3.03,
+        "error": null,
+        "response_text": "",
+        "tool_calls": [
+          {
+            "name": "get_weather",
+            "arguments": "{\"city\":\"Madrid\"}"
+          }
+        ]
+      },
+      "context": {
+        "grade": {
+          "critical": {
+            "one_call": true,
+            "correct_tool": true,
+            "city_madrid": true
+          },
+          "requirements": {},
+          "forbidden_hit": [],
+          "critical_pass": true
+        },
+        "meta": {
+          "note": "tool task: runtime cannot carry tools; direct tool call"
+        },
+        "calls": [
+          {
+            "purpose": "execute",
+            "tokens_in": 218,
+            "tokens_out": 21,
+            "wall_s": 1.22
+          }
+        ],
+        "tokens_in": 218,
+        "tokens_out": 21,
+        "wall_s": 1.22,
+        "error": null,
+        "response_text": "",
+        "tool_calls": [
+          {
+            "name": "get_weather",
+            "arguments": "{\"city\":\"Madrid\"}"
+          }
+        ],
+        "verdict": "MAINTAINED"
+      },
+      "think_context": {
+        "grade": {
+          "critical": {
+            "one_call": true,
+            "correct_tool": true,
+            "city_madrid": true
+          },
+          "requirements": {},
+          "forbidden_hit": [],
+          "critical_pass": true
+        },
+        "meta": {
+          "think_prefix_chars": 5723
+        },
+        "calls": [
+          {
+            "purpose": "execute",
+            "tokens_in": 1399,
+            "tokens_out": 21,
+            "wall_s": 10.88
+          }
+        ],
+        "tokens_in": 1399,
+        "tokens_out": 21,
+        "wall_s": 10.89,
+        "error": null,
+        "response_text": "",
+        "tool_calls": [
+          {
+            "name": "get_weather",
+            "arguments": "{\"city\":\"Madrid\"}"
+          }
+        ],
+        "verdict": "MAINTAINED"
+      },
+      "full_cortex": {
+        "grade": {
+          "critical": {
+            "one_call": true,
+            "correct_tool": true,
+            "city_madrid": true
+          },
+          "requirements": {},
+          "forbidden_hit": [],
+          "critical_pass": true
+        },
+        "meta": {
+          "router_decision": "PASS_THROUGH",
+          "router_reasons": [
+            "input estimate 38 tokens is below trivial ceiling 200 and no intervention signal fired"
+          ]
+        },
+        "calls": [
+          {
+            "purpose": "execute",
+            "tokens_in": 218,
+            "tokens_out": 21,
+            "wall_s": 1.7
+          }
+        ],
+        "tokens_in": 218,
+        "tokens_out": 21,
+        "wall_s": 1.7,
+        "error": null,
+        "response_text": "",
+        "tool_calls": [
+          {
+            "name": "get_weather",
+            "arguments": "{\"city\":\"Madrid\"}"
+          }
+        ],
+        "verdict": "MAINTAINED"
+      }
+    },
+    "11-already-correct": {
+      "direct": {
+        "grade": {
+          "critical": {
+            "STATUS_intact": true,
+            "OWNER_intact": true,
+            "DEADLINE_intact": true,
+            "TICKET_intact": true,
+            "no_extra_lines": false
+          },
+          "requirements": {},
+          "forbidden_hit": [],
+          "critical_pass": false
+        },
+        "meta": {},
+        "calls": [
+          {
+            "purpose": "execute",
+            "tokens_in": 143,
+            "tokens_out": 48,
+            "wall_s": 3.75
+          }
+        ],
+        "tokens_in": 143,
+        "tokens_out": 48,
+        "wall_s": 3.75,
+        "error": null,
+        "response_text": "STATUS: APPROVED\nOWNER: platform-security\nDEADLINE: 2026-08-01\nTICKET: SEC-4211\n\nThe draft triage block satisfies the required format.",
+        "tool_calls": null
+      },
+      "context": {
+        "grade": {
+          "critical": {
+            "STATUS_intact": true,
+            "OWNER_intact": true,
+            "DEADLINE_intact": true,
+            "TICKET_intact": true,
+            "no_extra_lines": true
+          },
+          "requirements": {},
+          "forbidden_hit": [],
+          "critical_pass": true
+        },
+        "meta": {
+          "outcome": "OPTIMIZED CONTEXT ACCEPTED",
+          "optimizer_refused": false,
+          "fallback_executed": false,
+          "silent_truncation": false,
+          "expansion_rounds": 0
+        },
+        "calls": [
+          {
+            "purpose": "optimized",
+            "tokens_in": 320,
+            "tokens_out": 37,
+            "wall_s": 4.59
+          }
+        ],
+        "tokens_in": 320,
+        "tokens_out": 37,
+        "wall_s": 4.59,
+        "error": null,
+        "response_text": "STATUS: APPROVED\nOWNER: platform-security\nDEADLINE: 2026-08-01\nTICKET: SEC-4211",
+        "tool_calls": null,
+        "verdict": "IMPROVED"
+      },
+      "think_context": {
+        "grade": {
+          "critical": {
+            "STATUS_intact": true,
+            "OWNER_intact": true,
+            "DEADLINE_intact": true,
+            "TICKET_intact": true,
+            "no_extra_lines": false
+          },
+          "requirements": {},
+          "forbidden_hit": [],
+          "critical_pass": false
+        },
+        "meta": {
+          "outcome": "OPTIMIZED CONTEXT ACCEPTED",
+          "optimizer_refused": false,
+          "fallback_executed": false,
+          "silent_truncation": false,
+          "expansion_rounds": 0,
+          "think_prefix_chars": 5944
+        },
+        "calls": [
+          {
+            "purpose": "optimized",
+            "tokens_in": 1560,
+            "tokens_out": 422,
+            "wall_s": 37.58
+          }
+        ],
+        "tokens_in": 1560,
+        "tokens_out": 422,
+        "wall_s": 37.58,
+        "error": null,
+        "response_text": "## Cognitive program execution\n\n### 1. recover_objective\n- **Objective:** Review the draft triage block below and ensure it fully satisfies the required format, delivering it unchanged if no violations are found.\n\n### 2. identify_constraints\n- **Constraints:**\n  - STATUS: exactly one of APPROVED|REJECTED (hard)\n  - OWNER: <team name> (hard)\n  - DEADLINE: <YYYY-MM-DD> (hard)\n  - TICKET: <ABC-#### id> (hard)\n  - Exactly four lines (hard)\n\n### 3. execute\nThe draft triage block is as follows:\n```\nSTATUS: APPROVED\nOWNER: platform-security\nDEADLINE: 2026-08-01\nTICKET: SEC-4211\n```\n\nThis draft satisfies all the required constraints and format requirements.\n\n### 4. inspect_result\nNo observable defects detected in the draft triage block.\n\n### 5. classify_failure\nNo output is absent, so this is not a delivery failure.\nThe output is present and correctly formatted, so no cognition or contract compliance failures are identified.\n\n### 6. apply_targeted_repair\nNo repairs needed as the draft meets all requirements.\n\n### 7. verify\n- **Cognition:** The text is correct and matches the required format.\n- **Contract Compliance:** The text is correct and matches the required format.\n- **Deterministic Checks:** All fields are present and correctly formatted.\n\nThe verdict JSON:\n```json\n{\n  \"cognition\": true,\n  \"contract_compliance\": true,\n  \"deterministic_checks\": true\n}\n```\n\n### 8. deliver\nSince the draft triage block fully satisfies the required format, it is delivered unchanged:\n\n```\nSTATUS: APPROVED\nOWNER: platform-security\nDEADLINE: 2026-08-01\nTICKET: SEC-4211\n```\n\nThe claim spans only checked items and no further verification or uncertainty exists.",
+        "tool_calls": null,
+        "verdict": "MAINTAINED"
+      },
+      "full_cortex": {
+        "grade": {
+          "critical": {
+            "STATUS_intact": true,
+            "OWNER_intact": true,
+            "DEADLINE_intact": true,
+            "TICKET_intact": true,
+            "no_extra_lines": false
+          },
+          "requirements": {},
+          "forbidden_hit": [],
+          "critical_pass": false
+        },
+        "meta": {
+          "check_ran": true,
+          "defects": 1,
+          "contract_missing": 0,
+          "abstained": false,
+          "repair_attempted": true,
+          "repair_accepted": true,
+          "repair_skill": "disqualifier-scan",
+          "router_decision": "CHECK (draft-first policy)"
+        },
+        "calls": [
+          {
+            "purpose": "repair",
+            "tokens_in": 685,
+            "tokens_out": 442,
+            "wall_s": 32.52
+          }
+        ],
+        "tokens_in": 685,
+        "tokens_out": 442,
+        "wall_s": 32.52,
+        "error": null,
+        "response_text": "```\nSTATUS: APPROVED\nOWNER: platform-security\nDEADLINE: 2026-08-01\nTICKET: SEC-4211\n\n# disqualifier-scan\n\n**Trigger (observable):** The task defines pass/fail conditions, mandatory requirements, or a required format \u2014 or any deliverable is about to be declared finished against a spec, rubric, or submission rule set.\n\n**When NOT to activate:** No external spec or rule set exists to disqualify against; early drafting where the structure is still moving; the same scan already ran on this draft version.\n\n## Procedure\n1. List every condition that would make the answer worth zero regardless of its other qualities: mandatory elements, format requirements, prohibited content or resources, scope rules, eligibility criteria. Take them from the task/spec, not from imagination.\n2. Check the draft against each disqualifier one at a time; quote the evidence for any hit.\n3. Any hit is repaired before shipping \u2014 a disclosed disqualifier is still a disqualifier; writing it down does not resolve it.\n4. If a disqualifier cannot be repaired, the verdict is 'does not qualify', stated first \u2014 not a polished delivery with a caveat.\n5. Record which disqualifiers were checked, so the final claim is scoped to what was actually swept.\n\n## Required output\nA disqualifier list with per-item check results (pass / HIT with quoted evidence / not-checkable), placed before the completion claim.\n\n## Verification\nEvery mandatory condition stated in the task/spec appears in the list, and no hit survives into the shipped version undeclared or merely caveated.\n\n**Known risk:** Sweeping invented disqualifiers that the spec never stated, burning tokens on phantom rules. Mitigation: step 1 requires each item to trace to the task text.\n\n**Max intended cost:** \u2264250 added output tokens; re-read of the spec's requirement clauses.\n\n**Evidence status:** experimentally supported (n=1, controlled transfer eval) \u2014 procedure grounded in a documented completion-integrity failure mode and a syntax-not-semantics verifica",
+        "tool_calls": null,
+        "verdict": "MAINTAINED"
+      }
+    },
+    "12-unsafe-budget": {
+      "direct": {
+        "grade": {
+          "critical": {
+            "x7_correct": true,
+            "checksum_correct": true
+          },
+          "requirements": {},
+          "forbidden_hit": [],
+          "critical_pass": true
+        },
+        "meta": {},
+        "calls": [
+          {
+            "purpose": "execute",
+            "tokens_in": 706,
+            "tokens_out": 17,
+            "wall_s": 6.54
+          }
+        ],
+        "tokens_in": 706,
+        "tokens_out": 17,
+        "wall_s": 6.54,
+        "error": null,
+        "response_text": "X7: 512\nCHECKSUM: crc32-hex",
+        "tool_calls": null
+      },
+      "context": {
+        "grade": {
+          "critical": {
+            "x7_correct": true,
+            "checksum_correct": true,
+            "optimizer_refused": true,
+            "safe_fallback_executed": true
+          },
+          "requirements": {},
+          "forbidden_hit": [],
+          "critical_pass": true
+        },
+        "meta": {
+          "outcome": "SAFE FALLBACK (EXECUTED)",
+          "optimizer_refused": true,
+          "fallback_executed": true,
+          "silent_truncation": false,
+          "expansion_rounds": 0
+        },
+        "calls": [
+          {
+            "purpose": "fallback-full",
+            "tokens_in": 788,
+            "tokens_out": 17,
+            "wall_s": 7.04
+          }
+        ],
+        "tokens_in": 788,
+        "tokens_out": 17,
+        "wall_s": 7.04,
+        "error": null,
+        "response_text": "X7: 512\nCHECKSUM: crc32-hex",
+        "tool_calls": null,
+        "verdict": "SAFE FALLBACK"
+      },
+      "think_context": {
+        "grade": {
+          "critical": {
+            "x7_correct": true,
+            "checksum_correct": true,
+            "optimizer_refused": true,
+            "safe_fallback_executed": true
+          },
+          "requirements": {},
+          "forbidden_hit": [],
+          "critical_pass": true
+        },
+        "meta": {
+          "outcome": "SAFE FALLBACK (EXECUTED)",
+          "optimizer_refused": true,
+          "fallback_executed": true,
+          "silent_truncation": false,
+          "expansion_rounds": 0,
+          "think_prefix_chars": 6010
+        },
+        "calls": [
+          {
+            "purpose": "fallback-full",
+            "tokens_in": 2020,
+            "tokens_out": 17,
+            "wall_s": 16.98
+          }
+        ],
+        "tokens_in": 2020,
+        "tokens_out": 17,
+        "wall_s": 16.98,
+        "error": null,
+        "response_text": "X7: 512\nCHECKSUM: crc32-hex",
+        "tool_calls": null,
+        "verdict": "SAFE FALLBACK"
+      },
+      "full_cortex": {
+        "grade": {
+          "critical": {
+            "x7_correct": true,
+            "checksum_correct": true,
+            "optimizer_refused": false,
+            "safe_fallback_executed": false
+          },
+          "requirements": {},
+          "forbidden_hit": [],
+          "critical_pass": false
+        },
+        "meta": {
+          "check_ran": true,
+          "defects": 0,
+          "contract_missing": 0,
+          "abstained": true,
+          "repair_attempted": false,
+          "repair_accepted": false,
+          "router_decision": "CHECK",
+          "router_reasons": [
+            "9 deterministic output requirement(s) detected (>= threshold 3)"
+          ]
+        },
+        "calls": [
+          {
+            "purpose": "execute",
+            "tokens_in": 706,
+            "tokens_out": 17,
+            "wall_s": 1.05
+          }
+        ],
+        "tokens_in": 706,
+        "tokens_out": 17,
+        "wall_s": 1.05,
+        "error": null,
+        "response_text": "X7: 512\nCHECKSUM: crc32-hex",
+        "tool_calls": null,
+        "verdict": "MAINTAINED"
+      }
+    }
+  }
+}

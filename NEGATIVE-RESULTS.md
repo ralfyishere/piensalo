@@ -93,6 +93,53 @@ a success when correct. Inspection must be able to end without a repair.
 
 ---
 
+## NR-9 · Presence-only verification let optimized context ship wrong values
+
+In the preregistered cortex-value run (qwen2.5:7b, 12 frozen tasks,
+`evals/cortex-value/`), the Context Optimizer regressed both real
+long-context tasks: selection dropped or diluted needed facts, the model
+emitted template placeholders and superseded values, and the runtime's
+presence-only contract verified "all required lines present" — so **zero
+expansion rounds fired** and wrong answers were accepted. The same tasks
+passed with full context.
+
+**Design consequence:** presence-only verification cannot gate context
+optimization on value-exact tasks. Expansion policy needs a
+selection-integrity signal (can each required field be traced to a selected
+chunk?), not just line presence.
+
+---
+
+## NR-10 · A repair "improvement" signal disagreed with the contract — and won
+
+Same run, the already-correct-draft task: the deterministic scanner fired a
+false positive on a fully compliant draft, the repair kept every value intact
+but wrapped the output in a code fence and echoed instruction text, and the
+acceptance rule — "fewer scanner defects" — accepted it. The contract grader
+correctly scored it as delivery damage. The one-layer harm law reproduced on
+a second model family: cognition intact, delivery broken.
+
+**Design consequence:** repair acceptance must be gated on the strongest
+available deterministic check (the output contract), never on the detector's
+own defect count. A repair that increases contract violations is a rejection,
+whatever the scanner thinks.
+
+---
+
+## NR-11 · A full cognitive program harmed a competent model's exact-format work
+
+Same run: prepending the ~1.2k-token THINK program to exact-format tasks
+(three-line poem, JSON-only, anchored fields, code-only) caused five critical
+regressions — the model annotated, fenced, or reorganized output it formats
+perfectly when asked directly. On the hard planning tasks the model already
+passed direct, so the program added tokens and latency for zero lift.
+
+**Design consequence:** THINK must be gated away from tasks with exact output
+contracts on models that pass them directly; replicates NR-1/NR-8 on a second
+model family, live, at scale.
+
+---
+
 ## What qualifies for this file
 
 A negative result is publishable here when it is (a) a real measured outcome,
