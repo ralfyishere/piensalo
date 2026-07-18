@@ -25,6 +25,18 @@ recommend intervention merely because it is available (abstention-first).
 | `ambiguity_signal_hits` | regex (`maybe`, `unclear`, `figure out`, …) | recorded |
 | `has_tools` / `tool_count` / `has_images` | request fields | recorded |
 | `stream` | request field | recorded |
+| `exact_delivery_contract` | regex (`output only`, `nothing else`, `exactly N lines`, `verbatim`, …) | **suppresses THINK** |
+
+**EXACT_DELIVERY_CONTRACT.** When a task demands verbatim output shape (JSON
+only, code only, exact line counts, fixed anchors, no commentary), the full
+THINK program is suppressed and the suppression reason is recorded — attaching
+plan scaffolding to such tasks was measured to cause exact-format regressions
+on a competent local 7B (NR-11, repaired and re-verified on the frozen rerun).
+Known limitations, deliberately documented and pinned by tests: the lexical
+trigger set is not exhaustive (a novel phrasing means THINK applies as
+before), and exact-format wording *quoted inside source material* fires the
+signal (THINK is skipped — abstention, not damage). No model-assisted
+classification in this layer.
 
 Thresholds live in `RouterPolicy` (inspectable, operator-overridable):
 `context_token_threshold` (4000), `check_requirement_threshold` (3),

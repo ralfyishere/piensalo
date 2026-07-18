@@ -85,15 +85,33 @@ def test_router_check_on_deterministic_requirements():
 
 
 def test_router_full_cortex_when_all_signals_fire():
+    # NOTE: deliberately avoids exact-delivery wording ("output exactly",
+    # "nothing else", …) — that suppresses THINK by design (NR-11 guard),
+    # which test_router_exact_delivery.py covers.
     r = CortexRouter(RouterPolicy(context_token_threshold=10, check_requirement_threshold=2))
     text = (
-        "Plan step by step how to do this. "
-        "Return JSON. It must be valid. Output exactly this format. "
+        "Plan step by step how to approach this. "
+        "The result must be valid JSON following the schema format. "
         + ("filler " * 30)
     )
     d = r.decide(_req(text))
     assert d.decision == "FULL_CORTEX"
     assert 0.0 < d.confidence <= 0.95
+
+
+def test_router_exact_delivery_suppresses_think_in_combined_signals():
+    # The same request WITH an exact-delivery demand must drop the THINK
+    # component (NR-11: plan scaffolding measurably harms exact formats).
+    r = CortexRouter(RouterPolicy(context_token_threshold=10, check_requirement_threshold=2))
+    text = (
+        "Plan step by step how to approach this. "
+        "The result must be valid JSON following the schema format. "
+        "Output exactly this format and nothing else. "
+        + ("filler " * 30)
+    )
+    d = r.decide(_req(text))
+    assert d.decision == "CONTEXT_AND_CHECK"
+    assert any("EXACT_DELIVERY_CONTRACT" in reason for reason in d.reasons)
 
 
 def test_router_is_deterministic():

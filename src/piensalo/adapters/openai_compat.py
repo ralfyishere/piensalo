@@ -27,11 +27,20 @@ class OpenAICompatAdapter(ModelAdapter):
         base_url: str = "https://api.openai.com/v1",
         api_key_env: str = "OPENAI_API_KEY",
         timeout: int = 300,
+        extra_body: dict | None = None,
     ):
         super().__init__(model)
         self.base_url = base_url.rstrip("/")
         self.api_key_env = api_key_env
         self.timeout = timeout
+        # Optional generation settings merged into the request body
+        # (e.g. {"temperature": 0, "seed": 42} for deterministic evaluation
+        # runs). ``model`` and ``messages`` cannot be overridden — provenance
+        # and prompt content are not tunable knobs.
+        self.extra_body = dict(extra_body or {})
+        for reserved in ("model", "messages"):
+            if reserved in self.extra_body:
+                raise AdapterError(f"extra_body may not override {reserved!r}")
 
     def complete(self, prompt: str) -> ModelResponse:
         api_key = os.environ.get(self.api_key_env)
@@ -41,6 +50,7 @@ class OpenAICompatAdapter(ModelAdapter):
             )
         body = json.dumps(
             {
+                **self.extra_body,
                 "model": self.requested_model,
                 "messages": [{"role": "user", "content": prompt}],
             }

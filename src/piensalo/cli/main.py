@@ -228,7 +228,16 @@ def _repair_via_adapter(args, task: str, draft: str, contract: dict | None,
         return 1
     finished_at = datetime.now(timezone.utc).isoformat()
 
-    out_path.write_text(response.text, encoding="utf-8")
+    # Contract-gated acceptance (NR-10): when a contract exists, the contract
+    # — never the scanner that proposed the repair — judges whether the
+    # repaired text ships. A rejected repair preserves the original draft.
+    from piensalo.verify.acceptance import evaluate_repair
+
+    acceptance = evaluate_repair(contract, draft, response.text) if contract \
+        else None
+    final_text = acceptance["output"] if acceptance else response.text
+
+    out_path.write_text(final_text, encoding="utf-8")
     sidecar = out_path.with_name(out_path.name + ".provenance.json")
     sidecar.write_text(
         json.dumps(
@@ -240,22 +249,39 @@ def _repair_via_adapter(args, task: str, draft: str, contract: dict | None,
                 "started_at": started_at,
                 "finished_at": finished_at,
                 "selected_repair": skill,
+                "acceptance": (
+                    {"verdict": acceptance["verdict"],
+                     "accepted": acceptance["accept"],
+                     "reason": acceptance["reason"]}
+                    if acceptance else
+                    {"verdict": "UNMEASURED",
+                     "accepted": None,
+                     "reason": "no contract declared: no independent verifier "
+                               "gated this repair"}),
                 "input_sha256": {
                     "task": _sha256(task),
                     "draft": _sha256(draft),
                     "prompt": _sha256(prompt),
                 },
-                "output_sha256": _sha256(response.text),
+                "output_sha256": _sha256(final_text),
+                "model_output_sha256": _sha256(response.text),
             },
             indent=2,
         )
         + "\n",
         encoding="utf-8",
     )
-    print(f"wrote repaired draft: {out_path}")
+    if acceptance and not acceptance["accept"]:
+        print(f"REPAIR {acceptance['verdict']} — {acceptance['reason']}")
+        print(f"wrote ORIGINAL draft (repair not accepted): {out_path}")
+    else:
+        if acceptance:
+            print(f"repair ACCEPTED under the contract — {acceptance['reason']}")
+        print(f"wrote repaired draft: {out_path}")
     print(f"wrote provenance: {sidecar}")
-    # A model returning text is never "repair succeeded" — re-inspect it.
-    _print_reinspection(scanner.scan(task, response.text, contract, max_repairs=1))
+    # A model returning text is never "repair succeeded" — re-inspect what
+    # actually shipped.
+    _print_reinspection(scanner.scan(task, final_text, contract, max_repairs=1))
     return 0
 
 

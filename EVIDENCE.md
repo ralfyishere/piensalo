@@ -217,6 +217,57 @@ not yet earned controlled-run records.
 }
 ```
 
+## Cortex-value evaluation (preregistered, branch `cortex-value-eval`)
+
+**Same model alone vs same model with the cortex** (`evals/cortex-value/`)
+```json
+{
+  "mechanism": "cortex-value: THINK/CONTEXT/CHECK around one local model",
+  "claim": "on 12 frozen tasks with qwen2.5:7b (Q4_K_M, temp=0/seed=42), the shipping cortex mechanisms were tested causally against the same model alone under a preregistered gate",
+  "evidence": "preregistration frozen (tasks, deterministic graders, budgets, router policy, gate) at commit df4c819 BEFORE any outcome-producing call; 4 conditions x 12 tasks with full per-call token/latency ledgers; results committed under evals/cortex-value/results/",
+  "result": {
+    "direct": "10/12 critical-pass (near ceiling)",
+    "context_runtime": "9/12 — 1 genuine IMPROVED (contract envelope fixed direct's delivery damage), 2 REGRESSIONS (optimizer shipped wrong values under presence-only verification; NR-9), 1 correct SAFE FALLBACK",
+    "think_context": "7/12 — 5 REGRESSIONS from generic plan scaffolding on exact-format tasks (NR-11)",
+    "full_cortex": "9/12 — 0% unnecessary intervention on pass-through tasks, 1 CORRECT ABSTENTION, 2 SAFE FALLBACK, 1 CHECK-damaged draft via misaligned repair acceptance (NR-10), 1 documented grader artifact",
+    "gate": "FAIL (criteria 1 and 7 of 8) — optimize-safe NOT earned, not merged, not released"
+  },
+  "known_confounds": [
+    "one model, one machine, n=1 per cell (deterministic settings)",
+    "direct baseline near ceiling: this set measures harm and safety cleanly but cannot show large lifts",
+    "runtime arm used presence-only contracts (deployed optimizers do not know answer values in advance)"
+  ],
+  "evidence_level": "EXPERIMENTALLY_TESTED",
+  "verdict": "safety mechanisms (refusal, fallback, abstention, pass-through) worked everywhere engaged; two mechanisms measurably harmed and are root-caused (value-blind expansion policy; scanner-count repair acceptance); one deterministic mechanism genuinely improved a real failure class",
+  "next_kill_test": "wire a selection-integrity expansion signal and a contract-gated repair acceptance, rerun the same frozen tasks: both prior regressions must flip without introducing new ones"
+}
+```
+
+## Integrity repair (branch `cortex-integrity-repair`)
+
+**Repaired mechanisms, re-verified on the unchanged frozen evaluation**
+```json
+{
+  "mechanism": "selection integrity + contract-gated repair acceptance + EXACT_DELIVERY THINK suppression",
+  "claim": "the three root-caused failures from the cortex-value run (NR-9/10/11) are eliminated on the identical frozen evaluation with zero new critical regressions",
+  "evidence": "same 12 frozen tasks/graders/budgets/model/settings/gate (preregistration df4c819 untouched); original run preserved; rerun at evals/cortex-value/results/integrity-repair/: CONTEXT 9->11/12, THINK+CONTEXT 7->11/12 (tokens -72%, wall -90%), FULL CORTEX 9->10/12 (tokens -67%); all 8 prior regression cells individually flipped; frozen gate PASS 8/8 (was FAIL on criteria 1 and 7)",
+  "result": {
+    "earned_positive": "contract envelope + CHECK abstention on draft/exact-contract tasks (improved twice; correct draft preserved at zero token cost)",
+    "earned_safety_only": "integrity-gated optimization: zero wrong-value acceptances, correct fallbacks; NO net token savings demonstrated on these tasks",
+    "earned_harm_avoidance": "THINK suppressed on exact-delivery contracts; its positive case remains unproven on this model",
+    "router": "repaired router scored under the ORIGINAL frozen rules: 9/12 = 75%, a boundary pass (down from 11/12; 03/04 suppressions counted as misses)"
+  },
+  "known_confounds": [
+    "one model, one machine, n=1 per cell (deterministic settings)",
+    "near-ceiling direct baseline: proves failure elimination, not broad uplift",
+    "12-D grader artifact unchanged and documented (values correct, arm never optimized)"
+  ],
+  "evidence_level": "EXPERIMENTALLY_TESTED",
+  "verdict": "optimize-safe is EVIDENCE-ELIGIBLE for exactly the narrow earned classes above; observe remains the default; nothing merged or released without review",
+  "next_kill_test": "a task class where integrity-gated optimization shows net token savings WITH maintained correctness; and an independent rerun on a second model family"
+}
+```
+
 ## What we will not claim
 
 - **Observe mode is not a performance improvement.** It forwards traffic

@@ -1,0 +1,1738 @@
+{
+  "model": "qwen2.5:7b",
+  "settings": {
+    "temperature": 0,
+    "seed": 42
+  },
+  "mock": true,
+  "tasks": {
+    "01-simple-arith": {
+      "direct": {
+        "grade": {
+          "critical": {
+            "correct_value": false
+          },
+          "requirements": {
+            "only_number": false
+          },
+          "forbidden_hit": [],
+          "critical_pass": false
+        },
+        "meta": {},
+        "calls": [
+          {
+            "purpose": "execute",
+            "tokens_in": 11,
+            "tokens_out": 1,
+            "wall_s": 0.0
+          }
+        ],
+        "tokens_in": 11,
+        "tokens_out": 1,
+        "wall_s": 0.0,
+        "error": null,
+        "response_text": "MOCK",
+        "tool_calls": null
+      },
+      "context": {
+        "grade": {
+          "critical": {
+            "correct_value": false
+          },
+          "requirements": {
+            "only_number": false
+          },
+          "forbidden_hit": [],
+          "critical_pass": false
+        },
+        "meta": {
+          "outcome": "OPTIMIZED CONTEXT ACCEPTED",
+          "optimizer_refused": false,
+          "fallback_executed": false,
+          "silent_truncation": false,
+          "expansion_rounds": 0
+        },
+        "calls": [
+          {
+            "purpose": "optimized",
+            "tokens_in": 89,
+            "tokens_out": 1,
+            "wall_s": 0.0
+          }
+        ],
+        "tokens_in": 89,
+        "tokens_out": 1,
+        "wall_s": 0.0,
+        "error": null,
+        "response_text": "MOCK",
+        "tool_calls": null,
+        "verdict": "MAINTAINED"
+      },
+      "think_context": {
+        "grade": {
+          "critical": {
+            "correct_value": false
+          },
+          "requirements": {
+            "only_number": false
+          },
+          "forbidden_hit": [],
+          "critical_pass": false
+        },
+        "meta": {
+          "outcome": "OPTIMIZED CONTEXT ACCEPTED",
+          "optimizer_refused": false,
+          "fallback_executed": false,
+          "silent_truncation": false,
+          "expansion_rounds": 0,
+          "think_prefix_chars": 5528
+        },
+        "calls": [
+          {
+            "purpose": "optimized",
+            "tokens_in": 1473,
+            "tokens_out": 1,
+            "wall_s": 0.0
+          }
+        ],
+        "tokens_in": 1473,
+        "tokens_out": 1,
+        "wall_s": 0.0,
+        "error": null,
+        "response_text": "MOCK",
+        "tool_calls": null,
+        "verdict": "MAINTAINED"
+      },
+      "full_cortex": {
+        "grade": {
+          "critical": {
+            "correct_value": false
+          },
+          "requirements": {
+            "only_number": false
+          },
+          "forbidden_hit": [],
+          "critical_pass": false
+        },
+        "meta": {
+          "router_decision": "PASS_THROUGH",
+          "router_reasons": [
+            "input estimate 11 tokens is below trivial ceiling 200 and no intervention signal fired"
+          ]
+        },
+        "calls": [
+          {
+            "purpose": "execute",
+            "tokens_in": 11,
+            "tokens_out": 1,
+            "wall_s": 0.0
+          }
+        ],
+        "tokens_in": 11,
+        "tokens_out": 1,
+        "wall_s": 0.0,
+        "error": null,
+        "response_text": "MOCK",
+        "tool_calls": null,
+        "verdict": "MAINTAINED"
+      }
+    },
+    "02-simple-haiku": {
+      "direct": {
+        "grade": {
+          "critical": {
+            "three_lines": false,
+            "no_meta": true
+          },
+          "requirements": {},
+          "forbidden_hit": [],
+          "critical_pass": false
+        },
+        "meta": {},
+        "calls": [
+          {
+            "purpose": "execute",
+            "tokens_in": 28,
+            "tokens_out": 1,
+            "wall_s": 0.0
+          }
+        ],
+        "tokens_in": 28,
+        "tokens_out": 1,
+        "wall_s": 0.0,
+        "error": null,
+        "response_text": "MOCK",
+        "tool_calls": null
+      },
+      "context": {
+        "grade": {
+          "critical": {
+            "three_lines": false,
+            "no_meta": true
+          },
+          "requirements": {},
+          "forbidden_hit": [],
+          "critical_pass": false
+        },
+        "meta": {
+          "outcome": "OPTIMIZED CONTEXT ACCEPTED",
+          "optimizer_refused": false,
+          "fallback_executed": false,
+          "silent_truncation": false,
+          "expansion_rounds": 0
+        },
+        "calls": [
+          {
+            "purpose": "optimized",
+            "tokens_in": 106,
+            "tokens_out": 1,
+            "wall_s": 0.0
+          }
+        ],
+        "tokens_in": 106,
+        "tokens_out": 1,
+        "wall_s": 0.0,
+        "error": null,
+        "response_text": "MOCK",
+        "tool_calls": null,
+        "verdict": "MAINTAINED"
+      },
+      "think_context": {
+        "grade": {
+          "critical": {
+            "three_lines": false,
+            "no_meta": true
+          },
+          "requirements": {},
+          "forbidden_hit": [],
+          "critical_pass": false
+        },
+        "meta": {
+          "outcome": "OPTIMIZED CONTEXT ACCEPTED",
+          "optimizer_refused": false,
+          "fallback_executed": false,
+          "silent_truncation": false,
+          "expansion_rounds": 0,
+          "think_prefix_chars": 5649
+        },
+        "calls": [
+          {
+            "purpose": "optimized",
+            "tokens_in": 1521,
+            "tokens_out": 1,
+            "wall_s": 0.0
+          }
+        ],
+        "tokens_in": 1521,
+        "tokens_out": 1,
+        "wall_s": 0.0,
+        "error": null,
+        "response_text": "MOCK",
+        "tool_calls": null,
+        "verdict": "MAINTAINED"
+      },
+      "full_cortex": {
+        "grade": {
+          "critical": {
+            "three_lines": false,
+            "no_meta": true
+          },
+          "requirements": {},
+          "forbidden_hit": [],
+          "critical_pass": false
+        },
+        "meta": {
+          "router_decision": "PASS_THROUGH",
+          "router_reasons": [
+            "input estimate 29 tokens is below trivial ceiling 200 and no intervention signal fired"
+          ]
+        },
+        "calls": [
+          {
+            "purpose": "execute",
+            "tokens_in": 28,
+            "tokens_out": 1,
+            "wall_s": 0.0
+          }
+        ],
+        "tokens_in": 28,
+        "tokens_out": 1,
+        "wall_s": 0.0,
+        "error": null,
+        "response_text": "MOCK",
+        "tool_calls": null,
+        "verdict": "MAINTAINED"
+      }
+    },
+    "03-plan-schedule": {
+      "direct": {
+        "grade": {
+          "critical": {
+            "parse_ok": false,
+            "durations_ok": false,
+            "deps_ok": false,
+            "no_overlap": false,
+            "makespan_consistent": false
+          },
+          "requirements": {
+            "optimal_makespan_6": false
+          },
+          "forbidden_hit": [],
+          "critical_pass": false
+        },
+        "meta": {},
+        "calls": [
+          {
+            "purpose": "execute",
+            "tokens_in": 154,
+            "tokens_out": 1,
+            "wall_s": 0.0
+          }
+        ],
+        "tokens_in": 154,
+        "tokens_out": 1,
+        "wall_s": 0.0,
+        "error": null,
+        "response_text": "MOCK",
+        "tool_calls": null
+      },
+      "context": {
+        "grade": {
+          "critical": {
+            "parse_ok": false,
+            "durations_ok": false,
+            "deps_ok": false,
+            "no_overlap": false,
+            "makespan_consistent": false
+          },
+          "requirements": {
+            "optimal_makespan_6": false
+          },
+          "forbidden_hit": [],
+          "critical_pass": false
+        },
+        "meta": {
+          "outcome": "OPTIMIZED CONTEXT ACCEPTED",
+          "optimizer_refused": false,
+          "fallback_executed": false,
+          "silent_truncation": false,
+          "expansion_rounds": 0
+        },
+        "calls": [
+          {
+            "purpose": "optimized",
+            "tokens_in": 232,
+            "tokens_out": 1,
+            "wall_s": 0.0
+          }
+        ],
+        "tokens_in": 232,
+        "tokens_out": 1,
+        "wall_s": 0.0,
+        "error": null,
+        "response_text": "MOCK",
+        "tool_calls": null,
+        "verdict": "MAINTAINED"
+      },
+      "think_context": {
+        "grade": {
+          "critical": {
+            "parse_ok": false,
+            "durations_ok": false,
+            "deps_ok": false,
+            "no_overlap": false,
+            "makespan_consistent": false
+          },
+          "requirements": {
+            "optimal_makespan_6": false
+          },
+          "forbidden_hit": [],
+          "critical_pass": false
+        },
+        "meta": {
+          "outcome": "OPTIMIZED CONTEXT ACCEPTED",
+          "optimizer_refused": false,
+          "fallback_executed": false,
+          "silent_truncation": false,
+          "expansion_rounds": 0,
+          "think_prefix_chars": 6296
+        },
+        "calls": [
+          {
+            "purpose": "optimized",
+            "tokens_in": 1809,
+            "tokens_out": 1,
+            "wall_s": 0.0
+          }
+        ],
+        "tokens_in": 1809,
+        "tokens_out": 1,
+        "wall_s": 0.0,
+        "error": null,
+        "response_text": "MOCK",
+        "tool_calls": null,
+        "verdict": "MAINTAINED"
+      },
+      "full_cortex": {
+        "grade": {
+          "critical": {
+            "parse_ok": false,
+            "durations_ok": false,
+            "deps_ok": false,
+            "no_overlap": false,
+            "makespan_consistent": false
+          },
+          "requirements": {
+            "optimal_makespan_6": false
+          },
+          "forbidden_hit": [],
+          "critical_pass": false
+        },
+        "meta": {
+          "router_decision": "THINK",
+          "router_reasons": [
+            "3 deterministic output requirement(s) detected (>= threshold 3)",
+            "1 planning signal(s) on a short conversation (1 message(s))"
+          ],
+          "think_prefix_chars": 6296
+        },
+        "calls": [
+          {
+            "purpose": "execute",
+            "tokens_in": 1730,
+            "tokens_out": 1,
+            "wall_s": 0.0
+          }
+        ],
+        "tokens_in": 1730,
+        "tokens_out": 1,
+        "wall_s": 0.0,
+        "error": null,
+        "response_text": "MOCK",
+        "tool_calls": null,
+        "verdict": "MAINTAINED"
+      }
+    },
+    "04-plan-migration": {
+      "direct": {
+        "grade": {
+          "critical": {
+            "exact_order": false
+          },
+          "requirements": {},
+          "forbidden_hit": [],
+          "critical_pass": false
+        },
+        "meta": {},
+        "calls": [
+          {
+            "purpose": "execute",
+            "tokens_in": 134,
+            "tokens_out": 1,
+            "wall_s": 0.0
+          }
+        ],
+        "tokens_in": 134,
+        "tokens_out": 1,
+        "wall_s": 0.0,
+        "error": null,
+        "response_text": "MOCK",
+        "tool_calls": null
+      },
+      "context": {
+        "grade": {
+          "critical": {
+            "exact_order": false
+          },
+          "requirements": {},
+          "forbidden_hit": [],
+          "critical_pass": false
+        },
+        "meta": {
+          "outcome": "OPTIMIZED CONTEXT ACCEPTED",
+          "optimizer_refused": false,
+          "fallback_executed": false,
+          "silent_truncation": false,
+          "expansion_rounds": 0
+        },
+        "calls": [
+          {
+            "purpose": "optimized",
+            "tokens_in": 212,
+            "tokens_out": 1,
+            "wall_s": 0.0
+          }
+        ],
+        "tokens_in": 212,
+        "tokens_out": 1,
+        "wall_s": 0.0,
+        "error": null,
+        "response_text": "MOCK",
+        "tool_calls": null,
+        "verdict": "MAINTAINED"
+      },
+      "think_context": {
+        "grade": {
+          "critical": {
+            "exact_order": false
+          },
+          "requirements": {},
+          "forbidden_hit": [],
+          "critical_pass": false
+        },
+        "meta": {
+          "outcome": "OPTIMIZED CONTEXT ACCEPTED",
+          "optimizer_refused": false,
+          "fallback_executed": false,
+          "silent_truncation": false,
+          "expansion_rounds": 0,
+          "think_prefix_chars": 8237
+        },
+        "calls": [
+          {
+            "purpose": "optimized",
+            "tokens_in": 2274,
+            "tokens_out": 1,
+            "wall_s": 0.0
+          }
+        ],
+        "tokens_in": 2274,
+        "tokens_out": 1,
+        "wall_s": 0.0,
+        "error": null,
+        "response_text": "MOCK",
+        "tool_calls": null,
+        "verdict": "MAINTAINED"
+      },
+      "full_cortex": {
+        "grade": {
+          "critical": {
+            "exact_order": false
+          },
+          "requirements": {},
+          "forbidden_hit": [],
+          "critical_pass": false
+        },
+        "meta": {
+          "router_decision": "THINK",
+          "router_reasons": [
+            "6 deterministic output requirement(s) detected (>= threshold 3)",
+            "2 planning signal(s) on a short conversation (1 message(s))"
+          ],
+          "think_prefix_chars": 8237
+        },
+        "calls": [
+          {
+            "purpose": "execute",
+            "tokens_in": 2196,
+            "tokens_out": 1,
+            "wall_s": 0.0
+          }
+        ],
+        "tokens_in": 2196,
+        "tokens_out": 1,
+        "wall_s": 0.0,
+        "error": null,
+        "response_text": "MOCK",
+        "tool_calls": null,
+        "verdict": "MAINTAINED"
+      }
+    },
+    "05-longctx-release": {
+      "direct": {
+        "grade": {
+          "critical": {
+            "SERVICE_correct": false,
+            "PORT_correct": false,
+            "VERSION_correct": false,
+            "DATE_correct": false
+          },
+          "requirements": {},
+          "forbidden_hit": [],
+          "critical_pass": false
+        },
+        "meta": {},
+        "calls": [
+          {
+            "purpose": "execute",
+            "tokens_in": 1059,
+            "tokens_out": 1,
+            "wall_s": 0.0
+          }
+        ],
+        "tokens_in": 1059,
+        "tokens_out": 1,
+        "wall_s": 0.0,
+        "error": null,
+        "response_text": "MOCK",
+        "tool_calls": null
+      },
+      "context": {
+        "grade": {
+          "critical": {
+            "SERVICE_correct": false,
+            "PORT_correct": false,
+            "VERSION_correct": false,
+            "DATE_correct": false
+          },
+          "requirements": {},
+          "forbidden_hit": [],
+          "critical_pass": false
+        },
+        "meta": {
+          "outcome": "SAFE FALLBACK (EXECUTED)",
+          "optimizer_refused": false,
+          "fallback_executed": true,
+          "silent_truncation": false,
+          "expansion_rounds": 2
+        },
+        "calls": [
+          {
+            "purpose": "optimized",
+            "tokens_in": 896,
+            "tokens_out": 1,
+            "wall_s": 0.0
+          },
+          {
+            "purpose": "expansion-1",
+            "tokens_in": 1324,
+            "tokens_out": 1,
+            "wall_s": 0.0
+          },
+          {
+            "purpose": "expansion-2",
+            "tokens_in": 1808,
+            "tokens_out": 1,
+            "wall_s": 0.0
+          },
+          {
+            "purpose": "fallback-full",
+            "tokens_in": 1164,
+            "tokens_out": 1,
+            "wall_s": 0.0
+          }
+        ],
+        "tokens_in": 5192,
+        "tokens_out": 4,
+        "wall_s": 0.0,
+        "error": null,
+        "response_text": "MOCK",
+        "tool_calls": null,
+        "verdict": "MAINTAINED"
+      },
+      "think_context": {
+        "grade": {
+          "critical": {
+            "SERVICE_correct": false,
+            "PORT_correct": false,
+            "VERSION_correct": false,
+            "DATE_correct": false
+          },
+          "requirements": {},
+          "forbidden_hit": [],
+          "critical_pass": false
+        },
+        "meta": {
+          "outcome": "SAFE FALLBACK (EXECUTED)",
+          "optimizer_refused": true,
+          "fallback_executed": true,
+          "silent_truncation": false,
+          "expansion_rounds": 0,
+          "think_prefix_chars": 5865
+        },
+        "calls": [
+          {
+            "purpose": "fallback-full",
+            "tokens_in": 2632,
+            "tokens_out": 1,
+            "wall_s": 0.0
+          }
+        ],
+        "tokens_in": 2632,
+        "tokens_out": 1,
+        "wall_s": 0.0,
+        "error": null,
+        "response_text": "MOCK",
+        "tool_calls": null,
+        "verdict": "MAINTAINED"
+      },
+      "full_cortex": {
+        "grade": {
+          "critical": {
+            "SERVICE_correct": false,
+            "PORT_correct": false,
+            "VERSION_correct": false,
+            "DATE_correct": false
+          },
+          "requirements": {},
+          "forbidden_hit": [],
+          "critical_pass": false
+        },
+        "meta": {
+          "outcome": "SAFE FALLBACK (EXECUTED)",
+          "optimizer_refused": true,
+          "fallback_executed": true,
+          "silent_truncation": false,
+          "expansion_rounds": 0,
+          "router_decision": "THINK_AND_CONTEXT",
+          "router_reasons": [
+            "input estimate 1059 tokens >= context threshold 800",
+            "1 planning signal(s) on a short conversation (1 message(s))"
+          ],
+          "think_prefix_chars": 5865
+        },
+        "calls": [
+          {
+            "purpose": "fallback-full",
+            "tokens_in": 2632,
+            "tokens_out": 1,
+            "wall_s": 0.0
+          }
+        ],
+        "tokens_in": 2632,
+        "tokens_out": 1,
+        "wall_s": 0.0,
+        "error": null,
+        "response_text": "MOCK",
+        "tool_calls": null,
+        "verdict": "MAINTAINED"
+      }
+    },
+    "06-longctx-decisions": {
+      "direct": {
+        "grade": {
+          "critical": {
+            "DB_correct": false,
+            "RETENTION_correct": false,
+            "REGION_correct": false
+          },
+          "requirements": {},
+          "forbidden_hit": [],
+          "critical_pass": false
+        },
+        "meta": {},
+        "calls": [
+          {
+            "purpose": "execute",
+            "tokens_in": 921,
+            "tokens_out": 1,
+            "wall_s": 0.0
+          }
+        ],
+        "tokens_in": 921,
+        "tokens_out": 1,
+        "wall_s": 0.0,
+        "error": null,
+        "response_text": "MOCK",
+        "tool_calls": null
+      },
+      "context": {
+        "grade": {
+          "critical": {
+            "DB_correct": false,
+            "RETENTION_correct": false,
+            "REGION_correct": false
+          },
+          "requirements": {},
+          "forbidden_hit": [],
+          "critical_pass": false
+        },
+        "meta": {
+          "outcome": "SAFE FALLBACK (EXECUTED)",
+          "optimizer_refused": false,
+          "fallback_executed": true,
+          "silent_truncation": false,
+          "expansion_rounds": 2
+        },
+        "calls": [
+          {
+            "purpose": "optimized",
+            "tokens_in": 867,
+            "tokens_out": 1,
+            "wall_s": 0.0
+          },
+          {
+            "purpose": "expansion-1",
+            "tokens_in": 1400,
+            "tokens_out": 1,
+            "wall_s": 0.0
+          },
+          {
+            "purpose": "expansion-2",
+            "tokens_in": 1669,
+            "tokens_out": 1,
+            "wall_s": 0.0
+          },
+          {
+            "purpose": "fallback-full",
+            "tokens_in": 1014,
+            "tokens_out": 1,
+            "wall_s": 0.0
+          }
+        ],
+        "tokens_in": 4950,
+        "tokens_out": 4,
+        "wall_s": 0.0,
+        "error": null,
+        "response_text": "MOCK",
+        "tool_calls": null,
+        "verdict": "MAINTAINED"
+      },
+      "think_context": {
+        "grade": {
+          "critical": {
+            "DB_correct": false,
+            "RETENTION_correct": false,
+            "REGION_correct": false
+          },
+          "requirements": {},
+          "forbidden_hit": [],
+          "critical_pass": false
+        },
+        "meta": {
+          "outcome": "SAFE FALLBACK (EXECUTED)",
+          "optimizer_refused": true,
+          "fallback_executed": true,
+          "silent_truncation": false,
+          "expansion_rounds": 0,
+          "think_prefix_chars": 5853
+        },
+        "calls": [
+          {
+            "purpose": "fallback-full",
+            "tokens_in": 2479,
+            "tokens_out": 1,
+            "wall_s": 0.0
+          }
+        ],
+        "tokens_in": 2479,
+        "tokens_out": 1,
+        "wall_s": 0.0,
+        "error": null,
+        "response_text": "MOCK",
+        "tool_calls": null,
+        "verdict": "MAINTAINED"
+      },
+      "full_cortex": {
+        "grade": {
+          "critical": {
+            "DB_correct": false,
+            "RETENTION_correct": false,
+            "REGION_correct": false
+          },
+          "requirements": {},
+          "forbidden_hit": [],
+          "critical_pass": false
+        },
+        "meta": {
+          "outcome": "SAFE FALLBACK (EXECUTED)",
+          "optimizer_refused": true,
+          "fallback_executed": true,
+          "silent_truncation": false,
+          "expansion_rounds": 0,
+          "router_decision": "THINK_AND_CONTEXT",
+          "router_reasons": [
+            "input estimate 922 tokens >= context threshold 800",
+            "1 planning signal(s) on a short conversation (1 message(s))"
+          ],
+          "think_prefix_chars": 5853
+        },
+        "calls": [
+          {
+            "purpose": "fallback-full",
+            "tokens_in": 2479,
+            "tokens_out": 1,
+            "wall_s": 0.0
+          }
+        ],
+        "tokens_in": 2479,
+        "tokens_out": 1,
+        "wall_s": 0.0,
+        "error": null,
+        "response_text": "MOCK",
+        "tool_calls": null,
+        "verdict": "MAINTAINED"
+      }
+    },
+    "07-exact-json": {
+      "direct": {
+        "grade": {
+          "critical": {
+            "parses_exact_keys": false,
+            "price_number": false,
+            "stock_bool": false,
+            "tags_exact": false,
+            "name_correct": false,
+            "only_json": false
+          },
+          "requirements": {},
+          "forbidden_hit": [],
+          "critical_pass": false
+        },
+        "meta": {},
+        "calls": [
+          {
+            "purpose": "execute",
+            "tokens_in": 112,
+            "tokens_out": 1,
+            "wall_s": 0.0
+          }
+        ],
+        "tokens_in": 112,
+        "tokens_out": 1,
+        "wall_s": 0.0,
+        "error": null,
+        "response_text": "MOCK",
+        "tool_calls": null
+      },
+      "context": {
+        "grade": {
+          "critical": {
+            "parses_exact_keys": false,
+            "price_number": false,
+            "stock_bool": false,
+            "tags_exact": false,
+            "name_correct": false,
+            "only_json": false
+          },
+          "requirements": {},
+          "forbidden_hit": [],
+          "critical_pass": false
+        },
+        "meta": {
+          "outcome": "OPTIMIZED CONTEXT ACCEPTED",
+          "optimizer_refused": false,
+          "fallback_executed": false,
+          "silent_truncation": false,
+          "expansion_rounds": 0
+        },
+        "calls": [
+          {
+            "purpose": "optimized",
+            "tokens_in": 190,
+            "tokens_out": 1,
+            "wall_s": 0.0
+          }
+        ],
+        "tokens_in": 190,
+        "tokens_out": 1,
+        "wall_s": 0.0,
+        "error": null,
+        "response_text": "MOCK",
+        "tool_calls": null,
+        "verdict": "MAINTAINED"
+      },
+      "think_context": {
+        "grade": {
+          "critical": {
+            "parses_exact_keys": false,
+            "price_number": false,
+            "stock_bool": false,
+            "tags_exact": false,
+            "name_correct": false,
+            "only_json": false
+          },
+          "requirements": {},
+          "forbidden_hit": [],
+          "critical_pass": false
+        },
+        "meta": {
+          "outcome": "OPTIMIZED CONTEXT ACCEPTED",
+          "optimizer_refused": false,
+          "fallback_executed": false,
+          "silent_truncation": false,
+          "expansion_rounds": 0,
+          "think_prefix_chars": 8081
+        },
+        "calls": [
+          {
+            "purpose": "optimized",
+            "tokens_in": 2213,
+            "tokens_out": 1,
+            "wall_s": 0.0
+          }
+        ],
+        "tokens_in": 2213,
+        "tokens_out": 1,
+        "wall_s": 0.0,
+        "error": null,
+        "response_text": "MOCK",
+        "tool_calls": null,
+        "verdict": "MAINTAINED"
+      },
+      "full_cortex": {
+        "grade": {
+          "critical": {
+            "parses_exact_keys": false,
+            "price_number": false,
+            "stock_bool": false,
+            "tags_exact": false,
+            "name_correct": false,
+            "only_json": false
+          },
+          "requirements": {},
+          "forbidden_hit": [],
+          "critical_pass": false
+        },
+        "meta": {
+          "check_ran": true,
+          "defects": 0,
+          "contract_missing": 0,
+          "abstained": true,
+          "repair_attempted": false,
+          "repair_accepted": false,
+          "router_decision": "CHECK",
+          "router_reasons": [
+            "8 deterministic output requirement(s) detected (>= threshold 3)"
+          ]
+        },
+        "calls": [
+          {
+            "purpose": "execute",
+            "tokens_in": 112,
+            "tokens_out": 1,
+            "wall_s": 0.0
+          }
+        ],
+        "tokens_in": 112,
+        "tokens_out": 1,
+        "wall_s": 0.0,
+        "error": null,
+        "response_text": "MOCK",
+        "tool_calls": null,
+        "verdict": "MAINTAINED"
+      }
+    },
+    "08-exact-fields": {
+      "direct": {
+        "grade": {
+          "critical": {
+            "four_lines_in_order": false,
+            "risk_high": false,
+            "confidence_int": false
+          },
+          "requirements": {
+            "summary_25_words": false,
+            "action_12_words": false
+          },
+          "forbidden_hit": [],
+          "critical_pass": false
+        },
+        "meta": {},
+        "calls": [
+          {
+            "purpose": "execute",
+            "tokens_in": 135,
+            "tokens_out": 1,
+            "wall_s": 0.0
+          }
+        ],
+        "tokens_in": 135,
+        "tokens_out": 1,
+        "wall_s": 0.0,
+        "error": null,
+        "response_text": "MOCK",
+        "tool_calls": null
+      },
+      "context": {
+        "grade": {
+          "critical": {
+            "four_lines_in_order": false,
+            "risk_high": false,
+            "confidence_int": false
+          },
+          "requirements": {
+            "summary_25_words": false,
+            "action_12_words": false
+          },
+          "forbidden_hit": [],
+          "critical_pass": false
+        },
+        "meta": {
+          "outcome": "SAFE FALLBACK (RECOMMENDED)",
+          "optimizer_refused": false,
+          "fallback_executed": false,
+          "silent_truncation": false,
+          "expansion_rounds": 0
+        },
+        "calls": [
+          {
+            "purpose": "optimized",
+            "tokens_in": 320,
+            "tokens_out": 1,
+            "wall_s": 0.0
+          }
+        ],
+        "tokens_in": 320,
+        "tokens_out": 1,
+        "wall_s": 0.0,
+        "error": null,
+        "response_text": "",
+        "tool_calls": null,
+        "verdict": "MAINTAINED"
+      },
+      "think_context": {
+        "grade": {
+          "critical": {
+            "four_lines_in_order": false,
+            "risk_high": false,
+            "confidence_int": false
+          },
+          "requirements": {
+            "summary_25_words": false,
+            "action_12_words": false
+          },
+          "forbidden_hit": [],
+          "critical_pass": false
+        },
+        "meta": {
+          "outcome": "SAFE FALLBACK (RECOMMENDED)",
+          "optimizer_refused": false,
+          "fallback_executed": false,
+          "silent_truncation": false,
+          "expansion_rounds": 0,
+          "think_prefix_chars": 6914
+        },
+        "calls": [
+          {
+            "purpose": "optimized",
+            "tokens_in": 2051,
+            "tokens_out": 1,
+            "wall_s": 0.0
+          }
+        ],
+        "tokens_in": 2051,
+        "tokens_out": 1,
+        "wall_s": 0.0,
+        "error": null,
+        "response_text": "",
+        "tool_calls": null,
+        "verdict": "MAINTAINED"
+      },
+      "full_cortex": {
+        "grade": {
+          "critical": {
+            "four_lines_in_order": false,
+            "risk_high": false,
+            "confidence_int": false
+          },
+          "requirements": {
+            "summary_25_words": false,
+            "action_12_words": false
+          },
+          "forbidden_hit": [],
+          "critical_pass": false
+        },
+        "meta": {
+          "check_ran": true,
+          "defects": 1,
+          "contract_missing": 4,
+          "abstained": false,
+          "repair_attempted": true,
+          "repair_accepted": false,
+          "repair_skill": "final-answer-completeness",
+          "router_decision": "CHECK",
+          "router_reasons": [
+            "4 deterministic output requirement(s) detected (>= threshold 3)"
+          ]
+        },
+        "calls": [
+          {
+            "purpose": "execute",
+            "tokens_in": 135,
+            "tokens_out": 1,
+            "wall_s": 0.0
+          },
+          {
+            "purpose": "repair",
+            "tokens_in": 901,
+            "tokens_out": 1,
+            "wall_s": 0.0
+          }
+        ],
+        "tokens_in": 1036,
+        "tokens_out": 2,
+        "wall_s": 0.0,
+        "error": null,
+        "response_text": "MOCK",
+        "tool_calls": null,
+        "verdict": "MAINTAINED"
+      }
+    },
+    "09-code-function": {
+      "direct": {
+        "grade": {
+          "critical": {
+            "value_cases": false,
+            "error_cases": false,
+            "single_block_function_only": false
+          },
+          "requirements": {},
+          "forbidden_hit": [],
+          "critical_pass": false
+        },
+        "meta": {},
+        "calls": [
+          {
+            "purpose": "execute",
+            "tokens_in": 112,
+            "tokens_out": 1,
+            "wall_s": 0.0
+          }
+        ],
+        "tokens_in": 112,
+        "tokens_out": 1,
+        "wall_s": 0.0,
+        "error": null,
+        "response_text": "MOCK",
+        "tool_calls": null
+      },
+      "context": {
+        "grade": {
+          "critical": {
+            "value_cases": false,
+            "error_cases": false,
+            "single_block_function_only": false
+          },
+          "requirements": {},
+          "forbidden_hit": [],
+          "critical_pass": false
+        },
+        "meta": {
+          "outcome": "OPTIMIZED CONTEXT ACCEPTED",
+          "optimizer_refused": false,
+          "fallback_executed": false,
+          "silent_truncation": false,
+          "expansion_rounds": 0
+        },
+        "calls": [
+          {
+            "purpose": "optimized",
+            "tokens_in": 190,
+            "tokens_out": 1,
+            "wall_s": 0.0
+          }
+        ],
+        "tokens_in": 190,
+        "tokens_out": 1,
+        "wall_s": 0.0,
+        "error": null,
+        "response_text": "MOCK",
+        "tool_calls": null,
+        "verdict": "MAINTAINED"
+      },
+      "think_context": {
+        "grade": {
+          "critical": {
+            "value_cases": false,
+            "error_cases": false,
+            "single_block_function_only": false
+          },
+          "requirements": {},
+          "forbidden_hit": [],
+          "critical_pass": false
+        },
+        "meta": {
+          "outcome": "OPTIMIZED CONTEXT ACCEPTED",
+          "optimizer_refused": false,
+          "fallback_executed": false,
+          "silent_truncation": false,
+          "expansion_rounds": 0,
+          "think_prefix_chars": 7979
+        },
+        "calls": [
+          {
+            "purpose": "optimized",
+            "tokens_in": 2188,
+            "tokens_out": 1,
+            "wall_s": 0.0
+          }
+        ],
+        "tokens_in": 2188,
+        "tokens_out": 1,
+        "wall_s": 0.0,
+        "error": null,
+        "response_text": "MOCK",
+        "tool_calls": null,
+        "verdict": "MAINTAINED"
+      },
+      "full_cortex": {
+        "grade": {
+          "critical": {
+            "value_cases": false,
+            "error_cases": false,
+            "single_block_function_only": false
+          },
+          "requirements": {},
+          "forbidden_hit": [],
+          "critical_pass": false
+        },
+        "meta": {
+          "check_ran": true,
+          "defects": 1,
+          "contract_missing": 0,
+          "abstained": false,
+          "repair_attempted": true,
+          "repair_accepted": false,
+          "repair_skill": "boundary-case-check",
+          "router_decision": "CHECK",
+          "router_reasons": [
+            "4 deterministic output requirement(s) detected (>= threshold 3)"
+          ]
+        },
+        "calls": [
+          {
+            "purpose": "execute",
+            "tokens_in": 112,
+            "tokens_out": 1,
+            "wall_s": 0.0
+          },
+          {
+            "purpose": "repair",
+            "tokens_in": 789,
+            "tokens_out": 1,
+            "wall_s": 0.0
+          }
+        ],
+        "tokens_in": 901,
+        "tokens_out": 2,
+        "wall_s": 0.0,
+        "error": null,
+        "response_text": "MOCK",
+        "tool_calls": null,
+        "verdict": "MAINTAINED"
+      }
+    },
+    "10-tool-use": {
+      "direct": {
+        "grade": {
+          "critical": {
+            "one_call": true,
+            "correct_tool": true,
+            "city_madrid": true
+          },
+          "requirements": {},
+          "forbidden_hit": [],
+          "critical_pass": true
+        },
+        "meta": {},
+        "calls": [
+          {
+            "purpose": "execute",
+            "tokens_in": 37,
+            "tokens_out": 1,
+            "wall_s": 0.0
+          }
+        ],
+        "tokens_in": 37,
+        "tokens_out": 1,
+        "wall_s": 0.0,
+        "error": null,
+        "response_text": "",
+        "tool_calls": [
+          {
+            "name": "get_weather",
+            "arguments": "{\"city\":\"Madrid\"}"
+          }
+        ]
+      },
+      "context": {
+        "grade": {
+          "critical": {
+            "one_call": true,
+            "correct_tool": true,
+            "city_madrid": true
+          },
+          "requirements": {},
+          "forbidden_hit": [],
+          "critical_pass": true
+        },
+        "meta": {
+          "note": "tool task: runtime cannot carry tools; direct tool call"
+        },
+        "calls": [
+          {
+            "purpose": "execute",
+            "tokens_in": 37,
+            "tokens_out": 1,
+            "wall_s": 0.0
+          }
+        ],
+        "tokens_in": 37,
+        "tokens_out": 1,
+        "wall_s": 0.0,
+        "error": null,
+        "response_text": "",
+        "tool_calls": [
+          {
+            "name": "get_weather",
+            "arguments": "{\"city\":\"Madrid\"}"
+          }
+        ],
+        "verdict": "MAINTAINED"
+      },
+      "think_context": {
+        "grade": {
+          "critical": {
+            "one_call": true,
+            "correct_tool": true,
+            "city_madrid": true
+          },
+          "requirements": {},
+          "forbidden_hit": [],
+          "critical_pass": true
+        },
+        "meta": {
+          "think_prefix_chars": 5723
+        },
+        "calls": [
+          {
+            "purpose": "execute",
+            "tokens_in": 1470,
+            "tokens_out": 1,
+            "wall_s": 0.0
+          }
+        ],
+        "tokens_in": 1470,
+        "tokens_out": 1,
+        "wall_s": 0.0,
+        "error": null,
+        "response_text": "",
+        "tool_calls": [
+          {
+            "name": "get_weather",
+            "arguments": "{\"city\":\"Madrid\"}"
+          }
+        ],
+        "verdict": "MAINTAINED"
+      },
+      "full_cortex": {
+        "grade": {
+          "critical": {
+            "one_call": true,
+            "correct_tool": true,
+            "city_madrid": true
+          },
+          "requirements": {},
+          "forbidden_hit": [],
+          "critical_pass": true
+        },
+        "meta": {
+          "router_decision": "PASS_THROUGH",
+          "router_reasons": [
+            "input estimate 38 tokens is below trivial ceiling 200 and no intervention signal fired"
+          ]
+        },
+        "calls": [
+          {
+            "purpose": "execute",
+            "tokens_in": 37,
+            "tokens_out": 1,
+            "wall_s": 0.0
+          }
+        ],
+        "tokens_in": 37,
+        "tokens_out": 1,
+        "wall_s": 0.0,
+        "error": null,
+        "response_text": "",
+        "tool_calls": [
+          {
+            "name": "get_weather",
+            "arguments": "{\"city\":\"Madrid\"}"
+          }
+        ],
+        "verdict": "MAINTAINED"
+      }
+    },
+    "11-already-correct": {
+      "direct": {
+        "grade": {
+          "critical": {
+            "STATUS_intact": false,
+            "OWNER_intact": false,
+            "DEADLINE_intact": false,
+            "TICKET_intact": false,
+            "no_extra_lines": false
+          },
+          "requirements": {},
+          "forbidden_hit": [],
+          "critical_pass": false
+        },
+        "meta": {},
+        "calls": [
+          {
+            "purpose": "execute",
+            "tokens_in": 96,
+            "tokens_out": 1,
+            "wall_s": 0.0
+          }
+        ],
+        "tokens_in": 96,
+        "tokens_out": 1,
+        "wall_s": 0.0,
+        "error": null,
+        "response_text": "MOCK",
+        "tool_calls": null
+      },
+      "context": {
+        "grade": {
+          "critical": {
+            "STATUS_intact": false,
+            "OWNER_intact": false,
+            "DEADLINE_intact": false,
+            "TICKET_intact": false,
+            "no_extra_lines": false
+          },
+          "requirements": {},
+          "forbidden_hit": [],
+          "critical_pass": false
+        },
+        "meta": {
+          "outcome": "SAFE FALLBACK (RECOMMENDED)",
+          "optimizer_refused": false,
+          "fallback_executed": false,
+          "silent_truncation": false,
+          "expansion_rounds": 0
+        },
+        "calls": [
+          {
+            "purpose": "optimized",
+            "tokens_in": 279,
+            "tokens_out": 1,
+            "wall_s": 0.0
+          }
+        ],
+        "tokens_in": 279,
+        "tokens_out": 1,
+        "wall_s": 0.0,
+        "error": null,
+        "response_text": "",
+        "tool_calls": null,
+        "verdict": "MAINTAINED"
+      },
+      "think_context": {
+        "grade": {
+          "critical": {
+            "STATUS_intact": false,
+            "OWNER_intact": false,
+            "DEADLINE_intact": false,
+            "TICKET_intact": false,
+            "no_extra_lines": false
+          },
+          "requirements": {},
+          "forbidden_hit": [],
+          "critical_pass": false
+        },
+        "meta": {
+          "outcome": "SAFE FALLBACK (RECOMMENDED)",
+          "optimizer_refused": false,
+          "fallback_executed": false,
+          "silent_truncation": false,
+          "expansion_rounds": 0,
+          "think_prefix_chars": 5944
+        },
+        "calls": [
+          {
+            "purpose": "optimized",
+            "tokens_in": 1768,
+            "tokens_out": 1,
+            "wall_s": 0.0
+          }
+        ],
+        "tokens_in": 1768,
+        "tokens_out": 1,
+        "wall_s": 0.0,
+        "error": null,
+        "response_text": "",
+        "tool_calls": null,
+        "verdict": "MAINTAINED"
+      },
+      "full_cortex": {
+        "grade": {
+          "critical": {
+            "STATUS_intact": true,
+            "OWNER_intact": true,
+            "DEADLINE_intact": true,
+            "TICKET_intact": true,
+            "no_extra_lines": true
+          },
+          "requirements": {},
+          "forbidden_hit": [],
+          "critical_pass": true
+        },
+        "meta": {
+          "check_ran": true,
+          "defects": 1,
+          "contract_missing": 0,
+          "abstained": false,
+          "repair_attempted": true,
+          "repair_accepted": false,
+          "repair_skill": "disqualifier-scan",
+          "router_decision": "CHECK (draft-first policy)"
+        },
+        "calls": [
+          {
+            "purpose": "repair",
+            "tokens_in": 748,
+            "tokens_out": 1,
+            "wall_s": 0.0
+          }
+        ],
+        "tokens_in": 748,
+        "tokens_out": 1,
+        "wall_s": 0.0,
+        "error": null,
+        "response_text": "STATUS: APPROVED\nOWNER: platform-security\nDEADLINE: 2026-08-01\nTICKET: SEC-4211",
+        "tool_calls": null,
+        "verdict": "IMPROVED"
+      }
+    },
+    "12-unsafe-budget": {
+      "direct": {
+        "grade": {
+          "critical": {
+            "x7_correct": false,
+            "checksum_correct": false
+          },
+          "requirements": {},
+          "forbidden_hit": [],
+          "critical_pass": false
+        },
+        "meta": {},
+        "calls": [
+          {
+            "purpose": "execute",
+            "tokens_in": 721,
+            "tokens_out": 1,
+            "wall_s": 0.0
+          }
+        ],
+        "tokens_in": 721,
+        "tokens_out": 1,
+        "wall_s": 0.0,
+        "error": null,
+        "response_text": "MOCK",
+        "tool_calls": null
+      },
+      "context": {
+        "grade": {
+          "critical": {
+            "x7_correct": false,
+            "checksum_correct": false,
+            "optimizer_refused": true,
+            "safe_fallback_executed": true
+          },
+          "requirements": {},
+          "forbidden_hit": [],
+          "critical_pass": false
+        },
+        "meta": {
+          "outcome": "SAFE FALLBACK (EXECUTED)",
+          "optimizer_refused": true,
+          "fallback_executed": true,
+          "silent_truncation": false,
+          "expansion_rounds": 0
+        },
+        "calls": [
+          {
+            "purpose": "fallback-full",
+            "tokens_in": 800,
+            "tokens_out": 1,
+            "wall_s": 0.0
+          }
+        ],
+        "tokens_in": 800,
+        "tokens_out": 1,
+        "wall_s": 0.0,
+        "error": null,
+        "response_text": "MOCK",
+        "tool_calls": null,
+        "verdict": "MAINTAINED"
+      },
+      "think_context": {
+        "grade": {
+          "critical": {
+            "x7_correct": false,
+            "checksum_correct": false,
+            "optimizer_refused": true,
+            "safe_fallback_executed": true
+          },
+          "requirements": {},
+          "forbidden_hit": [],
+          "critical_pass": false
+        },
+        "meta": {
+          "outcome": "SAFE FALLBACK (EXECUTED)",
+          "optimizer_refused": true,
+          "fallback_executed": true,
+          "silent_truncation": false,
+          "expansion_rounds": 0,
+          "think_prefix_chars": 6010
+        },
+        "calls": [
+          {
+            "purpose": "fallback-full",
+            "tokens_in": 2305,
+            "tokens_out": 1,
+            "wall_s": 0.0
+          }
+        ],
+        "tokens_in": 2305,
+        "tokens_out": 1,
+        "wall_s": 0.0,
+        "error": null,
+        "response_text": "MOCK",
+        "tool_calls": null,
+        "verdict": "MAINTAINED"
+      },
+      "full_cortex": {
+        "grade": {
+          "critical": {
+            "x7_correct": false,
+            "checksum_correct": false,
+            "optimizer_refused": false,
+            "safe_fallback_executed": false
+          },
+          "requirements": {},
+          "forbidden_hit": [],
+          "critical_pass": false
+        },
+        "meta": {
+          "check_ran": true,
+          "defects": 1,
+          "contract_missing": 2,
+          "abstained": false,
+          "repair_attempted": true,
+          "repair_accepted": false,
+          "repair_skill": "final-answer-completeness",
+          "router_decision": "CHECK",
+          "router_reasons": [
+            "9 deterministic output requirement(s) detected (>= threshold 3)"
+          ]
+        },
+        "calls": [
+          {
+            "purpose": "execute",
+            "tokens_in": 721,
+            "tokens_out": 1,
+            "wall_s": 0.0
+          },
+          {
+            "purpose": "repair",
+            "tokens_in": 801,
+            "tokens_out": 1,
+            "wall_s": 0.0
+          }
+        ],
+        "tokens_in": 1522,
+        "tokens_out": 2,
+        "wall_s": 0.0,
+        "error": null,
+        "response_text": "MOCK",
+        "tool_calls": null,
+        "verdict": "MAINTAINED"
+      }
+    }
+  }
+}
