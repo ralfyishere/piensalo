@@ -41,9 +41,10 @@ from piensalo.compiler.program import compile_program  # noqa: E402
 from piensalo.context.ingest import load_context_text  # noqa: E402
 from piensalo.context.runtime import run_optimized  # noqa: E402
 from piensalo.gateway.protocol import ContentBlock, Message, NormalizedRequest  # noqa: E402
-from piensalo.gateway.router import CortexRouter, RouterPolicy  # noqa: E402
+from piensalo.gateway.router import CortexRouter, RouterPolicy, extract_features  # noqa: E402
 from piensalo.inspect import scanner  # noqa: E402
 from piensalo.verify import contract as contract_mod  # noqa: E402
+from piensalo.verify.acceptance import evaluate_repair  # noqa: E402
 
 MODEL = "qwen2.5:7b"
 BASE = "http://127.0.0.1:11434/v1"
@@ -172,21 +173,27 @@ class Runner:
         return {"text": rr.response_text or "", "tool_calls": None, "meta": meta}
 
     def check_repair(self, t: dict, text: str) -> dict:
-        """CHECK: inspect -> at most one targeted repair on demonstrated
-        failure -> accept only a deterministic improvement."""
+        """CHECK (repaired, NR-10 guard): the contract — never the detector —
+        judges. Original fully passing -> CORRECT_ABSTENTION with zero repair
+        calls. No contract -> no independent verifier -> no repair call."""
         icontract = self.internal_contract(t)
-        cres = contract_mod.check(icontract, text) if icontract else None
-        # Instructions-only task for the scanner (the shipping CLI contract);
-        # embedding the draft inside the "task" distorts deliverable detection.
-        sres = scanner.scan(t["task_text"], text,
-                            cres or icontract, max_repairs=1)
-        missing = len(cres["missing"]) if cres else 0
-        meta = {"check_ran": True, "defects": len(sres.get("defects_detected", [])),
-                "contract_missing": missing, "abstained": False,
+        meta = {"check_ran": True, "abstained": False,
                 "repair_attempted": False, "repair_accepted": False}
-        if sres["no_repair_needed"] and missing == 0:
-            meta["abstained"] = True  # NO REPAIR NEEDED is a success verdict
+        if icontract is None:
+            # A detector must never be the sole judge of its own repair.
+            meta["abstained"] = True
+            meta["acceptance_verdict"] = "UNMEASURED (no independent verifier)"
             return {"text": text, "meta": meta}
+        probe = evaluate_repair(icontract, text, text)
+        if probe["verdict"] == "CORRECT_ABSTENTION":
+            meta["abstained"] = True
+            meta["acceptance_verdict"] = "CORRECT_ABSTENTION"
+            return {"text": text, "meta": meta}
+        # Demonstrated contract failure: let the detector PROPOSE a repair.
+        cres = contract_mod.check(icontract, text)
+        sres = scanner.scan(t["task_text"], text, cres, max_repairs=1)
+        meta["defects"] = len(sres.get("defects_detected", []))
+        meta["contract_missing"] = len(cres["missing"])
         if not sres["selected_repairs"]:
             return {"text": text, "meta": meta}
         skill = sres["selected_repairs"][0]
@@ -194,17 +201,11 @@ class Runner:
         meta["repair_attempted"] = True
         meta["repair_skill"] = skill
         repaired = self.call_text(prompt, "repair")
-        r_cres = contract_mod.check(icontract, repaired) if icontract else None
-        r_missing = len(r_cres["missing"]) if r_cres else 0
-        r_sres = scanner.scan(t["task_text"], repaired, r_cres or icontract, 1)
-        better = (r_missing < missing) or (
-            r_missing == missing
-            and len(r_sres.get("defects_detected", [])) < len(
-                sres.get("defects_detected", [])))
-        if better:
-            meta["repair_accepted"] = True
-            return {"text": repaired, "meta": meta}
-        return {"text": text, "meta": meta}  # never accept a non-improvement
+        verdict = evaluate_repair(icontract, text, repaired)
+        meta["repair_accepted"] = verdict["accept"]
+        meta["acceptance_verdict"] = verdict["verdict"]
+        meta["acceptance_reason"] = verdict["reason"]
+        return {"text": verdict["output"], "meta": meta}
 
     # ---------------------------------------------------------- conditions
 
@@ -219,6 +220,16 @@ class Runner:
         return self.run_runtime(t, t["task_text"])
 
     def cond_think_context(self, t: dict) -> dict:
+        # NR-11 guard: THINK abstains on exact-delivery-contract tasks. The
+        # signal is computed on the TASK text (the delivery contract lives
+        # there, not in the context).
+        f = extract_features(NormalizedRequest(model=MODEL, messages=[
+            Message(role="user",
+                    content=[ContentBlock(type="text", text=t["task_text"])])]))
+        if f["exact_delivery_contract"]:
+            out = self.run_runtime(t, t["task_text"])
+            out["meta"]["think_abstained"] = "EXACT_DELIVERY_CONTRACT"
+            return out
         plan = self.think_plan(t)
         if t.get("tools"):
             content, tcs = self.call_tools(
@@ -306,6 +317,8 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--mock", action="store_true")
     ap.add_argument("--only", default=None, help="comma list of task-id prefixes")
+    ap.add_argument("--outdir", default="results",
+                    help="results subdirectory (e.g. results/integrity-repair)")
     args = ap.parse_args()
     os.environ.setdefault("OPENAI_API_KEY", "ollama")
 
@@ -355,9 +368,9 @@ def main():
             cell["verdict"] = verdict(cell["grade"], dgrade, cell["meta"])
             print(f"  -> {cname}: {cell['verdict']}", flush=True)
 
-    outpath = Path(__file__).parent / "results" / (
+    outpath = Path(__file__).parent / args.outdir / (
         "run-mock.json" if args.mock else "run.json")
-    outpath.parent.mkdir(exist_ok=True)
+    outpath.parent.mkdir(parents=True, exist_ok=True)
     outpath.write_text(json.dumps(results, indent=2) + "\n")
     print(f"\nwrote {outpath}")
 

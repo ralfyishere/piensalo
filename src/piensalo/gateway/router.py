@@ -52,6 +52,19 @@ _AMBIGUITY_SIGNALS = re.compile(
     r"or something|whatever works|etc\.?)\b",
     re.IGNORECASE,
 )
+# EXACT_DELIVERY_CONTRACT (NR-11 guard): the task demands verbatim output
+# shape — JSON only, code only, exact line counts, fixed anchors, no
+# commentary. Attaching a full THINK program to such tasks measurably harmed
+# a competent model (5/12 critical regressions in the cortex-value run), so
+# THINK is suppressed when this signal fires. Inspectable like every signal.
+_EXACT_DELIVERY = re.compile(
+    r"\b(output only|only the (?:json|number|function|table|code)|"
+    r"reply with only|nothing else|no prose|no commentary|no preamble|"
+    r"output exactly|exactly (?:this|one|two|three|four|five|\d+|these)|"
+    r"verbatim|json only|code only|single (?:```|code block)|"
+    r"exactly in this format|in exactly this format)\b",
+    re.IGNORECASE,
+)
 
 
 @dataclass
@@ -93,7 +106,10 @@ def extract_features(req: NormalizedRequest) -> dict:
     numbered = len(_NUMBERED_REQ.findall(text))
     planning_hits = len(_PLANNING_SIGNALS.findall(text))
     ambiguity_hits = len(_AMBIGUITY_SIGNALS.findall(text))
+    exact_delivery_hits = len(_EXACT_DELIVERY.findall(text))
     return {
+        "exact_delivery_contract": exact_delivery_hits > 0,
+        "exact_delivery_hits": exact_delivery_hits,
         "input_tokens_est": input_tokens,
         "input_tokens_measured": False,
         "message_count": req.message_count(),
@@ -124,6 +140,15 @@ class CortexRouter:
         deterministic_reqs = max(f["contract_signal_hits"], f["numbered_requirements"])
         wants_check = deterministic_reqs >= p.check_requirement_threshold
         wants_think = f["planning_signal_hits"] >= 1 and f["message_count"] <= 4
+        # NR-11 guard: never attach the full THINK program to a task with an
+        # exact-delivery contract — measured harm on a competent model.
+        if wants_think and f["exact_delivery_contract"]:
+            wants_think = False
+            reasons.append(
+                f"THINK suppressed: EXACT_DELIVERY_CONTRACT "
+                f"({f['exact_delivery_hits']} exact-output signal(s)) — "
+                "full plan scaffolding measurably harms exact-format delivery"
+            )
 
         # Trivial-and-clear requests always pass through. This is the
         # abstention-first default and it fires first.

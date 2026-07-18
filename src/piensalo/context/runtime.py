@@ -19,6 +19,7 @@ from dataclasses import dataclass, field
 from datetime import datetime, timezone
 from pathlib import Path
 
+from piensalo.context import integrity as integrity_mod
 from piensalo.context import optimize as optimize_mod
 from piensalo.context import quality, schema, select
 from piensalo.context.tokens import ESTIMATOR, estimate_tokens
@@ -56,6 +57,7 @@ class RunResult:
     provenance: dict
     selection: object = None      # the (possibly expanded) Selection
     packet: str = ""              # the final packet actually sent
+    integrity: dict | None = None  # selection-integrity report (NR-9 guard)
 
 
 def _envelope(packet: str, contract: dict | None) -> str:
@@ -199,6 +201,89 @@ def run_optimized(*, task_text: str, items, budget: int, adapter,
     queue = list(opt.selection.expansion_queue)
     by_id = {c.id: c for c in opt.selection.chunks}
     packet = opt.packet
+
+    # ---- selection-integrity pre-flight (NR-9 guard) -------------------
+    # Before ANY model call: prove every contract requirement's lexical
+    # evidence is inside the packet. Deterministic; expansion here costs
+    # zero model tokens. Unresolved integrity -> full-context fallback,
+    # never a silently under-grounded "optimized" packet.
+    integrity_report: dict | None = None
+    if contract and items:
+        integrity_report = integrity_mod.evaluate(contract, opt.selection)
+        pre_rounds = 0
+        used_tokens = opt.selection.selected_tokens
+        while (not integrity_report["all_supported"]
+               and pre_rounds < max_expansions):
+            addable: list[str] = []
+            for cid in integrity_mod.expansion_ids(integrity_report,
+                                                   opt.selection):
+                chunk = by_id[cid]
+                if used_tokens + chunk.tokens > budget:
+                    continue  # cannot fit without violating the budget
+                addable.append(cid)
+                used_tokens += chunk.tokens
+            if not addable:
+                break  # nothing fits; integrity cannot be repaired in-budget
+            for cid in addable:
+                chunk = by_id[cid]
+                chunk.disposition = "INCLUDED_RELEVANT"
+                chunk.reason += (" | integrity expansion: requirement "
+                                 "evidence was missing from the packet")
+                if cid in queue:
+                    queue.remove(cid)
+            extra_ids.extend(addable)
+            packet = optimize_mod.render_packet(
+                task_text, opt.selection, extra_chunk_ids=tuple(extra_ids))
+            integrity_report = integrity_mod.evaluate(
+                contract, opt.selection, extra_ids=tuple(extra_ids))
+            pre_rounds += 1
+        integrity_report["preflight_expansion_rounds"] = pre_rounds
+        if extra_ids:
+            added_by_round[0] = list(extra_ids)
+        if not integrity_report["all_supported"]:
+            unsupported = [n for n, r in integrity_report["requirements"].items()
+                           if r["verdict"] != "SUPPORTED"]
+            detail = ("selection integrity could not establish grounding "
+                      f"within the budget for: {', '.join(unsupported)}")
+            if fallback == "run":
+                resp = adapter.complete(
+                    _full_context_prompt(task_text, source_text, contract))
+                g = quality.grade(resp.text, contract=contract,
+                                  expectations=expectations)
+                attempts.append(Attempt(
+                    label="fallback-full",
+                    prompt_tokens_est=estimate_tokens(
+                        _full_context_prompt(task_text, source_text,
+                                             contract)),
+                    added_chunk_ids=[], requested_model=resp.requested_model,
+                    resolved_model=resp.resolved_model,
+                    tokens_in=resp.tokens_in, tokens_out=resp.tokens_out,
+                    wall_seconds=resp.wall_seconds, grade=g))
+                outcome = "SAFE FALLBACK (EXECUTED)"
+                verification = {
+                    "status": g["status"], "outcome": outcome, "grade": g,
+                    "detail": detail,
+                    "integrity": integrity_report,
+                    "behavioral_status": "full-context response; selection "
+                                         "integrity unresolved",
+                }
+                return RunResult(outcome, resp.text, attempts,
+                                 _ledger(outcome,
+                                         fallback_tokens=attempts[-1].tokens_in),
+                                 verification, _provenance(outcome),
+                                 selection=opt.selection, packet="",
+                                 integrity=integrity_report)
+            outcome = "SAFE FALLBACK (RECOMMENDED)"
+            verification = {
+                "status": "UNMEASURED", "outcome": outcome, "detail": detail,
+                "integrity": integrity_report,
+                "behavioral_status": "UNMEASURED",
+            }
+            return RunResult(outcome, None, attempts, _ledger(outcome),
+                             verification, _provenance(outcome),
+                             selection=opt.selection, packet=packet,
+                             integrity=integrity_report)
+
     for round_no in range(max_expansions + 1):
         label = "optimized" if round_no == 0 else f"expansion-{round_no}"
         prompt = _envelope(packet, contract)
@@ -224,7 +309,8 @@ def run_optimized(*, task_text: str, items, budget: int, adapter,
             }
             return RunResult(outcome, resp.text, attempts, _ledger(outcome),
                              verification, _provenance(outcome),
-                             selection=opt.selection, packet=packet)
+                             selection=opt.selection, packet=packet,
+                             integrity=integrity_report)
         if round_no == max_expansions:
             break
         added_now: list[str] = []
@@ -269,7 +355,8 @@ def run_optimized(*, task_text: str, items, budget: int, adapter,
                          _ledger(outcome,
                                  fallback_tokens=attempts[-1].tokens_in),
                          verification, _provenance(outcome),
-                         selection=opt.selection, packet=packet)
+                         selection=opt.selection, packet=packet,
+                         integrity=integrity_report)
     outcome = "SAFE FALLBACK (RECOMMENDED)"
     verification = {
         "status": "REGRESSION-CANDIDATE", "outcome": outcome,
@@ -281,7 +368,8 @@ def run_optimized(*, task_text: str, items, budget: int, adapter,
     }
     return RunResult(outcome, None, attempts, _ledger(outcome),
                      verification, _provenance(outcome),
-                     selection=opt.selection, packet=packet)
+                     selection=opt.selection, packet=packet,
+                     integrity=integrity_report)
 
 
 def run_to_dir(*, task_path: str, context_path: str, artifact_paths: list,
