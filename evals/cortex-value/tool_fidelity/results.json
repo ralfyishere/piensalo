@@ -1,0 +1,129 @@
+{
+  "model": "qwen2.5:7b",
+  "settings": {
+    "temperature": 0,
+    "seed": 42
+  },
+  "cells": {
+    "nonstream_single_toolcall": {
+      "direct": [
+        {
+          "id": "call_phwxtsf9",
+          "name": "get_weather",
+          "arguments": "{\"city\":\"Paris\"}"
+        }
+      ],
+      "gateway": [
+        {
+          "id": "call_xh3ryen3",
+          "name": "get_weather",
+          "arguments": "{\"city\":\"Paris\"}"
+        }
+      ],
+      "id_present_both_arms": true,
+      "identical": true,
+      "ids_cross_invocation": "BLOCKED BY UPSTREAM CAPABILITY (Ollama mints a random id per invocation; within-conversation id integrity is proven by tool_result_association)"
+    },
+    "finish_reason_usage_nonstream": {
+      "direct": {
+        "finish": "tool_calls",
+        "usage": {
+          "prompt_tokens": 159,
+          "completion_tokens": 20,
+          "total_tokens": 179
+        }
+      },
+      "gateway": {
+        "finish": "tool_calls",
+        "usage": {
+          "prompt_tokens": 159,
+          "completion_tokens": 20,
+          "total_tokens": 179
+        }
+      },
+      "identical": true
+    },
+    "stream_single_toolcall": {
+      "direct": [
+        {
+          "id": "call_lw376p7u",
+          "name": "get_weather",
+          "arguments": "{\"city\":\"Paris\"}"
+        }
+      ],
+      "gateway": [
+        {
+          "id": "call_p12ovl9y",
+          "name": "get_weather",
+          "arguments": "{\"city\":\"Paris\"}"
+        }
+      ],
+      "done_marker_both": true,
+      "id_present_both_arms": true,
+      "identical": true
+    },
+    "stream_event_order": {
+      "direct_events": 3,
+      "gateway_events": 3,
+      "identical_sequence": true
+    },
+    "finish_reason_usage_stream": {
+      "direct": {
+        "finish": "tool_calls",
+        "usage": null
+      },
+      "gateway": {
+        "finish": "tool_calls",
+        "usage": null
+      },
+      "identical": true
+    },
+    "multiple_toolcalls": {
+      "direct": [
+        {
+          "id": "call_bbucen1q",
+          "name": "get_weather",
+          "arguments": "{\"city\":\"Paris\"}"
+        },
+        {
+          "id": "call_7169kcqe",
+          "name": "get_time",
+          "arguments": "{\"city\":\"Tokyo\"}"
+        }
+      ],
+      "gateway": [
+        {
+          "id": "call_hte1y3kb",
+          "name": "get_weather",
+          "arguments": "{\"city\":\"Paris\"}"
+        },
+        {
+          "id": "call_a9mcv9he",
+          "name": "get_time",
+          "arguments": "{\"city\":\"Tokyo\"}"
+        }
+      ],
+      "identical": true,
+      "order_preserved": true
+    },
+    "tool_result_association": {
+      "direct_content": "The current weather in Paris is sunny with a temperature of 21 degrees Celsius.",
+      "gateway_content": "The current weather in Paris is sunny with a temperature of 21 degrees Celsius.",
+      "identical": true,
+      "answer_uses_result": true
+    },
+    "cancellation_midstream": {
+      "gateway_survived": true,
+      "note": "client aborted mid-stream; gateway served the next request"
+    },
+    "timeout_behavior": {
+      "status": "NOT RUN LIVE",
+      "detail": "requires a deliberately stalling upstream; dead-upstream 502 relay is unit-tested (tests/test_gateway_server.py)"
+    },
+    "resolved_model": {
+      "direct": "qwen2.5:7b",
+      "gateway": "qwen2.5:7b",
+      "identical": true
+    }
+  }
+}
